@@ -6,7 +6,7 @@ class Controller{
 
     function __construct(){
 
-        $this->model_object=new Model();
+        //$this->model_object=new Model();
         $this->view_object=new View();
 
     }

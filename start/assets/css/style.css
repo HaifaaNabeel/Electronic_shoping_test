@@ -1,0 +1,186 @@
+@font-face{
+  src: url('../font/f/Tajawal-Medium.ttf');
+font-family: Tajawal;
+}
+*{font-family: 'Tajawal', sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+     /*************header*********************/
+.navbar {
+    direction: rtl;
+    background-color: #ffffff;
+    border-bottom: 2px solid black;
+}   
+
+.navbar-brand{
+    font-size: 28px;
+    color: black;
+    font-style: normal;
+    font-weight: bold;
+}
+
+#collapsibleNavbar{margin-right: 11%;}
+.nav-item a{
+    width: 115px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+.nav-item a:hover{
+    color: #fd519a;
+    font-size: 17px;
+}
+li ul{
+    list-style: none;
+    position: fixed;
+    background: white;
+    border: 1px solid aliceblue;
+    border-top: 0px;
+        display:none ;
+}
+ul::after {
+    clear: both;
+}
+li ul ul{
+   position: absolute;
+right: 90%;
+    display:none ;
+}
+
+li:hover ul{
+    display: block;
+}
+li:hover ul ul{
+    display: none;
+}
+li ul li:hover ul{
+    display:block;
+}
+
+.icons {
+    position: fixed;
+    right:82%;
+}
+.icons .ico{
+        margin: 11px;
+        margin-top: 11px;
+    margin-top: 5px;
+    color: black;
+    font-weight: bolder;
+    font-size: 22px;
+}
+.icons .ico:hover{
+    color: #fd519a;;
+    font-size: 23px;
+}
+#home{color: #fd519a;}
+/*******************************slider****************************/
+.carousel-indicators li {
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #eeeeee;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+.carousel-caption {
+  
+    color: #000;
+}
+
+.owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled {
+    display: block;
+    background: transparent;
+}
+.owl-theme .owl-nav .owl-prev {
+    color: #fd519a;
+    margin: 5px;
+    background: transparent;
+    display: inline-block;
+}.owl-theme .owl-nav .owl-next {
+    color: #fd519a;
+    margin: 5px;
+    background: transparent;
+    display: inline-block;
+}
+/*******************************footer*****************************/
+footer {
+    direction: rtl;
+    background-color: black;
+    color: white;
+    padding-top: 2%;
+}
+footer ul {
+    margin-top: 5%;
+    list-style: none;
+}
+footer ul li {
+    margin: 3%;
+}
+.foo {
+    border-top: 1px solid #606060;
+}
+
+/****************************************product card************************/
+
+ .product_btn {
+    color: #fd51b1;
+    border-radius: 50%;
+    background-color: #fd51b108;
+    font-size: 17px;
+    border: 1px solid #fd51b1;
+    box-shadow: 9px -1px 9px -2px #eee;
+}
+ .product_btn:hover {
+    color: #fff;
+    border-radius: 50%;
+    background-color: #fd51b1;
+transition: all ease 1s;}
+
+/*****************svg******************/
+.points{
+    top: 15%;
+position: relative;
+width: 100%;
+height: 20vh;
+background-repeat: no-repeat;
+    background-size: cover;
+}
+#mesvg {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+}
+#mesvg path{
+fill:#fd51b1;
+}
+
+.points h1{
+    z-index: ;
+    position: relative;
+    z-index: 1;
+    color: white;
+    margin-left: 15%;
+}
+
+.points2 {
+    margin-top: -2px;
+  top: 0%;
+position: relative;
+width: 100%;
+background-color: #fd51b1;
+}

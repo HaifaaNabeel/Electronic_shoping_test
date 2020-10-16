@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>     
+<head>     
        <meta charset="utf-8">
 <meta name='author' content=''>
 <meta name='description' content=''>
@@ -35,7 +35,7 @@
     height: 100vh;
   }
   </style>
-      </head>
+</head>
     
    <body>
    <!--start header-->
@@ -54,7 +54,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#" id="home">الرئيسية</a>
+        <a class="nav-link" href="./home" id="home">الرئيسية</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">عن المتجر </a>
@@ -99,7 +99,7 @@
         <a class="nav-link" href="#">العروض</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">تواصل معنا</a>
+        <a class="nav-link" href="./contact">تواصل معنا</a>
       </li>
          <li class="nav-item">
         <a class="nav-link" href="#">عربي</a>

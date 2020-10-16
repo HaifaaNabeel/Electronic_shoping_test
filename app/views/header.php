@@ -9,20 +9,20 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Ecomm</title>
       <!--fonts files-->
-      <link href="../assets/font/f/Tajawal-Medium.ttf" rel="stylesheet"> 
-      <link rel="stylesheet" href="../assets/font/ionicons/css/ionicons.min.css">
+      <link href="app/assets/font/f/Tajawal-Medium.ttf" rel="stylesheet"> 
+      <link rel="stylesheet" href="app/assets/font/ionicons/css/ionicons.min.css">
        <!--css files-->
-      <link rel="stylesheet" href="../assets/css/animated.css">
-      <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
-      <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-      <link rel="stylesheet" href="../assets/css/style.css">
-      <link rel="stylesheet" href="../assets/css/response.css">
+      <link rel="stylesheet" href="app/assets/css/animated.css">
+      <link rel="stylesheet" href="app/assets/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="app/assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="app/assets/css/style.css">
+      <link rel="stylesheet" href="app/assets/css/response.css">
      <!--javascript files-->
-       <script src="../assets/js/jquery3.4.1.js"></script>
-       <script src="../assets/js/popper.min.js"></script>
-       <script src="../assets/js/owl.carousel.min.js"></script>
-       <script src="../assets/js/bootstrap.min.js"></script>
-       <script src="../assets/js/js.js"></script> 
+       <script src="app/assets/js/jquery3.4.1.js"></script>
+       <script src="app/assets/js/popper.min.js"></script>
+       <script src="app/assets/js/owl.carousel.min.js"></script>
+       <script src="app/assets/js/bootstrap.min.js"></script>
+       <script src="app/assets/js/js.js"></script> 
        	<style>
 	
   /* Make the image fully responsive */
@@ -91,7 +91,7 @@
           </ul>
       </li>
               <li class="nav-item">
-        <a class="nav-link" href="#">العروض</a>
+        <a class="nav-link" href="./products">العروض</a>
       </li>
           </ul>
       </li> 

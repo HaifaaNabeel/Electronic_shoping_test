@@ -11,20 +11,27 @@ class DB{
     function __construct($server,$dbname,$username,$pass){
 
        // $dsn="mysql:host=".$server.";dbname=".$dbname;
-       $dsn="mysql:host=localhost;dbname=store";
+       $dsn="mysql:host=localhost;dbname=ecommerce_project";
 
         $this->connection=new PDO($dsn,"root","");
 
     }
 
 
-    function select($cols){
-        $this->columns="select ".implode(",",$cols)." ";
+    function select ($cols){
 
-
-        return $this;
+        if (empty($this->columns))
+        {
+            $this->columns=" select * " ;
+        }
+     
+        else{
+            $this->columns=" select ".implode(",",$cols)." " ;
+        }
+            return $this;
 
     }
+
     function from($tbls){
 
         $this->tables="from ".implode(",",$tbls)." ";
@@ -68,7 +75,7 @@ class DB{
     function exeucte(){
         $stmt=$this->connection->prepare($this->final_query);
         $stmt->execute();
-       $result= $stmt->fetchAll(PDO::FETCH_BOTH);
+       $result= $stmt->fetchAll(PDO::FETCH_OBJ);
        print_r($result);
        return $result;
 

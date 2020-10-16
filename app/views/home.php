@@ -40,6 +40,11 @@
 </div>
     </slider>   
  </br></br>
+                           <!--<?PHP 
+                            foreach($data['categories'] as $c){
+                                echo "<li><a href='./$c->category_name'>$c->category_name</a></li>";
+                            }
+                            ?>-->
 <section>
     <div class="container">
         <div class="row">

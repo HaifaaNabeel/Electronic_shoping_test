@@ -9,6 +9,14 @@
     .nav-item a {
     width: auto;
 }
+    .points h1 {
+    z-index: ;
+    position: relative;
+    z-index: 1;
+    color: white;
+    margin-left: 20%;
+    bottom: -154%;
+}
 }
 @media (min-width: 250px) and (max-width: 575.98px) { 
      #collapsibleNavbar {
@@ -37,6 +45,14 @@ li ul ul{
    position: relative;
 right: 0%;
     display:none ;
+}
+    .points h1 {
+    z-index: ;
+    position: relative;
+    z-index: 1;
+    color: white;
+    margin-left: 20%;
+    bottom: -154%;
 }
    }
 

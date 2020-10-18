@@ -159,6 +159,9 @@ width: 100%;
 height: 20vh;
 background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    display: none;
 }
 #mesvg {
     width: 100%;
@@ -174,7 +177,7 @@ fill:#fd51b1;
     position: relative;
     z-index: 1;
     color: white;
-    margin-left: 15%;
+    margin-left: 20%;
 }
 
 .points2 {
@@ -182,5 +185,37 @@ fill:#fd51b1;
   top: 0%;
 position: relative;
 width: 100%;
-background-color: #fd51b1;
+background-color: ;
 }
+
+/*****************offers******************/
+.gift {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin: 2%;
+    border: 2px solid #ff133f;
+    padding: 2%;
+    border-radius: 50%;
+}
+.gift2 {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    margin: 2%;
+    border: 2px solid #ff133f;
+    padding: 3%;
+    border-radius: 50%;
+}
+
+.off {
+    color: #dc3545 !important;
+    font-size: 33px;
+    position: absolute;
+    right: 40%;
+    bottom: 23%;
+}
+
+
+.product_det{direction: rtl;}
+

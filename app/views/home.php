@@ -40,11 +40,6 @@
 </div>
     </slider>   
  </br></br>
-                           <!--<?PHP 
-                            foreach($data['categories'] as $c){
-                                echo "<li><a href='./$c->category_name'>$c->category_name</a></li>";
-                            }
-                            ?>-->
 <section>
     <div class="container">
         <div class="row">
@@ -53,25 +48,6 @@
             </div>
              <div class="col-sm-12">
               <div class="img-gallery  owl-carousel owl-theme">
-              <div class=" text-center mr-1 ml-1  mb-2">
-                  <div class="card">
-                 <div style="height:auto ;" class="table-block ">
-                    <img alt=""  src="app/assets/img/banner_gear-sport.png" style="height: 272px;" />
-                 </div>
-                <div class="card-body">
-                    <h6>ساعه رياضيه ذكية</h6>
-                    <h6>8000RY</h6>
-                    <h6>
-                        <form action="" method="post">
-                        <button class="btn product_btn m-1" type="submit" name="card"><span class="ion-ios-cart-outline"></span></button>
-                        <button class="btn product_btn m-1" type="submit" name="favorite"><span class="ion-android-favorite-outline"></span></button>
-                        <button class="btn product_btn m-1" type="submit" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
-                        <button class="btn product_btn m-1" type="submit" name="more"><span class="ion-ios-more-outline"></span></button>
-                        </form>
-                    </h6>                    
-                </div>
-              </div> 
-            </div>
               <div class=" text-center mr-1 ml-1  mb-2">
                   <div class="card">
                  <div style="height:auto ;" class="table-block ">
@@ -85,7 +61,7 @@
                         <button class="btn product_btn m-1" type="submit" name="card"><span class="ion-ios-cart-outline"></span></button>
                         <button class="btn product_btn m-1" type="submit" name="favorite"><span class="ion-android-favorite-outline"></span></button>
                         <button class="btn product_btn m-1" type="submit" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
-                        <button class="btn product_btn m-1" type="submit" name="more"><span class="ion-ios-more-outline"></span></button>
+                        <a class="btn product_btn m-1" href="product_details.php"><span class="ion-ios-more-outline"></span></a>
                         </form>
                     </h6>                    
                 </div>
@@ -184,7 +160,192 @@
     </div>
 </section> 
  </br></br>
-
+<section style="">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 class="text-center mb-3 mt-3">  عروض جديدة</h3>
+                </br>
+            </div>
+             <div class="col-sm-12 col-md-3">
+              <div class=" text-center mr-1 ml-1  mb-2">
+                  <div class="card">
+                 <div style="height:auto ;" class="table-block ">
+                     <img src="app/assets/img/gift-box.png" class="gift">
+                    <img alt=""  src="app/assets/img/banner_gear-sport.png" style="height: 272px;" />
+                 </div>
+                <div class="card-body">
+                    <?php $name="ساعه رياضيه ذكية"; $wordjoin="مع"; $giftname="سماعات جالكسي";?>
+                    <h6><?php echo $name.' '.$wordjoin.' '.$giftname?></h6>
+                    <h6>8000RY</h6>
+                    <h6>
+                        <form action="" method="post">
+                        <button class="btn product_btn m-1" type="submit" name="card"><span class="ion-ios-cart-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="favorite"><span class="ion-android-favorite-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="more"><span class="ion-ios-more-outline"></span></button>
+                        </form>
+                    </h6>                    
+                </div>
+              </div> 
+            </div>
+            </div>
+        
+             <div class="col-sm-12 col-md-3">
+              <div class=" text-center mr-1 ml-1  mb-2">
+                  <div class="card">
+                 <div style="height:auto ;" class="table-block ">
+                     <img src="app/assets/img/gift-box.png" class="gift">
+                    <img alt=""  src="app/assets/img/banner_gear-sport.png" style="height: 272px;" />
+                 </div>
+                <div class="card-body">
+                    <?php $name="ساعه رياضيه ذكية"; $wordjoin="مع"; $giftname="سماعات جالكسي";?>
+                    <h6><?php echo $name.' '.$wordjoin.' '.$giftname?></h6>
+                    <h6>8000RY</h6>
+                    <h6>
+                        <form action="" method="post">
+                        <button class="btn product_btn m-1" type="submit" name="card"><span class="ion-ios-cart-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="favorite"><span class="ion-android-favorite-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="more"><span class="ion-ios-more-outline"></span></button>
+                        </form>
+                    </h6>                    
+                </div>
+              </div> 
+            </div>
+            </div>
+        
+             <div class="col-sm-12 col-md-3">
+              <div class=" text-center mr-1 ml-1  mb-2">
+                  <div class="card">
+                 <div style="height:auto ;" class="table-block ">
+                     <img src="app/assets/img/gift-box.png" class="gift">
+                    <img alt=""  src="app/assets/img/banner_gear-sport.png" style="height: 272px;" />
+                 </div>
+                <div class="card-body">
+                    <?php $name="ساعه رياضيه ذكية"; $wordjoin="مع"; $giftname="سماعات جالكسي";?>
+                    <h6><?php echo $name.' '.$wordjoin.' '.$giftname?></h6>
+                    <h6>8000RY</h6>
+                    <h6>
+                        <form action="" method="post">
+                        <button class="btn product_btn m-1" type="submit" name="card"><span class="ion-ios-cart-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="favorite"><span class="ion-android-favorite-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="more"><span class="ion-ios-more-outline"></span></button>
+                        </form>
+                    </h6>                    
+                </div>
+              </div> 
+            </div>
+            </div>
+        
+             <div class="col-sm-12 col-md-3">
+              <div class=" text-center mr-1 ml-1  mb-2">
+                  <div class="card">
+                 <div style="height:auto ;" class="table-block ">
+                     <img src="app/assets/img/gift-box.png" class="gift">
+                    <img alt=""  src="app/assets/img/banner_gear-sport.png" style="height: 272px;" />
+                 </div>
+                <div class="card-body">
+                    <?php $name="ساعه رياضيه ذكية"; $wordjoin="مع"; $giftname="سماعات جالكسي";?>
+                    <h6><?php echo $name.' '.$wordjoin.' '.$giftname?></h6>
+                    <h6>8000RY</h6>
+                    <h6>
+                        <form action="" method="post">
+                        <button class="btn product_btn m-1" type="submit" name="card"><span class="ion-ios-cart-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="favorite"><span class="ion-android-favorite-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="more"><span class="ion-ios-more-outline"></span></button>
+                        </form>
+                    </h6>                    
+                </div>
+              </div> 
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+</br></br>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 class="text-center mb-3 mt-3">أحدث التخفيضات</h3>
+                </br>
+            </div>
+             <div class="col-sm-12 col-md-3">
+              <div class=" text-center mr-1 ml-1  mb-2">
+                  <div class="card">
+                 <div style="height:auto ;" class="table-block ">
+                     <img src="app/assets/img/ribbon.png" class="gift2">
+                    <img alt=""  src="app/assets/img/banner_gear-sport.png" style="height: 272px;" />
+                 </div>
+                <div class="card-body">
+                    <h6>ساعة رياضية ذكية</h6>
+                    <h6>8000RY<span class="off">------</span></h6>
+                    <h6>4000RY</h6>
+                    <h6>
+                        <form action="" method="post">
+                        <button class="btn product_btn m-1" type="submit" name="card"><span class="ion-ios-cart-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="favorite"><span class="ion-android-favorite-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="more"><span class="ion-ios-more-outline"></span></button>
+                        </form>
+                    </h6>                    
+                </div>
+              </div> 
+            </div>
+            </div>
+           <div class="col-sm-12 col-md-3">
+              <div class=" text-center mr-1 ml-1  mb-2">
+                  <div class="card">
+                 <div style="height:auto ;" class="table-block ">
+                     <img src="app/assets/img/ribbon.png" class="gift2">
+                    <img alt=""  src="app/assets/img/banner_gear-sport.png" style="height: 272px;" />
+                 </div>
+                <div class="card-body">
+                    <h6>ساعة رياضية ذكية</h6>
+                    <h6>8000RY<span class="off">------</span></h6>
+                    <h6>4000RY</h6>
+                    <h6>
+                        <form action="" method="post">
+                        <button class="btn product_btn m-1" type="submit" name="card"><span class="ion-ios-cart-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="favorite"><span class="ion-android-favorite-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="more"><span class="ion-ios-more-outline"></span></button>
+                        </form>
+                    </h6>                    
+                </div>
+              </div> 
+            </div>
+            </div>
+           <div class="col-sm-12 col-md-3">
+              <div class=" text-center mr-1 ml-1  mb-2">
+                  <div class="card">
+                 <div style="height:auto ;" class="table-block ">
+                     <img src="app/assets/img/ribbon.png" class="gift2">
+                    <img alt=""  src="app/assets/img/banner_gear-sport.png" style="height: 272px;" />
+                 </div>
+                <div class="card-body">
+                    <h6>ساعة رياضية ذكية</h6>
+                    <h6>8000RY<span class="off">------</span></h6>
+                    <h6>4000RY</h6>
+                    <h6>
+                        <form action="" method="post">
+                        <button class="btn product_btn m-1" type="submit" name="card"><span class="ion-ios-cart-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="favorite"><span class="ion-android-favorite-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="more"><span class="ion-ios-more-outline"></span></button>
+                        </form>
+                    </h6>                    
+                </div>
+              </div> 
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+</br></br>
 <section class="points">
 <h1 class="">   علامات تجاريه</h1>
 <svg id="mesvg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 197.72"><path class="cls-1" d="M0,262.71S322.94-46.71,686.47,108.59,1182.94,245.06,1400,118V262.71Z" transform="translate(0 -64.98)"/></svg>
@@ -193,52 +354,32 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-2">
+              <div class="col-sm-12">
+            <h1 class="text-center">   علامات تجاريه</h1>
+                  </br></br>
+</div>
+            <div class="col-sm-6 col-md-3 p-1">
                 <div class="">
                 <img class="img-fluid" src="app/assets/img/Download-Lenovo-Logo-PNG-Transparent-Image-420x186.png">
                 </div>
             </div>
-             <div class="col-sm-12 col-md-2">
-                <div class="">
-                <img class="img-fluid" src="app/assets/img/47050_preview.png">
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-2">
-                <div class="">
-                <img class="img-fluid" src="app/assets/img/177-1774997_htc-logo-transparent-background-download-htc-logo.png">
-                </div>
-            </div>
-             <div class="col-sm-12 col-md-2">
+            
+             <div class="col-sm-6 col-md-3 p-1">
                 <div class="">
                 <img class="img-fluid" src="app/assets/img/Huawei-Symbol.png">
                 </div>
             </div>
-             <div class="col-sm-12 col-md-2">
-                <div class="">
-                <img class="img-fluid" src="app/assets/img/laptop-desktop-dell-png-logo-8.png">
-                </div>
-            </div>
-             <div class="col-sm-12 col-md-2">
+             <div class="col-sm-6 col-md-3 p-1">
                 <div class="">
                 <img class="img-fluid" src="app/assets/img/Sony-Logo-1961%E2%80%931962.png">
                 </div>
             </div>
-            <div class="col-sm-12 col-md-2">
-                <div class="">
-                <img class="img-fluid" src="app/assets/img/47050_preview.png">
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-2">
-                <div class="">
-                <img class="img-fluid" src="app/assets/img/177-1774997_htc-logo-transparent-background-download-htc-logo.png">
-                </div>
-            </div>
-             <div class="col-sm-12 col-md-2">
+             <div class="col-sm-6 col-md-3 p-1">
                 <div class="">
                 <img class="img-fluid" src="app/assets/img/samsung_logo_PNG16.png">
                 </div>
             </div>
-             
+             </br></br>
         </div>
     </div>
 </section>

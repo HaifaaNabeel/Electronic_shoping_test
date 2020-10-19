@@ -218,4 +218,12 @@ background-color: ;
 
 
 .product_det{direction: rtl;}
-
+.contact_btn {
+    background-color: white;
+    border: 2px solid #fd51a6;
+    border-radius: 5%;
+    float: left;
+    width: ;
+    color: #fd51a6;
+}
+/*hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh*/

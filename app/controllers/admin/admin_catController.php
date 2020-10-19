@@ -8,36 +8,39 @@ public $function;
 
 
 
-    function __construct($function="index"){
+function __construct($function="index"){
 
         $this->controller=new Controller();
        $this->cat_model=$this->controller->model_object->create_model('category');
         $this->$function();
         
-    }
+}
 
 
-       function index(){
+function index(){
       //  $items=array(
        //     'categories'=>$this->cat_model->getDataOrder(),
             
        // );
         
         $this->controller->view_object->create_view('admin/homeAdmin');
-       }
-          function categories(){
+}
+
+function categories(){
            $items=array(
          'categories'=>$this->cat_model->getDataOrder(),
             
      );
         
         $this->controller->view_object->create_view('admin/categories',$items);
-       }
+}
 
-       function add(){
+
+function add(){
            // print_r($_POST);
            $this->cat_model->addData($_POST); 
-                  }
+}
+
 function add_cat()
 {
      $items=array(
@@ -46,6 +49,8 @@ function add_cat()
     $this->controller->view_object->create_view('admin/cat_add',$items);
 
 }
+
+
 function update_cat()
 {$id=$_GET['id'];
     $items=array(
@@ -53,15 +58,15 @@ function update_cat()
         'categories_parent'=>$this->cat_model->getData(),
            );
     $this->controller->view_object->create_view('admin/cat_update',$items);
-
 }
-    function update(){
+
+
+function update(){
         //    print_r($_POST);
            $this->cat_model->updateData($_POST); 
+}
 
 
-       }
- 
     function delete_cat(){
 
    // $this->controller->view_object->create_view('admin/update_cat');

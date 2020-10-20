@@ -9,10 +9,10 @@
 										</div>
 										<div class="card-body">
 											<form method="post" action="admin_cat/update">
-				<?php
-$rows=$data['categories'];
-foreach($rows as $row){        
-?>
+				                              <?php
+                                                 $rows=$data['categories'];
+                                                     foreach($rows as $row){        
+                                                ?>
                                                 <div class="form-group">
 													<input value="<?php echo $row->category_id;?>" class="form-control" type="text" id="category_name" name="category_id" hidden="hidden">
 												</div>
@@ -38,12 +38,12 @@ foreach($rows as $row){
 													<select class="form-control" id="category_parent">
 														<option value=0>Parent</option>
                                                           <?php
-                              $rows=$data['categories_parent'];
+                                   $rows=$data['categories_parent'];
         
-                              foreach($rows as $row){
-                                 echo "
-                                 <option value=$row->category_id>$row->category_name</option>
-                                       ";
+                                      foreach($rows as $row){
+                                      echo "
+                                        <option value=$row->category_id>$row->category_name</option>
+                                         ";
                                 }
                             ?>
 													</select>

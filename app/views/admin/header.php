@@ -108,13 +108,13 @@
                     data-parent="#sidebar-menu">
                     <div class="sub-menu">
                         <li >
-                            <a class="sidenav-item-link" href="index">
+                            <a class="sidenav-item-link" href="../admin_cat/categories">
                               <span class="nav-text">الاصناف</span>
                               
                             </a>
                           </li>
                          <li >
-                            <a class="sidenav-item-link" href="index">
+                            <a class="sidenav-item-link" href="../admin_prod/index">
                               <span class="nav-text">المنتجات </span>
                               
                             </a>
@@ -158,13 +158,13 @@
                     data-parent="#sidebar-menu">
                     <div class="sub-menu">
                           <li >
-                            <a class="sidenav-item-link" href="./categories">
+                            <a class="sidenav-item-link" href="../admin_cat/categories">
                               <span class="nav-text">عرض الاصناف</span>
                               
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="add_cat">
+                            <a class="sidenav-item-link" href="../admin_cat/add_cat">
                               <span class="nav-text"> اضافة صنف</span>
                               
                             </a>
@@ -188,13 +188,13 @@
                     data-parent="#sidebar-menu">
                     <div class="sub-menu">
                           <li >
-                            <a class="sidenav-item-link" href="index">
+                            <a class="sidenav-item-link" href="../admin_prod/index">
                               <span class="nav-text">عرض المنتجات</span>
                               
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="./add_prod">
+                            <a class="sidenav-item-link" href="../admin_prod/add_prod">
                               <span class="nav-text"> اضافة منتج</span>
                               
                             </a>

@@ -8,7 +8,7 @@
 											<h2>Add New Category</h2>
 										</div>
 										<div class="card-body">
-											<form method="post" action="admin_cat/add">
+											<form method="post" action="../admin_cat/add">
 				
 												<div class="form-group">
 													<label for="category_name">Category Name:</label>

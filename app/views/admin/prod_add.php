@@ -9,7 +9,7 @@
 							<h2>Add New Product</h2>
 						</div>
 						<div class="card-body">
-						  <form method="post" action="./add_product">
+						  <form method="post" action="../admin_prod/add_product">
 				
 						  <div class="form-group">
 								<label for="product_name">Product Name:</label>
@@ -91,9 +91,8 @@
                             <div class="form-group">
 								<label for="category_id">Category:</label>
 								<select class="form-control" name="category_id">
-								  <option value=26>Parent</option>
-                                      <?php
-                                            $rows=$data['categories_parent'];
+									  <?php 
+											$rows=$data['categories_parent'];
                                                foreach($rows as $row){
                                                    echo "
                                                      <option value=$row->category_id>$row->category_name</option>

@@ -1,54 +1,48 @@
 
 <?php include'header.php'; ?>
 
-   	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  
-       <style>
-       .form-control{font-size: 1.5em;color: #080808;}
-       .content-header{font-family: 'Oleo Script', cursive;color:#fcc500;font-size:.90em;}
-       .section-content{text-align: center;}
-       .contact-section .col-md-6{width:50%;}
-       .form-group{margin-top: 10px;text-align: right;}
-       .form-control{ font-size: 1.3em;color: #080808;text-align: right;}
-    </style>
-    <br><br><br><br>
+<section class="contact">
+	<br> <br><br> <br>
 
-<section id="contact" class="container-fluid">
-			<div class="section-content container">
-				<h1 class="section-header">  <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">WepDev</span> ابقى على   <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> تواصل </span> معنا </h1>
-			</div>
-			<div class="contact-section">
-			<div class="container">
-				<form style="" action="" method="POST">
-          <div class="row">
-          <div class="col-md-6 col-sm-12">
-          <img class="" width="100%"  alt="image" src="app/assets/img/contactus.png"/>
-			  		</div>
-			  		<div class="col-md-6 col-xs-6">
-			  			<div class="form-group">
-			  				<label for="exampleInputUsername" class="text-labe">الاسم </label>
-					    	<input type="text" class="form-control" id="" placeholder=" ادخل اسمك ">
-				  		</div>
-				  		<div class="form-group">
-					    	<label for="exampleInputEmail" class="text-labe">البريد الالكتروني </label>
-					    	<input type="email" class="form-control" id="exampleInputEmail" placeholder=" ادخل بريدك ">
-					  	</div>	
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            </br>
+  </br>
+            <img class="" width="100%" alt="image" src="app/assets/img/contactus.png"/>
+        </div> 
+         <div class="col-md-6 col-sm-12 ">
+               <div class="">
+                  <h3 class="text-right" style="color: #000;"> تواصل معنا</h3>
+  </br>
+                <form  class="text-right" role="form" action=""  method="POST">
+						<div class="form-group col-sm-12" style="float:right;">
+						 <label class="text-labe">الاسم </label>
+                          <input type="text" name="name" value="" class="form-control  rounded-0 p-3"   placeholder=" ادخل اسمك">   
+                        </div>
+                           <div class="form-group col-sm-12" style="float:right;"> 
+                               <label class="text-labe">البريد الالكتروني </label>
+  
+                          <input type="email"  name="email" class="form-control text-right rounded-0 p-3" value="" placeholder="ادخل بريدك  ">   
+                        </div>	   
 					  	<!--<div class="form-group">
 					    	<label for="countery" class="text-labe"> الدولة </label>
 					    	<input type="countery" class="form-control" id="countery" placeholder=" ادخل اسم دولتك ">
-              </div>-->
-              <div class="form-group">
+						</div>-->
+                      <div class="form-group col-sm-12" style="float:right;" >
 			  				<label for ="description" class="text-labe">  رسالتك الينا</label>
-			  			 	<textarea  class="form-control" id="description" placeholder="اكتب ما تريد توصيله لنا " style="height: 6.1em;"></textarea>
+			  			 	<textarea type="text" class="form-control text-right" id="description" name="message" placeholder="اكتب ما تريد توصيله لنا " style="height: 6.1em;"></textarea>
 			  			</div>
-			  			<div>
-			  				<button type="button" class="btn btn-default submit" ><i class="fa fa-paper-plane" aria-hidden="true"></i> ارسال الرسالة </button>
+			  			<div class="form-group" style="float:left; padding:3px 20px" >
+			  				<button type="button" class="btn btn-default submit" ><i class="ion-ios-paperplane" ></i> ارسال الرسالة </button>
 			  			</div>
 			  			
-          </div>
-        </div>
+          
 				</form>
 			</div>
+		</div> 
+	</div>
+</div>
     </section>
     <br> <br>
 

@@ -18,12 +18,12 @@
                 <form  class="text-right" role="form" action=""  method="POST">
 						<div class="form-group col-sm-12" style="float:right;">
 						 <label class="text-labe">الاسم </label>
-                          <input type="text" name="name" value="" class="form-control  rounded-0 p-3"   placeholder=" ادخل اسمك">   
+                          <input type="text" name="name" value="" class="form-control text-right "   placeholder=" ادخل اسمك">   
                         </div>
                            <div class="form-group col-sm-12" style="float:right;"> 
                                <label class="text-labe">البريد الالكتروني </label>
   
-                          <input type="email"  name="email" class="form-control text-right rounded-0 p-3" value="" placeholder="ادخل بريدك  ">   
+                          <input type="email"  name="email" class="form-control text-right " value="" placeholder="ادخل بريدك  ">   
                         </div>	   
 					  	<!--<div class="form-group">
 					    	<label for="countery" class="text-labe"> الدولة </label>

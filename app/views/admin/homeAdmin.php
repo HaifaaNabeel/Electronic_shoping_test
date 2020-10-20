@@ -43,10 +43,40 @@
                                 </td>
                             </tr>
 
+                          <?php
+
+                               $rows=$data['products'];
+                                   foreach($rows as $row)
+                                   {
+                                    echo '  
+                            <tr>
+                            <td >1</td>
+                            <td ><img src="../../$row[product_main_image]" class="img-thumbnail img-fluid"></td>
+                            <td >'.$row->product_name.'</td>
+                            <td >'.$row->category_id.'</td><!-- we want to add category name not id-->
+                            <td >'.$row->product_price.'</td>
+                            <td >'.$row->product_Quantity.'</td>
+                            <td >
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a type="button" href="" class="btn btn-success"><span class="ion-edit"></span></a>
+                                    <a type="button" href="" class="btn btn-info"><span class="">%</span></a>
+                                   <a type="button" href="" class="btn btn-warning"><span class="ion-ribbon-b"></span></a>
+                                   <a type="button" href="" class="btn btn-primary"><span class="ion-ios-photos-outline"></span></a>
+                                   <a type="button" href="" class="btn btn-danger"><span class="ion-android-delete"></span></a>
+                                 </div>
+                                </td>
+                            </tr>
+
+                             ';
+                            }
+                          ?>
                             </tbody>
                           
                       
                       </table>
                     </div>
                   </div>
+
+
+
 <?php include"footer.php";?>

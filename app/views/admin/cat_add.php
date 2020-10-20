@@ -24,7 +24,7 @@
 													<select class="form-control" name="category_is_active" id="category_is_active">
 														<option value=1>active</option>
 														<option value=0>no-active</option>
-                           				</select>
+                           				            </select>
                                                 </div>
                                                <div class="form-group">
 													<label for="category_parent">Parent</label>
@@ -41,7 +41,7 @@
                                                     ?>
                                                  </select>
                                                    <input type="text" class="form-control"  placeholder="" name="date_added" hidden="hidden" readonly required value="<?php echo date('y-m-d'); ?>">
-                                                      <input type="text"  value="1" name="admin_who_added" hidden="hidden" readonly required >
+                                                   <input type="text"  value="1" name="admin_who_added" hidden="hidden" readonly required >
                                                 </div>
 
                                                 <div class="form-footer pt-4 pt-5 mt-4 border-top">

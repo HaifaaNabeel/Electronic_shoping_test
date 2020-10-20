@@ -158,7 +158,7 @@
                     data-parent="#sidebar-menu">
                     <div class="sub-menu">
                           <li >
-                            <a class="sidenav-item-link" href="categories">
+                            <a class="sidenav-item-link" href="./categories">
                               <span class="nav-text">عرض الاصناف</span>
                               
                             </a>
@@ -194,7 +194,7 @@
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="">
+                            <a class="sidenav-item-link" href="./add_prod">
                               <span class="nav-text"> اضافة منتج</span>
                               
                             </a>
@@ -353,10 +353,10 @@
                 </div>
               </div>
 
-              <div class="navbar-right ">
+              <div class="navbar-right " >
                 <ul class="nav navbar-nav">
                  
-                  <li class="dropdown notifications-menu">
+                  <li class="dropdown notifications-menu" style="display:none">
                     <button class="dropdown-toggle" data-toggle="dropdown">
                       <i class="mdi mdi-bell-outline"></i>
                     </button>

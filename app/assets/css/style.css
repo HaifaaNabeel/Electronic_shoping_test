@@ -226,4 +226,9 @@ background-color: ;
     width: ;
     color: #fd51a6;
 }
-/*hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh*/
+/*hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh login*/
+
+.col-login{
+    background-color: #606060;
+    border: 3px solid red;
+}

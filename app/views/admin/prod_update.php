@@ -38,7 +38,9 @@
 							
 							<div class="form-group">
 								<label for="product_details">Product details:</label>
-								<textarea value="<?php echo $row->product_details;?>"  class="form-control" id="product_details" rows="3" name="product_details"></textarea>
+								<textarea value="<?php echo $row->product_details;?>"  class="form-control" id="product_details" rows="3" name="product_details">
+								<?php echo $row->product_details;?>
+							   </textarea>
 							</div>
 
 							<div class="form-group">
@@ -79,12 +81,14 @@
 
                             <div class="form-group">
 								<label for="product_main_image">Product image:</label>
-								<input  value="<?php echo $row->product_main_image;?>" type="file" class="form-control-file" id="product_main_image" name="product_main_image">
+								<input type="file" value="<?php echo $row->product_main_image;?>"  class="form-control-file" id="product_main_image" name="product_main_image">
+								print_r(<?php echo $row->product_main_image;?>)
 							</div>
 
 							<div class="form-group">
 								<label for="product_main_image">Product images</label>
 								<input value="<?php echo $row->product_branch_images;?>" type="file"  class="dropzone form-control-file" multiple id="product_branch_images"name="product_branch_images">
+							       print_r(<?php echo $row->product_branch_images;?>)
 							</div>
 
 							<div class="form-group">

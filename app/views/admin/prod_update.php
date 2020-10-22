@@ -9,7 +9,7 @@
 				<h2>Update Product</h2>
 			</div>
 			<div class="card-body">
-			   <form method="post" action="admin_prod/update">
+			   <form method="post" action="admin_prod/update" enctype="multipart/form-data">
 				 <?php
                     $rows=$data['products'];
 				    foreach($rows as $row)
@@ -79,14 +79,16 @@
                            		</select>
 							</div>
 
+							<div style="float:right; padding-right:300px"><img src="<?php echo '../../'.$row->product_main_image;?>" width=100px hight=80px></div>
                             <div class="form-group">
 								<label for="product_main_image">Product image:</label>
 								<input type="file" value="<?php echo $row->product_main_image;?>"  class="form-control-file" id="product_main_image" name="product_main_image">
 								print_r(<?php echo $row->product_main_image;?>)
+								
 							</div>
 
 							<div class="form-group">
-								<label for="product_main_image">Product images</label>
+								<label for="product_branch_images">Product images</label>
 								<input value="<?php echo $row->product_branch_images;?>" type="file"  class="dropzone form-control-file" multiple id="product_branch_images"name="product_branch_images">
 							       print_r(<?php echo $row->product_branch_images;?>)
 							</div>

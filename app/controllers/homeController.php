@@ -13,13 +13,15 @@ public $cat_model;
         $this->controller=new Controller();
         $cat_model=$this->controller->model_object->create_model('category');
         //$cat_model2=$this->controller->model_object->create_model('users');
+        //$cat_model2=$this->controller->model_object->create_model('product');
         $homeItems=array(
-            'categories'=>$cat_model->getData(),
+            'categories'=>$cat_model->getDataWhereOrder(),
+            'products'=>$cat_model->getDataWhereOrderProd(),
             //'users'=>$cat_model2->getData()
             //'image'=>$cat_model->getData1(),
             //'products'=>array('Lenovo','Galaxy s10','Dell Inspiron','Toshiba','HTC'),
 
-            //'products'=>$cat_model->getData1(),
+            //'products'=>$cat_model2->getDataOrder(),
         
         );
 

@@ -35,11 +35,11 @@ function addData($data)
        $final_query= $this->db->insertrow("products",$data);
         if( $this->db->executea($final_query))
            {
-             echo '<meta http-equiv = "refresh" content = ".5; url = http://localhost/Electronic_shoping_test/admin/admin_prod/index" />';
+             echo '<meta http-equiv = "refresh" content = "15.5; url = http://localhost/Electronic_shoping_test/admin/admin_prod/index" />';
             }
         else
            {
-             echo '<meta http-equiv = "refresh" content = "0.5; url = http://localhost/Electronic_shoping_test/admin/admin_prod/index" />';
+             echo '<meta http-equiv = "refresh" content = "15.5; url = http://localhost/Electronic_shoping_test/admin/admin_prod/index" />';
 
             }
 }

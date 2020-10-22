@@ -75,9 +75,22 @@ class DB{
     function orderbymore($col_name,$method){
       return " ORDER BY ". $col_name ." ". $method ;
     }
+/////////////////////////////////
+function orderbymoreorder($col_name,$method){
+  return " , ". $col_name ." ". $method ;
+}
 
+function whereAnd($col_name,$con,$val){
+  return " and ". $col_name . $con . $val;
 
+}
 
+function whereOr($col_name,$con,$val){
+  return " or ". $col_name . $con . $val;
+
+}
+
+////////////////////////////////
  function executea($sql){
 //when use update insert query
       $result =$this->connect()->prepare($sql);

@@ -9,7 +9,7 @@
 							<h2>Add New Product</h2>
 						</div>
 						<div class="card-body">
-						  <form method="post" action="../admin_prod/add_product">
+						  <form method="post" action="../admin_prod/add_product" enctype="multipart/form-data">
 				
 						  <div class="form-group">
 								<label for="product_name">Product Name:</label>

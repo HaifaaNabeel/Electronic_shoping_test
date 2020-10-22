@@ -29,7 +29,6 @@ function  getDataOrder()
     return $this->db->executeb($final_query); 
         
 }
-
 function addData($data)
 {
        $final_query= $this->db->insertrow("categories",$data);
@@ -85,7 +84,20 @@ function  getDataOrderP()
     return $this->db->executeb($final_query); 
         
 }
-
+//////////////////////////for show all category and is active////
+function  getDataWhereOrder()
+{
+    $final_query= $this->db->select('*').$this->db->from('categories').$this->db->whereone('category_is_active','=','1').$this->db->orderbymore('date_added',' DESC').$this->db->orderbymoreorder('category_id',' DESC');
+    return $this->db->executeb($final_query); 
+        
+}
+ 
+function  getDataWhereOrderProd()
+{
+    $final_query= $this->db->select('*').$this->db->from('products').$this->db->whereone('product_is_active','=','1').$this->db->orderbymore('product_date_added',' DESC').$this->db->orderbymoreorder('Product_id',' DESC');
+    return $this->db->executeb($final_query); 
+        
+}
 
 }
 

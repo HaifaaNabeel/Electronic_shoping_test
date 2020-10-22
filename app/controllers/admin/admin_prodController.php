@@ -100,7 +100,21 @@ function add_prod()
 
 function add_product(){
     print_r($_POST);
-    $this->cat_model->addData($_POST); 
+    //$this->cat_model->addData($_POST); 
+    $imag_path="app/assets/img/".$_FILES['product_main_image']['name'];
+    if(move_uploaded_file($_FILES['product_main_image']['tmp_name'],$imag_path))
+    {  
+        //echo"YESsssssssssssssssssssssssssss";
+        $final_path=str_replace("../","",$imag_path);
+        $_POST['product_main_image']=$final_path;
+        $this->cat_model->addData($_POST); 
+         
+    }
+    else
+    {
+        echo"NOooooooooooooooooooooooooooooooo";
+
+    }
 }
 
 
@@ -115,8 +129,33 @@ function update_prod()
 
 
 function update(){
+
+    /*$imag_path="app/assets/img/".$_FILES['product_main_image']['name'];
+    move_uploaded_file($_FILES['product_main_image']['tmp_name'],$imag_path);
+    $final_path=str_replace("../","",$imag_path);
+    $_POST['product_main_image']=$final_path;
+    $this->cat_model->updateData($_POST); 
+    */
+
+
     //    print_r($_POST);
-       $this->cat_model->updateData($_POST); 
+    //$this->cat_model->updateData($_POST); 
+    $imag_path="app/assets/img/".$_FILES['product_main_image']['name'];
+    if(move_uploaded_file($_FILES['product_main_image']['tmp_name'],$imag_path))
+    {  
+        //echo"YESsssssssssssssssssssssssssss";
+        $final_path=str_replace("../","",$imag_path);
+        $_POST['product_main_image']=$final_path;
+        $this->cat_model->updateData($_POST); 
+    }
+    else
+    {
+        //echo"NOooooooooooooooooooooooooooooooo";
+        $this->cat_model->updateData($_POST); 
+
+    }
+
+
 }
 
 

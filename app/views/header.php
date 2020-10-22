@@ -57,14 +57,18 @@
         <a class="nav-link" href="./home" id="home">الرئيسية</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">عن المتجر </a>
+        <a class="nav-link" href="./aboutus">عن المتجر </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">أهم الاصناف</a>
           <ul class="submenu">
+            <?php
+          $rows=$data['categories'];
+                foreach($rows as $row){
+                    echo '
            <li class="nav-item">
-        <a class="nav-link" href="#">العروض</a>
-                <ul class="">
+        <a class="nav-link" href="'.$row->category_name.'">'.$row->category_name.'</a>
+                ';}?><ul class="">
            <li class="nav-item">
         <a class="nav-link" href="#">العروض</a>
       </li>

@@ -39,8 +39,82 @@
   
 </div>
     </slider>   
- </br></br>
+ </br></br> 
 <section>
+<!-- try for show category and its products -->
+
+
+
+<div class="container">
+<?php
+            $rows=$data['categories'];
+            foreach($rows as $row){
+            echo'
+
+            
+    <div class="row">
+            <div class="col-sm-12">
+
+                <h3 class="text-center mb-3 mt-3">'.$row->category_name.'</h3>
+           </div>'?>
+        <div class="col-sm-12">
+          <div class="img-gallery  owl-carousel owl-theme" >
+          <?php
+            $rows1=$data['products'];
+            //for($row1 = 0; $row1 < 8; $row1++){
+                $x=1;
+            foreach($rows1 as $row1){
+                if($x < 9)
+                {
+                    if($row1->category_id == $row->category_id )
+                 {
+            echo'
+            <div class=" text-center mr-1 ml-1  mb-2" >
+              <div class="card">
+
+                 <div style="height:auto ;" class="table-block ">
+                    <img alt=""  src="'.$row1->product_main_image.'" style="height: 272px;" />
+                 </div>
+                <div class="card-body">
+                    <h6>'.$row1->product_name.'</h6>
+                    <h6>'.$row1->product_price.'</h6>
+                    <h6>
+                        <form action="" method="post">
+                        <button class="btn product_btn m-1" type="submit" name="card"><span class="ion-ios-cart-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="favorite"><span class="ion-android-favorite-outline"></span></button>
+                        <button class="btn product_btn m-1" type="submit" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
+                        <a class="btn product_btn m-1" href="product_details.php"><span class="ion-ios-more-outline"></span></a>
+                        </form>
+                    </h6>                    
+                </div>
+              </div> 
+            </div>
+                   ';}
+                   else
+                   continue;
+
+                }
+                else
+                {
+                    break;
+                }
+                $x++; }?> 
+
+
+
+            </div>
+         </div>
+    </div>
+
+      <?php ;}?>
+</div>
+
+
+
+
+
+
+<!--////////////////////////////////////////////////////-->
     <div class="container">
         <div class="row">
             <div class="col-sm-12">

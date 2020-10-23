@@ -1,100 +1,11 @@
 <?php include'header.php'; ?>
-    
+<link rel="stylesheet" href= "app/assets/css/loginstyle.css">
+
 
 <body>
     <br><br><br><br><br><br>
 <style>
-    ul.social-network {
-    list-style: none;
-    display: inline;
-    margin-left: 0 !important;
-    padding: 0
-}
 
-ul.social-network li {
-    display: inline;
-    margin: 0 5px
-}
-
-.social-network a.icoFacebook:hover {
-    background-color: #3B5998
-}
-
-.social-network a.icoTwitter:hover {
-    background-color: #33ccff
-}
-
-.social-network a.icoGoogle:hover {
-    background-color: #BD3518
-}
-.social-network a.icoGmail:hover {
-    background-color: #922a13
-}
-.social-network a.icoFacebook:hover i,
-.social-network a.icoTwitter:hover i,
-.social-network a.icoGmail:hover i,
-.social-network a.icoGoogle:hover i {
-    color: black
-}
-
-a.socialIcon:hover,
-.socialHoverClass {
-    color: #44BCDD
-}
-
-.social-circle li a {
-    display: inline-block;
-    position: relative;
-    margin: 0 auto 0 auto;
-    border-radius: 50%;
-    text-align: center;
-    width: 50px;
-    height: 50px;
-    font-size: 20px
-}
-
-.social-circle li i {
-    margin: 0;
-    line-height: 50px;
-    text-align: center
-}
-
-.social-circle li a:hover i,
-.triggeredHover {
-    transform: rotate(360deg);
-    transition: all 0.2s
-}
-
-.social-circle i {
-    color: black;
-    transition: all 0.8s;
-    transition: all 0.8s
-}
-.card button[type="submit"]{
-    border-radius: 24px;
-    cursor: pointer;
-    text-align: center;
-
-
-
-}
-
-.card input, button[type="submit"],label {
-    border: 0;
-    background: none;
-    display: block;
-    margin: 10px ;
-    outline: none;
-    color: black;
-    border-radius: 24px;
-    transition: 0.25s;
-    width: 400px;
-    height: 50px;
-}
-.card input,button[type="submit"]{    border: 2px solid #2ecc71;}
-.cadr button[type="submit"]:hover {
-    background: #2ecc71
-}
 
 </style>
      <main>

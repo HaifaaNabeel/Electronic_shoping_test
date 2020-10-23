@@ -58,7 +58,7 @@
                                     echo '
                             <tr>
                             <td >1</td>
-                            <td ><img src="$row->product_main_image" class="img-thumbnail img-fluid"></td>
+                            <td ><img src="'.'../../'.$row->product_main_image.'" class="img-thumbnail img-fluid" width=60px hight=60px></td>
                             <td >'.$row->product_name.'</td>
                             <td >'.$row->category_id.'</td><!-- we want to add category name not id-->
                             <td >'.$row->product_price.'</td>

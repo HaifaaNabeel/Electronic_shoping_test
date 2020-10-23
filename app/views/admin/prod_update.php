@@ -89,7 +89,7 @@
 
 							<div class="form-group">
 								<label for="product_branch_images">Product images</label>
-								<input value="<?php echo $row->product_branch_images;?>" type="file"  class="dropzone form-control-file" multiple id="product_branch_images"name="product_branch_images">
+								<input value="<?php echo $row->product_branch_images;?>" type="file"  class="dropzone form-control-file" multiple id="product_branch_images" name="product_branch_images[]">
 							       print_r(<?php echo $row->product_branch_images;?>)
 							</div>
 

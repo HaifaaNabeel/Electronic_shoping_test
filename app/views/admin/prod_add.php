@@ -77,7 +77,7 @@
 
 							<div class="form-group">
 								<label for="product_main_image">Product images</label>
-								<input type="file"  class="dropzone form-control-file" multiple id="product_branch_images"name="product_branch_images">
+								<input type="file"  class="dropzone form-control-file" multiple id="product_branch_images[]" name="product_branch_images[]">
 							</div>
 
 							<div class="form-group">

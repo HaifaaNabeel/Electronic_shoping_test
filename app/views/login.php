@@ -1,7 +1,7 @@
 <?php include'header.php'; ?>
-
-
 <link rel="stylesheet" href= "app/assets/css/loginstyle.css">
+
+
 <body>
     <br><br><br><br><br><br>
 <style>
@@ -17,7 +17,7 @@
                     <h2 class="text-center" style="color: #000;"> تسجيل الدخول </h2>
                     </br>
                     <div class="form-group text-right">
-                                                <label class="text-right" for="uname">اسم المستخدم </label>
+                                <label class="text-right" for="uname">اسم المستخدم </label>
 
                         <input type="text" class="form-control text-right " id="uname" placeholder="اسم المستخدم" name="user_name" required>
                     </div>
@@ -29,13 +29,13 @@
                     </div>
                      <button type="submit" name="Login" class="btn  btn-primary"  id="submit">الدخول </button>
 <br><br>
-                                                             <a  href="#" style="display:none;"><p class="text-muted text-center">نسيت كلمة المرور ؟ </p></a> <br>
+                    <a  href="#" style="display:none;"><p class="text-muted text-center">نسيت كلمة المرور ؟ </p></a> <br>
 
                      <p class="text-muted text-center"> او لتسجيل الدخول بحسابات اخرى </p>
                      
-                    
+                    <br>
                         <ul class="social-network social-circle navbar-nav" style="text-align:center;padding-left:27%">
-                        <br>
+                        
                             <li><a href="#" class="icoFacebook" title="Facebook"><i class="ion-social-facebook-outline"></i></a></li>
                             <li><a href="#" class="icoTwitter" title="Twitter"><i class="ion-social-twitter-outline"></i></a></li>
                             <li><a href="#" class="icoGoogle" title="Google +"><i class="ion-social-google-outline"></i></a></li>

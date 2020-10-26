@@ -36,6 +36,7 @@
                          <input type="text" name="date_added" hidden="hidden" value="<?php echo date('y-m-d'); ?>" required>
                          <input type="text" name="admin_who_added" hidden="hidden" value="0" required>
                     <button type="submit" name="singup" class="btn  btn-primary"  id="submit">التسجيل الان </button>
+                    
                     <p class="text-muted text-center"> او لتسجيل الدخول بحسابات اخرى </p>
                      <ul class="social-network social-circle navbar-nav" style="text-align:center;padding-left:27%">
                          

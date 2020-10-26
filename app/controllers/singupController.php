@@ -10,6 +10,8 @@ public $controller;
 
         $this->controller=new Controller();
         $cat_model=$this->controller->model_object->create_model('category');
+        $user_model=$this->controller->model_object->create_model('users');
+        $user_model->signup(); 
         $homeItems=array(
             'categories'=>$cat_model->getDataWhereOrder(),
             //'image'=>$cat_model->getData1(),

@@ -1,8 +1,4 @@
 <?PHP
-
-
-include("core/db.php");
-
 class advertisements{
 
 

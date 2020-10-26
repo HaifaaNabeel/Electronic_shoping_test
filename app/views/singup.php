@@ -14,23 +14,28 @@
         <div class="col-md-4 "></div>
         <div class="col-md-4 ">
             <div class="card" style="border-radius: 24px; padding:10px" >
-                <form class="" action="" method="POST">
+              <form action="" method="post">
                   <h2 class="text-center" style="color: #000;"> انشاء حساب </h2>
                   <p class="text-center"> اهلا بك في متجرنا لإنشاء حساب قم بإدخال بياناتك</p>
                   <div class="form-group text-right">
                         <label class="text-right" for="uname">اسم المستخدم </label>
-                        <input type="text" class="form-control text-right " id="uname" placeholder="اسم المستخدم" name="uname" required>
+                        <input type="text" class="form-control text-right " id="uname" placeholder="اسم المستخدم" name="user_name" required>
                     </div>
                     <div class="form-group text-right">
                         <label class="text-right" for="pass">كلمة المرور  </label>
-                        <input type="password" class="form-control text-right" id="pass" placeholder="كلمة المرور " name="pass" required>
+                        <input type="password" class="form-control text-right" id="pass" placeholder="كلمة المرور " name="user_pass" required>
                     </div>
                     <div class="form-group text-right">
                         <label class="text-right" for="email">بريدك الالكتروني   </label>
-                        <input type="email" class="form-control text-right" id="email" placeholder="بريدك الالكتروني  " name="email" required>
+                        <input type="email" class="form-control text-right" id="email" placeholder="بريدك الالكتروني  " name="user_email" required>
                     </div>
 <br>
-                    <button type="submit" class="btn  btn-primary"  id="submit">التسجيل الان </button>
+                    
+                         <input type="text" name="user_is_active" hidden="hidden" value="1" required>
+                         <input type="text" name="user_roles" hidden="hidden" value="0" required>
+                         <input type="text" name="date_added" hidden="hidden" value="<?php echo date('y-m-d'); ?>" required>
+                         <input type="text" name="admin_who_added" hidden="hidden" value="0" required>
+                    <button type="submit" name="singup" class="btn  btn-primary"  id="submit">التسجيل الان </button>
                     <p class="text-muted text-center"> او لتسجيل الدخول بحسابات اخرى </p>
                      <ul class="social-network social-circle navbar-nav" style="text-align:center;padding-left:27%">
                          

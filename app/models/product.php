@@ -1,8 +1,5 @@
 <?PHP
 
-
-include("core/db.php");
-
 class product{
 
 

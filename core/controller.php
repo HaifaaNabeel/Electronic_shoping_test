@@ -1,6 +1,8 @@
 <?PHP
+
 namespace coreAppNS;
 class Controller{
+
    public $view_object;
     public $model_object;
 

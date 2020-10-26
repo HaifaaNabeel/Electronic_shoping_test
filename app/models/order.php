@@ -1,13 +1,6 @@
 <?PHP
-
-
-include("core/db.php");
-
 class orders{
-
-
    public  $db;
-
     function __construct(){
         $this->db=new DB("localhost","ecommerce_project","root","");
     }

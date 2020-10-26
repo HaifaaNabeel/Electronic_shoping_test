@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(isset($_SESSION['uid'])){
+echo $_SESSION['uid'];
+
+}else{
+echo 'no';
+$_SESSION['uid']=session_id(); 
+    echo session_id();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>     
@@ -5,6 +16,8 @@
 <meta name='author' content=''>
 <meta name='description' content=''>
 <meta name='keywords' content=''>
+    <link rel="icon" href="app/assets/img/login_store_logos-1.png">  
+
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Ecomm</title>
@@ -43,7 +56,7 @@
        
         <nav class="navbar navbar-expand-md fixed-top">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">شعار</a>
+  <a class="navbar-brand" href="#"><img src="app/assets/img/login_store_logos-2.png" width="144px"></a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

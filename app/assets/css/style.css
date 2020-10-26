@@ -8,17 +8,18 @@ font-family: Tajawal;
   outline: none;
   box-sizing: border-box;
 }
+h1,h2,h3,h4,h5,h6,p{color:#221446;}
 
      /*************header*********************/
 .navbar {
     direction: rtl;
     background-color: #ffffff;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #221446;
 }   
 
 .navbar-brand{
     font-size: 28px;
-    color: black;
+    color: #221446;
     font-style: normal;
     font-weight: bold;
 }
@@ -26,13 +27,13 @@ font-family: Tajawal;
 #collapsibleNavbar{margin-right: 11%;}
 .nav-item a{
     width: 115px;
-    color: black;
+    color: #221446;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
 }
 .nav-item a:hover{
-    color: #fd519a;
+    color: #ff6500;
     font-size: 17px;
 }
 li ul{
@@ -70,15 +71,15 @@ li ul li:hover ul{
         margin: 11px;
         margin-top: 11px;
     margin-top: 5px;
-    color: black;
+    color: #221446;
     font-weight: bolder;
     font-size: 22px;
 }
 .icons .ico:hover{
-    color: #fd519a;;
+    color: #ff6500;;
     font-size: 23px;
 }
-#home{color: #fd519a;}
+#home{color: #ff6500;}
 /*******************************slider****************************/
 .carousel-indicators li {
     box-sizing: content-box;
@@ -99,7 +100,7 @@ li ul li:hover ul{
 }
 .carousel-caption {
   
-    color: #000;
+    color:#221446;
 }
 
 .owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled {
@@ -107,12 +108,12 @@ li ul li:hover ul{
     background: transparent;
 }
 .owl-theme .owl-nav .owl-prev {
-    color: #fd519a;
+    color: #ff6500;
     margin: 5px;
     background: transparent;
     display: inline-block;
 }.owl-theme .owl-nav .owl-next {
-    color: #fd519a;
+    color: #ff6500;
     margin: 5px;
     background: transparent;
     display: inline-block;
@@ -120,7 +121,7 @@ li ul li:hover ul{
 /*******************************footer*****************************/
 footer {
     direction: rtl;
-    background-color: black;
+    background-color: #221446;
     color: white;
     padding-top: 2%;
 }
@@ -138,17 +139,17 @@ footer ul li {
 /****************************************product card************************/
 
  .product_btn {
-    color: #fd51b1;
+    color: #ff6500;
     border-radius: 50%;
-    background-color: #fd51b108;
+    background-color: #ff650008;
     font-size: 17px;
-    border: 1px solid #fd51b1;
+    border: 1px solid #ff6500;
     box-shadow: 9px -1px 9px -2px #eee;
 }
  .product_btn:hover {
     color: #fff;
     border-radius: 50%;
-    background-color: #fd51b1;
+    background-color: #ff6500;
 transition: all ease 1s;}
 
 /*****************svg******************/
@@ -169,7 +170,7 @@ background-repeat: no-repeat;
     bottom: 0%;
 }
 #mesvg path{
-fill:#fd51b1;
+fill:#ff6500;
 }
 
 .points h1{

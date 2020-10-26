@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['id'])){
+    echo $_SESSION['id'];
+}else{
+header('location:../../login');
+exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -414,7 +423,7 @@
 
                       
                       <li class="dropdown-footer">
-                        <a href="signin.html"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a href="admin_sess/end_sess"> <i class="mdi mdi-logout"></i> Log Out </a>
                       </li>
                     </ul>
                   </li>

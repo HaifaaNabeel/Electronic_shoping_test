@@ -8,7 +8,7 @@
 											<h2>Add New Category</h2>
 										</div>
 										<div class="card-body">
-											<form method="post" action="../admin_cat/add">
+											<form method="post" action="admin_cat/add">
 				
 												<div class="form-group">
 													<label for="category_name">Category Name:</label>
@@ -24,7 +24,7 @@
 													<select class="form-control" name="category_is_active" id="category_is_active">
 														<option value=1>active</option>
 														<option value=0>no-active</option>
-                           				            </select>
+                           				</select>
                                                 </div>
                                                <div class="form-group">
 													<label for="category_parent">Parent</label>
@@ -41,7 +41,7 @@
                                                     ?>
                                                  </select>
                                                    <input type="text" class="form-control"  placeholder="" name="date_added" hidden="hidden" readonly required value="<?php echo date('y-m-d'); ?>">
-                                                   <input type="text"  value="1" name="admin_who_added" hidden="hidden" readonly required >
+                                                      <input type="text"  value="<?php echo $_SESSION['id'];?>" name="admin_who_added" hidden="hidden" readonly required >
                                                 </div>
 
                                                 <div class="form-footer pt-4 pt-5 mt-4 border-top">

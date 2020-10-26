@@ -15,20 +15,22 @@
             <div class="card" style="border-radius: 24px; padding:10px" >
                 <form class="" action="" method="POST">
                     <h2 class="text-center" style="color: #000;"> تسجيل الدخول </h2>
-                    <p class="text-center"> ادخل اسمك وكلمة المرور للتمكن من الوصول الى حسابك</p>
+                    </br>
                     <div class="form-group text-right">
-                        <label class="text-right" for="uname">اسم المستخدم </label>
-                        <input type="text" class="form-control text-right " id="uname" placeholder="اسم المستخدم" name="uname" required>
+                                                <label class="text-right" for="uname">اسم المستخدم </label>
+
+                        <input type="text" class="form-control text-right " id="uname" placeholder="اسم المستخدم" name="user_name" required>
                     </div>
                     <div class="form-group text-right">
-                        <label class="text-right" for="uname">كلمة المرور  </label>
-                        <input type="password" class="form-control text-right" id="uname" placeholder="كلمة المرور " name="uname" required>
+                                                <label class="text-right" for="pass">كلمة المرور  </label>
+
+                        <input type="password" class="form-control text-right" id="uname" placeholder="كلمة المرور " name="user_pass" required>
+
                     </div>
-                     <a  href="#"><p class="text-muted text-center">نسيت كلمة المرور ؟ </p></a> <br>
-
-
-                     <button type="submit" class="btn  btn-primary"  id="submit">الدخول </button>
+                     <button type="submit" name="Login" class="btn  btn-primary"  id="submit">الدخول </button>
 <br><br>
+                                                             <a  href="#" style="display:none;"><p class="text-muted text-center">نسيت كلمة المرور ؟ </p></a> <br>
+
                      <p class="text-muted text-center"> او لتسجيل الدخول بحسابات اخرى </p>
                      
                     

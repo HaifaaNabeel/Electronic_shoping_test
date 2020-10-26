@@ -65,6 +65,10 @@ a.socialIcon:hover,
     transition: all 0.8s;
     transition: all 0.8s
 }
+.card{
+    background-color: ;
+
+}
 .card button[type="submit"]{
     border-radius: 24px;
     cursor: pointer;
@@ -109,10 +113,10 @@ a.socialIcon:hover,
     height: 50px;
 }
 .card select{border-radius: 24px;
-    transition: 0.25s;    background: none; border: 2px solid;
+    transition: 0.25s;    background: none; border: 2px solid #F27523;
     width:95%;
     height: 50px;}
-.card input,select,button[type="submit"]{    border: 2px solid }
+.card input,select,button[type="submit"]{  border: 2px solid #F27523 }
 .cadr button[type="submit"]:hover {
     background: #2ecc71
 }

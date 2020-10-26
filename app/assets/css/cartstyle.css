@@ -1,0 +1,59 @@
+       /* Make the image fully responsive */
+        .jumbotron {
+            background-color: floralwhite;
+            height: 20vw;
+        }
+
+        .jumbotron h1 {
+            color: #F27523;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            border-radius: 5px;
+            /* 5px rounded corners */
+        }
+
+        /* On mouse-over, add a deeper shadow */
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .a-text {
+            text-decoration: none;
+            color: darkslategrey;
+        }
+
+        .a-text:hover {
+            text-decoration: none;
+            color: #F27523;
+            transition: all ease 1s;
+        }
+
+        .quantity {
+            width: 50px;
+            font-size: 20px;
+            margin: 0 10px;
+            border: none;
+            outline: none;
+
+        }
+
+        .quantity:hover {
+
+            border: #F27523;
+            outline: #F27523;
+
+
+        }
+
+        .counter-minus,
+        .counter-plus {
+            background-color: #fff;
+            border-color: #F27523;
+            color: #F27523;
+        }
+
+
+ 

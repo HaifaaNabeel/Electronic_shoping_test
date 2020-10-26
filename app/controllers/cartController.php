@@ -1,7 +1,7 @@
 <?PHP
 use coreAppNS\Controller;
 //include("app/models/category.php");
-class checkoutController extends Controller{
+class cartController extends Controller{
 public $controller;
 
     function __construct(){
@@ -16,7 +16,7 @@ public $controller;
             //'products'=>$cat_model->getData1(),
         );
         //$this->controller->view_object->create_view('home',$homeItems);
-        $this->controller->view_object->create_view('checkout',$homeItems);
+        $this->controller->view_object->create_view('cart',$homeItems);
        // $this->controller->view_object->create_view('admin/categories',$homeItems);
     
        }

@@ -133,9 +133,9 @@ $_SESSION['uid']=session_id();
         <li class="nav-item icons">
           <a class="ico" href="./login"><span class="ion-ios-person-outline"></span></a>
      
-          <a class="ico" href="#"><span class="ion-ios-cart-outline"></span></a>
+          <a class="ico" href="./cart"><span class="ion-ios-cart-outline"></span></a>
      
-          <a class="ico" href="#"><span class="ion-android-favorite-outline"></span></a>
+          <a class="ico" href="./favorite"><span class="ion-android-favorite-outline"></span></a>
    
           <a class="ico" href="#"><span class="ion-ios-color-filter-outline"></span></a>
   

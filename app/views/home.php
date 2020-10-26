@@ -115,6 +115,7 @@
 
 
 <!--////////////////////////////////////////////////////-->
+<!---
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -418,7 +419,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 </br></br>
 <section class="points">
 <h1 class="">   علامات تجاريه</h1>

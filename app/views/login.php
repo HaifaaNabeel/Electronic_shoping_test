@@ -24,7 +24,7 @@
                     <div class="form-group text-right">
                                                 <label class="text-right" for="pass">كلمة المرور  </label>
 
-                        <input type="password" class="form-control text-right" id="uname" placeholder="كلمة المرور " name="user_pass" required>
+                        <input type="password" class="form-control text-right" id="pass" placeholder="كلمة المرور " name="user_pass" required>
 
                     </div>
                      <button type="submit" name="Login" class="btn  btn-primary"  id="submit">الدخول </button>
@@ -35,7 +35,7 @@
                      
                     
                         <ul class="social-network social-circle navbar-nav" style="text-align:center;padding-left:27%">
-                            
+                        <br>
                             <li><a href="#" class="icoFacebook" title="Facebook"><i class="ion-social-facebook-outline"></i></a></li>
                             <li><a href="#" class="icoTwitter" title="Twitter"><i class="ion-social-twitter-outline"></i></a></li>
                             <li><a href="#" class="icoGoogle" title="Google +"><i class="ion-social-google-outline"></i></a></li>

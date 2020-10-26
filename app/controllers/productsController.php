@@ -8,20 +8,19 @@ public $controller;
 
     function __construct(){
 
+        //$prod_model=$this->controller->model_object->create_model('product');
+
         $this->controller=new Controller();
-        $cat_model=$this->controller->model_object->create_model('category');
+        $cat_model=$this->controller->model_object->create_model('product');
+        $id=$_GET['id'];
         $homeItems=array(
+            'products'=>$cat_model->getDataWhereOrderProd($id),
             'categories'=>$cat_model->getDataWhereOrder(),
-            //'image'=>$cat_model->getData1(),
-            //'products'=>array('Lenovo','Galaxy s10','Dell Inspiron','Toshiba','HTC'),
-
-            //'products'=>$cat_model->getData1(),
-        
         );
-
-        //$this->controller->view_object->create_view('home',$homeItems);
+//print_r($homeItems);
+        //$this->controller->view_object->create_view('products',$homeItems);
         $this->controller->view_object->create_view('products',$homeItems);
-       // $this->controller->view_object->create_view('admin/categories',$homeItems);
+
     
        }
 

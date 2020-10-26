@@ -80,7 +80,7 @@ $_SESSION['uid']=session_id();
                 foreach($rows as $row){
                     echo '
            <li class="nav-item">
-        <a class="nav-link" href="'.$row->category_name.'">'.$row->category_name.'</a>
+        <a class="nav-link" href="products?id='.$row->category_id.'">'.$row->category_name.'</a>
                 ';}?><ul class="">
            <li class="nav-item">
         <a class="nav-link" href="#">العروض</a>

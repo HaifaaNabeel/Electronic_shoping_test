@@ -34,7 +34,12 @@
                         <input type="date" class="form-control text-right" id="Expired_date" name="Expired_date" required>
                     </div>
 
-                     <button type="submit" class="btn  btn-primary"  id="submit">الدفع الان  </button>
+                    
+                    <input type="text"  id="url" name="url"value="<?php echo 'http://localhost/Electronic_shoping_test/done_pay_or_not'?>" hidden="hidden" readonly required>
+                    <input type="text"  id="cost" name="cost"value="<?php echo '100000'?>" hidden="hidden" readonly required>
+
+                     
+                        <button type="submit" class="btn  btn-primary"  id="submit">الدفع الان  </button>
 <br><br>
                     
                 </form>

@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-4 "></div>
         <div class="col-md-4 ">
-            <div class="card" style="border-radius: 24px; padding:10px" >
+            <div class="card" style="border-radius: 24px; padding:10px " >
                 <form class="" action="" method="POST">
                     <h2 class="text-center" style="color: #000;"> تسجيل الدخول </h2>
                     </br>

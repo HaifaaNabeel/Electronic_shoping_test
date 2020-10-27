@@ -38,14 +38,15 @@
                     <h6>'.$row->product_price.'</h6>
                     <h6>
                         <form action="" method="post">
-                        <button class="btn product_btn m-1" type="submit" name="card"><span class="ion-ios-cart-outline"></span></button>
-                        <button class="btn product_btn m-1" type="submit" name="favorite"><span class="ion-android-favorite-outline"></span></button>
-                        <button class="btn product_btn m-1" type="submit" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
-                        <button class="btn product_btn m-1" type="submit" name="more"><span class="ion-ios-more-outline"></span></button>
+                        <a class="btn product_btn m-1" href="" name="card"><span class="ion-ios-cart-outline"></span></a>
+                        <a class="btn product_btn m-1" href="" name="favorite"><span class="ion-android-favorite-outline"></span></a>
+                        <a class="btn product_btn m-1" href="" name="filter"><span class="ion-ios-color-filter-outline"></span></a>
+                        <a class="btn product_btn m-1" href="product_details?id='.$row->Product_id.'"><span class="ion-ios-more-outline"></span></a>
                         </form>
                     </h6>                    
                 </div>
-              </div> 
+              </div>          
+
             </div>
             </div>';}?>
 

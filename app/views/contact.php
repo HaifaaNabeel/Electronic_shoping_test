@@ -1,8 +1,66 @@
 
 <?php include'header.php'; ?>
 
+
+<div class="row">
+ <!--<iframe src="https://maps.google.com/maps?width=1139&amp;height=436&amp;hl=en&amp;q=%20taiz+(map%20)&amp;t=h&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+  <iframe src="https://maps.google.com/maps?width=1139&amp;height=436&amp;hl=en&amp;q=%20%D8%A7%D9%84%D8%B3%D8%AA%D9%8A%D9%86%20%D8%AC%D9%88%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B5%D8%A8%D8%A7%D8%AD%D9%8A%20sanaa+(map%20)&amp;t=h&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="320" frameborder="0" style="border:0" allowfullscreen></iframe>
+ </div>
+
+ <hr>
+    </section>
+    <section id="contact">
+       <div class="container">
+          <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 >راسلنا </h4>
+                    <h1 class="ion-ios-chatboxes"></h1>
+                    <address>راسلنا ليصلك ما تريد  </address>
+                  </div>
+                </div>
+             </div>
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 >اتصل بنا</h4>
+                    <h1 class="ion-android-call"></h1>
+                    <p>+967734256894,+967977123465</p>
+                  </div>
+                </div>
+             </div>
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 >office loaction</h4>
+                    <h1 class="ion-ios-location"></h1>
+                   <address>اليمن صنعاء - تعز   </address>
+                  </div>
+                </div>
+             </div>
+             
+             <div class="col-sm-12 col-md-6 col-lg-3 my-5">
+               <div class="card border-0">
+                  <div class="card-body text-center">
+                    <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
+                    <h4 >ايميل </h4>
+                    <h1 class="ion-android-mail"></h1>
+                    <p>http://al.a.webdev@gmail.com</p>
+                  </div>
+                </div>
+             </div>
+           </div>
+       </div>
+ 
+    </section>
+    <br><hr> <br>
+
 <section class="contact">
-	<br> <br><br> <br>
+	
 
 <div class="container-fluid ">
     <div class="row">
@@ -43,7 +101,5 @@
 		</div> 
 	</div>
 </div>
-    </section>
-    <br> <br>
 
 <?php include'footer.php'; ?>

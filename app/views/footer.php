@@ -45,7 +45,7 @@
 				</div>
             <div class="col-lg-12 foo" style="">
 					<div class="text-center">
-						<p style="text-center">
+						<p style="text-center ;color:white">
                             @2020حقوق الطبع محفوظة لفريق <span style="color:#ff6500;">webDev</span>          
                         </p>
                     </div>

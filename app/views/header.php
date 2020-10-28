@@ -1,12 +1,26 @@
 <?php
-session_start();
+@session_start();
 if(isset($_SESSION['uid'])){
 echo $_SESSION['uid'];
 
 }else{
 echo 'no';
-$_SESSION['uid']=session_id(); 
-    echo session_id();
+}
+if(isset($_SESSION['cart'])){
+echo 'no';
+
+}else{
+echo 'npppppppo';
+    $_SESSION['cart']=array();
+print_r($_SESSION['cart']);
+}
+
+?>
+ <?php 
+if(isset($_SESSION['uid'])){
+$_GLOBALS['U']=$_SESSION['uid'];
+}else{
+$_GLOBALS['U']=0;
 }
 ?>
 <!DOCTYPE html>
@@ -82,31 +96,33 @@ $_SESSION['uid']=session_id();
            <li class="nav-item">
         <a class="nav-link" href="products?id='.$row->category_id.'">'.$row->category_name.'</a>
                 ';}?>
-                <!--<ul class="">
-                   <li class="nav-item">
-                       <a class="nav-link" href="#">العروض</a>
+                
+                
+               <!--<ul class="">
+               <li class="nav-item">
+                  <a class="nav-link" href="#">العروض</a>
                   </li>
-                 <li class="nav-item">
-                     <a class="nav-link" href="#">العروض</a>
-                 </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="#">العروض</a>
-                 </li>
-               </ul>-->
+               <li class="nav-item">
+                 <a class="nav-link" href="#">العروض</a>
+                  </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">العروض</a>
+               </li>
+            </ul>
       </li>
-              <!--<li class="nav-item">
+              <li class="nav-item">
         <a class="nav-link" href="#">العروض</a>
                      <ul class="submenu">
-                           <li class="nav-item">
-                             <a class="nav-link" href="#">1العروض</a>
-                           </li>
-                           <li class="nav-item">
-                               <a class="nav-link" href="#">1العروض</a>
-                          </li>
-                         <li class="nav-item">
-                             <a class="nav-link" href="#">1العروض</a>
-                          </li>
-                      </ul>
+           <li class="nav-item">
+        <a class="nav-link" href="#">1العروض</a>
+      </li>
+              <li class="nav-item">
+        <a class="nav-link" href="#">1العروض</a>
+      </li>
+              <li class="nav-item">
+        <a class="nav-link" href="#">1العروض</a>
+      </li>
+          </ul>
       </li>
               <li class="nav-item">
         <a class="nav-link" href="./products">العروض</a>
@@ -121,24 +137,31 @@ $_SESSION['uid']=session_id();
       </li>
          <li class="nav-item">
         <a class="nav-link" href="#">عربي</a>
-                  <ul class="submenu">
-                           <li class="nav-item">
-                              <a class="nav-link" href="#">عربي</a>
-                           </li>
-                          <li class="nav-item">
-                              <a class="nav-link" href="#">english</a>
-                          </li>
-            
-                   </ul>
+                     <ul class="submenu">
+           <li class="nav-item">
+        <a class="nav-link" href="#">عربي</a>
       </li>
-        <li class="nav-item icons">
+              <li class="nav-item">
+        <a class="nav-link" href="#">english</a>
+      </li>
+            
+          </ul>
+      </li>
+           <li class="nav-item icons">
           <a class="ico" href="./login"><span class="ion-ios-person-outline"></span></a>
+               
+          <a class="ico" href="./cart"><span class="counter" id="count1">
+               <?php
+                   $rows=$data['cartitem'];
+                  foreach($rows as $row){
+                  echo $row;
+                  }
+                 ?>
+              </span><span class="ion-ios-cart-outline"></span></a>
      
-          <a class="ico" href="./cart"><span class="ion-ios-cart-outline"></span></a>
-     
-          <a class="ico" href="./favorite"><span class="ion-android-favorite-outline"></span></a>
+            <a class="ico" href="./favorite"><span class="counter" id="count2">0</span><span class="ion-android-favorite-outline"></span></a>
    
-          <a class="ico" href="#"><span class="ion-ios-color-filter-outline"></span></a>
+          <a class="ico" href="#"><span class="counter" id="count3">0</span><span class="ion-ios-color-filter-outline"></span></a>
   
           <a class="ico" href="#"><span class="ion-ios-search"></span></a>
       </li>

@@ -37,18 +37,64 @@
                     <h6>'.$row->product_name.'</h6>
                     <h6>'.$row->product_price.'</h6>
                     <h6>
-                        <form action="" method="post">
-                        <a class="btn product_btn m-1" href="" name="card"><span class="ion-ios-cart-outline"></span></a>
-                        <a class="btn product_btn m-1" href="" name="favorite"><span class="ion-android-favorite-outline"></span></a>
-                        <a class="btn product_btn m-1" href="" name="filter"><span class="ion-ios-color-filter-outline"></span></a>
+                         <input id="id';?><?php echo $row->Product_id; ?><?php echo'"  name="product_id" value="';?><?php echo $row->Product_id; ?><?php echo '" hidden="hidden">
+                            <input id="qty"  name="qty" value="1" hidden="hidden">
+                            <input id="user';?><?php echo $_GLOBALS['U']; ?><?php echo'"  name="user" value="';?><?php echo $_GLOBALS['U']; ?><?php echo '" hidden="hidden">
+                        <button class="btn product_btn m-1" id="cart';?><?php echo $row->Product_id; ?><?php echo'" onclick="cart';?><?php echo $row->Product_id;?><?php echo'()"><span class="ion-ios-cart-outline"></span></button>
+                        <button class="dcart btn product_btn m-1 "  id="dcart';?><?php echo $row->Product_id; ?><?php echo'" onclick="dcart';?><?php echo $row->Product_id;?><?php echo'()"><span class="ion-ios-cart-outline"></span></button>
+                        <button class="btn product_btn m-1" onclick="favorite()" name="favorite"><span class="ion-android-favorite-outline"></span></button>
+                        <button class="btn product_btn m-1" onclick="filter()"  name="filter"><span class="ion-ios-color-filter-outline"></span></button>
                         <a class="btn product_btn m-1" href="product_details?id='.$row->Product_id.'"><span class="ion-ios-more-outline"></span></a>
-                        </form>
                     </h6>                    
                 </div>
               </div>          
 
             </div>
-            </div>';}?>
+            </div>';?>
+                
+                <script>
+    function cart<?php echo $row->Product_id;?>(){
+        document.getElementById('cart<?php echo $row->Product_id;?>').style.display='none';
+        document.getElementById('dcart<?php echo $row->Product_id;?>').style.display='inline-block';
+$.post("add/add_cart/addtocart",{product_id:$("#id<?php echo $row->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val(),add:$("#cart").val()},function(data){
+              var id='count1';
+     var fi =document.getElementById(id).innerHTML;
+             fi++
+            document.getElementById(id).innerHTML = fi; 
+           });
+    }
+      function dcart<?php echo $row->Product_id;?>(){
+            document.getElementById('cart<?php echo $row->Product_id;?>').style.display='inline-block';
+        document.getElementById('dcart<?php echo $row->Product_id;?>').style.display='none';
+$.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val(),add:$("#dcart").val()},function(data){
+              var id='count1';
+     var fi =document.getElementById(id).innerHTML;
+             fi--
+            document.getElementById(id).innerHTML = fi; 
+           });
+    
+    }
+      function favorite(){
+            $.post("getlike.php",{id:$("#id1").val(),like:$("#user<?php echo $_GLOBALS['U']; ?>").val(),add:$("#cart").val()},function(data){ $("#lo").html(data);
+              var id='count2';
+     var fi =document.getElementById(id).innerHTML;
+             fi++
+            document.getElementById(id).innerHTML = fi; 
+           });
+    
+    }
+      function filter(){
+            $.post("add/add_cart/index",{id:$("#id1").val(),like:$("#user<?php echo $_GLOBALS['U']; ?>").val(),add:$("#cart").val()},function(data){ $("#lo").html(data);
+              var id='count3';
+     var fi =document.getElementById(id).innerHTML;
+             fi++
+            document.getElementById(id).innerHTML = fi; 
+           });
+    
+    }
+    </script>
+                
+            <?php    }?>
 
 
 

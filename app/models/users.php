@@ -1,5 +1,4 @@
 <?PHP
-
 class users{
 
 public  $db;
@@ -20,13 +19,33 @@ public  $db;
                     $_GLOBALS['ROLE']=$row['user_roles'];
                     $_GLOBALS['UID']=$row['user_id'];
                 endwhile;
-        if($_GLOBALS['ROLE']==1) { 
+        if($_GLOBALS['ROLE']>=1) { 
             header('location:admin/admin_sess/check_admin_how?id='.$_GLOBALS['UID']);
          exit();
 	}elseif($_GLOBALS['ROLE']==0){
-             session_start();
+             @session_start();
 $_SESSION['uid']=$_GLOBALS['UID'];
 echo $_SESSION['uid'];
+            $id=$_SESSION['uid'];
+    $_SESSION['cart'];
+            if(sizeof($_SESSION['cart'])!=0){
+foreach ($_SESSION['cart'] as $item) {
+    $me=$_GLOBALS['UID'];
+    $date=date('y-m-d');
+     $final_query = "INSERT INTO `orders`(`user_id`, `product_id`, `quantity`,order_date) VALUES ('$me',$item,'1','$date')";
+    if( $this->db->executea($final_query)){
+echo"yees";           
+    }else{
+echo"no";
+ }    
+ 
+   // echo $item."<br>";
+}
+      
+            }else{
+             echo"there is items in cart";  
+                print_r($_SESSION['cart']);
+            }
    header('location:home');
          exit();}
                 }elseif($count==0){
@@ -36,6 +55,7 @@ echo $_SESSION['uid'];
           }
        }
     }
+    
     function signup(){
     
     if(isset($_POST['singup'])){
@@ -55,21 +75,7 @@ echo $_SESSION['uid'];
  }               
        }
     }
-    /*
 
-    function  getData(){
-        $cols=array("");
-        $tbls=array("users");
-
-        return  $this->db
-        ->select($cols)
-        ->from($tbls)
-        //->where("category_is_active","=","1")
-        //->where('parent','=','0')
-        ->build()
-        ->exeucte();
-    }
-*/
 
 }
 

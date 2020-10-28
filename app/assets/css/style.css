@@ -9,6 +9,8 @@ font-family: Tajawal;
   box-sizing: border-box;
 }
 h1,h2,h3,h4,h5,h6,p{color:#221446;}
+.dcart{display: none;color: black;}
+.counter{color: black;font-size: 14px;font-style: normal;font-weight:lighter;}
 
      /*************header*********************/
 .navbar {

@@ -79,7 +79,6 @@ function  getDataWhereOrderProd($id)
     return $this->db->executeb($final_query); 
         
 }
-
 function  getOneCat($id)
 {
         $final_query= $this->db->select('category_name').$this->db->from('categories').$this->db->whereone('category_id','=',$id);
@@ -90,6 +89,12 @@ function  getOneCat($id)
 function  getDataWhereOrder()
 {
     $final_query= $this->db->select('*').$this->db->from('categories').$this->db->whereone('category_is_active','=','1').$this->db->orderbymore('date_added',' DESC').$this->db->orderbymoreorder('category_id',' DESC');
+    return $this->db->executeb($final_query); 
+        
+}
+function  getDataWhereOrderProd_just()
+{
+    $final_query= $this->db->select('*').$this->db->from('products').$this->db->orderbymore('product_date_added',' DESC').$this->db->orderbymoreorder('Product_id',' DESC');
     return $this->db->executeb($final_query); 
         
 }

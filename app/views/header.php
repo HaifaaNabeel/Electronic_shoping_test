@@ -81,35 +81,36 @@ $_SESSION['uid']=session_id();
                     echo '
            <li class="nav-item">
         <a class="nav-link" href="products?id='.$row->category_id.'">'.$row->category_name.'</a>
-                ';}?><ul class="">
-           <li class="nav-item">
-        <a class="nav-link" href="#">العروض</a>
+                ';}?>
+                <!--<ul class="">
+                   <li class="nav-item">
+                       <a class="nav-link" href="#">العروض</a>
+                  </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#">العروض</a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="#">العروض</a>
+                 </li>
+               </ul>-->
       </li>
-              <li class="nav-item">
-        <a class="nav-link" href="#">العروض</a>
-      </li>
-              <li class="nav-item">
-        <a class="nav-link" href="#">العروض</a>
-      </li>
-          </ul>
-      </li>
-              <li class="nav-item">
+              <!--<li class="nav-item">
         <a class="nav-link" href="#">العروض</a>
                      <ul class="submenu">
-           <li class="nav-item">
-        <a class="nav-link" href="#">1العروض</a>
-      </li>
-              <li class="nav-item">
-        <a class="nav-link" href="#">1العروض</a>
-      </li>
-              <li class="nav-item">
-        <a class="nav-link" href="#">1العروض</a>
-      </li>
-          </ul>
+                           <li class="nav-item">
+                             <a class="nav-link" href="#">1العروض</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="#">1العروض</a>
+                          </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="#">1العروض</a>
+                          </li>
+                      </ul>
       </li>
               <li class="nav-item">
         <a class="nav-link" href="./products">العروض</a>
-      </li>
+      </li>-->
           </ul>
       </li> 
         <li class="nav-item">
@@ -120,15 +121,15 @@ $_SESSION['uid']=session_id();
       </li>
          <li class="nav-item">
         <a class="nav-link" href="#">عربي</a>
-                     <ul class="submenu">
-           <li class="nav-item">
-        <a class="nav-link" href="#">عربي</a>
-      </li>
-              <li class="nav-item">
-        <a class="nav-link" href="#">english</a>
-      </li>
+                  <ul class="submenu">
+                           <li class="nav-item">
+                              <a class="nav-link" href="#">عربي</a>
+                           </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">english</a>
+                          </li>
             
-          </ul>
+                   </ul>
       </li>
         <li class="nav-item icons">
           <a class="ico" href="./login"><span class="ion-ios-person-outline"></span></a>

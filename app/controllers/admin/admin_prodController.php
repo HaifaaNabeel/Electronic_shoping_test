@@ -24,7 +24,7 @@ function __construct($function="index"){
 function index(){
         $items=array(
             'categories_parent'=>$this->prod_model->getDataC(),
-            'products'=>$this->prod_model->getDataOrder(),
+            'products'=>$this->prod_model->getDataWhereOrderProd_just(),
    
         );
         
@@ -46,10 +46,21 @@ function add_prod()
 }
 
 function add_product(){
+    $allowedFileType = array('jpg','png','jpeg'); 
+    $done_upload=0;$done_upload1=0;
+
     ///////////for upload main image////////
     $imag_path="app/assets/img/products_images/".$_FILES['product_main_image']['name'];
+    $fileType= strtolower(pathinfo($imag_path, PATHINFO_EXTENSION));
+    
+    
+    if(in_array($fileType, $allowedFileType))  ///////////for upload main image////////
+    {
     move_uploaded_file($_FILES['product_main_image']['tmp_name'],$imag_path);
     $_POST['product_main_image']=$imag_path;
+    $done_upload=1;
+}
+
     //////////////for upload branch images//////////////
     $imags_path="app/assets/img/products_images/";
     $array_images="";
@@ -57,15 +68,28 @@ function add_product(){
         {   $fileName        = $_FILES['product_branch_images']['name'][$id];
             $tempLocation    = $_FILES['product_branch_images']['tmp_name'][$id];
             $targetFilePath  = $imags_path . $fileName;
-            move_uploaded_file($tempLocation, $targetFilePath);
+            $fileType        = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+            if(in_array($fileType, $allowedFileType))
+            {
+               move_uploaded_file($tempLocation, $targetFilePath);
+                $array_images.= $imags_path.$val.",";
+                $done_upload1=1;
 
-            $array_images.= $imags_path.$val.",";
+              }
         }
         $_POST['product_branch_images']=$array_images;
         //echo $array_images;
-        print_r($_POST);
-        $this->prod_model->addData($_POST); 
+        //print_r($_POST);
 
+        if($done_upload == 1  && $done_upload1 == 1 && $_POST['product_name'] !='' && $_POST['product_english_name'] !='' && $_POST['product_price'] !='' && $_POST['product_Quantity'] !=''  && $_POST['product_details'] != ""){
+        $this->prod_model->addData($_POST); 
+            }
+            else 
+            { echo "<script>
+                alert('insert true data and choose just file image  ')</script>";
+                echo '<meta http-equiv = "refresh" content = "1.5; url = http://localhost/Electronic_shoping_test/admin/admin_prod/add_prod" />';
+                 
+            }
 }
 
 
@@ -81,13 +105,19 @@ function update_prod()
 
 
 function update(){
-
+    $allowedFileType = array('jpg','png','jpeg'); 
+    $done_upload=0;$done_upload1=0;
     ///////////for upload main image////////
     $imag_path="app/assets/img/products_images".$_FILES['product_main_image']['name'];
+    $fileType= strtolower(pathinfo($imag_path, PATHINFO_EXTENSION));
     if(move_uploaded_file($_FILES['product_main_image']['tmp_name'],$imag_path))
-    {
+    {  if(in_array($fileType, $allowedFileType))
+        {
         $final_path=str_replace("../","",$imag_path);
-        $_POST['product_main_image']=$final_path;   
+        $_POST['product_main_image']=$final_path;
+        $done_upload=1; 
+       } 
+       else{$done_upload=2;}  
     }
     //////////////for upload branch images//////////////
     if(!empty(array_filter($_FILES['product_branch_images']['name'])))
@@ -98,14 +128,30 @@ function update(){
        {   $fileName        = $_FILES['product_branch_images']['name'][$id];
            $tempLocation    = $_FILES['product_branch_images']['tmp_name'][$id];
            $targetFilePath  = $imags_path . $fileName;
-           move_uploaded_file($tempLocation, $targetFilePath);
-
-           $array_images.= $imags_path.$val.",";
+           $fileType= strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+           if(in_array($fileType, $allowedFileType))
+            {  if(move_uploaded_file($tempLocation, $targetFilePath))
+               { $array_images.= $imags_path.$val.",";
+                  $done_upload1=1; 
+               }
+           }
+           else{$done_upload1=2;}
         }
        $_POST['product_branch_images']=$array_images;
     }
     print_r($_POST);
-     $this->prod_model->updateData($_POST); 
+     
+    //if($done_upload==1 || $done_upload==0){echo "upload;;";}
+    if(($done_upload==1 || $done_upload==0) && ($done_upload1 ==1 || $done_upload1 == 0))
+    {
+        //echo"upload";//
+        $this->prod_model->updateData($_POST);
+    }
+    
+    else{echo"<script>
+        alert('update true data and choose just file image ')</script>";
+        }
+    //$this->prod_model->updateData($_POST); 
 
 
 }

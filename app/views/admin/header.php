@@ -179,7 +179,7 @@ exit();
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="chartjs.html">
+                            <a class="sidenav-item-link" href=" ">
                               <span class="nav-text"> بحث عن صنف</span>
                               
                             </a>
@@ -209,7 +209,7 @@ exit();
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="chartjs.html">
+                            <a class="sidenav-item-link" href=" ">
                               <span class="nav-text"> بحث عن منتج</span>
                               
                             </a>
@@ -227,19 +227,19 @@ exit();
                     data-parent="#sidebar-menu">
                     <div class="sub-menu">
                           <li >
-                            <a class="sidenav-item-link" href="chartjs.html">
+                            <a class="sidenav-item-link" href="../admin_offer/offers">
                               <span class="nav-text">عرض جميع العروض </span>
                               
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="chartjs.html">
+                            <a class="sidenav-item-link" href="../admin_percent/offerPercent">
                               <span class="nav-text">  عرض العروض بخصم</span>
                               
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="chartjs.html">
+                            <a class="sidenav-item-link" href="../admin_offer/offerGift">
                               <span class="nav-text"> عرض العروض مع هديه</span>
                               
                             </a>
@@ -257,13 +257,13 @@ exit();
                     data-parent="#sidebar-menu">
                     <div class="sub-menu">
                           <li >
-                            <a class="sidenav-item-link" href="chartjs.html">
+                            <a class="sidenav-item-link" href=" ">
                               <span class="nav-text">عرض جميع الاعلانات </span>
                               
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="chartjs.html">
+                            <a class="sidenav-item-link" href=" ">
                               <span class="nav-text"> اضافة اعلان</span>
                               
                             </a>
@@ -281,19 +281,19 @@ exit();
                     data-parent="#sidebar-menu">
                     <div class="sub-menu">
                           <li >
-                            <a class="sidenav-item-link" href="chartjs.html">
+                            <a class="sidenav-item-link" href=" ">
                               <span class="nav-text">عرض المستخدمين</span>
                               
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="chartjs.html">
+                            <a class="sidenav-item-link" href=" ">
                               <span class="nav-text"> اضافة مستخدمين</span>
                               
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="chartjs.html">
+                            <a class="sidenav-item-link" href=" ">
                               <span class="nav-text"> بحث عن مستخدم</span>
                               
                             </a>
@@ -316,7 +316,7 @@ exit();
                       
                         
                           <li >
-                            <a class="sidenav-item-link" href="chartjs.html">
+                            <a class="sidenav-item-link" href=" ">
                               <span class="nav-text">ChartJS</span>
                               
                             </a>

@@ -16,11 +16,18 @@ public $controller;
          $user_model=$this->controller->model_object->create_model('users');
         $order_model=$this->controller->model_object->create_model('order');
         $cat_model=$this->controller->model_object->create_model('category');
+        $cat_model=$this->controller->model_object->create_model('product');
+
+        $id=$_GET['id'];
         $homeItems=array(
             'categories'=>$cat_model->getDataWhereOrder(),
-            'products'=>$cat_model->getDataWhereOrderProd(),
+            'products'=>$cat_model->getDataWhereOrderProd_details($id),
             'cartitem'=>$order_model->getOne($this->u)
         );
+
+
+        
+
 
         //$this->controller->view_object->create_view('home',$homeItems);
         $this->controller->view_object->create_view('product_details',$homeItems);

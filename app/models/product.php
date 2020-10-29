@@ -98,6 +98,40 @@ function  getDataWhereOrderProd_just()
     return $this->db->executeb($final_query); 
         
 }
+/////////////////// get//////////// 
+
+function  getDataWhereOrderProd_details($id)
+{
+    $final_query= $this->db->select('*').$this->db->from('products').$this->db->whereone('Product_id','=',$id);
+    return $this->db->executeb($final_query); 
+        
+}
+
+
+///////////////////// get offers ////////////////////////
+
+function  getDataOffer()
+{
+    $final_query= $this->db->select('*').$this->db->from('products').$this->db->whereone('product_is_offer','=','1');
+    return $this->db->executeb($final_query); 
+        
+}
+
+
+
+function getDataofferPercent()
+{
+    $final_query= $this->db->select('*').$this->db->from('products').$this->db->whereone('product_offer_percent','=','1');
+    return $this->db->executeb($final_query); 
+}
+
+function getDataofferGift()
+{
+    $final_query= $this->db->select('*').$this->db->from('products').$this->db->whereone('product_is_gift','=','1');
+    return $this->db->executeb($final_query); 
+}
+
+
 
 }
 

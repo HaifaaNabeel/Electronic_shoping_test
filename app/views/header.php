@@ -7,12 +7,27 @@ echo $_SESSION['uid'];
 echo 'no';
 }
 if(isset($_SESSION['cart'])){
-echo 'no';
-
+echo"cart";
 }else{
-echo 'npppppppo';
     $_SESSION['cart']=array();
 print_r($_SESSION['cart']);
+    
+}
+if(isset($_SESSION['favore'])){
+echo"favore";
+$_SESSION['favore'];
+}else{
+echo 'fffffffffffff';
+$_SESSION['favore']=array();
+print_r($_SESSION['favore']);
+}
+if(isset($_SESSION['filter'])){
+echo 'filter';
+
+}else{
+echo 'kkkkkkkk';
+    $_SESSION['filter']=array();
+print_r($_SESSION['filter']);
 }
 
 ?>
@@ -147,7 +162,7 @@ $_GLOBALS['U']=0;
             
           </ul>
       </li>
-           <li class="nav-item icons">
+      <li class="nav-item icons">
           <a class="ico" href="./login"><span class="ion-ios-person-outline"></span></a>
                
           <a class="ico" href="./cart"><span class="counter" id="count1">
@@ -159,11 +174,25 @@ $_GLOBALS['U']=0;
                  ?>
               </span><span class="ion-ios-cart-outline"></span></a>
      
-            <a class="ico" href="./favorite"><span class="counter" id="count2">0</span><span class="ion-android-favorite-outline"></span></a>
+            <a class="ico" href="./favorite"><span class="counter" id="count2">
+                 <?php
+                   $rows1=$data['favoriteitem'];
+                  foreach($rows1 as $row1){
+                  echo $row1;
+                  }
+                 ?>
+                </span><span class="ion-android-favorite-outline"></span></a>
    
-          <a class="ico" href="#"><span class="counter" id="count3">0</span><span class="ion-ios-color-filter-outline"></span></a>
+          <a class="ico" href="./compare"><span class="counter" id="count3">
+              <?php
+                   $rows3=$data['filteritem'];
+                  foreach($rows3 as $row){
+                  echo $row;
+                  }
+                 ?>
+              </span><span class="ion-ios-color-filter-outline"></span></a>
   
-          <a class="ico" href="#"><span class="ion-ios-search"></span></a>
+          <a class="ico" href=""><span class="ion-ios-search"></span></a>
       </li>
     </ul>
   </div>

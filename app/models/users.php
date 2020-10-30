@@ -23,11 +23,12 @@ public  $db;
             header('location:admin/admin_sess/check_admin_how?id='.$_GLOBALS['UID']);
          exit();
 	}elseif($_GLOBALS['ROLE']==0){
-             @session_start();
+             session_start();
 $_SESSION['uid']=$_GLOBALS['UID'];
 echo $_SESSION['uid'];
             $id=$_SESSION['uid'];
     $_SESSION['cart'];
+    $_SESSION['favore'];
             if(sizeof($_SESSION['cart'])!=0){
 foreach ($_SESSION['cart'] as $item) {
     $me=$_GLOBALS['UID'];
@@ -39,13 +40,30 @@ echo"yees";
 echo"no";
  }    
  
-   // echo $item."<br>";
+    echo $item."<br>";
 }
       
             }else{
              echo"there is items in cart";  
                 print_r($_SESSION['cart']);
             }
+     if(sizeof($_SESSION['favore'])!=0){
+foreach ($_SESSION['favore'] as $item1) {
+    $me1=$_GLOBALS['UID'];
+     $final_query = "INSERT INTO `favorite_products`(`user_id`, `product_id`) VALUES ('$me1',$item1)";
+    if( $this->db->executea($final_query)){
+echo"yees";           
+    }else{
+echo"no";
+ }    
+ 
+    echo $item."<br>";
+}
+      
+            }else{
+             echo"there is items in favore";  
+                print_r($_SESSION['favore']);
+            }        
    header('location:home');
          exit();}
                 }elseif($count==0){
@@ -55,7 +73,6 @@ echo"no";
           }
        }
     }
-    
     function signup(){
     
     if(isset($_POST['singup'])){

@@ -72,7 +72,12 @@ echo"no";
                 </script>';
           }
        }
+       
     }
+
+
+
+
     function signup(){
     
     if(isset($_POST['singup'])){

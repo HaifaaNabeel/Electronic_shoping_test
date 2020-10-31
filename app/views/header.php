@@ -163,7 +163,10 @@ $_GLOBALS['U']=0;
           </ul>
       </li>
       <li class="nav-item icons">
-          <a class="ico" href="./login"><span class="ion-ios-person-outline"></span></a>
+      <a class="ico" href="./login"><span class="ion-ios-person-outline"></span></a>
+      
+      <a  href="./logout" style="font-size:17px;"><span class="ion-android-exit"></span></a>
+
                
           <a class="ico" href="./cart"><span class="counter" id="count1">
                <?php
@@ -193,6 +196,8 @@ $_GLOBALS['U']=0;
               </span><span class="ion-ios-color-filter-outline"></span></a>
   
           <a class="ico" href=""><span class="ion-ios-search"></span></a>
+
+
       </li>
     </ul>
   </div>

@@ -72,7 +72,7 @@
                         
                             <li><a href="#" class="icoFacebook" title="Facebook"><i class="ion-social-facebook-outline"></i></a></li>
                             <li><a href="#" class="icoTwitter" title="Twitter"><i class="ion-social-twitter-outline"></i></a></li>
-                            <li><a href="#" class="icoGoogle" title="Google +"><i class="ion-social-google-outline"></i></a></li>
+                            <li><a href="login_google" class="icoGoogle" title="Google +"><i class="ion-social-google-outline"></i></a></li>
                         </ul><br>
                     <a href="./singup"> <p class="text-muted text-center">او لإنشاء حساب والتسجيل الان  </p></a>
 

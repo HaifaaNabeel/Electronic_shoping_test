@@ -2,7 +2,7 @@
 
 
  <!DOCTYPE html>
-<html lang="en" >
+<html lang="en"dir="rtl" >
 <head>
   <meta charset="UTF-8">
   <title>bill sale</title>
@@ -21,8 +21,8 @@
   <td>
     <table id="header" style="background-color: white; width: 100%;">
       <tr>
-        <td>
-                  <span  class="logo ion-ios-cart" alt="Kepware Logo"   style="color: #F27523; font-size:4.5em"></span></td>
+        <td style="color: #F27523; text-align:center;">
+                  <span  class="logo ion-ios-cart" alt="Kepware Logo"   style="color: #F27523; font-size:4.5em; text-align:center;"></span></td>
       </tr>
     </table>
   </td>
@@ -45,7 +45,7 @@
   <table id="thank-you" style="width:100%;">
     <tr>
       <td><br>
-        <h1 style="color: #3d4647; font-family: Arial, Helvetica, sans-serif; font-weight: normal;">Order #1234568</h1>
+        <h1 style="color: #3d4647; font-family: Arial, Helvetica, sans-serif; font-weight: normal;">الطلب #1234568</h1>
       </td>
     </tr>
   </table>
@@ -71,8 +71,8 @@
   <table id="thank-you" style="width:100%;">
     <tr>
       <td><br>
-        <h1 style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; font-weight: normal;">Thank you for your order</h1>
-        <p style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif;">You will receive an email confirmation shortly. If you have any questions regarding your order, please email <a href="loginstore.gmail.com">order.loginstore.gmail.com</a></p>
+        <h1 style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; font-weight: normal;">شكرا لطلبك</h1>
+        <p style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif;">سوف تتلقى رسالة تأكيد بالبريد الإلكتروني قريبا. إذا كانت لديك أي أسئلة بخصوص طلبك ، فيرجى إرسال بريد إلكتروني إلى <a href="webDev.gmail.com">order.webDev.gmail.com</a></p>
       </td>
     </tr>
   </table>
@@ -98,39 +98,39 @@
   <table id="customer-information" style="font-family: Arial, Helvetica, sans-serif; width:100%;">
     <tr>
       <td style="width: 33%;">
-        <h3>Billing Information</h3>
+        <h3>بيانات الفاتورة</h3>
         <span class="customer-info" style="color:#c8c9c7">
-        John Smith
+       هيفاء نبيل
         <br />
-        Smith Engineering
+        web developer
         <br />        
-        johnsmith@smithengineering.com
+        haifaa@web developer.com
         <br />
-        1234 Surry Lane
+        1234 
         <br />
-        WallaWalla, WA
+        taiz
         <br />
-        02355, USA
+        02355, yemen
         <br />  
         <span>
       </td>
       <td style="width: 33%;">
-        <h3>Shipping Information</h3>
+        <h3>معلومات الشحن</h3>
         <span class="customer-info" style="color:#c8c9c7">
-        John Smith
+        هيفاء نبيل
         <br />
-        Smith Engineering
+        web developer
         <br />        
-        1234 Surry Lane
+        1234 
         <br />
-        WallaWalla, WA
+        Wtaiz
         <br />
-        02355, USA
+        02355, yemen
         <br />  
         <span>
       </td>
       <td style="width: 33%;">
-        <h3>Payment</h3>
+        <h3>  طريقه الدفع</h3>
         <span class="payment-info" style="color:#c8c9c7">
         VISA
         <br />
@@ -153,11 +153,11 @@
   <td><br>
   <table id="bill-of-sale" style="border-spacing: 20px; hight:10px; width:100%;">
     <tr><hr >
-      <th style=" color:#3d4647; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-align: left;">Product</th>
-      <th style="color:#3d4647; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-align: center;">Qty</th>
-      <th style="color:#3d4647; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-align: center;">Unit Price</th>
+      <th style=" color:#3d4647; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-align: left;">المنتجات</th>
+      <th style="color:#3d4647; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-align: center;">الكمية</th>
+      <th style="color:#3d4647; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-align: center;">سعر الواحدة</th>
       <th style="color:#3d4647; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-align: center;"></th>
-      <th style="color:#3d4647; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-align: right;">Subtotal</th>
+      <th style="color:#3d4647; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-align: right;"> إجمالي المبلغ</th>
     </tr>
     <tr> 
       <td colspan="5" style="background-color: #c8c9c7;"></td>
@@ -165,9 +165,9 @@
     <!-- product -->
     <tr>
       <td style="text-align: left;"><hr style="border:0px">
-        <span class="product-name" style="color: #a01c86; font-family: Arial, Helvetica, sans-serif;">ABB Totalflow - Subscription</span>
+        <span class="product-name" style="color: #a01c86; font-family: Arial, Helvetica, sans-serif;">labtop</span>
         <br />
-        <span class="serial-number" style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem;">KWS-ABBTF0-SUB</span>
+        <span class="serial-number" style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem;">lenovo</span>
       </td>
       <td style="color: #c8c9c7; text-align:center; font-family: Arial, Helvetica, sans-serif;">1</td>
       <td style="color: #c8c9c7; text-align:center; font-family: Arial, Helvetica, sans-serif;">1,230.00</td>
@@ -175,36 +175,41 @@
       <td style="color: #f27523; text-align:right; font-family: Arial, Helvetica, sans-serif;">$1,230.00</td>
     </tr>
     
-    <!-- support & maintenance -->
-    <tr>
-      <td style="padding-left: 0.0rem; text-align: left;"><hr style="border:0px" style="border:0px">
-        <span class="product-name" style="color: #3d4647; font-family: Arial, Helvetica, sans-serif;">1 Year Support &amp; Maintenance Agreement</span>
+     <!-- product -->
+     <tr>
+      <td style="text-align: left;"><hr style="border:0px">
+        <span class="product-name" style="color: #a01c86; font-family: Arial, Helvetica, sans-serif;">labtop</span>
         <br />
-        <span class="serial-number" style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem;">KWS-ABBTF0-ATT</span>
+        <span class="serial-number" style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem;">lenovo</span>
       </td>
-      <td style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; text-align:center;"></td>
-      <td style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; text-align:center;">615.00</td>
+      <td style="color: #c8c9c7; text-align:center; font-family: Arial, Helvetica, sans-serif;">1</td>
+      <td style="color: #c8c9c7; text-align:center; font-family: Arial, Helvetica, sans-serif;">1,230.00</td>
       <td style="color: #c8c9c7; text-align:right; font-family: Arial, Helvetica, sans-serif;"></td>
-      <td style="color: #f27523; text-align:right; font-family: Arial, Helvetica, sans-serif;">$615.00</td>
+      <td style="color: #f27523; text-align:right; font-family: Arial, Helvetica, sans-serif;">$1,230.00</td>
     </tr>
-    <!-- physical media -->
-    <tr>
+     <!-- product -->
+     <tr>
       <td style="text-align: left;"><hr style="border:0px">
-        <span class="product-name" style="color: #3d4647;  font-family: Arial, Helvetica, sans-serif;">Physical Media (CD)</span>
+        <span class="product-name" style="color: #a01c86; font-family: Arial, Helvetica, sans-serif;">labtop</span>
+        <br />
+        <span class="serial-number" style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem;">lenovo</span>
       </td>
-      <td style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; text-align:center;">1</td>
-      <td style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; text-align:center;">40.00</td>
-      <td style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; text-align:right;"></td>
-      <td style="color: #912f46; font-family: Arial, Helvetica, sans-serif; text-align:right;">$40.00</td>
+      <td style="color: #c8c9c7; text-align:center; font-family: Arial, Helvetica, sans-serif;">1</td>
+      <td style="color: #c8c9c7; text-align:center; font-family: Arial, Helvetica, sans-serif;">1,230.00</td>
+      <td style="color: #c8c9c7; text-align:right; font-family: Arial, Helvetica, sans-serif;"></td>
+      <td style="color: #f27523; text-align:right; font-family: Arial, Helvetica, sans-serif;">$1,230.00</td>
     </tr>
-    <tr>
+     <!-- product -->
+     <tr>
       <td style="text-align: left;"><hr style="border:0px">
-        <span class="product-name" style="color: #3d4647; font-family: Arial, Helvetica, sans-serif;">Coupon Code - FREECD</span>
+        <span class="product-name" style="color: #a01c86; font-family: Arial, Helvetica, sans-serif;">labtop</span>
+        <br />
+        <span class="serial-number" style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem;">lenovo</span>
       </td>
-      <td style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; text-align:center;"></td>
-      <td style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; text-align:center; ">-40.00</td>
-      <td style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; text-align:right;"></td>
-      <td style="color: #912f46; font-family: Arial, Helvetica, sans-serif; text-align:right;">($40.00)</td>
+      <td style="color: #c8c9c7; text-align:center; font-family: Arial, Helvetica, sans-serif;">1</td>
+      <td style="color: #c8c9c7; text-align:center; font-family: Arial, Helvetica, sans-serif;">1,230.00</td>
+      <td style="color: #c8c9c7; text-align:right; font-family: Arial, Helvetica, sans-serif;"></td>
+      <td style="color: #f27523; text-align:right; font-family: Arial, Helvetica, sans-serif;">$1,230.00</td>
     </tr>
     <tr>
       <td colspan="5" style="background-color: #c8c9c7;"></td>
@@ -214,7 +219,7 @@
       </td>
       <td style="text-align:center;"></td>
       <td style="text-align:center;"></td>
-      <td style="color: #3d4647; font-family: Arial, Helvetica, sans-serif; text-align:right;">Tax</td>
+      <td style="color: #3d4647; font-family: Arial, Helvetica, sans-serif; text-align:right;">الضريبة</td>
       <td style="color: #912f46; font-family: Arial, Helvetica, sans-serif; text-align:right;">$0.00</td>
     </tr>
     <tr>
@@ -222,7 +227,7 @@
       </td>
       <td style="text-align:center;"></td>
       <td style="text-align:center;"></td>
-      <td style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; text-align:right; font-size: 1.5rem; font-weight: bold;">Total</td>
+      <td style="color: #c8c9c7; font-family: Arial, Helvetica, sans-serif; text-align:right; font-size: 1.5rem; font-weight: bold;">المجموع</td>
       <td style="color: #f27523; font-family: Arial, Helvetica, sans-serif; font-size: 1.5rem; font-weight: bold; text-align:right; ">$1,230.00</td>
     </tr> <br>
   </table>

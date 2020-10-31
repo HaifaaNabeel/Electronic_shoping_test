@@ -12,9 +12,10 @@ public $adv_model;
 
         $this->controller=new Controller();
         $cat_model=$this->controller->model_object->create_model('advertisement');
-        //$id=$_GET['id'];
+        $id=$_GET['id'];
         $homeItems=array(
-            'advertisement'=>$adv_model->getDataWhereOrderProd($id)
+            'advertisement'=>$adv_model->getDataWhereOrderProd($id),
+            
         );
 
         $this->controller->view_object->create_view('advertisement',$homeItems);

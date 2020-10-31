@@ -87,7 +87,7 @@ if($done_upload == 1  && $_POST['adds_name'] !='' && $_POST['adds_img'] !='' && 
         else 
         { echo "<script>
             alert('insert true data and choose just file image  ')</script>";
-            echo '<meta http-equiv = "refresh" content = "1.5; url = http://localhost/Electronic_shoping_test/admin/admin_adv/add_adv" />';
+            echo '<meta http-equiv = "refresh" content = "0.5; url = http://localhost/Electronic_shoping_test/admin/admin_adv/add_adv" />';
              
         }
 }
@@ -102,22 +102,55 @@ if($done_upload == 1  && $_POST['adds_name'] !='' && $_POST['adds_img'] !='' && 
 
 // }
 function add(){
-    $allowedFileType = array('jpg','png','jpeg');
+
+    $allowedFileType = array('jpg','png','jpeg'); 
+    //$done_upload=0;$done_upload1=0;
     ///////////for upload main image////////
+    $imag_path="app/assets/img/advs_images/".$_FILES['adds_img']['name'];
+    $fileType= strtolower(pathinfo($imag_path, PATHINFO_EXTENSION));
+    if(in_array($fileType, $allowedFileType))  ///////////for upload main image////////
+    { 
+      if( move_uploaded_file($_FILES['adds_img']['tmp_name'],$imag_path))
+        {//move_uploaded_file($_FILES['adds_img']['tmp_name'],$imag_path);
+           $_POST['adds_img']=$imag_path;
+            //echo'upload';
+            //echo $imag_path;
+            $this->adv_model->addData($_POST); 
+        }
+        else
+        {
+            echo"<script>
+            alert('update true data and choose just file image ')</script>"; 
+        }
+
+    }
+    else
+    { echo"<script>
+    alert('update true data and choose just file image ')</script>";
+    echo '<meta http-equiv = "refresh" content = "0.5; url = http://localhost/Electronic_shoping_test/admin/admin_adv/add_adv" />';
+ 
+
+    }
+
+
+
+
+
+    /*//////////for upload main image////////
     $imag_path="app/assets/img/adv_images".$_FILES['adds_img']['name'];
     $fileType= strtolower(pathinfo($imag_path, PATHINFO_EXTENSION));
     if(move_uploaded_file($_FILES['adds_img']['tmp_name'],$imag_path))
     {  if(in_array($fileType, $allowedFileType))
-        {
-        $final_path=str_replace("../","",$imag_path);
-        $_POST['adds_img']=$final_path;
+        { echo "move";
+        //$final_path=str_replace("../","",$imag_path);
+        //$_POST['adds_img']=$final_path;
     
     
-        $this->adv_model->addData($_POST); 
+        //$this->adv_model->addData($_POST); 
        } 
        else echo"<script>
        alert('update true data and choose just file image ')</script>";  
-    }
+    }*/
     
        
     
@@ -133,8 +166,8 @@ function update_adv()
 {$id=$_GET['id'];
     $items=array(
         'advertisements'=>$this->adv_model->getOne($id),
-        
-           );
+        //'advertisements'=>$this->adv_model->getDataOrder(),
+);
     $this->controller->view_object->create_view('admin/adv_update',$items);
 }
 
@@ -142,24 +175,23 @@ function update_adv()
 function update(){
     $allowedFileType = array('jpg','png','jpeg');
     ///////////for upload main image////////
-    $imag_path="app/assets/img/adv_images".$_FILES['adds_img']['name'];
+    $imag_path="app/assets/img/advs_images/".$_FILES['adds_img']['name'];
     $fileType= strtolower(pathinfo($imag_path, PATHINFO_EXTENSION));
     if(move_uploaded_file($_FILES['adds_img']['tmp_name'],$imag_path))
     {  if(in_array($fileType, $allowedFileType))
         {
-        $final_path=str_replace("../","",$imag_path);
-        $_POST['adds_img']=$final_path;
+          $final_path=str_replace("../","",$imag_path);
+          $_POST['adds_img']=$final_path;
     
     
         $this->adv_model->updateData($_POST); 
        } 
        else echo"<script>
-       alert('update true data and choose just file image ')</script>";  
+       alert('update true data and choose just file image ')</script>";
+       echo '<meta http-equiv = "refresh" content = "0.5; url = http://localhost/Electronic_shoping_test/admin/admin_adv/index" />';
+  
     }
-    
-       
-    
-    print_r($_POST);
+    //print_r($_POST);
     $this->adv_model->updateData($_POST); 
 }
 
@@ -196,6 +228,7 @@ function delete_adv()
   
      $items=array(
           'advertisement_del'=>$this->adv_model->deleteone($id),
+          'advertisements'=>$this->adv_model->getDataOrder(),
           
            );
            

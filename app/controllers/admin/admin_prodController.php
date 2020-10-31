@@ -56,7 +56,7 @@ function add_product(){
     
     if(in_array($fileType, $allowedFileType))  ///////////for upload main image////////
     {
-    move_uploaded_file($_FILES['product_main_image']['tmp_name'],$imag_path);
+       move_uploaded_file($_FILES['product_main_image']['tmp_name'],$imag_path);
     $_POST['product_main_image']=$imag_path;
     $done_upload=1;
 }
@@ -87,7 +87,7 @@ function add_product(){
             else 
             { echo "<script>
                 alert('insert true data and choose just file image  ')</script>";
-                echo '<meta http-equiv = "refresh" content = "1.5; url = http://localhost/Electronic_shoping_test/admin/admin_prod/add_prod" />';
+                echo '<meta http-equiv = "refresh" content = "0.5; url = http://localhost/Electronic_shoping_test/admin/admin_prod/add_prod" />';
                  
             }
 }
@@ -139,7 +139,7 @@ function update(){
         }
        $_POST['product_branch_images']=$array_images;
     }
-    print_r($_POST);
+    //print_r($_POST);
      
     //if($done_upload==1 || $done_upload==0){echo "upload;;";}
     if(($done_upload==1 || $done_upload==0) && ($done_upload1 ==1 || $done_upload1 == 0))
@@ -150,6 +150,9 @@ function update(){
     
     else{echo"<script>
         alert('update true data and choose just file image ')</script>";
+        echo '<meta http-equiv = "refresh" content = "0.5; url = http://localhost/Electronic_shoping_test/admin/admin_prod/index" />';
+
+        
         }
     //$this->prod_model->updateData($_POST); 
 
@@ -168,7 +171,6 @@ function delete_prod()
            $this->controller->view_object->create_view('admin/homeAdmin',$items);
 
 }
-
 
 }
 ?>

@@ -38,11 +38,11 @@ function addData($data)
        $final_query= $this->db->insertrow("advertisements",$data);
         if( $this->db->executea($final_query))
            {
-             echo '<meta http-equiv = "refresh" content = "05.5; url = http://localhost/Electronic_shoping_test/admin/admin_adv/advertisements" />';
+             echo '<meta http-equiv = "refresh" content = "0.5; url = http://localhost/Electronic_shoping_test/admin/admin_adv/advertisements" />';
             }
         else
            {
-             echo '<meta http-equiv = "refresh" content = "05.5; url = http://localhost/Electronic_shoping_test/admin/admin_adv/advertisements" />';
+             echo '<meta http-equiv = "refresh" content = "0.5; url = http://localhost/Electronic_shoping_test/admin/admin_adv/advertisements" />';
 
             }
 }
@@ -53,9 +53,9 @@ function updateData($data)
          $final_query= $this->db->updaterow("advertisements",$data).$this->db->whereone('adds_id','=',$id);
             if( $this->db->executea($final_query))
             {
-               echo '<meta http-equiv = "refresh" content = "05.5; url = http://localhost/Electronic_shoping_test/admin/admin_adv/index" />';
+               echo '<meta http-equiv = "refresh" content = "0.5; url = http://localhost/Electronic_shoping_test/admin/admin_adv/index" />';
             }else{
-               echo '<meta http-equiv = "refresh" content = "05.5; url = http://localhost/Electronic_shoping_test/admin/admin_adv/index" />';
+               echo '<meta http-equiv = "refresh" content = "0.5; url = http://localhost/Electronic_shoping_test/admin/admin_adv/index" />';
 
             } 
 }

@@ -22,17 +22,17 @@ public $compare_product_model;
                    $this->controller->view_object->create_view('add/addcart');
        }
     function addtocart(){
-       print_r($_POST);
+       //print_r($_POST);
              $this->order_model->add_to_cart($_POST);    
         }
      function deletefromcart(){
-        print_r($_POST);
+        //print_r($_POST);
              $this->order_model->delete_from_cart($_POST);
 
     
     }
       function addtofavorite(){
-        print_r($_POST);
+        //print_r($_POST);
              $this->favorite_product_model->add_to_favorite($_POST);    
         }
      function deletefromfavorite(){
@@ -42,7 +42,7 @@ public $compare_product_model;
     
     }
     function addtofilter(){
-        print_r($_POST);
+        //print_r($_POST);
              $this->compare_product_model->add_to_compare($_POST);    
         }
      function deletefromfilter(){

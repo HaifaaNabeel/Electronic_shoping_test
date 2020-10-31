@@ -1,4 +1,5 @@
-<?php include'header.php'; ?>
+<?php include'header.php'; //session_destroy();
+?>
       <slider style="top: -56px;">
   <div class="layer1"></div>   
 <div id="demo" class="carousel slide" data-ride="carousel">

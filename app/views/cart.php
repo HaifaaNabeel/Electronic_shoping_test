@@ -178,18 +178,37 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $item->Product
                   foreach($TOTALE as $T){
                   echo $T->sumcollll;
                       ?>
-             <input   name="totalprice" value="<?php echo $T->sumcollll ?>" hidden="hidden">
-
-                                    <?php
-                    
-                
-                  }
-                 ?>RY</strong></span>
+                      <?php
+                      }
+                     ?>RY</strong></span>
                             </li>
-                        </ul>
+                        </ul><?php
+                        if($_GLOBALS['U'] == 0)
+                         {echo'
+                            <form class="" action="./login" method="POST">
+                            <!--<input   name="tootlecost" value="<?php echo $T->sumcollll ?>" hidden="hidden">-->
+                            <input   name="user_login" value="'. $T->sumcollll.'" hidden="hidden">
+                             <button type="submit" class="btn check_btn"  id="submit">تأكيد الشراء  </button>
 
-                        <a href="./checkout?cost=".<?php echo $T->sumcollll ?> ><button type="button" class="btn check_btn">تأكيد الشراء</button>
+                            </form>';
+                          }
+                         else{ 
+                            //echo $T->sumcollll ."<br>";
+                             echo'
+                             <form class="" action="./checkout" method="POST">
+                            <input   name="tootlecost" value="'. $T->sumcollll.'" hidden="hidden">
+                            <button type="submit" class="btn check_btn"  id="submit">تأكيد الشراء </button>
+                            </form>'
+                            ; 
+                             }?>
+                        <!-- <a href="./checkout?cost=".<?php echo $T->sumcollll ?> ><button type="button" class="btn check_btn">تأكيد الشراء</button>
+                        <?php/* if($_GLOBALS['U'] != 0){echo '
+                        <form class="" action="./checkout" method="POST">
+                        <input   name="cost" value="'. $T->sumcollll.' " hidden="hidden">
+                        <button type="submit" class="btn check_btn"  id="submit">تأكيد الشراء  </button>
+                        </form>';}*/?>-->
 
+                        
                     </div>
 
                     <div class="card-body">

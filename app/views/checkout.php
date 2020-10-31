@@ -4,6 +4,13 @@
     <br><br><br><br><br><br>
 <style>
 </style>
+                   <?php
+                    $tootlecost=$_POST['tootlecost'];
+                   //echo $tootlecost=$_POST['tootlecost'];
+                   //echo"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
+
+
+                    ?>
      <main>
 <div class="container-fluid">
     <div class="row">
@@ -11,7 +18,7 @@
         <div class="col-md-4 ">
             <div class="card" style="border-radius: 24px; padding:10px" >
             <!---<div class="col-md-12 col-xs-12  number_check"> 2 </div><br>-->
-                <form class="" action="http://localhost/bank_api/api/take_card.php" method="POST">
+                <form class="" action="http://localhost/bank_new_api/api/take_card.php" method="POST">
                     <h2 class="text-center" style="color: #000;"> الدفع </h2>
                     <div class="form-group text-right ">
                         <label class="text-right" for="card_type">نوع البطاقة </label>
@@ -36,10 +43,10 @@
 
                     
                     <input type="text"  id="url" name="url"value="<?php echo 'http://localhost/Electronic_shoping_test/done_pay_or_not'?>" hidden="hidden" readonly required>
-                    <input type="text"  id="cost" name="cost"value="<?php echo '10'?>" hidden="hidden" readonly required>
+                    <input type="text"  id="cost" name="cost"value="<?php echo $tootlecost;?>" hidden="hidden" readonly required>
 
                      
-                        <button type="submit" class="btn  btn-primary"  id="submit">الدفع الان  </button>
+                        <button type="submit" class="btn  check_btn"  id="submit">الدفع الان  </button>
 <br><br>
                     
                 </form>

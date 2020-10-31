@@ -66,7 +66,49 @@ $result = $this->db->connect()->prepare($final_query);
 
         }
   }
-    
+    function fetchfilter($uid){     
+   $final_query= "select product_id from compare_product where user_id= $uid";
+$result = $this->db->connect()->prepare($final_query);
+			$result->execute();
+          $count= $result->rowcount();
+        if($count > 0){
+            $arr=array();
+            while($row=$result->fetch()){
+                $arr[]=$row['product_id'];
+                $size9=sizeof($arr);
+                $unique=array_unique($arr);
+                $datar=implode(',' ,$unique);
+              } 
+            if(sizeof($arr)>0){
+               $final_query= "select * from products where Product_id in($datar)";
+            return $this->db->executeb($final_query);
+			$result50->execute();
+        return $result50;
+        }
+            else{
+            header('location:comparee');
+
+            }
+        }
+        elseif($count == 0){
+                 @session_start();
+            if(isset($_SESSION['filter'])){
+            $size1=sizeof($_SESSION['filter']);
+                 if($size1 >0){
+                $uniqe=array_unique($_SESSION['filter']);
+                $data=implode(',' ,$uniqe);
+                 $final_query= "select * from products where Product_id in($data)";
+            return $this->db->executeb($final_query);
+            }
+                 
+            else{
+                 header('location:comparee');
+        }
+
+        }
+        }
+ }
+   
     
    
     

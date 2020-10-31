@@ -257,13 +257,13 @@ exit();
                     data-parent="#sidebar-menu">
                     <div class="sub-menu">
                           <li >
-                            <a class="sidenav-item-link" href=" ">
+                            <a class="sidenav-item-link" href="../admin_adv/index">
                               <span class="nav-text">عرض جميع الاعلانات </span>
                               
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href=" ">
+                            <a class="sidenav-item-link" href="../admin_adv/add_adv">
                               <span class="nav-text"> اضافة اعلان</span>
                               
                             </a>

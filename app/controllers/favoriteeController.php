@@ -1,18 +1,19 @@
 <?PHP
 use coreAppNS\Controller;
 //include("app/models/category.php");
-class bill_saleController extends Controller{
+class favoriteeController extends Controller{
 public $controller;
 
 
 
     function __construct(){
+
         $this->controller=new Controller();
         @session_start();
         if(isset($_SESSION['uid'])){
          $this->u=$_SESSION['uid'];}else{
          $this->u=0;}
-        $user_model=$this->controller->model_object->create_model('users');
+         $user_model=$this->controller->model_object->create_model('users');
         $order_model=$this->controller->model_object->create_model('order');
         $compare_product_model=$this->controller->model_object->create_model('compare_product');
         $favorite_product_model=$this->controller->model_object->create_model('favorite_product');
@@ -24,10 +25,7 @@ public $controller;
              'filteritem'=>$compare_product_model->getOnefilter($this->u)
             
         );
-
-        //$this->controller->view_object->create_view('home',$homeItems);
-        $this->controller->view_object->create_view('bill_sale',$homeItems);
-       // $this->controller->view_object->create_view('admin/categories',$homeItems);
+        $this->controller->view_object->create_view('favoritee',$homeItems);
     
        }
 

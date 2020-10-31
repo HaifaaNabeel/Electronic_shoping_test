@@ -98,6 +98,39 @@ echo"no";
        }
     }
 
+////////////////for login by goooooooogle
+    function login_google($x,$y)
+    {      
+        $name=$x;
+        $pass="";
+        $email=$y;
+        $active="1";
+        $role="0";
+        $date=date('y-m-d');
+        $admin='1';
+        $SQL = "SELECT * FROM users where user_name='$name' and user_pass='$pass' and user_is_active=1 ";
+			$result = $this->db->connect()->prepare($SQL);
+			$result->execute();
+          $count= $result->rowcount();
+            if($count >= 1)
+            {
+                    echo 'done hhhhhhhhhhhhhhhhhhhhhhhhh check in ';
+              }
+           else
+            { 
+                $final_query="INSERT INTO `users`(`user_name`, `user_email`, `user_pass`, `user_is_active`, `user_roles`, `date_added`, `admin_who_added`) VALUES ('$name','$email','$pass','$active','$role','$date','$admin')";
+                   if( $this->db->executea($final_query))
+                       { //echo 'done hhhhhhhhhhhhhhhhhhhhhhhhh insert';
+                           header('location:home');
+                         }
+                    else
+                          { //echo 'not done mmmmmmmmmmmmmmmmmmmmmmm insert';
+                             header('location:login');
+                           }
+            }
+
+    }
+
 
 }
 

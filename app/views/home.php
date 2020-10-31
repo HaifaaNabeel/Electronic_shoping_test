@@ -35,8 +35,7 @@
     <p>We had such a great time in LA!</p>
   </div>
     </div>
-      
-  </div>
+</div>
   
 </div>
     </slider>   

@@ -42,7 +42,7 @@
                         <div class="row mb-4" id="cartitem<?php echo $item->Product_id; ?>">
                             <div class="col-md-5 col-lg-3 col-xl-3">
                                 <div class="mb-3 mb-md-0">
-                                    <img src="app/assets/img/<?php  echo $item->product_main_image;?>"
+                                    <img src="<?php  echo $item->product_main_image;?>"
                                         class="img-fluid w-100" alt="">
                                 </div>
                             </div>

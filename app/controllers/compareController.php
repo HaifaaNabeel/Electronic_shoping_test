@@ -20,11 +20,13 @@ function __construct(){
     $cat_model=$this->controller->model_object->create_model('category');
     $homeItems=array(
         'categories'=>$cat_model->getDataWhereOrder(),
-         'cartitem'=>$order_model->getOne($this->u),
-         'favoriteitem'=>$favorite_product_model->getOnef($this->u),
-         'filteritem'=>$compare_product_model->getOnefilter($this->u)
-        
-    );
+        'cartitem'=>$order_model->getOne($this->u),
+        'favoriteitem'=>$favorite_product_model->getOnef($this->u),
+       'fetchfilter'=>$compare_product_model->fetchfilter($this->u),
+        'filteritem'=>$compare_product_model->getOnefilter($this->u)
+       
+   );
+
 
     //$this->controller->view_object->create_view('home',$homeItems);
     $this->controller->view_object->create_view('compare',$homeItems);

@@ -6,14 +6,14 @@ public $controller;
     public $order_model;
 public $function;
 public $uid;
-
+public $favorite_product_model;
+public $compare_product_model;
     function __construct($function="index"){
         $this->controller=new Controller();
-       /* @session_start();
-                  $this->uid=$_SESSION['uid'];
-        echo $_SESSION['uid'];*/
         $this->order_model=$this->controller->model_object->create_model('order');
-        $this->$function();
+       $this->compare_product_model=$this->controller->model_object->create_model('compare_product');
+       $this->favorite_product_model=$this->controller->model_object->create_model('favorite_product');
+         $this->$function();
         
     }
 
@@ -22,18 +22,36 @@ public $uid;
                    $this->controller->view_object->create_view('add/addcart');
        }
     function addtocart(){
-       // print_r($_POST);
+       print_r($_POST);
              $this->order_model->add_to_cart($_POST);    
         }
      function deletefromcart(){
-       // print_r($_POST);
+        print_r($_POST);
              $this->order_model->delete_from_cart($_POST);
 
     
     }
-      function getcount(){
-    //  echo $this->order_model->getOne($this->uid);
+      function addtofavorite(){
+        print_r($_POST);
+             $this->favorite_product_model->add_to_favorite($_POST);    
+        }
+     function deletefromfavorite(){
+       // print_r($_POST);
+             $this->favorite_product_model->delete_from_favorite($_POST);
+
+    
     }
+    function addtofilter(){
+        print_r($_POST);
+             $this->compare_product_model->add_to_compare($_POST);    
+        }
+     function deletefromfilter(){
+       // print_r($_POST);
+             $this->compare_product_model->delete_from_compare($_POST);
+
+    
+    }
+      
 }
 
 

@@ -70,9 +70,7 @@ $result = $this->db->connect()->prepare($final_query);
         }
   }
     
- function fetchcart($uid){
- 
-     
+ function fetchcart($uid){     
    $final_query= "select product_id from orders where user_id= $uid";
 $result = $this->db->connect()->prepare($final_query);
 			$result->execute();
@@ -85,25 +83,35 @@ $result = $this->db->connect()->prepare($final_query);
                 $unique=array_unique($arr);
                 $datar=implode(',' ,$unique);
               } 
+            if(sizeof($arr)>0){
                $final_query= "select * from products where Product_id in($datar)";
             return $this->db->executeb($final_query);
 			$result50->execute();
         return $result50;
         }
+            else{
+            header('location:carte');
+
+            }
+        }
         elseif($count == 0){
                  @session_start();
             if(isset($_SESSION['cart'])){
             $size1=sizeof($_SESSION['cart']);
+                 if($size1 >0){
                 $uniqe=array_unique($_SESSION['cart']);
                 $data=implode(',' ,$uniqe);
                  $final_query= "select * from products where Product_id in($data)";
             return $this->db->executeb($final_query);
             }
                  
-            }
+            else{
+                 header('location:carte');
+        }
 
         }
-    
+        }
+ }
     function totalcost($uid){
  
      
@@ -112,6 +120,7 @@ $result = $this->db->connect()->prepare($final_query);
 			$result->execute();
           $count= $result->rowcount();
         if($count > 0){
+            
             $arr=array();
             while($row=$result->fetch()){
                 $arr[]=$row['product_id'];
@@ -119,27 +128,43 @@ $result = $this->db->connect()->prepare($final_query);
                 $unique=array_unique($arr);
                 $datar=implode(',' ,$unique);
               } 
+               if(sizeof($arr)>0){
                $final_query= "SELECT SUM(product_price) AS sumcollll FROM products WHERE Product_id in ($datar)";
-            return $this->db->executeb($final_query);
-			$result50->execute();
-        return $result50;
+                $result =$this->db->connect()->prepare($final_query);
+			$result->execute();
+           $result1= $result->fetchAll(PDO::FETCH_OBJ);
+           return $result1;
+        }else{
+header('location:carte');
+               }
+        
         }
         elseif($count == 0){
                  @session_start();
             if(isset($_SESSION['cart'])){
             $size1=sizeof($_SESSION['cart']);
-                $uniqe=array_unique($_SESSION['cart']);
+                if($size1 >0){
+                    $uniqe=array_unique($_SESSION['cart']);
                 $data=implode(',' ,$uniqe);
                  $final_query= "SELECT SUM(product_price) AS sumcollll FROM products WHERE Product_id in ($data)";
-            return $this->db->executeb($final_query);
+                $result =$this->db->connect()->prepare($final_query);
+			$result->execute();
+           $result1= $result->fetchAll(PDO::FETCH_OBJ);
+           return $result1;
+             }else{
+          //   $no=array('sumcollll'=>0);
+           // return $no;
+                    header('location:carte');
+
+            }
             }
                  
-            }
+            }else{
+        }
 
         }
  
-    
-    
+  
    
     
 }

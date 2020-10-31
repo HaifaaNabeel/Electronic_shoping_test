@@ -1,4 +1,5 @@
 <?php
+ob_start();
 @session_start();
 if(isset($_SESSION['uid'])){
 echo $_SESSION['uid'];
@@ -80,10 +81,10 @@ $_GLOBALS['U']=0;
 </head>
     
    <body>
-   <!--start header-->
+  <!--start header-->
        
        
-        <nav class="navbar navbar-expand-md fixed-top">
+  <nav class="navbar navbar-expand-md fixed-top">
   <!-- Brand -->
   <a class="navbar-brand" href="#"><img src="app/assets/img/login_store_logos-2.png" width="144px"></a>
 
@@ -164,10 +165,14 @@ $_GLOBALS['U']=0;
       </li>
       <li class="nav-item icons">
       <a class="ico" href="./login"><span class="ion-ios-person-outline"></span></a>
-      
-      <a  href="./logout" style="font-size:17px;"><span class="ion-android-exit"></span></a>
-
-               
+        <ul class="submenu"> 
+           <li class="nav-item ">
+               <a class="ico" href="./login"><span class="ion-ios-person-outline"></span></a>
+            </li>
+            <li class="nav-item ">
+               <a class="ico" href="./logout" ><span class="ion-android-exit"></span></a>
+            </li>
+               </ul>
           <a class="ico" href="./cart"><span class="counter" id="count1">
                <?php
                    $rows=$data['cartitem'];

@@ -21,7 +21,7 @@
                             <th>اسم المنتج </th>
                             <th>الصنف</th>
                             <th class="d-none d-md-table-cell">السعر</th>
-                            <th class="d-none d-md-table-cell">الكميه</th>
+                            
                             <th class="d-none d-md-table-cell">الهديه</th>
                             <th>عمليات</th>
                           </tr>
@@ -51,7 +51,10 @@
 
                           <?php
 
-                               $rows=$data['products']; 
+                               $rows=$data['products'];
+                                //$rows=$data['products'];
+                                   //foreach($rows as $row){if()}
+                            
                                
                                    foreach($rows as $row)
                                    {
@@ -65,15 +68,14 @@
                             <td >'.$row->product_name.'</td>
                             <td >'.$row->category_id.'</td><!-- we want to add category name not id-->
                             <td >'.$row->product_price.'</td>
-                            <td >'.$row->product_Quantity.'</td>
-                            <td >'.$row->gift_id.'</td>//
-                            <td >
+                            
+                            
+                            <td ><img src="'.'../../'.$row->product_main_image.'" class="img-thumbnail img-fluid" width=60px hight=60px></td>
+                            
+                               <td >
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <a type="button" href="../admin_prod/update_prod?id='.$row->Product_id.'" class="btn btn-success"><span class="ion-edit"></span></a>
-                                    <a type="button" href="" class="btn btn-info"><span class="">%</span></a>
-                                   <a type="button" href="" class="btn btn-warning"><span class="ion-ribbon-b"></span></a>
-                                   <a type="button" href="" class="btn btn-primary"><span class="ion-ios-photos-outline"></span></a>
-                                   <a type="button" href="../admin_prod/delete_prod?id='.$row->Product_id.'" class="btn btn-danger"><span class="ion-android-delete"></span></a>
+                                    
 
 
                                    

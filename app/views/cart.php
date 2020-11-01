@@ -197,6 +197,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $item->Product
                              echo'
                              <form class="" action="./checkout" method="POST">
                             <input   name="tootlecost" value="'. $T->sumcollll.'" hidden="hidden">
+                            <input   name="user" value="'. $_GLOBALS['U'].'" hidden="hidden">
                             <button type="submit" class="btn check_btn"  id="submit">تأكيد الشراء </button>
                             </form>'
                             ; 

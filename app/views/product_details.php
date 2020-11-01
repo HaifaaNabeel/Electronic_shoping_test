@@ -53,13 +53,19 @@
 										<!-- Images -->
 										<div class="exzoom_img_box" style="background:white">
 										  <ul class="exzoom_img_ul">
-											<li><img src="'.$rows->product_main_image.'"/></li>
-											<li><img src="'.$rows->product_main_image.'"/></li>
-											<li><img src="'.$rows->product_main_image.'"/></li>
-											<li><img src="'.$rows->product_main_image.'"/></li>
-											<li><img src="'.$rows->product_main_image.'"/></li>
-											...
-										  </ul> 
+										  <li><img src="'.$rows->product_main_image.'"/></li>'?>
+										  <?php
+										   $branch_img=explode(',',$rows->product_branch_images);
+										   for($i=0; $i<sizeof($branch_img)-2; $i++)
+										   echo 
+											'<li><img src="'.$branch_img[$i].'"/></li>
+										   	
+											'?>
+											
+										
+											
+										 <?php
+										 echo' </ul>
 										</div><hr>
 										<!-- Thumbnail Nav-->
 										<div class="exzoom_nav"></div>
@@ -82,8 +88,8 @@
 											<form action="#" class="display-flex">
 												<div class="qtyminus">-</div>
 												<input type="text" name="quantity" value="1" class="qty">
-												<div class="qtyplus">+</div>
-											</form>
+												<div class="qtyplus ">+</div>
+											</form><br>
 											<!--<a href="cart?id=" class="round-black-btn">Add to Cart</a>-->
 											';?>
            <!-- <button class="btn product_btn m-1 round-black-btn" onclick="favorite()" name="cart"><span class="ion-ios-cart-outline"></span></button>

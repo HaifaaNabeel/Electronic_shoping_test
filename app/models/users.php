@@ -131,6 +131,13 @@ echo"no";
 
     }
 
+    function getOne($id)
+    {
+        $final_query=$this->db->select('*').$this->db->from('users').$this->db->whereone('user_id','=',$id);
+        return $this->db->executeb($final_query);
+
+    }
+
 
 }
 

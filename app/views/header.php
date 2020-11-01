@@ -2,33 +2,33 @@
 ob_start();
 @session_start();
 if(isset($_SESSION['uid'])){
-echo $_SESSION['uid'];
+//echo $_SESSION['uid'];
 
 }else{
-echo 'no';
+//echo 'no';
 }
 if(isset($_SESSION['cart'])){
-echo"cart";
+//echo"cart";
 }else{
     $_SESSION['cart']=array();
-print_r($_SESSION['cart']);
+//print_r($_SESSION['cart']);
     
 }
 if(isset($_SESSION['favore'])){
-echo"favore";
+//echo"favore";
 $_SESSION['favore'];
 }else{
-echo 'fffffffffffff';
+//echo 'fffffffffffff';
 $_SESSION['favore']=array();
-print_r($_SESSION['favore']);
+//print_r($_SESSION['favore']);
 }
 if(isset($_SESSION['filter'])){
-echo 'filter';
+//echo 'filter';
 
 }else{
-echo 'kkkkkkkk';
+///echo 'kkkkkkkk';
     $_SESSION['filter']=array();
-print_r($_SESSION['filter']);
+//print_r($_SESSION['filter']);
 }
 
 ?>

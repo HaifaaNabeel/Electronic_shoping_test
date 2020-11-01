@@ -64,7 +64,7 @@ if(isset($_GET["code"]))
 if(!isset($_SESSION['access_token']))
 {
  //Create a URL to obtain user authorization
- echo' <h3 align="center">you will login in our store by google account </h3>';
+ echo' <h3 align="center">سوف يتم تسجيل دخولك بحساب جوجل </h3>';
  $login_button = '<a href="'.$google_client->createAuthUrl().'" class="icoGoogle" title="Google +" style="font-size:5em;color:red"><i class="ion-social-google-outline"></i></a>';
 
 }

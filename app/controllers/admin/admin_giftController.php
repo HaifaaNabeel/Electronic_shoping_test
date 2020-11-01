@@ -6,6 +6,7 @@ public $controller;
 public $prod_model;
 public $function;
 public $prod_model2;
+public $final_query;
 
 
 
@@ -26,6 +27,7 @@ function index(){
            // 'categories_parent'=>$this->prod_model->getDataC(),
            
             'products'=>$this->prod_model->getDataofferGift(),
+            'product'=>$this->prod_model->getDataGift(),
    
         );
         
@@ -33,7 +35,7 @@ function index(){
 }
 
 
- //
+
 
 //////////////////////////////offers///////////////////////////
 
@@ -46,6 +48,14 @@ function offerGift()
            );
     $this->controller->view_object->create_view('admin/offer_gift',$items);
 
+}
+
+
+function  getDataGift()
+{
+        $final_query= $this->db->select('product_main_image').$this->db->from('products').$this->db->whereone('gift_id','=','Product_id');
+       
+        return $this->db->executeb($final_query);  
 }
 
 

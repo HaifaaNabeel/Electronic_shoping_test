@@ -70,10 +70,7 @@
                             <td >
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <a type="button" href="../admin_prod/update_prod?id='.$row->Product_id.'" class="btn btn-success"><span class="ion-edit"></span></a>
-                                    <a type="button" href="" class="btn btn-info"><span class="">%</span></a>
-                                   <a type="button" href="" class="btn btn-warning"><span class="ion-ribbon-b"></span></a>
-                                   <a type="button" href="" class="btn btn-primary"><span class="ion-ios-photos-outline"></span></a>
-                                   <a type="button" href="../admin_prod/delete_prod?id='.$row->Product_id.'" class="btn btn-danger"><span class="ion-android-delete"></span></a>
+                                    
 
 
                                    

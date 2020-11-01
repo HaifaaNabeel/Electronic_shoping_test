@@ -6,6 +6,7 @@
 </style>
                    <?php
                     $tootlecost=$_POST['tootlecost'];
+                    $user=$_POST['user'];
                    //echo $tootlecost=$_POST['tootlecost'];
                    //echo"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
 
@@ -41,8 +42,8 @@
                         <input type="date" class="form-control text-right" id="Expired_date" name="Expired_date" required>
                     </div>
 
-                    
                     <input type="text"  id="url" name="url"value="<?php echo 'http://localhost/Electronic_shoping_test/done_pay_or_not'?>" hidden="hidden" readonly required>
+                    <input type="text"  id="url" name="user"value="<?php echo $user; ?>" hidden="hidden" readonly required>
                     <input type="text"  id="cost" name="cost"value="<?php echo $tootlecost;?>" hidden="hidden" readonly required>
 
                      

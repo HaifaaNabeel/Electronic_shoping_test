@@ -32,9 +32,7 @@ function categories(){
          'categories'=>$this->cat_model->getDataOrder(),
          'products'=>$this->cat_model->getDataOrderP(),
 
-            
      );
-        
         $this->controller->view_object->create_view('admin/categories',$items);
 }
 
@@ -100,10 +98,23 @@ function delete_cat()
      $this->cat_model->addDataP($_POST); 
  }
 
-
-
-
-
+///////////////////////////////////////////search///////////////////
+function search_result()
+{            print_r($_POST);
+              $this->cat_model->searchData($_POST);
+}    
+function search()
+{          
+    $this->controller->view_object->create_view('admin/search');
+} 
+    function search_cat()
+{         $id=$_GET['id'];
+    $items=array(
+         'result_search'=>$this->cat_model->getOne($id),
+     );
+        
+        $this->controller->view_object->create_view('admin/cat_search',$items);
+}
 
 }
 ?>

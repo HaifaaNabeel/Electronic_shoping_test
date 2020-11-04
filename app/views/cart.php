@@ -27,16 +27,15 @@
                     <div class="card-body">
 
                     <div class="mb-4 mb-md-0">
-                    <h4 class="mb-4" style="color: #F27523;" >
-                         عناصر <span >
-                            <?php
+                    <h4 class="mb-4" style="color: #F27523;"><?php
                    $rows=$data['cartitem'];
                   foreach($rows as $row){
                   echo $row;
                   }
-                 ?>
+                 ?> عناصر <span>
+                            
                             </span> </h4>
-                    </div>
+                                </div>
                         
                                                <?php
                    $items=$data['fetchcart'];
@@ -61,17 +60,18 @@
                                     </div>
 
                                     <div>
-                                    <div class="handle-counter">
+                                        <div class="handle-counter">
                                             <button
-                                                    onclick="delete_qty<?php echo $item->Product_id; ?>()"
-                                                    class="counter-minus btn"><span
+                                                onclick="this.parentNode.querySelector(&#39;input[type=number]&#39;).stepDown()"
+                                                class="counter-minus btn"><span
                                                     class="ion-android-remove"></span></button>
  <input id="id<?php echo $item->Product_id; ?>"  name="product_id" value="<?php echo $item->Product_id; ?>" hidden="hidden">
- <input id="price<?php echo $item->Product_id; ?>"  name="price" value="<?php echo $item->product_price; ?>" hidden="hidden">
+ <input id="id<?php echo $item->Product_id; ?>"  name="price" value="<?php echo $item->product_price; ?>" hidden="hidden">
 <input id="user<?php echo $_GLOBALS['U']; ?>"  name="user" value="<?php echo $_GLOBALS['U']; ?>" hidden="hidden">
-<input class="quantity text-center" min="1" name="qty" id="qty<?php echo $item->Product_id; ?>"value="<?php echo $item->quantity; ?>" type="number">
+                                            <input class="quantity text-center" min="1" name="qty"
+                                                value="<?php  echo $item->product_main_image;?>" type="number">
                                             <button
-                                                onclick="add_qty<?php echo $item->Product_id; ?>()"
+                                                onclick="this.parentNode.querySelector(&#39;input[type=number]&#39;).stepUp()"
                                                 class="counter-plus btn "><span
                                                     class="ion-android-add"></span></button>
                                         </div>
@@ -84,7 +84,7 @@
 
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <p class="mb-0"><span ><strong id="priceq<?php echo $item->Product_id;?>"><?php  echo $item->product_price*$item->quantity ;?></strong>RY</span></p>
+                                    <p class="mb-0"><span><strong><?php  echo $item->product_price;?>RY</strong></span></p>
                                     <div>
          <a href="#" class="a-text" id="dcart<?php echo $item->Product_id; ?>" onclick="dcart<?php echo $item->Product_id;?>()">حذف من السلة
              <span class="ion-android-delete"></span></a>
@@ -93,10 +93,11 @@
                                     <div>
 
                                    
-               <a href="#" class="a-text" id="favorit<?php echo $item->Product_id; ?>" onclick="favoor<?php echo $item->Product_id; ?>()" >إضافة إلى المفضلة<span class="ion-android-favorite"></span></a>
+                    <a href="#" class="a-text" id="favorit<?php echo $item->Product_id; ?>" onclick="favoor<?php echo $item->Product_id; ?>()" >إضافة إلى المفضلة<span class="ion-android-favorite"></span></a>
                                                  <a href="#" class="dcart a-text" id="dfavorit<?php echo $item->Product_id; ?>" onclick="dfavoor<?php echo $item->Product_id; ?>()" >حذف من المفضلة<span
                                                 class="ion-android-favorite"></span></a>
                                     </div>
+
 
                                 </div>
 
@@ -104,68 +105,44 @@
                         </div>
                         <hr class="mb-4">
                         
-                        <script>
+                         <script>
         
-        function add_qty<?php echo $item->Product_id; ?>(){
-         $.post("add/add_cart/addtoqty",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty<?php echo $item->Product_id; ?>").val()},function(data){
-                          var id='qty<?php echo $item->Product_id;?>';
-             var fi =document.getElementById(id).value;
-                     fi++
-                    document.getElementById(id).value = fi;
-                 var id2='price<?php echo $item->Product_id;?>';
-                var m=document.getElementById(id2).value;
-            document.getElementById('priceq<?php echo $item->Product_id;?>').innerHTML=fi*m;
-                   });
-              }
-            function delete_qty<?php echo $item->Product_id; ?>(){
-                   
-                  $.post("add/add_cart/deletefromqty",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty<?php echo $item->Product_id; ?>").val()},function(data){
-                          var id='qty<?php echo $item->Product_id;?>';
-             var fi =document.getElementById(id).value;
-                     fi--
-                    document.getElementById(id).value = fi;
-                 var id2='price<?php echo $item->Product_id;?>';
-                var m=document.getElementById(id2).value;
-            document.getElementById('priceq<?php echo $item->Product_id;?>').innerHTML=fi*m;
-                   });
-              }                         
-        function favoor<?php echo $item->Product_id; ?>(){
-            //  alert('hhhhh');
-                    document.getElementById('dfavorit<?php echo $item->Product_id;?>').style.display='inline-block';
-               document.getElementById('favorit<?php echo $item->Product_id;?>').style.display='none';
-                  $.post("add/add_cart/addtofavorite",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val()},function(data){
-                      var id='count2';
-             var fi =document.getElementById(id).innerHTML;
-                     fi++
-                    document.getElementById(id).innerHTML = fi; 
-                   });
-              }
-                function dfavoor<?php echo $item->Product_id; ?>(){
-                    document.getElementById('dfavorit<?php echo $item->Product_id;?>').style.display='none';
-               document.getElementById('favorit<?php echo $item->Product_id;?>').style.display='inline-block';
-                  $.post("add/add_cart/deletefromfavorite",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val()},function(data){
-                      var id='count2';
-             var fi =document.getElementById(id).innerHTML;
-                     fi--
-                    document.getElementById(id).innerHTML = fi; 
-                   });
-              }
-           
-                function dcart<?php echo $item->Product_id;?>(){
-                document.getElementById('cartitem<?php echo $item->Product_id; ?>').style.display='none';
-        $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val(),add:$("#dcart").val()},function(data){
-                      var id='count1';
-             var fi =document.getElementById(id).innerHTML;
-                     fi--
-                    document.getElementById(id).innerHTML = fi; 
-                    document.getElementById('counter4').innerHTML = fi; 
-                  
-                   });
-            
-            }
-              
-                
-            </script>
+
+function favoor<?php echo $item->Product_id; ?>(){
+    //  alert('hhhhh');
+            document.getElementById('dfavorit<?php echo $item->Product_id;?>').style.display='inline-block';
+       document.getElementById('favorit<?php echo $item->Product_id;?>').style.display='none';
+          $.post("add/add_cart/addtofavorite",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val()},function(data){
+              var id='count2';
+     var fi =document.getElementById(id).innerHTML;
+             fi++
+            document.getElementById(id).innerHTML = fi; 
+           });
+      }
+        function dfavoor<?php echo $item->Product_id; ?>(){
+            document.getElementById('dfavorit<?php echo $item->Product_id;?>').style.display='none';
+       document.getElementById('favorit<?php echo $item->Product_id;?>').style.display='inline-block';
+          $.post("add/add_cart/deletefromfavorite",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val()},function(data){
+              var id='count2';
+     var fi =document.getElementById(id).innerHTML;
+             fi--
+            document.getElementById(id).innerHTML = fi; 
+           });
+      }
+   
+        function dcart<?php echo $item->Product_id;?>(){
+        document.getElementById('cartitem<?php echo $item->Product_id; ?>').style.display='none';
+$.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val(),add:$("#dcart").val()},function(data){
+              var id='count1';
+     var fi =document.getElementById(id).innerHTML;
+             fi--
+            document.getElementById(id).innerHTML = fi; 
+           });
+    
+    }
+      
+        
+    </script>
 <?php
                   }
  ?>
@@ -198,7 +175,7 @@
                             <li
                                 class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                 <div>
-                                <strong>الإجمالي الكلي</strong>
+                                <h6 class="mb-0">الإجمالي الكلي</h6>
                                     <strong>
                                         <p class="mb-0">(بالإضافة إلى تكاليف الشحن)</p>
                                     </strong>

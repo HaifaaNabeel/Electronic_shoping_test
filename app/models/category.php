@@ -95,6 +95,29 @@ function  getDataWhereOrderProd()
     return $this->db->executeb($final_query); 
         
 }
+////////////////////////////////////////////// search  /////////////////////////////////////////
+function searchData($data)
+{
+ $id= $data['category_name'];
+         $final_query= $this->db->select('*').$this->db->from('categories').$this->db->whereone(' category_name ',' like ', "'%".$id."%'");
+ $result = $this->db->connect()->prepare($final_query);
+			$result->execute();
+          $count= $result->rowcount();
+    if($count>=1){
+       while($row=$result->fetch()){
+                $o=$row['category_id'];
+           
+              }        
+                  header('location:search_cat?id='.$o); 
+
+            }
+        else
+           {
+           echo 'not success';
+            header('location:search'); 
+
+            }
+}
 
 }
 

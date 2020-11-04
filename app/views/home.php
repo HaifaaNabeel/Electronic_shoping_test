@@ -148,13 +148,16 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product
       
         
     </script>
-              <?php echo'
+               <?php echo'
                     
                     <h6>
-                      <input id="id';?><?php echo $row1->Product_id; ?><?php echo'"  name="product_id" value="';?><?php echo $row1->Product_id; ?><?php echo '" hidden="hidden">
-                            <input id="qty"  name="qty" value="1" hidden="hidden">
-                            <input id="user';?><?php echo $_GLOBALS['U']; ?><?php echo'"  name="user" value="';?><?php echo $_GLOBALS['U']; ?><?php echo '" hidden="hidden">
-          <button class="btn product_btn m-1" id="cart';?><?php echo $row1->Product_id; ?><?php echo'" onclick="cart';?><?php echo $row1->Product_id;?><?php echo'()"><span class="ion-ios-cart-outline"></span></button>
+<input id="id';?><?php echo $row1->Product_id; ?><?php echo'"  name="product_id" value="';?><?php echo $row1->Product_id; ?><?php echo '" hidden="hidden">
+<input id="qty"  name="qty" value="1" hidden="hidden">
+<input id="pname';?><?php echo $row1->Product_id; ?><?php echo'"  name="product_name" value="'.$row1->product_name.'" hidden="hidden">
+<input id="pimg';?><?php echo $row1->Product_id; ?><?php echo'"  name="pimg" value="'.$row1->product_main_image.'" hidden="hidden">
+<input id="user';?><?php echo $_GLOBALS['U']; ?><?php echo'"  name="user" value="';?><?php echo $_GLOBALS['U']; ?><?php echo '" hidden="hidden">
+<input id="price';?><?php echo $row1->Product_id; ?><?php echo'"  name="price" value="';?><?php echo $row1->product_price ?><?php echo '" hidden="hidden">
+<button class="btn product_btn m-1" id="cart';?><?php echo $row1->Product_id; ?><?php echo'" onclick="cart';?><?php echo $row1->Product_id;?><?php echo'()"><span class="ion-ios-cart-outline"></span></button>
                         <button class="dcart btn product_btn m-1 "  id="dcart';?><?php echo $row1->Product_id; ?><?php echo'" onclick="dcart';?><?php echo $row1->Product_id;?><?php echo'()"><span class="ion-ios-cart-outline"></span></button>
                         <button class=" btn product_btn m-1" id="favorit';?><?php echo $row1->Product_id; ?><?php echo'" onclick="favoor';?><?php echo $row1->Product_id; ?><?php echo'()" name="favorite"><span class="ion-android-favorite-outline"></span></button>
                          <button class=" dcart btn product_btn m-1" id="dfavorite';?><?php echo $row1->Product_id; ?><?php echo'" onclick="dfavoor';?><?php echo $row1->Product_id; ?><?php echo'()" name="dfavorite"><span class="ion-android-favorite-outline"></span></button>
@@ -170,7 +173,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product
                 
     
                 
-            <?php    }
+                <?php    }
                    else
                    continue;
 

@@ -5,9 +5,9 @@
 <style>
 </style>
                    <?php
-                    //$tootlecost=$_POST['tootlecost'];
-                    //$user=$_POST['user'];
-                    $tootlecost=590;$user=10;
+                    $tootlecost=$_POST['tootlecost'];
+                    $user=$_POST['user'];
+                    //$tootlecost=590;$user=10;
                    //echo"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
 
 

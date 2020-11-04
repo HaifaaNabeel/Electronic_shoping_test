@@ -12,15 +12,24 @@ class order{
     ***************************************/
     function add_to_cart($items){
       $pid=$_POST['product_id'];    
+      $pname=$_POST['pname'];  
+      $pimg=$_POST['pimg'];  
       $qty=$_POST['qty'];    
       $uid=$_POST['user']; 
+      $price=$_POST['price'];    
         $date=date('y-m-d');
         if($uid==0){
         @session_start();
             $_SESSION['cart'];
-            array_push($_SESSION['cart'],$pid);
+ $item=array('p_id'=>$pid,'p_name'=>$pname,'p_img'=>$pimg,'p_qty'=>$qty,'p_price'=>$price);
+            array_push($_SESSION['cart'],$item);        
             print_r($_SESSION['cart']);
         }elseif($uid!=0){
+             $final_query= "select * from orders where user_id= $uid and product_id= $pid";
+$result = $this->db->connect()->prepare($final_query);
+			$result->execute();
+          $count= $result->rowcount();
+        if($count==0){
                $final_query = "INSERT INTO `orders`(`user_id`, `product_id`, `quantity`,order_date) VALUES ('$uid',$pid,'$qty','$date')";
             $result = $this->db->connect()->prepare($final_query);
 			
@@ -28,17 +37,32 @@ class order{
 echo"yees";           
     }else{
 echo"no";
- }      }
+ }      }else{
+        
+        echo"product is here";           
+
+        }
     }
+    }
+    
     function delete_from_cart($items){
       $pid=$_POST['product_id'];    
       $uid=$_POST['user'];
       if($uid==0){
            @session_start();
-          $ar=$_SESSION['cart'];
-           $ar=array_diff($ar,[$pid]);
-         $_SESSION['cart']= $ar;
-           print_r($_SESSION['cart']);
+          foreach($_SESSION['cart'] as $index=>$column){
+foreach($column as $key=>$value){
+if($key=='p_id' && $value==$pid){
+				$sp=array();
+				$sp=$_SESSION['cart'];
+				unset($sp[$index]);
+				$_SESSION['cart']=$sp;
+			}
+		
+	
+}
+}
+             print_r($_SESSION['cart']);
         }elseif($uid!=0){
                $final_query = "delete from `orders` where `user_id`=$uid and `product_id`=$pid ";
     if( $this->db->executea($final_query)){
@@ -48,9 +72,61 @@ echo"no";
  }      
 }
         }
- 
-    function  getOne($uid){
-        $final_query= "select * from orders where user_id= $uid";
+      function add_to_qty($items){
+    $pid=$_POST['product_id'];    
+      $uid=$_POST['user'];
+      $qty=$_POST['qty'];
+   $k= ++$qty;
+        if($uid==0){
+           @session_start();
+          foreach($_SESSION['cart'] as $index=>$column){
+foreach($column as $key=>$value){
+if($key=='p_id' && $value==$pid){
+				$_SESSION['cart'][$index]['p_qty']=$k;
+			}
+		
+	
+}
+}
+             print_r($_SESSION['cart']);
+        }elseif($uid!=0){
+               $final_query = "update `orders` set `quantity`=$qty where `product_id`=$pid and user_id=$uid";
+    if( $this->db->executea($final_query)){
+echo"yees";           
+    }else{
+echo"no";
+ } 
+    
+    }
+      }
+    function delete_from_qty($items){
+    $pid=$_POST['product_id'];    
+      $uid=$_POST['user'];
+      $qty=$_POST['qty'];
+   $k= --$qty;
+        if($uid==0){
+           @session_start();
+          foreach($_SESSION['cart'] as $index=>$column){
+foreach($column as $key=>$value){
+if($key=='p_id' && $value==$pid){
+          $_SESSION['cart'][$index]['p_qty']=$k;
+
+			}
+		}
+}
+             print_r($_SESSION['cart']);
+        }elseif($uid!=0){
+               $final_query = "update `orders` set `quantity`=$k where `product_id`=$pid and user_id=$uid";
+    if( $this->db->executea($final_query)){
+echo"yees";           
+    }else{
+echo"no";
+ } 
+    
+    }
+      }
+function  getOne($uid){
+        $final_query= "select DISTINCT * from orders where user_id= $uid";
 $result = $this->db->connect()->prepare($final_query);
 			$result->execute();
           $count= $result->rowcount();
@@ -69,9 +145,9 @@ $result = $this->db->connect()->prepare($final_query);
 
         }
   }
+ function fetchcart($uid){    
     
- function fetchcart($uid){     
-   $final_query= "select product_id from orders where user_id= $uid";
+   $final_query= "select  product_id from orders where user_id= $uid";
 $result = $this->db->connect()->prepare($final_query);
 			$result->execute();
           $count= $result->rowcount();
@@ -84,7 +160,7 @@ $result = $this->db->connect()->prepare($final_query);
                 $datar=implode(',' ,$unique);
               } 
             if(sizeof($arr)>0){
-               $final_query= "select * from products where Product_id in($datar)";
+               $final_query= " select DISTINCT products.Product_id,products.product_main_image,products.product_name ,products.product_price,orders.quantity FROM products JOIN orders WHERE products.Product_id IN($datar) and orders.product_id=products.Product_id ";
             return $this->db->executeb($final_query);
 			$result50->execute();
         return $result50;
@@ -93,15 +169,15 @@ $result = $this->db->connect()->prepare($final_query);
             header('location:carte');
 
             }
-        }
-        elseif($count == 0){
-                 @session_start();
+        }elseif($uid==0){
+            /*
+         @session_start();
             if(isset($_SESSION['cart'])){
             $size1=sizeof($_SESSION['cart']);
                  if($size1 >0){
                 $uniqe=array_unique($_SESSION['cart']);
-                $data=implode(',' ,$uniqe);
-                 $final_query= "select * from products where Product_id in($data)";
+                     $data=implode(',' ,array_keys($uniqe));                     
+                 $final_query= " select DISTINCT products.Product_id,products.product_main_image,products.product_name ,products.product_price,orders.quantity FROM orders,products WHERE products.Product_id in ($data)";
             return $this->db->executeb($final_query);
             }
                  
@@ -110,9 +186,13 @@ $result = $this->db->connect()->prepare($final_query);
         }
 
         }
-        }
- }
-    function totalcost($uid){
+        */
+        } else{
+            header('location:carte');
+
+            }
+ }    
+function totalcost($uid){
  
      
    $final_query= "select product_id from orders where user_id= $uid";
@@ -129,7 +209,7 @@ $result = $this->db->connect()->prepare($final_query);
                 $datar=implode(',' ,$unique);
               } 
                if(sizeof($arr)>0){
-               $final_query= "SELECT SUM(product_price) AS sumcollll FROM products WHERE Product_id in ($datar)";
+               $final_query= "SELECT SUM(products.product_price*orders.quantity) AS sumcollll FROM products,orders WHERE products.Product_id in ($datar) ";
                 $result =$this->db->connect()->prepare($final_query);
 			$result->execute();
            $result1= $result->fetchAll(PDO::FETCH_OBJ);
@@ -140,13 +220,13 @@ header('location:carte');
         
         }
         elseif($count == 0){
-                 @session_start();
+             /*sssssss   @session_start();
             if(isset($_SESSION['cart'])){
             $size1=sizeof($_SESSION['cart']);
                 if($size1 >0){
                     $uniqe=array_unique($_SESSION['cart']);
                 $data=implode(',' ,$uniqe);
-                 $final_query= "SELECT SUM(product_price) AS sumcollll FROM products WHERE Product_id in ($data)";
+                 $final_query= "SELECT SUM(products.product_price*orders.quantity) AS sumcollll FROM products,orders WHERE products.Product_id in ($data) ";
                 $result =$this->db->connect()->prepare($final_query);
 			$result->execute();
            $result1= $result->fetchAll(PDO::FETCH_OBJ);
@@ -158,12 +238,13 @@ header('location:carte');
 
             }
             }
-                 
+               */  
             }else{
         }
 
         }
- 
+    
+    
   
    
     

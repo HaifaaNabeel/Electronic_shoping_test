@@ -21,7 +21,15 @@ public $compare_product_model;
        function index(){
                    $this->controller->view_object->create_view('add/addcart');
        }
-    function addtocart(){
+    function addtoqty(){
+       //print_r($_POST);
+             $this->order_model->add_to_qty($_POST);    
+        }
+    function deletefromqty(){
+       //print_r($_POST);
+             $this->order_model->delete_from_qty($_POST);    
+        }
+     function addtocart(){
        //print_r($_POST);
              $this->order_model->add_to_cart($_POST);    
         }

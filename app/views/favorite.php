@@ -25,13 +25,13 @@
 
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h4 class="mb-4" style="color: #F27523;"><?php
+                    <h4 class="mb-4" style="color: #F27523;">عناصر <span id="counter4">
+                             <?php
                    $rows3=$data['favoriteitem'];
                   foreach($rows3 as $row){
                   echo $row;
                   }
-                 ?> عناصر <span id="counter4">
-                             
+                 ?> 
                             </span> </h4>
                         
                                                <?php
@@ -60,10 +60,12 @@
                                                 class="counter-minus btn"><span
                                                     class="ion-android-remove"></span></button>
  <input id="id<?php echo $item->Product_id; ?>"  name="product_id" value="<?php echo $item->Product_id; ?>" hidden="hidden">
- <input id="id<?php echo $item->Product_id; ?>"  name="price" value="<?php echo $item->product_price; ?>" hidden="hidden">
+ <input id="price<?php echo $item->Product_id; ?>"  name="price" value="<?php echo $item->product_price; ?>" hidden="hidden">
+ <input id="pname<?php echo $item->Product_id; ?>"  name="pname" value="<?php echo $item->product_name; ?>" hidden="hidden">
+ <input id="pimg<?php echo $item->Product_id; ?>"  name="pimg" value="<?php echo $item->product_main_image; ?>" hidden="hidden">
 <input id="user<?php echo $_GLOBALS['U']; ?>"  name="user" value="<?php echo $_GLOBALS['U']; ?>" hidden="hidden">
-                                            <input class="quantity text-center" min="1" name="qty"
-                                                value="<?php  echo $item->product_main_image;?>" type="number">
+                                            <input id="qty<?php echo $item->Product_id; ?>" class="quantity text-center" min="1" name="qty"
+                                                value="1" type="number">
                                             <button
                                                 onclick="this.parentNode.querySelector(&#39;input[type=number]&#39;).stepUp()"
                                                 class="counter-plus btn "><span
@@ -103,6 +105,7 @@
 
            });
       }
+           
         function cart<?php echo $item->Product_id;?>(){
         document.getElementById('cart<?php echo $item->Product_id;?>').style.display='none';
         document.getElementById('dcart<?php echo $item->Product_id;?>').style.display='inline-block';

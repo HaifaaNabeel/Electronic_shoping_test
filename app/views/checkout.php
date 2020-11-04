@@ -5,9 +5,9 @@
 <style>
 </style>
                    <?php
-                    $tootlecost=$_POST['tootlecost'];
-                    $user=$_POST['user'];
-                   //echo $tootlecost=$_POST['tootlecost'];
+                    //$tootlecost=$_POST['tootlecost'];
+                    //$user=$_POST['user'];
+                    $tootlecost=590;$user=10;
                    //echo"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
 
 
@@ -19,7 +19,7 @@
         <div class="col-md-4 ">
             <div class="card" style="border-radius: 24px; padding:10px" >
             <!---<div class="col-md-12 col-xs-12  number_check"> 2 </div><br>-->
-                <form class="" action="http://localhost/bank_new_api/api/take_card.php" method="POST">
+                <form class="" action="http://localhost/bank_new_api/api/take_put_checkout.php" method="POST">
                     <h2 class="text-center" style="color: #000;"> الدفع </h2>
                     <div class="form-group text-right ">
                         <label class="text-right" for="card_type">نوع البطاقة </label>
@@ -42,9 +42,11 @@
                         <input type="date" class="form-control text-right" id="Expired_date" name="Expired_date" required>
                     </div>
 
-                    <input type="text"  id="url" name="url"value="<?php echo 'http://localhost/Electronic_shoping_test/done_pay_or_not'?>" hidden="hidden" readonly required>
-                    <input type="text"  id="url" name="user"value="<?php echo $user; ?>" hidden="hidden" readonly required>
-                    <input type="text"  id="cost" name="cost"value="<?php echo $tootlecost;?>" hidden="hidden" readonly required>
+                    <input type="text"   name="url"      value="<?php echo 'http://localhost/Electronic_shoping_test/done_pay_or_not'?>" hidden="hidden" readonly required>
+                    <input type="text"   name="user_id"     value="<?php echo $user; ?>" hidden="hidden" readonly required>
+                    <input type="text"   name="cost"     value="<?php echo $tootlecost;?>" hidden="hidden" readonly required>
+                    <input type="text"   name="web_id"   value="123456789" hidden="hidden" readonly required>
+                    <input type="text"   name="web_pass" value="123456789" hidden="hidden" readonly required>
 
                      
                         <button type="submit" class="btn  check_btn"  id="submit">الدفع الان  </button>

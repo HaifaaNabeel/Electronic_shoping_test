@@ -18,9 +18,9 @@
 <?php
 $id=$_GET['id'];//$tootlecost=$_POST['tootlecost'];
 //echo $id;
-$user=$_GET['user'];$x=$_GLOBALS['U'];echo $x;
+echo $user=$_GET['user'];//$x=$_GLOBALS['U'];echo $x;
 //echo $user;echo $user;echo $user;echo $user;echo $user;
-if($id == 3)  //error in card data name ,num ,pass 
+if($id == 1)  //error in card data name ,num ,pass 
 { echo '
     <h2 class="text-center" style="color: #221446;"> لم تتم عمليه الشراء  <span class="ion-close-round"></span></h2>
     <h2 class="text-center" style="color: #221446;">الرجاء ادخال بيانات البطاقة بشكل صحيح <span class="ion-sad-outline"></span></h2>
@@ -31,7 +31,7 @@ if($id == 3)  //error in card data name ,num ,pass
     <br><a class="btn  number_check "   href="./home">للعودة الى المتجر <span class="ion-ios-home-outline"></a>
  ';
 }
-else if  ($id == 1)   //error in card date 
+else if  ($id == 3)   //error in card date 
  { echo '
     <h2 class="text-center" style="color: ##221446;"> لم تتم عمليه الشراء  <span class="ion-close-round"></span></h2>
     <h2 class="text-center" style="color: ##221446;">الرجاء التاكد من تاريخ صلاحية البطاقة <span class="ion-sad-outline"></span></h2>
@@ -73,7 +73,7 @@ else if  ($id == 4) //// the payment is done
     <h2 class="text-center" style="color: ##221446;">.............</h2>
     <h4 class="text-center" style="color: ##221446;"> لقد تمت عمليةالشراء بنجاح  <span class="ion-android-checkmark-circle">  </span><span class="ion-happy-outline"></span> </h4>
 
-    <br><a class="btn  number_check "  href="./bill_sale?id="'.$x.'">لعرض الفاتورة <span class="ion-ios-paper-outline"></span></a>
+    <br><a class="btn  number_check "  href="./bill_sale?id="'.$user.'">لعرض الفاتورة <span class="ion-ios-paper-outline"></span></a>
     <!--<br><a class="btn  number_check "   href="./">للعودة الى سلة المشتريات <span class="ion-ios-cart-outline"></span></a>-->
     <br><a class="btn  number_check "   href="./home">للعودة الى المتجر <span class="ion-ios-home-outline"></a>
  ';

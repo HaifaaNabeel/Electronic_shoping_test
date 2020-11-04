@@ -15,7 +15,7 @@
 
 
 
-<div class="container">
+<div class="container" dir="rtl">
 
     <section class="mt-5 mb-4">
 
@@ -25,13 +25,13 @@
 
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h4 class="mb-4" style="color: #F27523;"> عناصر <span id="counter4">
-                             <?php
+                        <h4 class="mb-4" style="color: #F27523;"><?php
                    $rows3=$data['favoriteitem'];
                   foreach($rows3 as $row){
                   echo $row;
                   }
-                 ?>
+                 ?> عناصر <span id="counter4">
+                             
                             </span> </h4>
                         
                                                <?php

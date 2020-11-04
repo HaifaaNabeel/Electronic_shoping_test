@@ -15,7 +15,7 @@
 
 
 
-<div class="container">
+<div class="container " dir="rtl">
 
     <section class="mt-5 mb-4">
 
@@ -25,14 +25,18 @@
 
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h4 class="mb-4" style="color: #F27523;"> عناصر <span>
-                            <?php
+
+                    <div class="mb-4 mb-md-0">
+                    <h4 class="mb-4" style="color: #F27523;"><?php
                    $rows=$data['cartitem'];
                   foreach($rows as $row){
                   echo $row;
                   }
-                 ?>
+                 ?> عناصر <span>
+                            
                             </span> </h4>
+                                </div>
+                        
                                                <?php
                    $items=$data['fetchcart'];
                   foreach($items as $item){
@@ -74,6 +78,9 @@
 
                                     </div>
 
+                                    <br>
+                                    <br>
+                                    <br>
 
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
@@ -168,7 +175,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $item->Product
                             <li
                                 class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                 <div>
-                                    <strong>الإجمالي الكلي</strong>
+                                <h6 class="mb-0">الإجمالي الكلي</h6>
                                     <strong>
                                         <p class="mb-0">(بالإضافة إلى تكاليف الشحن)</p>
                                     </strong>
@@ -213,7 +220,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $item->Product
                     </div>
 
                     <div class="card-body">
-                        <h6 class="text-center mb-4">:طرق الدفع المسموح بها </h6>
+                        <h6 class="text-center mb-4">طرق الدفع المسموح بها </h6>
                         <div class="align-items-center">
                             <img class="mr-2" width="45px" src="app/assets/img/mastercard.svg" alt="Mastercard">
                             <img class="mr-2" width="45px" src="app/assets/img/visa.svg" alt="Visa">

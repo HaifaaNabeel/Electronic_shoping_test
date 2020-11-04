@@ -12,6 +12,7 @@
     <div class="row">
         <div class="col-md-4 "></div>
         <div class="col-md-4 ">
+          <img src="app/assets/img/login_store_logos-2.png" width="100%">  
             <div class="card" style="border-radius: 24px; padding:10px" >
             <!--<div class="col-md-12 col-xs-12  number_check"> 4</div><br>-->
             

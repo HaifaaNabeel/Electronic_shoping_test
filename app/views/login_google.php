@@ -64,7 +64,12 @@ if(isset($_GET["code"]))
 if(!isset($_SESSION['access_token']))
 {
  //Create a URL to obtain user authorization
- echo' <h3 align="center">سوف يتم تسجيل دخولك بحساب جوجل </h3>';
+ echo'<div class="row">
+ <div class="col-md-4 "></div>
+ <div class="col-md-4 ">
+ <img src="app/assets/img/login_store_logos-2.png" width="100%">  
+   
+  <h3 align="center">سوف يتم تسجيل دخولك بحساب جوجل </h3>';
  $login_button = '<a href="'.$google_client->createAuthUrl().'" class="icoGoogle" title="Google +" style="font-size:5em;color:red"><i class="ion-social-google-outline"></i></a>';
 
 }
@@ -95,7 +100,7 @@ if(!isset($_SESSION['access_token']))
     echo '<div align="center">'.$login_button . '</div>';
    }
    ?>
-   </div>
+   </div></div></div>
 
  </body>
 </html>

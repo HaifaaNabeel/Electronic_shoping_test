@@ -311,6 +311,7 @@ background-color: ;
     font-size: 17px;
     border: 1px solid#F27523;
     box-shadow: 9px -1px 9px -2px #eee;
+    float: right;
 }
 
 .check_btn:hover {
@@ -321,3 +322,12 @@ background-color: ;
 }
 /*///////////////////////////////////////*/
 .icon-cont {color:F27523; font-size:100px}
+
+
+h4{
+    text-align: right;
+}
+
+h6{
+    text-align: right;
+}

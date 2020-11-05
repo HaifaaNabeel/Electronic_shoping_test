@@ -25,7 +25,6 @@
 				  
                   
 							echo'
-
 							
         <div class="row">
             <div class="col-md-6 sh_img">
@@ -64,11 +63,11 @@
 					onclick="this.parentNode.querySelector(&#39;input[type=number]&#39;).stepDown()"
 					class="counter-minus btn"><span
 						class="ion-android-remove"></span></button>
-<input id="id<?php echo $item->Product_id; ?>"  name="product_id" value="<?php echo $item->Product_id; ?>" hidden="hidden">
-<input id="id<?php echo $item->Product_id; ?>"  name="price" value="<?php echo $item->product_price; ?>" hidden="hidden">
+<input id="id<?php echo $rows->Product_id; ?>"  name="product_id" value="<?php echo $rows->Product_id; ?>" hidden="hidden">
+<input id="id<?php echo $rows->Product_id; ?>"  name="price" value="<?php echo $rows->product_price; ?>" hidden="hidden">
 <input id="user<?php echo $_GLOBALS['U']; ?>"  name="user" value="<?php echo $_GLOBALS['U']; ?>" hidden="hidden">
-				<input class="quantity text-center" min="1" name="qty"
-					value="<?php  echo $item->product_main_image;?>" type="number">
+				<input class="quantity text-center" min="1" id="qty" name="qty"
+					value="<?php  echo $rows->product_main_image;?>" type="number">
 				<button
 					onclick="this.parentNode.querySelector(&#39;input[type=number]&#39;).stepUp()"
 					class="counter-plus btn "><span
@@ -77,10 +76,11 @@
                         <br>
                         <br>
                         <br>
-                        <input id="id<?php echo $rows->Product_id; ?>"  name="product_id" value="<?php echo $rows->Product_id; ?>" hidden="hidden">
-                            <input id="qty"  name="qty" value="1" hidden="hidden">
-                            <input id="user<?php echo $_GLOBALS['U']; ?>"  name="user" value="<?php echo $_GLOBALS['U']; ?>" hidden="hidden">
-                        <button class="btn product_btn m-1" id="cart<?php echo $rows->Product_id; ?>" onclick="cart<?php echo $rows->Product_id;?>()"><span class="ion-ios-cart-outline"></span></button>
+<input id="pname<?php echo $rows->Product_id; ?>"  name="product_name" value="<?php $rows->product_name;?>" hidden="hidden">
+<input id="pimg<?php echo $rows->Product_id; ?>"  name="pimg" value="<?php echo $rows->product_main_image;?>" hidden="hidden">
+<input id="user<?php echo $_GLOBALS['U']; ?>"  name="user" value="<?php echo $_GLOBALS['U']; ?>" hidden="hidden">
+<input id="price<?php echo $rows->Product_id; ?>"  name="price" value="<?php echo $rows->product_price ?>" hidden="hidden">   
+                    <button class="btn product_btn m-1" id="cart<?php echo $rows->Product_id; ?>" onclick="cart<?php echo $rows->Product_id;?>()"><span class="ion-ios-cart-outline"></span></button>
                         <button class="dcart btn product_btn m-1 "  id="dcart<?php echo $rows->Product_id; ?>" onclick="dcart<?php echo 
                                                 $rows->Product_id;?>()"><span class="ion-ios-cart-outline"></span></button>
                         <button class=" btn product_btn m-1" id="favorit<?php echo $rows->Product_id; ?>" 
@@ -144,10 +144,10 @@ function favoor<?php echo $rows->Product_id; ?>(){
             document.getElementById(id).innerHTML = fi; 
            });
       }
-     function cart<?php echo $rows->Product_id;?>(){
+      function cart<?php echo $rows->Product_id;?>(){
         document.getElementById('cart<?php echo $rows->Product_id;?>').style.display='none';
         document.getElementById('dcart<?php echo $rows->Product_id;?>').style.display='inline-block';
-$.post("add/add_cart/addtocart",{product_id:$("#id<?php echo $rows->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val(),add:$("#cart").val()},function(data){
+$.post("add/add_cart/addtocart",{product_id:$("#id<?php echo $rows->Product_id; ?>").val(),user:$("#user<?php  echo $_GLOBALS['U']; ?>").val(),price:$("#price<?php echo $rows->Product_id; ?>").val(),qty:$("#qty").val(),pname:$("#pname<?php echo $rows->Product_id; ?>").val(),pimg:$("#pimg<?php echo $rows->Product_id; ?>").val(),add:$("#cart").val()},function(data){
               var id='count1';
      var fi =document.getElementById(id).innerHTML;
              fi++
@@ -214,7 +214,3 @@ $('small-img').click(function () {
 </body>
 
 <?php include'footer.php';?>
-
-
-
-

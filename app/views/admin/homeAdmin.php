@@ -12,11 +12,11 @@
                   <form method="post" action="search_result">
                 <div class="input-group">
                   
-                  <!--<input type="text"  name="category_name" id="search-input" class="form-control" placeholder="ابحث هنا"
+                  <!----><input type="text"  name="product_name" id="search-input" class="form-control" placeholder="ابحث هنا"
                     autofocus autocomplete="off" />
                     <button type="submit" name="search" value="search" id="search-btn" class="btn btn-flat" >
                     <i class="mdi mdi-magnify"></i> بحث 
-                  </button>-->
+                  </button>
                     </form>
                 </div>
               
@@ -155,9 +155,15 @@
                             <tr>
                             <td >1</td>
                             <td ><img src="'.'../../'.$row->product_main_image.'" class="img-thumbnail img-fluid" width=60px hight=60px></td>
-                            <td >'.$row->product_name.'</td>
-                            <td >'.$row->category_id.'</td><!-- we want to add category name not id-->
-                            <td >'.$row->product_price.'</td>
+                            <td >'.$row->product_name.'</td>';
+
+                            $rows=$data['categories'];
+                            foreach($rows as $row1)
+                             { if($row1->category_id == $row->category_id){
+                              echo '<td >'.$row1->category_name.'</td><!-- we want to add category name not id-->';
+                             }}//'<td >'.$row2->category_name.'</td><!-- we want to add category name not id-->
+
+                            echo'<td >'.$row->product_price.'</td>
                             <td >'.$row->product_Quantity.'</td>
                             <td >
                                 <div class="btn-group" role="group" aria-label="Basic example">

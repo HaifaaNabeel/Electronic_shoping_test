@@ -12,9 +12,9 @@
                   <form method="post" action="search_result">
                 <div class="input-group">
                   
-                  <input type="text"  name="category_name" id="search-input" class="form-control" placeholder="ابحث هنا"
-                    autofocus autocomplete="off" />
-                    <button type="submit" name="search" value="search" id="search-btn" class="btn btn-flat">
+                  <!----><input type="text"  name="product_name" id="search-input" class="form-control" placeholder="ابحث هنا"
+                  autofocus autocomplete="off" />
+                    <button type="submit" name="search" value="search" id="search-btn" class="btn btn-flat" >
                     <i class="mdi mdi-magnify"></i> بحث 
                   </button>
                     </form>
@@ -92,14 +92,18 @@
             </nav>
 
 
-          </header>
+          </header> 
+
+
+<!--////////////////////////////////end  header///////////////////////////////-->
           
 							<div class="row">
 								<div class="col-12">
                   <!-- Recent Order Table -->
                   <div class="card card-table-border-none" id="recent-orders">
                     <div class="card-header justify-content-between">
-                      <h2>الاصناف </h2>
+                      <h2>المنتجات </h2>
+                      
                       <div class="date-range-report ">
                         <span></span>
                       </div>
@@ -109,33 +113,54 @@
                         <thead>
                           <tr>
                             <th>#</th>
-                            <th>اسم الصنف </th>
-                            <th>تاريخ الاضافة</th>
+                            <th class="d-none d-md-table-cell">صورة</th>
+                            <th>اسم المنتج </th>
+                            <th>الصنف</th>
+                            <th class="d-none d-md-table-cell">السعر</th>
+                            <th class="d-none d-md-table-cell">الكميه</th>
                             <th>عمليات</th>
                           </tr>
                         </thead>
-                            <tbody> 
-                                <?php
+                            <tbody>
 
-             $rows=$data['categories'];
-                foreach($rows as $row){
-                    echo '                    
+                          <?php
+
+                               $rows=$data['result_search']; 
+                                   foreach($rows as $row)
+                                   {  //echo'.$row->product_main_image.';
+                                     //../../$row[product_main_image] \app\assets\admin\img\img;
+                                        //print_r($row->product_main_image);
+                                    echo '
                             <tr>
-                            <td >'.$row->category_id.'</td>
-                            <td >'.$row->category_name.'</td>
-                            <td >'.$row->date_added.'</td>
+                            <td >1</td>
+                            <td ><img src="'.'../../'.$row->product_main_image.'" class="img-thumbnail img-fluid" width=60px hight=60px></td>
+                            <td >'.$row->product_name.'</td>
+                            <td >'.$row->category_id.'</td><!-- we want to add category name not id-->
+                            <td >'.$row->product_price.'</td>
+                            <td >'.$row->product_Quantity.'</td>
                             <td >
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a type="button" href="update_cat?id='.$row->category_id.'" class="btn btn-success"><span class="ion-edit"></span></a>
-                                   <a type="button" href="delete_cat?id='.$row->category_id.'" class="btn btn-danger"><span class="ion-android-delete"></span></a>
+                                    <a type="button" href="../admin_prod/update_prod?id='.$row->Product_id.'" class="btn btn-success"><span class="ion-edit"></span></a>
+                                    <a type="button" href="" class="btn btn-info"><span class="">%</span></a>
+                                   <a type="button" href="" class="btn btn-warning"><span class="ion-ribbon-b"></span></a>
+                                   <a type="button" href="" class="btn btn-primary"><span class="ion-ios-photos-outline"></span></a>
+                                   <a type="button" href="../admin_prod/delete_prod?id='.$row->Product_id.'" class="btn btn-danger"><span class="ion-android-delete"></span></a>
+
+
+                                   
                                  </div>
                                 </td>
                             </tr>
-               '; }?>
+
+                             ';
+                            }
+                          ?>
                             </tbody>
-                          
-                      
+                            
                       </table>
                     </div>
                   </div>
+
+
+
 <?php include"footer.php";?>

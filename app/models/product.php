@@ -138,6 +138,30 @@ function  getDataGift()
         return $this->db->executeb($final_query);  
 }
 
+//////////////////////////////////////////////////////// search product////////////////////////////////////////
+function searchData($data)
+{
+ $id= $data['product_name'];
+         $final_query= $this->db->select('*').$this->db->from('products').$this->db->whereone(' product_name ',' like ', "'%".$id."%'");
+ $result = $this->db->connect()->prepare($final_query);
+			$result->execute();
+          $count= $result->rowcount();
+    if($count>=1){
+       while($row=$result->fetch()){
+                $o=$row['Product_id'];
+           
+              }        
+                  header('location:search_cat?id='.$o); 
+
+            }
+        else
+           {
+           echo 'not success';
+            header('location:search'); 
+
+            }
+}
+
 
 }
 

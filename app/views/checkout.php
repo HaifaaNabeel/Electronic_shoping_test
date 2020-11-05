@@ -30,10 +30,10 @@
                         <label class="text-right" for="card_num">رقم البطاقة </label>
                         <input type="text" class="form-control text-right " id="card_num" name="card_num" required>
                     </div>
-                    <div class="form-group text-right">
+                    <!--<div class="form-group text-right">
                         <label class="text-right" for="card_name">الاسم الموجود على البطاقة</label>
                         <input type="text" class="form-control text-right" id="name" name="name" required>
-                    </div>
+                    </div>-->
                     <div class="form-group text-right ">
                         <label class="text-right" for="card_pass">الرقم السري </label>
                         <input type="password" class="form-control text-right " id="card_pass" name="card_pass" required>

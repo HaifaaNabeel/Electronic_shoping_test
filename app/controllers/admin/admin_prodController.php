@@ -25,6 +25,7 @@ function index(){
         $items=array(
             'categories_parent'=>$this->prod_model->getDataC(),
             'products'=>$this->prod_model->getDataWhereOrderProd_just(),
+            'categories'=>$this->prod_model->getDataOrderC(),
    
         );
         
@@ -170,6 +171,23 @@ function delete_prod()
            //print_r($items);
            $this->controller->view_object->create_view('admin/homeAdmin',$items);
 
+}
+///////////////////////////////////////////// search product ////////////////
+function search_result()
+{            print_r($_POST);
+              $this->prod_model->searchData($_POST);
+}    
+function search()
+{          
+    $this->controller->view_object->create_view('admin/search');
+} 
+    function search_cat()
+{         $id=$_GET['id'];
+    $items=array(
+         'result_search'=>$this->prod_model->getOne($id),
+     );
+        
+        $this->controller->view_object->create_view('admin/prod_search',$items);
 }
 
 }

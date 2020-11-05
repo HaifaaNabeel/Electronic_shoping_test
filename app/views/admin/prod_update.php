@@ -13,11 +13,11 @@
                   <form method="post" action="search_result">
                 <div class="input-group">
                   
-                  <!--<input type="text"  name="category_name" id="search-input" class="form-control" placeholder="ابحث هنا"
+                  <!----><input type="text"  name="product_name" id="search-input" class="form-control" placeholder="ابحث هنا"
                     autofocus autocomplete="off" />
                     <button type="submit" name="search" value="search" id="search-btn" class="btn btn-flat" >
                     <i class="mdi mdi-magnify"></i> بحث 
-                  </button>-->
+                  </button>
                     </form>
                 </div>
               

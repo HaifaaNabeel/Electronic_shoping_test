@@ -233,7 +233,7 @@ exit();
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="../admin_percent/offerPercent">
+                            <a class="sidenav-item-link" href="../admin_offer/offerPercent">
                               <span class="nav-text">  عرض العروض بخصم</span>
                               
                             </a>

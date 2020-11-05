@@ -149,13 +149,10 @@
 							</div>
 							<div class="form-group">
 								<label for="product_details">Price after discount</label>
-								<select class="form-control" name="product_price_after_discount" id="product_price_after_discount">
-									<option value=0>No</option>
-									<option value=1>Yes</option>
-                           		</select>
+								<input class="form-control" type="text" name="product_price_after_discount" id="product_price_after_discount">
 							</div>
 							<div class="form-group">
-								<label for="product_details">Product is Gift</label>
+								<label for="product_details">Product has Gift</label>
 								<select class="form-control" name="product_is_gift" id="product_is_offer">
 									<option value=0>No</option>
 									<option value=1>Yes</option>
@@ -164,8 +161,15 @@
 							<div class="form-group">
 								<label for="product_details"> Gift Product </label>
 								<select class="form-control" name="gift_id" id="gift_id">
-									<option value=0>No</option>
-									<option value=1>Yes</option>
+                   <option value=0>.......</option>
+								<?php 
+											$rows=$data['products1'];
+                       foreach($rows as $row){
+                           echo "
+                          <option value=$row->Product_id>$row->product_name</option>
+															   ";
+															}
+                                         ?>
                            		</select>
 							</div>
 

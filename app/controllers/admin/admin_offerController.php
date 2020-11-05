@@ -41,7 +41,8 @@ function index(){
 function offers()
 {
     $items=array(
-        'products'=>$this->prod_model->getDataOffer(),
+        'products'=>$this->prod_model->getDataOfferOrGift(),
+        'products1'=>$this->prod_model->getDataOrder(),
            );
     $this->controller->view_object->create_view('admin/offers',$items);
 
@@ -60,10 +61,12 @@ function offerGift()
 {
     $items=array(
         'products'=>$this->prod_model->getDataofferGift(),
+        'products1'=>$this->prod_model->getDataOrder(),
            );
     $this->controller->view_object->create_view('admin/offer_gift',$items);
 
 }
+
 
 
 }

@@ -153,7 +153,7 @@
                                
                                    foreach($rows as $row)
                                    {
-                                    if($row->product_is_offer == '1' ){
+                                    
                                        
                                    
                                     echo '
@@ -162,24 +162,36 @@
                             <td ><img src="'.'../../'.$row->product_main_image.'" class="img-thumbnail img-fluid" width=60px hight=60px></td>
                             <td >'.$row->product_name.'</td>
                             <td >'.$row->category_id.'</td><!-- we want to add category name not id-->
-                            <td >'.$row->product_price.'</td>
-                            <td >'.$row->product_price_after_discount.'</td>
-                            <td><img src="'.'../../'.$row->product_main_image.'" class="img-thumbnail img-fluid" width=60px hight=60px></td>
-                            <td >
+                            <td >'.$row->product_price.'</td>';
+                            if($row->product_price_after_discount == $row->product_price)
+                            {
+                              echo'<td >no discount </td>';
+                            }
+                            else{ echo'<td >'.$row->product_price_after_discount.'</td>';}
+
+                            $rows1=$data['products1'];
+                            foreach($rows1 as $row1)
+                            {
+                              if($row1->Product_id == $row->gift_id)
+                              {
+                                echo '<td ><img src="'.'../../'.$row1->product_main_image.'" class="img-thumbnail img-fluid" width=60px hight=60px></td>';
+                              }
+                              else 
+                              continue;
+                            }
+                            if ( $row->gift_id == 0 ) 
+                              echo '<td > no gift</td>';
+                            
+                               echo'<td >
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <a type="button" href="../admin_prod/update_prod?id='.$row->Product_id.'" class="btn btn-success"><span class="ion-edit"></span></a>
                                     
-
-
-                                   
                                  </div>
                                 </td>
                             </tr>
 
-                             ';continue;}
-                             else{
-                            break;
-                            }}
+                             ';
+                            }
                           ?>
                             </tbody>
                             

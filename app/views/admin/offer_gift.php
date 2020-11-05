@@ -125,28 +125,6 @@
                           </tr>
                         </thead>
                             <tbody> 
-                            <!--<tr>
-                            <td >1</td>
-                            <td ><img src='../../$row[product_main_image]' class='img-thumbnail img-fluid'></td>
-                            <td >موبايل</td>
-                            <td >mobiles</td>
-                            <td >50000</td>
-                            <td >15</td>
-                            <td >
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a type="button" href="" class="btn btn-success"><span class="ion-edit"></span></a>
-                                    <a type="button" href="" class="btn btn-info"><span class="">%</span></a>
-                                   <a type="button" href="" class="btn btn-warning"><span class="ion-ribbon-b"></span></a>
-                                   <a type="button" href="" class="btn btn-primary"><span class="ion-ios-photos-outline"></span></a>
-                                   <a type="button" href="" class="btn btn-danger"><span class="ion-android-delete"></span></a>
-
-
-
-                                   
-                                 </div>
-                                </td>
-                            </tr>-->
-
                           <?php
 
                                $rows=$data['products'];
@@ -165,12 +143,21 @@
                             <td ><img src="'.'../../'.$row->product_main_image.'" class="img-thumbnail img-fluid" width=60px hight=60px></td>
                             <td >'.$row->product_name.'</td>
                             <td >'.$row->category_id.'</td><!-- we want to add category name not id-->
-                            <td >'.$row->product_price.'</td>
+                            <td >'.$row->product_price.'</td>';
+
+                            $rows1=$data['products1'];
+                            foreach($rows1 as $row1)
+                            {
+                              if($row1->Product_id == $row->gift_id)
+                              {
+                                echo '<td ><img src="'.'../../'.$row1->product_main_image.'" class="img-thumbnail img-fluid" width=60px hight=60px></td>';
+                              }
+                            }
                             
                             
-                            <td ><img src="'.'../../'.$row->product_main_image.'" class="img-thumbnail img-fluid" width=60px hight=60px></td>
                             
-                               <td >
+                            
+                               echo'<td >
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <a type="button" href="../admin_prod/update_prod?id='.$row->Product_id.'" class="btn btn-success"><span class="ion-edit"></span></a>
                                     

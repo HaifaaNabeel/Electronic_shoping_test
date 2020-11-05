@@ -152,8 +152,7 @@
                                
                                    foreach($rows as $row)
                                    {
-                                    if($row->product_offer_percent == '1' ){
-                                       
+                                                                           
                                    
                                     echo '
                             <tr>
@@ -175,10 +174,7 @@
                                 </td>
                             </tr>
 
-                             ';continue;}
-                             else{
-                            break;
-                            }}
+                             ';}
                           ?>
                             </tbody>
                             

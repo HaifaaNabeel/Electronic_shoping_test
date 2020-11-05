@@ -138,6 +138,14 @@ function  getDataGift()
         return $this->db->executeb($final_query);  
 }
 
+
+function  getDataOfferOrGift()
+{
+    $final_query= $this->db->select('*').$this->db->from('products').$this->db->whereone('product_is_offer','=','1').$this->db->whereOr('product_is_gift','=','1').$this->db->whereOr('product_offer_percent','=','1');
+    return $this->db->executeb($final_query); 
+        
+}
+
 //////////////////////////////////////////////////////// search product////////////////////////////////////////
 function searchData($data)
 {

@@ -26,6 +26,7 @@ function index(){
             'categories_parent'=>$this->prod_model->getDataC(),
             'products'=>$this->prod_model->getDataWhereOrderProd_just(),
             'categories'=>$this->prod_model->getDataOrderC(),
+            'products1'=>$this->prod_model->getDataOrder(),
    
         );
         
@@ -41,6 +42,7 @@ function add_prod()
 {
     $items=array(
         'categories_parent'=>$this->prod_model->getDataC(),
+        'products1'=>$this->prod_model->getDataOrder(),
            );
     $this->controller->view_object->create_view('admin/prod_add',$items);
 
@@ -100,6 +102,8 @@ function update_prod()
     $items=array(
         'products'=>$this->prod_model->getOne($id),
         'categories_parent'=>$this->prod_model->getDataC(),
+        'products1'=>$this->prod_model->getDataOrder(),
+
            );
     $this->controller->view_object->create_view('admin/prod_update',$items);
 }

@@ -124,10 +124,10 @@ function favoor<?php echo $row1->Product_id; ?>(){
             document.getElementById(id).innerHTML = fi; 
            });
       }
-     function cart<?php echo $row1->Product_id;?>(){
+   function cart<?php echo $row1->Product_id;?>(){
         document.getElementById('cart<?php echo $row1->Product_id;?>').style.display='none';
         document.getElementById('dcart<?php echo $row1->Product_id;?>').style.display='inline-block';
-$.post("add/add_cart/addtocart",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val(),add:$("#cart").val()},function(data){
+$.post("add/add_cart/addtocart",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user<?php  echo $_GLOBALS['U']; ?>").val(),price:$("#price<?php echo $row1->Product_id; ?>").val(),qty:$("#qty").val(),pname:$("#pname<?php echo $row1->Product_id; ?>").val(),pimg:$("#pimg<?php echo $row1->Product_id; ?>").val(),add:$("#cart").val()},function(data){
               var id='count1';
      var fi =document.getElementById(id).innerHTML;
              fi++
@@ -137,7 +137,7 @@ $.post("add/add_cart/addtocart",{product_id:$("#id<?php echo $row1->Product_id; 
         function dcart<?php echo $row1->Product_id;?>(){
             document.getElementById('cart<?php echo $row1->Product_id;?>').style.display='inline-block';
         document.getElementById('dcart<?php echo $row1->Product_id;?>').style.display='none';
-$.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val(),add:$("#dcart").val()},function(data){
+$.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty<?php echo $row1->Product_id; ?>").val(),price:$("#price<?php echo $row1->Product_id; ?>").val(),add:$("#dcart").val()},function(data){
               var id='count1';
      var fi =document.getElementById(id).innerHTML;
              fi--
@@ -148,7 +148,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product
       
         
     </script>
-               <?php echo'
+              <?php echo'
                     
                     <h6>
 <input id="id';?><?php echo $row1->Product_id; ?><?php echo'"  name="product_id" value="';?><?php echo $row1->Product_id; ?><?php echo '" hidden="hidden">
@@ -173,7 +173,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product
                 
     
                 
-                <?php    }
+            <?php    }
                    else
                    continue;
 
@@ -505,11 +505,59 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product
     </div>
 </section>-->
 </br></br>
-<section class="points">
+
+    <section class="points">
+        <h1 class=""> علامات تجاريه</h1>
+        <svg id="mesvg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 197.72">
+            <path class="cls-1" d="M0,262.71S322.94-46.71,686.47,108.59,1182.94,245.06,1400,118V262.71Z"
+                transform="translate(0 -64.98)" /></svg>
+    </section>
+    <section class="points2">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="text-center" style="color:#F27523;"> علامات تجاريه</h1>
+                    </br></br>
+                </div>
+                <div class="img-gallery  owl-carousel owl-theme">
+                    <div class="col-sm-6 col-md-3 p-1">
+                        <div class="">
+                            <img class="img-fluid"
+                                src="app/assets/img/Download-Lenovo-Logo-PNG-Transparent-Image-420x186.png">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 p-1">
+                        <div class="">
+                            <img class="img-fluid" src="app/assets/img/Huawei-Symbol.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 p-1">
+                        <div class="">
+                            <img class="img-fluid" src="app/assets/img/Sony-Logo-1961%E2%80%931962.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 p-1">
+                        <div class="">
+                            <img class="img-fluid" src="app/assets/img/samsung_logo_PNG16.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 p-1">
+                        <div class="">
+                            <img class="img-fluid" src="app/assets/img/samsung_logo_PNG16.png">
+                        </div>
+                    </div>
+                </div>
+                </br></br></br></br></br></br>
+            </div>
+        </div>
+    </section>
+<section class="points" style="display:none">
 <h1 class="">   علامات تجاريه</h1>
 <svg id="mesvg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 197.72"><path class="cls-1" d="M0,262.71S322.94-46.71,686.47,108.59,1182.94,245.06,1400,118V262.71Z" transform="translate(0 -64.98)"/></svg>
 </section>
-<section class="points2">
+<section class="points2" style="display:none">
 
     <div class="container">
         <div class="row">

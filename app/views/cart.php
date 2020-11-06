@@ -377,7 +377,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['car
                         </ul><?php
                         if($_GLOBALS['U'] == 0)
                          {echo'
-                            <form class="" action="./login" method="POST">
+                            <form class="" action="./login?page=/Electronic_shoping_test/cart" method="POST">
                             <!--<input class="tootale1"   name="tootlecost" value=" " hidden="hidden">-->
                             <input   name="user_login" value="" hidden="hidden">
                              <button type="submit" class="btn check_btn"  id="submit">تأكيد الشراء  </button>

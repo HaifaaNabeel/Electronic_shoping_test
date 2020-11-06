@@ -13,6 +13,7 @@ public $controller;
          $this->u=$_SESSION['uid'];}else{
          $this->u=0;}
         $userid=$_GET['id'];
+        $bill=$_GET['bill'];
         $user_model=$this->controller->model_object->create_model('users');
         $order_model=$this->controller->model_object->create_model('order');
         $compare_product_model=$this->controller->model_object->create_model('compare_product');
@@ -24,9 +25,9 @@ public $controller;
              'cartitem'=>$order_model->getOne($this->u),
              'favoriteitem'=>$favorite_product_model->getOnef($this->u),
              'filteritem'=>$compare_product_model->getOnefilter($this->u),
-             'checkout'=>$checkout_model->totalcost($userid),
              'uuser'=>$user_model->getOne($userid),
-              'userorder'=>$order_model->fetchcart($userid),
+              'checkout'=>$checkout_model->fetchbill($userid,$bill),
+              'checkout1'=>$checkout_model->checkout1($userid,$bill),
 
         );
 

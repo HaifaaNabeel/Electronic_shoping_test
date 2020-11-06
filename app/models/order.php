@@ -126,7 +126,7 @@ echo"no";
     }
       }
 function  getOne($uid){
-        $final_query= "select DISTINCT * from orders where user_id= $uid";
+        $final_query= "select DISTINCT * from orders where user_id= $uid and checkout_num=0";
 $result = $this->db->connect()->prepare($final_query);
 			$result->execute();
           $count= $result->rowcount();
@@ -147,7 +147,7 @@ $result = $this->db->connect()->prepare($final_query);
   }
  function fetchcart($uid){    
     
-   $final_query= "select  product_id from orders where user_id= $uid";
+   $final_query= "select  product_id from orders where user_id= $uid and checkout_num=0";
 $result = $this->db->connect()->prepare($final_query);
 			$result->execute();
           $count= $result->rowcount();

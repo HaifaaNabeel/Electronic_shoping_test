@@ -10,22 +10,20 @@ class bill_sale{
     checkout functions
     ========================================
     ***************************************/
-   function checkout($uid){
-   
-   $uid;
-   return $uid;
-   
+   function checkout1($uid,$bill){
+   $final_query= " select * from checkout where user_id=$uid and checkout_id=$bill";
+            return $this->db->executeb($final_query);
+			$result50->execute();
+        return $result50;
    }
     
-    function totalcost($uid){
- 
-     
-   $final_query= "select product_id from orders where user_id= $uid";
+    
+ function fetchbill($uid,$bill){    
+   $final_query= "select  product_id from orders where user_id= $uid and checkout_num=$bill ";
 $result = $this->db->connect()->prepare($final_query);
 			$result->execute();
           $count= $result->rowcount();
         if($count > 0){
-            
             $arr=array();
             while($row=$result->fetch()){
                 $arr[]=$row['product_id'];
@@ -33,18 +31,18 @@ $result = $this->db->connect()->prepare($final_query);
                 $unique=array_unique($arr);
                 $datar=implode(',' ,$unique);
               } 
-               if(sizeof($arr)>0){
-               $final_query= "SELECT SUM(product_price) AS sumcollll FROM products WHERE Product_id in ($datar)";
-                $result =$this->db->connect()->prepare($final_query);
-			$result->execute();
-           $result1= $result->fetchAll(PDO::FETCH_OBJ);
-           return $result1;
-        
+            if(sizeof($arr)>0){
+               $final_query= " select DISTINCT products.Product_id,products.product_name ,products.product_price,orders.quantity,orders.checkout_num FROM products JOIN orders WHERE products.Product_id IN($datar) and orders.product_id=products.Product_id";
+            return $this->db->executeb($final_query);
+			$result50->execute();
+        return $result50;
         }
-        }else{
-        }
+            else{
+            header('location:carte');
 
-        }
+            }
+        } 
+ }  
  
     
 }

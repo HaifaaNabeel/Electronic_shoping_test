@@ -6,7 +6,7 @@ public  $db;
     function __construct(){
         $this->db=new DB();
     }
-    function loginhere(){
+    function loginhere($page){
         if(isset($_POST['Login'])){
           $name=$_POST['user_name'];
           $pass=$_POST['user_pass'];
@@ -66,7 +66,7 @@ echo"no";
          echo"there is items in favore";  
             print_r($_SESSION['favore']);
         }        
-header('location:home');
+header('location:'.$page);
      exit();}
             }elseif($count==0){
             echo'<script>

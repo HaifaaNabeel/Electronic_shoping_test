@@ -1,11 +1,13 @@
 <?php
 ob_start();
 @session_start();
+$_SESSION['page']=$_SERVER['REQUEST_URI'];
+echo '<br><br><br>'.$_SESSION['page'];
 if(isset($_SESSION['uid'])){
     $_SESSION['cart']=array();
 echo $_SESSION['uid'];
 }else{
-//echo 'no';
+
 }
 if(isset($_SESSION['cart'])){
 }else{
@@ -155,10 +157,10 @@ $_GLOBALS['U']=0;
           </ul>
       </li>
       <li class="nav-item icons">
-      <a class="ico" href="./login"><span class="ion-ios-person-outline"></span></a>
+      <a class="ico" href="./login?page=<?php echo $_SESSION['page']; ?>"><span class="ion-ios-person-outline"></span></a>
         <ul class="submenu"> 
            <li class="nav-item ">
-               <a class="ico" href="./login"><span class="ion-ios-person-outline"></span></a>
+               <a class="ico" href="./login?page=<?php echo $_SESSION['page']; ?>"><span class="ion-ios-person-outline"></span></a>
             </li>
             <li class="nav-item ">
                <a class="ico" href="./logout" ><span class="ion-android-exit"></span></a>

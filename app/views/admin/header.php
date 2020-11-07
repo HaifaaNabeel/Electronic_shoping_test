@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 if(isset($_SESSION['id'])){
     echo $_SESSION['id'];
 }else{
@@ -178,12 +178,12 @@ exit();
                               
                             </a>
                           </li>
-                          <li >
+                          <!-- <li >
                             <a class="sidenav-item-link" href=" ">
                               <span class="nav-text"> بحث عن صنف</span>
                               
                             </a>
-                          </li>
+                          </li>-->
                </div>
                   </ul>
                 </li>
@@ -208,12 +208,12 @@ exit();
                               
                             </a>
                           </li>
-                          <li >
+                          <!--<li >
                             <a class="sidenav-item-link" href=" ">
                               <span class="nav-text"> بحث عن منتج</span>
                               
                             </a>
-                          </li>
+                          </li>-->
                </div>
                   </ul>
                 </li>

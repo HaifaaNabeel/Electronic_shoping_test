@@ -91,9 +91,9 @@ header('location:'.$page);
               $admin=$_POST['admin_who_added'];
         $final_query="INSERT INTO `users`(`user_name`, `user_email`, `user_pass`, `user_is_active`, `user_roles`, `date_added`, `admin_who_added`) VALUES ('$name','$email','$pass','$active','$role','$date','$admin')";
  if( $this->db->executea($final_query)){
-     header('location:login');
+     header('location:home');
             }else{
-      header('location:login');
+      header('location:home');
 
  }               
        }
@@ -126,7 +126,7 @@ header('location:'.$page);
                          }
                     else
                           { //echo 'not done mmmmmmmmmmmmmmmmmmmmmmm insert';
-                             header('location:login');
+                             header('location:home');
                            }
             }
 
@@ -135,6 +135,12 @@ header('location:'.$page);
     function getOne($id)
     {
         $final_query=$this->db->select('*').$this->db->from('users').$this->db->whereone('user_id','=',$id);
+        return $this->db->executeb($final_query);
+
+    }
+    function getusers()
+    {
+        $final_query=$this->db->select('*').$this->db->from('users');
         return $this->db->executeb($final_query);
 
     }

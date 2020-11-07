@@ -26,7 +26,7 @@ echo $_SESSION['id'];
  
  }
      function end_session(){
-     session_start();
+session_start();
 session_unset();
 session_destroy();
 header('location:../../login');

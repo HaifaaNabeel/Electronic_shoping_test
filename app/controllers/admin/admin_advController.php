@@ -11,10 +11,14 @@ public $function;
 
 
 function __construct($function="index"){
-
+    @session_start();
+    if(isset($_SESSION['uid'])){
+     $this->u=$_SESSION['uid'];}else{
+     $this->u=0;}
         $this->controller=new Controller();
        $this->adv_model=$this->controller->model_object->create_model('advertisement');
-       
+       $this->user_model=$this->controller->model_object->create_model('users');
+
 
         $this->$function();
         
@@ -25,6 +29,8 @@ function index(){
         $items=array(
             
             'advertisements'=>$this->adv_model->getDataOrder(),
+            'user'=>$this->user_model->getOne($_SESSION['id']),
+
    
         );
         
@@ -36,6 +42,8 @@ function index(){
 function advertisements(){
     $items=array(
   'advertisements'=>$this->adv_model->getDataOrder(),
+  'user'=>$this->user_model->getOne($_SESSION['id']),
+
   
 
      
@@ -60,6 +68,8 @@ function add_adv()
 {
     $items=array(
         'advertisements'=>$this->adv_model->getDataC(),
+        'user'=>$this->user_model->getOne($_SESSION['id']),
+
            );
     $this->controller->view_object->create_view('admin/adv_add',$items);
 
@@ -166,6 +176,8 @@ function update_adv()
 {$id=$_GET['id'];
     $items=array(
         'advertisements'=>$this->adv_model->getOne($id),
+        'user'=>$this->user_model->getOne($_SESSION['id']),
+
         //'advertisements'=>$this->adv_model->getDataOrder(),
 );
     $this->controller->view_object->create_view('admin/adv_update',$items);
@@ -229,6 +241,8 @@ function delete_adv()
      $items=array(
           'advertisement_del'=>$this->adv_model->deleteone($id),
           'advertisements'=>$this->adv_model->getDataOrder(),
+          'user'=>$this->user_model->getOne($_SESSION['id']),
+
           
            );
            

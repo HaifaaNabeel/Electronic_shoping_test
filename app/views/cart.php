@@ -79,10 +79,32 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <p class="mb-0"><span ><strong class="qtypricforeone" id="priceq<?php echo $item->Product_id;?>"><?php  echo $item->product_price*$item->quantity ;?></strong>RY</span></p>
                                     <div>
-         <a href="#" class="a-text" id="dcart<?php echo $item->Product_id; ?>" onclick="dcart<?php echo $item->Product_id;?>()">حذف من السلة
+    <a data-toggle="modal" data-target="#myModal1<?php echo $item->Product_id; ?>" class="a-text" id="dcart<?php echo $item->Product_id; ?>" >حذف من السلة
              <span class="ion-android-delete"></span></a>
 
                                     </div>
+                                    <!-- The signup Modal -->
+<div class="modal" id="myModal1<?php echo $item->Product_id; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content" style="color: #402558;">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style="direction: rtl;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <h6>هل تريد حذف المنتج من السلة</h6>
+ <a data-toggle="modal" data-target="#myModal1" class="a-text close" data-dismiss="modal" id="dcart<?php echo $item->Product_id; ?>" onclick="dcart<?php echo $item->Product_id; ?>()">حذف من السلة
+             <span class="ion-android-delete"></span></a>        
+        </div>
+
+     
+    </div>
+  </div>
+</div>
+              <!--end The signup Modal --> 
                                     <div>
 
                                    
@@ -231,10 +253,33 @@ elseif($_GLOBALS['U']==0){
                                 <div class="d-flex justify-content-between align-items-center">
                                     <p class="mb-0"><span ><strong class="qtypricforeone" id="priceq<?php echo $_SESSION['cart'][$index]['p_id']; ?>"><?php   echo $_SESSION['cart'][$index]['p_price']*$_SESSION['cart'][$index]['p_qty']; ;?></strong>RY</span></p>
                                     <div>
-         <a href="#" class="a-text" id="dcart<?php echo $_SESSION['cart'][$index]['p_id']; ?>" onclick="dcart<?php echo $_SESSION['cart'][$index]['p_id'];?>()">حذف من السلة
+         <a data-toggle="modal" data-target="#myModal1<?php echo $_SESSION['cart'][$index]['p_id']; ?>" class="a-text">حذف من السلة
              <span class="ion-android-delete"></span></a>
 
                                     </div>
+                                    
+<!-- The signup Modal -->
+<div class="modal" id="myModal1<?php echo $_SESSION['cart'][$index]['p_id']; ?>">
+  <div class="modal-dialog">
+    <div class="modal-content" style="color: #402558;">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style="direction: rtl;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <h6>هل تريد حذف المنتج من السلة</h6>
+ <a data-toggle="modal" data-target="#myModal1" class="a-text close" data-dismiss="modal" id="dcart<?php echo $_SESSION['cart'][$index]['p_id']; ?>" onclick="dcart<?php echo $_SESSION['cart'][$index]['p_id'];?>()">حذف من السلة
+             <span class="ion-android-delete"></span></a>        
+        </div>
+
+     
+    </div>
+  </div>
+</div>
+              <!--end The signup Modal -->                                    
                                     <div>
 
                                    
@@ -255,8 +300,10 @@ elseif($_GLOBALS['U']==0){
               var id='qty<?php echo $_SESSION['cart'][$index]['p_id'];?>';
               if(document.getElementById(id).value <= 1){
                   document.getElementById('erorr<?php echo $_SESSION['cart'][$index]['p_id'];?>').style.display ='none';
+
               }            
 function add_qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
+    
  $.post("add/add_cart/addtoqty",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val()},function(data){
                   var id='qty<?php echo $_SESSION['cart'][$index]['p_id'] ;?>';
      var fi =document.getElementById(id).value;
@@ -290,8 +337,7 @@ $('.tootale1').val(total);
          var id2='price<?php echo $_SESSION['cart'][$index]['p_id'];?>';
         var m=document.getElementById(id2).value;
     document.getElementById('priceq<?php echo $_SESSION['cart'][$index]['p_id'];?>').innerHTML=fi*m;
-           });
-            var total=0;
+                  var total=0;
 $('.qtypricforeone').each(function(){
 
 total +=parseInt($(this).text());
@@ -299,6 +345,8 @@ total +=parseInt($(this).text());
 });
 $('.tootale').text(total);
 $('.tootale1').val(total);
+           });
+        
       } 
 function favoor<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
     //  alert('hhhhh');
@@ -322,6 +370,7 @@ function favoor<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
            });
       }
         function dcart<?php echo $_SESSION['cart'][$index]['p_id'];?>(){
+      
         document.getElementById('cartitem<?php echo $_SESSION['cart'][$index]['p_id']; ?>').style.display='none';
 $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val(),add:$("#dcart").val()},function(data){
               var id='count1';
@@ -377,7 +426,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['car
                         </ul><?php
                         if($_GLOBALS['U'] == 0)
                          {echo'
-                            <form class="" action="./login?page=/Electronic_shoping_test/cart" method="POST">
+                            <form class="" action="./login?page=/Electronic_shoping_test-master/cart" method="POST">
                             <!--<input class="tootale1"   name="tootlecost" value=" " hidden="hidden">-->
                             <input   name="user_login" value="" hidden="hidden">
                              <button type="submit" class="btn check_btn"  id="submit">تأكيد الشراء  </button>

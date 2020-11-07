@@ -67,24 +67,30 @@
                       </li>
                     </ul>
                   </li>
-                  <!-- User Account -->
-                  <li class="dropdown user-menu">
+                 <!-- User Account -->
+                 <li class="dropdown user-menu">
                     <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                    <?php $rows=$data['user']; 
+                      //print_r($rows);
+                         foreach ($rows as $row){
+                      ?>
                       <img src="../../app/assets/admin/img/user/u5.jpg" class="user-image" alt="User Image" />
-                      <span class="d-none d-lg-inline-block">Alfalahy Shyma</span>
+                      <span class="d-none d-lg-inline-block"><?php echo  $row->user_name; ?></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <!-- User image -->
                       <li class="dropdown-header">
+                      
                         <img src="../../app/assets/admin/img/user/u5.jpg" class="img-circle" alt="User Image" />
                         <div class="d-inline-block">
-                          Alfalahy Shyma <small class="pt-1">alfalahysh.com</small>
+                          <?php echo  $row->user_name.' <small class="pt-1">'.$row->user_email.'</small>';
+                        }?>
                         </div>
                       </li>
 
                       
                       <li class="dropdown-footer">
-                        <a href="admin_sess/end_sess"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a href="../../logout"> <i class="mdi mdi-logout"></i> Log Out </a>
                       </li>
                     </ul>
                   </li>

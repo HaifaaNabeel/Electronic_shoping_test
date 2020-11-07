@@ -29,7 +29,7 @@ public $function;
        }
     function end_sess(){
      $this->cat_model->end_session();    
- //$this->controller->view_object->create_view('admin/session');
+ $this->controller->view_object->create_view('../../logout');
        }
  
 

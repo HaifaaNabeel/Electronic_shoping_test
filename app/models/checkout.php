@@ -13,6 +13,14 @@ class checkout{
     return $this->db->executeb($final_query); 
         
 }
+
+function getBills(){
+    $final_query= " select * from checkout ";
+             return $this->db->executeb($final_query);
+       $result50->execute();
+         return $result50;
+    }
+
 function getBillNum($user,$cost)
 {
    $date=date('y-m-d');

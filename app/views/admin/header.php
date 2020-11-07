@@ -271,6 +271,28 @@ exit();
                </div>
                   </ul>
                 </li>
+                <li  class="has-sub" >
+                  <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#charts"
+                    aria-expanded="false" aria-controls="charts">
+                    <i class="mdi mdi-chart-pie"></i>
+                    <span class="nav-text">تقارير </span> <b class="caret"></b>
+                  </a>
+                  <ul  class="collapse"  id="charts"
+                    data-parent="#sidebar-menu">
+                    <div class="sub-menu">
+                      
+                      
+                        
+                          <li >
+                            <a class="sidenav-item-link" href="../admin_report/index">
+                              <span class="nav-text">تقرير مبيعات مستخدم  </span>
+                              
+                            </a>
+                          </li>
+
+                          </div>
+                  </ul>
+                  </li>
                          <li  class="has-sub" >
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
                     aria-expanded="false" aria-controls="charts">
@@ -302,6 +324,9 @@ exit();
                   </ul>
                 </li>
               
+
+               
+
      
                 <li  class="has-sub" >
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#charts"

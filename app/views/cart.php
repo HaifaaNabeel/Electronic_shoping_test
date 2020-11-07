@@ -65,7 +65,7 @@
  <input id="id<?php echo $item->Product_id; ?>"  name="product_id" value="<?php echo $item->Product_id; ?>" hidden="hidden">
  <input id="price<?php echo $item->Product_id; ?>"  name="price" value="<?php echo $item->product_price; ?>" hidden="hidden">
 <input id="user<?php echo $_GLOBALS['U']; ?>"  name="user" value="<?php echo $_GLOBALS['U']; ?>" hidden="hidden">
-<input class="quantity text-center" min="1" name="qty" id="qty<?php echo $item->Product_id; ?>"value="<?php echo $item->quantity; ?>" type="number">
+<input class="quantity text-center" min="1" name="qty" id="qty<?php echo $item->Product_id; ?>"value="<?php echo $item->quantity; ?>" type="number"  >
                                             <button
                                                 onclick="add_qty<?php echo $item->Product_id; ?>()"
                                                 class="counter-plus btn "><span
@@ -233,17 +233,18 @@ elseif($_GLOBALS['U']==0){
                                     <div>
                                         <div class="handle-counter">
                                             <button id="erorr<?php echo $_SESSION['cart'][$index]['p_id'];?>"
-                                                    onclick="delete_qty<?php echo  $_SESSION['cart'][$index]['p_id']; ?>()"
+                                                    onclick="delete_qty<?php echo  $_SESSION['cart'][$index]['p_id']; ?>();"
                                                     class="counter-minus btn"><span
                                                     class="ion-android-remove"></span></button>
  <input id="id<?php echo $_SESSION['cart'][$index]['p_id']; ?>"  name="product_id" value="<?php echo $_SESSION['cart'][$index]['p_id']; ?>" hidden="hidden">
  <input id="price<?php echo $_SESSION['cart'][$index]['p_id']; ?>"  name="price" value="<?php echo $_SESSION['cart'][$index]['p_price']; ?>" hidden="hidden">
 <input id="user<?php echo $_GLOBALS['U']; ?>"  name="user" value="<?php echo $_GLOBALS['U']; ?>" hidden="hidden">
-<input class="quantity text-center" min="1" name="qty" id="qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>"value="<?php echo $_SESSION['cart'][$index]['p_qty']; ?>" type="number">
+<input class="quantity text-center" min="1" name="qty" id="qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>"value="<?php echo $_SESSION['cart'][$index]['p_qty']; ?>" type="text" >
                                             <button
-                                                onclick="add_qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>()"
+                                                onclick="add_qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>(); "
                                                 class="counter-plus btn " ><span
                                                     class="ion-android-add"></span></button>
+                                            
                                         </div>
 
                                     </div>
@@ -303,26 +304,20 @@ elseif($_GLOBALS['U']==0){
 
               }            
 function add_qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
-    
  $.post("add/add_cart/addtoqty",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val()},function(data){
                   var id='qty<?php echo $_SESSION['cart'][$index]['p_id'] ;?>';
      var fi =document.getElementById(id).value;
              fi++
             document.getElementById(id).value = fi;
      if(document.getElementById(id).value > 1){document.getElementById('erorr<?php echo $_SESSION['cart'][$index]['p_id'];?>').style.display ='inline-block';}
-                 
          var id2='price<?php echo $_SESSION['cart'][$index]['p_id'] ; ?>';
         var m=document.getElementById(id2).value;
     document.getElementById('priceq<?php echo $_SESSION['cart'][$index]['p_id'];?>').innerHTML=fi*m;
            });
-        var total=0;
-$('.qtypricforeone').each(function(){
-total +=parseInt($(this).text());
-    console.log(total);
-});
-$('.tootale').text(total);
-$('.tootale1').val(total);
-      }
+          
+  
+
+}
     function delete_qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
            
           $.post("add/add_cart/deletefromqty",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val()},function(data){
@@ -337,14 +332,7 @@ $('.tootale1').val(total);
          var id2='price<?php echo $_SESSION['cart'][$index]['p_id'];?>';
         var m=document.getElementById(id2).value;
     document.getElementById('priceq<?php echo $_SESSION['cart'][$index]['p_id'];?>').innerHTML=fi*m;
-                  var total=0;
-$('.qtypricforeone').each(function(){
-
-total +=parseInt($(this).text());
-    console.log(total);
-});
-$('.tootale').text(total);
-$('.tootale1').val(total);
+               
            });
         
       } 
@@ -378,7 +366,8 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['car
              fi--
             document.getElementById(id).innerHTML = fi; 
             document.getElementById('counter4').innerHTML = fi; 
-          
+              document.getElementById('priceq<?php echo $_SESSION['cart'][$index]['p_id'];?>').innerHTML=0;
+
            });
     
     }
@@ -426,7 +415,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['car
                         </ul><?php
                         if($_GLOBALS['U'] == 0)
                          {echo'
-                            <form class="" action="./login?page=/Electronic_shoping_test-master/cart" method="POST">
+                            <form class="" action="./login?page=/Electronic_shoping_test/cart" method="POST">
                             <!--<input class="tootale1"   name="tootlecost" value=" " hidden="hidden">-->
                             <input   name="user_login" value="" hidden="hidden">
                              <button type="submit" class="btn check_btn"  id="submit">تأكيد الشراء  </button>
@@ -481,13 +470,19 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['car
 
 </div>
   <script>
-       var total=0;
+   
+     
+
+      window.setInterval(function(){
+         var total=0;
 $('.qtypricforeone').each(function(){
 total +=parseInt($(this).text());
-    console.log(total);
+    
 });
 $('.tootale').text(total);
-$('.tootale1').val(total);
+$('.tootale1').val(total); 
+      
+      }, 1000);
       </script>
   
       

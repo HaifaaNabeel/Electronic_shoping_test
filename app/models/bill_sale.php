@@ -16,7 +16,9 @@ class bill_sale{
 			$result50->execute();
         return $result50;
    }
-    
+   
+
+
     
  function fetchbill($uid,$bill){    
    $final_query= "select  product_id from orders where user_id= $uid and checkout_num=$bill ";
@@ -32,7 +34,7 @@ $result = $this->db->connect()->prepare($final_query);
                 $datar=implode(',' ,$unique);
               } 
             if(sizeof($arr)>0){
-               $final_query= " select DISTINCT products.Product_id,products.product_name ,products.product_price,orders.quantity,orders.checkout_num FROM products JOIN orders WHERE products.Product_id IN($datar) and orders.product_id=products.Product_id";
+               $final_query= " select DISTINCT products.Product_id,products.product_name ,products.product_price,orders.quantity,orders.checkout_num FROM products JOIN orders WHERE products.Product_id IN($datar) and orders.product_id=products.Product_id and orders.checkout_num=$bill";
             return $this->db->executeb($final_query);
 			$result50->execute();
         return $result50;

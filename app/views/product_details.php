@@ -67,7 +67,7 @@
 <input id="id<?php echo $rows->Product_id; ?>"  name="price" value="<?php echo $rows->product_price; ?>" hidden="hidden">
 <input id="user<?php echo $_GLOBALS['U']; ?>"  name="user" value="<?php echo $_GLOBALS['U']; ?>" hidden="hidden">
 				<input class="quantity text-center" min="1" id="qty" name="qty"
-					value="<?php  echo $rows->product_main_image;?>" type="number">
+					value="1" type="number">
 				<button
 					onclick="this.parentNode.querySelector(&#39;input[type=number]&#39;).stepUp()"
 					class="counter-plus btn "><span

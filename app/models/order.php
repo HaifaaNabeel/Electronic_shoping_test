@@ -25,8 +25,8 @@ class order{
             array_push($_SESSION['cart'],$item);        
             print_r($_SESSION['cart']);
         }elseif($uid!=0){
-             $final_query= "select * from orders where user_id= $uid and product_id= $pid";
-$result = $this->db->connect()->prepare($final_query);
+          $final_query= "select * from orders where user_id= $uid and product_id= $pid and checkout_num = 0";
+          $result = $this->db->connect()->prepare($final_query);
 			$result->execute();
           $count= $result->rowcount();
         if($count==0){
@@ -245,7 +245,12 @@ header('location:carte');
         }
     
     
-  
+        function getOrders()
+    {
+        $final_query=$this->db->select('*').$this->db->from('orders').$this->db->whereone('checkout_num','!=','0');
+        return $this->db->executeb($final_query);
+
+    }
    
     
 }

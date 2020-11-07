@@ -331,3 +331,24 @@ h4{
 h6{
     text-align: right;
 }
+
+.bill-sale{
+    border: 2px solid #372f90;
+}
+.ball-sale table{    color: #372f90;
+}
+.bill-sale img {
+    width: 90px;
+    float: right;
+    padding-top: 9px;
+    padding-right: 9px;
+}
+.bill-sale h1{
+    float: right;
+    padding-top: 20px;
+    padding-right: 27px;
+}
+.s1,.s4{    border-bottom: 2px solid #362f90;
+}
+.s2,.s3{    border-bottom: 1px solid #362f90;
+}

@@ -171,6 +171,12 @@ function searchData($data)
 }
 
 
+function getAllProducts()
+{
+    $final_query= $this->db->select('*').$this->db->from('products');
+    return $this->db->executeb($final_query); 
+}
+
 }
 
 ?>

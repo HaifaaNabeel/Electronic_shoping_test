@@ -138,9 +138,9 @@ header('location:'.$page);
         return $this->db->executeb($final_query);
 
     }
-    function getusers()
+    function getUsers()
     {
-        $final_query=$this->db->select('*').$this->db->from('users');
+        $final_query=$this->db->select('*').$this->db->from('users').$this->db->whereone('user_id','!=','0');
         return $this->db->executeb($final_query);
 
     }

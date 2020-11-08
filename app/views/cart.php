@@ -138,14 +138,7 @@ function add_qty<?php echo $item->Product_id; ?>(){
               } 
     document.getElementById('priceq<?php echo $item->Product_id;?>').innerHTML=fi*m;
            });
-      var total=0;
-$('.qtypricforeone').each(function(){
-
-total +=parseInt($(this).text());
-    console.log(total);
-});
-$('.tootale').text(total);
-$('.tootale1').val(total);
+     
       }
     function delete_qty<?php echo $item->Product_id; ?>(){
            
@@ -161,14 +154,7 @@ $('.tootale1').val(total);
               } 
               document.getElementById('priceq<?php echo $item->Product_id;?>').innerHTML=fi*m;
            });
-          var total=0;
-$('.qtypricforeone').each(function(){
-
-total +=parseInt($(this).text());
-    console.log(total);
-});
-$('.tootale').text(total);
-$('.tootale1').val(total);
+       
       }                         
 function favoor<?php echo $item->Product_id; ?>(){
     //  alert('hhhhh');
@@ -193,6 +179,16 @@ function favoor<?php echo $item->Product_id; ?>(){
       }
         function dcart<?php echo $item->Product_id;?>(){
         document.getElementById('cartitem<?php echo $item->Product_id; ?>').style.display='none';
+            window.setInterval(function(){
+         var total=0;
+$('.qtypricforeone').each(function(){
+total +=parseInt($(this).text());
+    
+});
+$('.tootale').text(total);
+$('.tootale1').val(total); 
+      
+      }, 1000);
 $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val(),add:$("#dcart").val()},function(data){
               var id='count1';
      var fi =document.getElementById(id).innerHTML;
@@ -360,6 +356,16 @@ function favoor<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
         function dcart<?php echo $_SESSION['cart'][$index]['p_id'];?>(){
       
         document.getElementById('cartitem<?php echo $_SESSION['cart'][$index]['p_id']; ?>').style.display='none';
+            window.setInterval(function(){
+         var total=0;
+$('.qtypricforeone').each(function(){
+total +=parseInt($(this).text());
+    
+});
+$('.tootale').text(total);
+$('.tootale1').val(total); 
+      
+      }, 1000);
 $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val(),add:$("#dcart").val()},function(data){
               var id='count1';
      var fi =document.getElementById(id).innerHTML;
@@ -473,7 +479,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['car
    
      
 
-      window.setInterval(function(){
+ window.setInterval(function(){
          var total=0;
 $('.qtypricforeone').each(function(){
 total +=parseInt($(this).text());

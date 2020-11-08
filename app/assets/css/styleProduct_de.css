@@ -63,26 +63,7 @@
 	color: #adadad;
 	font-size: 14px;
 }
-.owl-nav button {
-	position: absolute;
-	top: 50%;
-	transform: translate(0, -50%);
-	outline: none;
-	height: 25px;
-}
-.owl-nav button svg {
-	width: 25px;
-	height: 25px;
-}
-.owl-nav button.owl-prev {
-	left: 25px;
-}
-.owl-nav button.owl-next {
-	right: 25px;
-}
-.owl-nav button span {
-	font-size: 45px;
-}
+
 .product-thumb .item img {
 	height: 100px;
 }
@@ -196,23 +177,7 @@
 	width: 60px;
 	text-align: center;
 }
-.round-black-btn {
-	border-radius: 4px;
-    background: #a01c8e;
-    color: #fff;
-    padding: 7px 20px;
-    display: inline-block;
-    margin-top: 20px;
-    border: solid 2px #a01c8e; 
-	transition: all 0.5s ease-in-out 0s;
-	margin-bottom: 40px;
-}
-.round-black-btn:hover,
-.round-black-btn:focus {
-	background: transparent;
-	color: #212529;
-	text-decoration: none;
-}
+
 
 /*  */
 
@@ -241,16 +206,17 @@ input:focus{
 
 .small-img-row{
 	display: flex;
-	justify-content: space-between;
+    justify-content: space-between;
+    float: right;
 }
 
 .small-img-col{
-	flex-basis: 24%;
+	flex-basis: 100%;
 	cursor: pointer;
 
 }
 
-h1,h4,h3,p{
+h1,h4,h3,.det{
 text-align: right;
 }
 
@@ -264,12 +230,81 @@ label{
 
 .small-img:active {
 	border: 1px #ffc700 solid;
-	background-color: #ffc700;
+	
 	opacity: 50%;
 }
 
-.small-img.clicked{
+
+
+.sh_img .small-img-row .small-img-col img{
+	
+    height: 100px;
+    width: 100px;
+
+}
+
+h1,h4,h3{
+text-align: right;
+}
+
+
+.sh_img img{
+height: 400px;
+}
+.small-img-row{
+	display: flex;
+    justify-content: space-between;
+    float: right;
+}
+
+.small-img-col{
+	flex-basis: 24%;
+	cursor: pointer;
+
+}
+
+h1,h4,h3,.det{
+text-align: right;
+}
+
+label{
+	float: right;
+}
+
+.handle-counter{
+	float: right;
+}
+
+.small-img:active {
 	border: 1px #ffc700 solid;
+	
 	opacity: 50%;
-	 
+}
+
+
+
+.sh_img .small-img-row .small-img-col img{
+	
+    height: 100px;
+    width: 100px;
+
+}
+
+h1,h4,h3{
+text-align: right;
+}
+
+
+.sh_img img{
+height: 400px;
+}
+
+.sh_img .thump-btn {
+    border:none;
+}
+
+.sh_img .thump-btn:active{
+    border: 1px #ffc700 solid;
+	
+	opacity: 50%;
 }

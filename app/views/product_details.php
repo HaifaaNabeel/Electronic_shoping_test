@@ -6,9 +6,6 @@
  <script src="app/assets/js/jquery.exzoom.js"></script> 
  <script src="app/assets/js/script.js"></script> 
 
-
-
-
  <body>
 
 		<!-- ggggggggggggggggggggggggggggg -->
@@ -24,25 +21,25 @@
                         
 				  
                   
-							echo'
+                    echo'
 							
-        <div class="row">
-            <div class="col-md-6 sh_img">
-				<img src="'.$rows->product_main_image.'" width="100%" id="productImg">
-                <br>
-                <br>
-                <div class="small-img-row">
-                <div class="small-img-col">
-                        <img src="'.$rows->product_main_image.'" width="100%" class="small-img">
-                    </div>'?>
-				<?php
-				 $branch_img=explode(',',$rows->product_branch_images);
-				 for($i=0; $i<sizeof($branch_img)-2; $i++)
-				 echo 
-				 ' <div class="small-img-col">
-                        <img src="'.$branch_img[$i].'" width="100%" class="small-img">
-                    </div>'?>
-                    
+                    <div class="row">
+                        <div class="col-md-6 sh_img">
+                            <img src="'.$rows->product_main_image.'" width="100%" id="productImg">
+                            <br>
+                            <br>
+                            <div class="small-img-row">
+                            <div class="small-img-col">
+                            <button class="thump-btn"><img src="'.$rows->product_main_image.'"  class="small-img">
+                                </div>'?>
+                            <?php
+                             $branch_img=explode(',',$rows->product_branch_images);
+                             for($i=0; $i<sizeof($branch_img)-1; $i++)
+                             echo 
+                             ' <div class="small-img-col">
+                             <button class="thump-btn"> <img src="'.$branch_img[$i].'"  class="small-img">
+                                </div>'?>
+                                
 					<?php
 					echo'    
                 </div>
@@ -177,8 +174,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $rows->Product
 			
 		
 	
-	
-		<script>
+                             <script>
     var productImg=document.getElementById("productImg");
     var smallImg=document.getElementsByClassName("small-img");
 
@@ -195,6 +191,14 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $rows->Product
     }
     smallImg[3].onclick=function(){
         productImg.src = smallImg[3].src;
+        
+    }
+    smallImg[4].onclick=function(){
+        productImg.src = smallImg[4].src;
+        
+    }
+    smallImg[5].onclick=function(){
+        productImg.src = smallImg[5].src;
         
     }
 

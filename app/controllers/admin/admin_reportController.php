@@ -41,9 +41,25 @@ function index(){
    
         );
         
-        $this->controller->view_object->create_view('admin/reports',$items);
+        $this->controller->view_object->create_view('admin/home_repoet',$items);
 }
 
+
+function reports_pays(){
+    $items=array(
+        
+        'user'=>$this->user_model->getOne($_SESSION['id']),
+        'users'=>$this->user_model->getUsers(),
+        'orders'=>$this->order_model->getOrders(),
+        'bills'=>$this->checkout_model->getBills(),
+        'products'=>$this->prod_model->getAllProducts(),
+
+
+
+    );
+    
+    $this->controller->view_object->create_view('admin/reports_pays',$items);
+}
 
  
 

@@ -8,7 +8,7 @@ exit();
 }
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="rtl">
   <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -31,9 +31,10 @@ exit();
   <link href="../../app/assets/admin/css/dropzone.css" rel="stylesheet" />
   <link href="../../app/assets/admin/plugins/select2/css/select2.min.css" rel="stylesheet" />
   <link href="../../app/assets/admin/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+  
 
   <!-- SLEEK CSS -->
-  <link id="sleek-css" rel="stylesheet" href="../../app/assets/admin/css/sleek.css" />
+  <link id="sleek-css" rel="stylesheet" href="../../app/assets/admin/css/sleek.rtl.css" />
 
   
 
@@ -80,7 +81,7 @@ exit();
           ——— LEFT SIDEBAR WITH FOOTER
           =====================================
         -->
-        <aside class="left-sidebar bg-sidebar ">
+        <aside class="left-sidebar bg-sidebar " dir="rtl">
           <div id="sidebar" class="sidebar sidebar-with-footer">
             <!-- Aplication Brand -->
             <div class="app-brand">
@@ -99,7 +100,7 @@ exit();
               </a>
             </div>
             <!-- begin sidebar scrollbar -->
-            <div class="sidebar-scrollbar">
+            <div class="sidebar-scrollbar" >
 
               <!-- sidebar menu -->
                     <!-- sidebar menu -->
@@ -283,8 +284,26 @@ exit();
                       
                       
                         
-                          <li >
+                            <li >
                             <a class="sidenav-item-link" href="../admin_report/index">
+                              <span class="nav-text">نظرة عامة  </span>
+                              
+                            </a>
+                          </li>
+                          <li >
+                            <a class="sidenav-item-link" href="">
+                              <span class="nav-text">تقرير 1  </span>
+                              
+                            </a>
+                          </li>
+                          <li >
+                            <a class="sidenav-item-link" href="">
+                              <span class="nav-text">تقرير 2  </span>
+                              
+                            </a>
+                          </li>
+                          <li >
+                            <a class="sidenav-item-link" href="../admin_report/reports_pays">
                               <span class="nav-text">تقرير مبيعات المستخدمين  </span>
                               
                             </a>

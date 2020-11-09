@@ -2,7 +2,7 @@
 ob_start();
 @session_start();
 $_SESSION['page']=$_SERVER['REQUEST_URI'];
-echo '<br><br><br>'.$_SESSION['page'];
+//echo '<br><br><br>'.$_SESSION['page'];
 if(isset($_SESSION['uid'])){
     $_SESSION['cart']=array();
 echo $_SESSION['uid'];

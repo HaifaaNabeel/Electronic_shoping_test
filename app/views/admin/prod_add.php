@@ -1,5 +1,14 @@
 <?php include'header.php';?>
-
+<style>
+.form-input .xx {display:block;width:150px;height:auto;max-height:100px;;
+            border-radius:10px;cursor:pointer;}
+.form-input img {width:150px;height:110px;margin:2px;}
+.ion-android-cancel{position: relative;bottom: 114px;left: 70%;font-size: 2.5em;outline: none;
+            margin:5px 8px;color: red;}
+.ion-android-cancel::after{color:green;font-weight:900;border-radius: 8px;cursor:pointer;}
+</style>
+<script data-require="jquery" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 <div class="page-wrapper">
                   <!-- Header -->
                   <header class="main-header " id="header">
@@ -177,17 +186,91 @@
 															}
                                          ?>
                            		</select>
-							</div>
+              </div>
 
-                            <div class="form-group">
+
+              <div class="form-group">
 								<label for="product_main_image">Product image:</label>
-								<input type="file" class="form-control-file" id="product_main_image" name="product_main_image">
-							</div>
+                <div class="form-input">
+                  <label for="file-ip-1" class="xx">
+                      <img id="file-ip-1-preview" >
+                      <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionOne()" ></button>
+                  </label>
+                   <input type="file" class="form-control-file www" name="product_main_image" id="file-ip-1" accept="image/*" onchange="showPreviewOne(event);">
+                </div>
+            </div>
+          <!--for show and delete this image-->
+       <script>
+            function showPreviewOne(event){
+              if(event.target.files.length > 0){
+                let src = URL.createObjectURL(event.target.files[0]);
+                let preview = document.getElementById("file-ip-1-preview");
+                preview.src = src;
+                preview.style.display = "block";
+              } 
+            }
+            function myImgRemoveFunctionOne() {
+              document.getElementById("file-ip-1-preview").src = "";
+              resetFile();
+            }
+        function resetFile() { 
+            const file = document.querySelector('.www'); 
+            file.value = ''; 
+        } 
+          </script>
+          <!--for show and delete this image-->
+
 
 							<div class="form-group">
-								<label for="product_main_image">Product images</label>
-								<input type="file"  class="dropzone form-control-file" multiple id="product_branch_images[]" name="product_branch_images[]">
-							</div>
+								<label for="product_branch_image">Product images</label>
+								<input type="file"  multiple accept="image/*" id="product_branch_images[]" name="product_branch_images[]" onchange="showPreviewMore(event);">
+                <div id="myFiles1" height='100'></div>
+
+              </div>
+<script>
+
+
+function showPreviewMore(event){
+  let inputFile = $('#product_branch_images');
+  let filesContainer = $('#myFiles1');
+  //filesContainer.append("ldfldsjflkjsdfk");
+  }
+}
+
+    /*$(function(){
+let inputFile = $('#product_branch_images');
+//let button = $('#myButton');
+//let buttonSubmit = $('#mySubmitButton');
+let filesContainer = $('#myFiles1');
+let files = [];
+
+inputFile.change(function() {
+let newFiles = []; 
+for(let index = 0; index < inputFile[0].files.length; index++) {
+  let file = inputFile[0].files[index];
+  newFiles.push(file);
+  files.push(file);
+}
+newFiles.forEach(file => {
+  let fileElement = $(` <img src="../../app/assets/img/products_images/${file.name}" height='100' width=' 120'>`);
+
+  fileElement.data('fileData', file);
+  filesContainer.append(fileElement);
+  fileElement.click(function(event) {
+    let fileElement = $(event.target);
+    //let indexToRemove = files.indexOf(fileElement.data('fileData'));
+    //fileElement.remove();
+    //files.splice(indexToRemove, 1);
+  });
+});
+});
+});*/
+</script>
+
+
+
+
+
 
 							<div class="form-group">
 								<label for="category_parent">status</label>

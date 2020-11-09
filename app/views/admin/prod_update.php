@@ -1,5 +1,12 @@
 <?php include"header.php";?>
-
+<style>
+.form-input .xx {display:block;width:150px;height:auto;max-height:100px;;
+            border-radius:10px;cursor:pointer;}
+.form-input img {width:150px;height:110px;margin:2px;}
+.ion-android-cancel{position: relative;bottom: 114px;left: 70%;font-size: 2.5em;outline: none;
+            margin:5px 8px;color: red;}
+.ion-android-cancel::after{color:green;font-weight:900;border-radius: 8px;cursor:pointer;}
+</style>
 <div class="page-wrapper">
                   <!-- Header -->
                   <header class="main-header " id="header">
@@ -117,6 +124,7 @@
 			   <form method="post" action="admin_prod/update" enctype="multipart/form-data">
 				 <?php
                     $rows=$data['products'];
+                    //print_r($rows);
 				    foreach($rows as $row)
 					{        
                  ?>
@@ -174,30 +182,61 @@
                   <option value=<?php echo $row->product_is_gift;?>><?php echo $row->product_is_gift;?></option>
                   <option value=0>No</option>
 									<option value=1>Yes</option>
-                           		</select>
-							</div>
+                  </select>
+              </div>
+              <?php //echo $row->product_main_image; ?>
 							<div class="form-group">
 								<label for="product_details"> Gift Product </label>
 								<select class="form-control" name="gift_id" id="gift_id">
                 <option value=<?php echo $row->gift_id;?>>.....</option>  
 								<?php 
-											$rows=$data['products1'];
-                       foreach($rows as $row){
+											$rows2=$data['products1'];
+                       foreach($rows2 as $row1){
                            echo "
-                          <option value=$row->Product_id>$row->product_name</option>
+                          <option value=$row1->Product_id>$row1->product_name</option>
 															   ";
 															}
                                          ?>
                            		</select>
 							</div>
 
-							<div style="float:right; padding-right:300px"><img src="<?php echo '../../'.$row->product_main_image;?>" width=100px hight=80px></div>
-                            <div class="form-group">
+              <!--<div class="form-group">
 								<label for="product_main_image">Product image:</label>
 								<input type="file" value="<?php echo $row->product_main_image;?>"  class="form-control-file" id="product_main_image" name="product_main_image">
 								print_r(<?php echo $row->product_main_image;?>)
-								
-							</div>
+              </div>-->
+              
+
+              <div class="form-group">
+								<label for="product_main_image">Product image:</label>
+                <div class="form-input">
+                  <label for="file-ip-1" class="xx">
+                      <img id="file-ip-1-preview" src="../../<?php echo $row->product_main_image;?>">
+                      <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionOne()" ></button>
+                  </label>
+                   <input type="file" class="form-control-file www" value="<?php echo $row->product_main_image;?>" name="product_main_image" id="file-ip-1" accept="image/*" onchange="showPreviewOne(event);">
+                </div>
+            </div>
+          <!--for show and delete this image-->
+       <script>
+            function showPreviewOne(event){
+              if(event.target.files.length > 0){
+                let src = URL.createObjectURL(event.target.files[0]);
+                let preview = document.getElementById("file-ip-1-preview");
+                preview.src = src;
+                preview.style.display = "block";
+              } 
+            }
+            function myImgRemoveFunctionOne() {
+              document.getElementById("file-ip-1-preview").src = "";
+              resetFile();
+            }
+        function resetFile() { 
+            const file = document.querySelector('.www'); 
+            file.value = ''; 
+        } 
+          </script>
+          <!--for show and delete this image-->
 
 							<div class="form-group">
 								<label for="product_branch_images">Product images</label>

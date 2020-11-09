@@ -61,6 +61,8 @@ function add_product(){
     $done_upload=0;$done_upload1=0;
 
     ///////////for upload main image////////
+    //$imag_path=date(DATE_RFC822)."app/assets/img/products_images/".$_FILES['product_main_image']['name'];
+    //$x=date("l jS \of F Y h/i/s A");
     $imag_path="app/assets/img/products_images/".$_FILES['product_main_image']['name'];
     $fileType= strtolower(pathinfo($imag_path, PATHINFO_EXTENSION));
     
@@ -181,6 +183,8 @@ function delete_prod()
           'category_del'=>$this->prod_model->deleteone($id),
            'products'=>$this->prod_model->getDataOrder(),
            'user'=>$this->user_model->getOne($_SESSION['id']),
+           'categories'=>$this->prod_model->getDataOrderC(),
+
 
            );
            //print_r($items);

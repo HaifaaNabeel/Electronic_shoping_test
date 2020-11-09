@@ -17,9 +17,6 @@
 				 $row=$data['products'];
 				 foreach($row as $rows){
 					 
-                    
-                        
-				  
                   
                     echo'
 							
@@ -201,6 +198,15 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $rows->Product
         productImg.src = smallImg[5].src;
         
     }
+    smallImg[6].onclick=function(){
+        productImg.src = smallImg[6].src;
+        
+    }
+    smallImg[7].onclick=function(){
+        productImg.src = smallImg[7].src;
+        
+    }
+
 
 </script>
 

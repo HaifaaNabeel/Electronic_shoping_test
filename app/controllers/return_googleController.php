@@ -20,7 +20,7 @@ function __construct(){
     $compare_product_model=$this->controller->model_object->create_model('compare_product');
     $favorite_product_model=$this->controller->model_object->create_model('favorite_product');
     $cat_model=$this->controller->model_object->create_model('category');
-    $user_model->loginhere();
+    $user_model->loginhere($page);
      
      //echo '<br><br><br><br><br><br><br>jkhkhkj jhjkh jhjk jh jhj j jhj j jh  jh jhkjh kjh ';
       $x=$_GET['name'];

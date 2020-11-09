@@ -165,7 +165,7 @@
 
                             $rows=$data['categories'];
                             foreach($rows as $row1)
-                             { if($row1->category_id == $row->category_id){
+                             { if($row->category_id == $row1->category_id){
                               echo '<td >'.$row1->category_name.'</td><!-- we want to add category name not id-->';
                              }}//'<td >'.$row2->category_name.'</td><!-- we want to add category name not id-->
 

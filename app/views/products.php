@@ -27,11 +27,11 @@
           $rows=$data['products'];
                 foreach($rows as $row){
                     echo '
-             <div class="col-sm-12 col-md-3">
+             <div class="col-sm-12 col-md-3 col-lg-4">
               <div class=" text-center mr-1 ml-1  mb-2">
                   <div class="card">
                  <div style="height:auto ;" class="table-block ">
-                    <img alt=""  src="'.$row->product_main_image.'" style="height:272px;width:240px" />
+                    <img alt=""  src="'.$row->product_main_image.'" style="height:272px;width:100%" />
                  </div>
                 <div class="card-body">    <!--$row->product_date_added.<br>-->
                     <h6>'.$row->product_name.'</h6>

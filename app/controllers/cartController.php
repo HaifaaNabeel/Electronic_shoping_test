@@ -23,6 +23,8 @@ function __construct(){
          'filteritem'=>$compare_product_model->getOnefilter($this->u),
         'fetchcart'=>$order_model->fetchcart($this->u),
         'tootlecost'=>$order_model->totalcost($this->u),
+        'user'=>$user_model->getname($this->u),
+
     );
     //$this->controller->view_object->create_view('home',$homeItems);
     $this->controller->view_object->create_view('cart',$homeItems);

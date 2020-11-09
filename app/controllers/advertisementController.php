@@ -15,6 +15,8 @@ public $adv_model;
         $id=$_GET['id'];
         $homeItems=array(
             'advertisement'=>$adv_model->getDataWhereOrderProd($id),
+            'user'=>$user_model->getname($this->u),
+
             
         );
 

@@ -17,8 +17,6 @@ class bill_sale{
         return $result50;
    }
    
-
-
     
  function fetchbill($uid,$bill){    
    $final_query= "select  product_id from orders where user_id= $uid and checkout_num=$bill ";

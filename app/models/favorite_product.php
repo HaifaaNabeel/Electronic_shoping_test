@@ -48,7 +48,7 @@ echo"no";
 }
         }   
      function  getOnef($uid){
-        $final_query= "select * from favorite_products where user_id= $uid";
+        $final_query= "select DISTINCT * from favorite_products where user_id= $uid";
 $result = $this->db->connect()->prepare($final_query);
 			$result->execute();
           $count1= $result->rowcount();
@@ -58,7 +58,8 @@ $result = $this->db->connect()->prepare($final_query);
         else{
              @session_start();
             if(isset($_SESSION['favore'])){
-            $size=sizeof($_SESSION['favore']);
+            $uniqe=array_unique($_SESSION['favore']);
+            $size=sizeof($uniqe);
                return $mef=array('f'=>$size);
             }else{
                    return $mef=array('f'=>$count1);
@@ -68,7 +69,7 @@ $result = $this->db->connect()->prepare($final_query);
         }
   }  
     function fetchfavorite($uid){     
-   $final_query= "select product_id from favorite_products where user_id= $uid";
+   $final_query= "select DISTINCT product_id from favorite_products where user_id= $uid";
 $result = $this->db->connect()->prepare($final_query);
 			$result->execute();
           $count= $result->rowcount();
@@ -81,7 +82,7 @@ $result = $this->db->connect()->prepare($final_query);
                 $datar=implode(',' ,$unique);
               } 
             if(sizeof($arr)>0){
-               $final_query= "select * from products where Product_id in($datar)";
+               $final_query= "select DISTINCT * from products where Product_id in($datar)";
             return $this->db->executeb($final_query);
 			$result50->execute();
         return $result50;
@@ -98,7 +99,7 @@ $result = $this->db->connect()->prepare($final_query);
                  if($size1 >0){
                 $uniqe=array_unique($_SESSION['favore']);
                 $data=implode(',' ,$uniqe);
-                 $final_query= "select * from products where Product_id in($data)";
+                 $final_query= "select DISTINCT * from products where Product_id in($data)";
             return $this->db->executeb($final_query);
             }
                  

@@ -2,9 +2,11 @@
 ob_start();
 @session_start();
 $_SESSION['page']=$_SERVER['REQUEST_URI'];
-//echo '<br><br><br>'.$_SESSION['page'];
+//echo $_SESSION['page'];
 if(isset($_SESSION['uid'])){
     $_SESSION['cart']=array();
+    $_SESSION['favore']=array();
+    $_SESSION['filter']=array();
 echo $_SESSION['uid'];
 }else{
 
@@ -23,7 +25,6 @@ if(isset($_SESSION['filter'])){
 }else{
     $_SESSION['filter']=array();
 }
-
 ?>
  <?php 
 if(isset($_SESSION['uid'])){
@@ -144,7 +145,7 @@ $_GLOBALS['U']=0;
       <li class="nav-item">
         <a class="nav-link" href="./contact">تواصل معنا</a>
       </li>
-         <li class="nav-item">
+         <li class="nav-item" style="display:none;">
         <a class="nav-link" href="#">عربي</a>
                      <ul class="submenu">
            <li class="nav-item">
@@ -157,15 +158,46 @@ $_GLOBALS['U']=0;
           </ul>
       </li>
       <li class="nav-item icons">
-      <a class="ico" href="./login?page=<?php echo $_SESSION['page']; ?>"><span class="ion-ios-person-outline"></span></a>
-        <ul class="submenu"> 
-           <li class="nav-item ">
-               <a class="ico" href="./login?page=<?php echo $_SESSION['page']; ?>"><span class="ion-ios-person-outline"></span></a>
+    
+          <a class="ico " href="#">
+              <span class="counter" id="mmo" style="position: absolute;
+top: 20%;
+left: 95%;">
+   <?php
+                   $user=$data['user'];
+                  foreach($user as $u){
+                  echo $u->user_name;
+                  }
+                 ?></span>
+              <span class="ion-ios-person-outline"></span>
+              
+        <ul class="submenu1"> 
+           <li id="login" class="nav-item ">
+               <a  class="ico" href="./login?page=<?php echo $_SESSION['page']; ?>"><span class="ion-ios-person-outline"></span></a>
             </li>
-            <li class="nav-item ">
-               <a class="ico" href="./logout" ><span class="ion-android-exit"></span></a>
+            <li id="logout" class="nav-item ">
+               <a  class="ico" href="./logout" ><span class="ion-android-exit"></span></a>
             </li>
+            <?php 
+            if($_GLOBALS['U']===0){
+            echo' <script>
+            document.getElementById("logout").style.display="none";
+            document.getElementById("mmo").style.display="none";
+            </script>';
+            }if($_GLOBALS['U'] > 0){
+            echo' <script>
+            document.getElementById("logout").style.display="block";
+            document.getElementById("login").style.display="none";
+            </script>';
+            }
+            
+            ?>
+            <script>
+           // document.getElementById("logout").style.display="none";
+            </script>
                </ul>
+                  </a>
+           
           <a class="ico" href="./cart"><span class="counter" id="count1">
                <?php
                    $rows=$data['cartitem'];

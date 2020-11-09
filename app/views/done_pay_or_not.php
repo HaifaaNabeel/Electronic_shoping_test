@@ -69,8 +69,8 @@ else if  ($id == 0) //// error in process payment
     <br><a class="btn  number_check "   href="./home">للعودة الى المتجر <span class="ion-ios-home-outline"></a>
  ';
  }
-else if  ($id == 4) //// the payment is done 
- { /*echo '
+/*else if  ($id == 4) //// the payment is done 
+ { echo '
     <h2 class="text-center" style="color: ##221446;"> رقم طلبك  </h2>
     <h2 class="text-center" style="color: ##221446;">.............</h2>
     <h4 class="text-center" style="color: ##221446;"> لقد تمت عمليةالشراء بنجاح  <span class="ion-android-checkmark-circle">  </span><span class="ion-happy-outline"></span> </h4>
@@ -78,9 +78,9 @@ else if  ($id == 4) //// the payment is done
     <br><a class="btn  number_check "  href="./bill_sale?id='.$user.'">لعرض الفاتورة <span class="ion-ios-paper-outline"></span></a>
     <!--<br><a class="btn  number_check "   href="./">للعودة الى سلة المشتريات <span class="ion-ios-cart-outline"></span></a>-->
     <br><a class="btn  number_check "   href="./home">للعودة الى المتجر <span class="ion-ios-home-outline"></a>
- ';*/
+ ';
 
-}
+}*/
  else        ////error in process payment 
  {
     echo '

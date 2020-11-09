@@ -52,12 +52,14 @@
                      <p class="text-muted text-center"> او لتسجيل الدخول بحسابات اخرى </p>
                      
                         <ul class="social-network social-circle navbar-nav" style="text-align:center;padding-left:27%">
-                        
-                            <br><li><a href="#" class="icoFacebook" title="Facebook" style='background-color: #3B5998;'><i class="ion-social-facebook-outline" style='color:white;'>للمتابعة على حساب فيس بوك</i></a></li>
+       <?php  
+$page=$_GET['page'];
+?>                  
+                            <br><!--<li><a href="#" class="icoFacebook" title="Facebook" style='background-color: #3B5998;'><i class="ion-social-facebook-outline"style='color:white;'>للمتابعة على حساب فيس بوك</i></a></li>
                             <li><a href="#" class="icoTwitter" title="Twitter" style='background-color: #33ccff;'><i class="ion-social-twitter-outline" style='color:white;'>للمتابعة على حساب تويتر </i></a></li>
-                            <li><a href="login_google" class="icoGoogle" title="Google +" style='background-color: #BD3518'><i class="ion-social-google-outline" style='color:white;'> للمتابعة على حساب جوجل </i></a></li>
+                            --><li><a href="login_google" class="icoGoogle" title="Google +" style='background-color: #BD3518'><i class="ion-social-google-outline" style='color:white;'> للمتابعة على حساب جوجل </i></a></li>
                         </ul><br><br>
-                    <a href="./singup"> <p class="text-muted text-center">او لإنشاء حساب والتسجيل الان  </p></a>
+                    <a href="./singup?page=<?php  echo $page; ?>"> <p class="text-muted text-center">او لإنشاء حساب والتسجيل الان  </p></a>
 
                     
                 </form> <!--//';}?>-->

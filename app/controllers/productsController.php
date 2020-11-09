@@ -22,8 +22,9 @@ public $u;
             'categories'=>$cat_model->getDataWhereOrder(),
              'cartitem'=>$order_model->getOne($this->u),
              'favoriteitem'=>$favorite_product_model->getOnef($this->u),
-             'filteritem'=>$compare_product_model->getOnefilter($this->u)
-            
+             'filteritem'=>$compare_product_model->getOnefilter($this->u),
+             'user'=>$user_model->getname($this->u),
+
         );
 //print_r($homeItems);
         //$this->controller->view_object->create_view('products',$homeItems);

@@ -1,6 +1,6 @@
 <?PHP
 
-class advertisement{
+class banner{
 
 
    public  $db;
@@ -11,25 +11,15 @@ function __construct(){
 
 function  getOne($id)
 {
-        $final_query= $this->db->select('adds_img').$this->db->from('advertisements').$this->db->whereone('adds_id','=',$id);
+        $final_query= $this->db->select('*').$this->db->from('banner');
         return $this->db->executeb($final_query); 
 }
 
-// function  getData()
-// {
-//         $final_query= $this->db->select('adds_img').$this->db->from('advertisements');
-//         return $this->db->executeb($final_query);  
-// }
 function  getDataOrder()
 {
-    $final_query= $this->db->select('*').$this->db->from('advertisements').$this->db->orderbymore('adds_id',' DESC');
+    $final_query= $this->db->select('*').$this->db->from('banner').$this->db->orderbymore('banner_id',' DESC');
     return $this->db->executeb($final_query); 
         
-}
-function  getDataC()
-{
-        $final_query= $this->db->select('date').$this->db->from('advertisements');
-        return $this->db->executeb($final_query);  
 }
 
 function addData($data)
@@ -74,14 +64,6 @@ function selecADS1()
    $final_query= $this->db->select('*').$this->db->from('advertisements').$this->db->whereone('place_in_home','=','1');
     return $this->db->executeb($final_query); 
 }
-
-function selecADS()
-{
-   $final_query= $this->db->select('*').$this->db->from('advertisements').$this->db->whereone('place_in_home','=','2');
-    return $this->db->executeb($final_query); 
-}
-
-
 
 
 

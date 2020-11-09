@@ -64,7 +64,7 @@
                                                     class="ion-android-remove"></span></button>
  <input id="id<?php echo $item->Product_id; ?>"  name="product_id" value="<?php echo $item->Product_id; ?>" hidden="hidden">
  <input id="price<?php echo $item->Product_id; ?>"  name="price" value="<?php echo $item->product_price; ?>" hidden="hidden">
-<input id="user<?php echo $_GLOBALS['U']; ?>"  name="user" value="<?php echo $_GLOBALS['U']; ?>" hidden="hidden">
+<input id="user"  name="user" value="<?php echo $_GLOBALS['U']; ?>" hidden="hidden">
 <input class="quantity text-center" min="1" name="qty" id="qty<?php echo $item->Product_id; ?>"value="<?php echo $item->quantity; ?>" type="number"  >
                                             <button
                                                 onclick="add_qty<?php echo $item->Product_id; ?>()"
@@ -97,7 +97,7 @@
       <div class="modal-body">
           <h6>هل تريد حذف المنتج من السلة</h6>
  <a data-toggle="modal" data-target="#myModal1" class="a-text close" data-dismiss="modal" id="dcart<?php echo $item->Product_id; ?>" onclick="dcart<?php echo $item->Product_id; ?>()">حذف من السلة
-             <span class="ion-android-delete"></span></a>        
+     <span class="ion-android-delete"></span></a>        
         </div>
 
      
@@ -126,7 +126,7 @@
                   document.getElementById('erorr<?php echo $item->Product_id; ?>').style.display ='none';
               } 
 function add_qty<?php echo $item->Product_id; ?>(){
- $.post("add/add_cart/addtoqty",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty<?php echo $item->Product_id; ?>").val()},function(data){
+ $.post("add/add_cart/addtoqty",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user").val(),qty:$("#qty<?php echo $item->Product_id; ?>").val()},function(data){
                   var id='qty<?php echo $item->Product_id;?>';
      var fi =document.getElementById(id).value;
              fi++
@@ -142,7 +142,7 @@ function add_qty<?php echo $item->Product_id; ?>(){
       }
     function delete_qty<?php echo $item->Product_id; ?>(){
            
-          $.post("add/add_cart/deletefromqty",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty<?php echo $item->Product_id; ?>").val()},function(data){
+          $.post("add/add_cart/deletefromqty",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user").val(),qty:$("#qty<?php echo $item->Product_id; ?>").val()},function(data){
                   var id='qty<?php echo $item->Product_id;?>';
      var fi =document.getElementById(id).value;
              fi--
@@ -160,7 +160,7 @@ function favoor<?php echo $item->Product_id; ?>(){
     //  alert('hhhhh');
             document.getElementById('dfavorit<?php echo $item->Product_id;?>').style.display='inline-block';
        document.getElementById('favorit<?php echo $item->Product_id;?>').style.display='none';
-          $.post("add/add_cart/addtofavorite",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val()},function(data){
+          $.post("add/add_cart/addtofavorite",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user").val(),qty:$("#qty").val()},function(data){
               var id='count2';
      var fi =document.getElementById(id).innerHTML;
              fi++
@@ -170,7 +170,7 @@ function favoor<?php echo $item->Product_id; ?>(){
         function dfavoor<?php echo $item->Product_id; ?>(){
             document.getElementById('dfavorit<?php echo $item->Product_id;?>').style.display='none';
        document.getElementById('favorit<?php echo $item->Product_id;?>').style.display='inline-block';
-          $.post("add/add_cart/deletefromfavorite",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val()},function(data){
+          $.post("add/add_cart/deletefromfavorite",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user").val(),qty:$("#qty").val()},function(data){
               var id='count2';
      var fi =document.getElementById(id).innerHTML;
              fi--
@@ -179,17 +179,8 @@ function favoor<?php echo $item->Product_id; ?>(){
       }
         function dcart<?php echo $item->Product_id;?>(){
         document.getElementById('cartitem<?php echo $item->Product_id; ?>').style.display='none';
-            window.setInterval(function(){
-         var total=0;
-$('.qtypricforeone').each(function(){
-total +=parseInt($(this).text());
-    
-});
-$('.tootale').text(total);
-$('.tootale1').val(total); 
-      
-      }, 1000);
-$.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val(),add:$("#dcart").val()},function(data){
+        
+$.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $item->Product_id; ?>").val(),user:$("#user").val(),qty:$("#qty").val(),add:$("#dcart").val()},function(data){
               var id='count1';
      var fi =document.getElementById(id).innerHTML;
              fi--
@@ -234,7 +225,7 @@ elseif($_GLOBALS['U']==0){
                                                     class="ion-android-remove"></span></button>
  <input id="id<?php echo $_SESSION['cart'][$index]['p_id']; ?>"  name="product_id" value="<?php echo $_SESSION['cart'][$index]['p_id']; ?>" hidden="hidden">
  <input id="price<?php echo $_SESSION['cart'][$index]['p_id']; ?>"  name="price" value="<?php echo $_SESSION['cart'][$index]['p_price']; ?>" hidden="hidden">
-<input id="user<?php echo $_GLOBALS['U']; ?>"  name="user" value="<?php echo $_GLOBALS['U']; ?>" hidden="hidden">
+<input id="user"  name="user" value="<?php echo $_GLOBALS['U']; ?>" hidden="hidden">
 <input class="quantity text-center" min="1" name="qty" id="qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>"value="<?php echo $_SESSION['cart'][$index]['p_qty']; ?>" type="text" >
                                             <button
                                                 onclick="add_qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>(); "
@@ -300,7 +291,7 @@ elseif($_GLOBALS['U']==0){
 
               }            
 function add_qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
- $.post("add/add_cart/addtoqty",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val()},function(data){
+ $.post("add/add_cart/addtoqty",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user").val(),qty:$("#qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val()},function(data){
                   var id='qty<?php echo $_SESSION['cart'][$index]['p_id'] ;?>';
      var fi =document.getElementById(id).value;
              fi++
@@ -316,7 +307,7 @@ function add_qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
 }
     function delete_qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
            
-          $.post("add/add_cart/deletefromqty",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val()},function(data){
+          $.post("add/add_cart/deletefromqty",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user").val(),qty:$("#qty<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val()},function(data){
                   var id='qty<?php echo $_SESSION['cart'][$index]['p_id'];?>';
               if(fi==1){document.getElementById('erorr<?php echo $_SESSION['cart'][$index]['p_id'];?>').style.display ='none';}
      var fi =document.getElementById(id).value;
@@ -336,7 +327,7 @@ function favoor<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
     //  alert('hhhhh');
             document.getElementById('dfavorit<?php echo $_SESSION['cart'][$index]['p_id'];?>').style.display='inline-block';
        document.getElementById('favorit<?php echo $_SESSION['cart'][$index]['p_id'];?>').style.display='none';
-          $.post("add/add_cart/addtofavorite",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val()},function(data){
+          $.post("add/add_cart/addtofavorite",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user").val(),qty:$("#qty").val()},function(data){
               var id='count2';
      var fi =document.getElementById(id).innerHTML;
              fi++
@@ -346,7 +337,7 @@ function favoor<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
         function dfavoor<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
             document.getElementById('dfavorit<?php echo $_SESSION['cart'][$index]['p_id'];?>').style.display='none';
        document.getElementById('favorit<?php echo $_SESSION['cart'][$index]['p_id'];?>').style.display='inline-block';
-          $.post("add/add_cart/deletefromfavorite",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val()},function(data){
+          $.post("add/add_cart/deletefromfavorite",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user").val(),qty:$("#qty").val()},function(data){
               var id='count2';
      var fi =document.getElementById(id).innerHTML;
              fi--
@@ -356,17 +347,8 @@ function favoor<?php echo $_SESSION['cart'][$index]['p_id']; ?>(){
         function dcart<?php echo $_SESSION['cart'][$index]['p_id'];?>(){
       
         document.getElementById('cartitem<?php echo $_SESSION['cart'][$index]['p_id']; ?>').style.display='none';
-            window.setInterval(function(){
-         var total=0;
-$('.qtypricforeone').each(function(){
-total +=parseInt($(this).text());
-    
-});
-$('.tootale').text(total);
-$('.tootale1').val(total); 
-      
-      }, 1000);
-$.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val(),add:$("#dcart").val()},function(data){
+            
+$.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['cart'][$index]['p_id']; ?>").val(),user:$("#user").val(),qty:$("#qty").val(),add:$("#dcart").val()},function(data){
               var id='count1';
      var fi =document.getElementById(id).innerHTML;
              fi--
@@ -477,8 +459,6 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['car
 </div>
   <script>
    
-     
-
  window.setInterval(function(){
          var total=0;
 $('.qtypricforeone').each(function(){
@@ -487,13 +467,11 @@ total +=parseInt($(this).text());
 });
 $('.tootale').text(total);
 $('.tootale1').val(total); 
-      
+      console.log(total);
       }, 1000);
+      
+      
       </script>
-  
-      
-      
-
 </section>
 
 </div>

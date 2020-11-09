@@ -28,6 +28,8 @@ public $controller;
              'uuser'=>$user_model->getOne($userid),
               'checkout'=>$checkout_model->fetchbill($userid,$bill),
               'checkout1'=>$checkout_model->checkout1($userid,$bill),
+              'user'=>$user_model->getname($this->u),
+
 
         );
 

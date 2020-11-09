@@ -3,43 +3,51 @@
       <slider style="top: -56px;">
   <div class="layer1"></div>   
 <div id="demo" class="carousel slide" data-ride="carousel">
- <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-    <li data-target="#demo" data-slide-to="3"></li>
-  </ul>
+
   <!-- The slideshow -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="app/assets/img/accessories_galaxy-note20_s.jpg" alt="Los Angeles" >
-        <div class="carousel-caption animated fadeInLeft " style="animation-delay:2s;">
-    <h3>Los Angeles</h3>
-    <p>We had such a great time in LA!</p>
-  </div>
-    </div>
     
-    <!-- /.Third slide -->
-    <div class="carousel-item">
-      <img src="app/assets/img/banner_galaxy-a8.png" alt="Chicago" >
-           <div class="carousel-caption animated fadeInLeft " style="animation-delay:2s;">
-    <h3>Los Angeles</h3>
-    <p>We had such a great time in LA!</p>
+  <div class="carousel-inner">
+       <?php
+     
+        $bann=$data['banner'];
+        foreach($bann as $ban){
+
+                               ?>
+    <div class="carousel-item <?php echo $ban->banner_status; ?>">
+      <img src="app/assets/img/banner_image/<?php echo $ban->banner_img; ?>"  alt="Los Angeles" >
+        <div class="carousel-caption animated fadeInLeft " style="animation-delay:2s;">
+    <h3><?php echo $ban->banner_title; ?></h3>
   </div>
     </div>
-    <div class="carousel-item">
-      <img src="app/assets/img/banner_galaxy-note8.png" alt="New York">
-        <div class="carousel-caption animated zoomIn " style="animation-delay:2s;">
-    <h3>Los Angeles</h3>
-    <p>We had such a great time in LA!</p>
-  </div>
-    </div>
+      <?php } ?>
+      
+    
 </div>
-  
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="control ti-arrow-left"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="control ti-arrow-right"></span>
+    </a>
 </div>
     </slider>   
  </br></br> 
+ <section class="head-ADs">
+     <div class="container">
+
+     <?php
+     
+        $rows=$data['advertisement1'];
+        foreach($rows as $row){
+
+                echo'
+                <h6>'.$row->adds_name.'</h6>
+                <img src="'.$row->adds_img.'" style="height: 180px;width:100%" />';
+
+            
+               }?>
+     </div>
+ </section>
 <section>
 <!-- try for show category and its products -->
 
@@ -84,7 +92,7 @@ function filter<?php echo $row1->Product_id; ?>(){
     //  alert('hhhhh');
             document.getElementById('dfilter<?php echo $row1->Product_id;?>').style.display='inline-block';
        document.getElementById('filter<?php echo $row1->Product_id;?>').style.display='none';
-          $.post("add/add_cart/addtofilter",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val()},function(data){
+          $.post("add/add_cart/addtofilter",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user").val(),qty:$("#qty").val()},function(data){
               var id='count3';
      var fi =document.getElementById(id).innerHTML;
              fi++
@@ -95,7 +103,7 @@ function filter<?php echo $row1->Product_id; ?>(){
     //  alert('hhhhh');
             document.getElementById('dfilter<?php echo $row1->Product_id;?>').style.display='none';
        document.getElementById('filter<?php echo $row1->Product_id;?>').style.display='inline-block';
-          $.post("add/add_cart/deletefromfilter",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val()},function(data){
+          $.post("add/add_cart/deletefromfilter",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user").val(),qty:$("#qty").val()},function(data){
               var id='count3';
      var fi =document.getElementById(id).innerHTML;
              fi--
@@ -106,7 +114,7 @@ function favoor<?php echo $row1->Product_id; ?>(){
     //  alert('hhhhh');
             document.getElementById('dfavorite<?php echo $row1->Product_id;?>').style.display='inline-block';
        document.getElementById('favorit<?php echo $row1->Product_id;?>').style.display='none';
-          $.post("add/add_cart/addtofavorite",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val()},function(data){
+          $.post("add/add_cart/addtofavorite",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user").val(),qty:$("#qty").val()},function(data){
               var id='count2';
      var fi =document.getElementById(id).innerHTML;
              fi++
@@ -117,7 +125,7 @@ function favoor<?php echo $row1->Product_id; ?>(){
     //  alert('hhhhh');
             document.getElementById('dfavorite<?php echo $row1->Product_id;?>').style.display='none';
        document.getElementById('favorit<?php echo $row1->Product_id;?>').style.display='inline-block';
-          $.post("add/add_cart/deletefromfavorite",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty").val()},function(data){
+          $.post("add/add_cart/deletefromfavorite",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user").val(),qty:$("#qty").val()},function(data){
               var id='count2';
      var fi =document.getElementById(id).innerHTML;
              fi--
@@ -127,7 +135,7 @@ function favoor<?php echo $row1->Product_id; ?>(){
    function cart<?php echo $row1->Product_id;?>(){
         document.getElementById('cart<?php echo $row1->Product_id;?>').style.display='none';
         document.getElementById('dcart<?php echo $row1->Product_id;?>').style.display='inline-block';
-$.post("add/add_cart/addtocart",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user<?php  echo $_GLOBALS['U']; ?>").val(),price:$("#price<?php echo $row1->Product_id; ?>").val(),qty:$("#qty").val(),pname:$("#pname<?php echo $row1->Product_id; ?>").val(),pimg:$("#pimg<?php echo $row1->Product_id; ?>").val(),add:$("#cart").val()},function(data){
+$.post("add/add_cart/addtocart",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user").val(),price:$("#price<?php echo $row1->Product_id; ?>").val(),qty:$("#qty").val(),pname:$("#pname<?php echo $row1->Product_id; ?>").val(),pimg:$("#pimg<?php echo $row1->Product_id; ?>").val(),add:$("#cart").val()},function(data){
               var id='count1';
      var fi =document.getElementById(id).innerHTML;
              fi++
@@ -137,7 +145,7 @@ $.post("add/add_cart/addtocart",{product_id:$("#id<?php echo $row1->Product_id; 
         function dcart<?php echo $row1->Product_id;?>(){
             document.getElementById('cart<?php echo $row1->Product_id;?>').style.display='inline-block';
         document.getElementById('dcart<?php echo $row1->Product_id;?>').style.display='none';
-$.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user<?php echo $_GLOBALS['U']; ?>").val(),qty:$("#qty<?php echo $row1->Product_id; ?>").val(),price:$("#price<?php echo $row1->Product_id; ?>").val(),add:$("#dcart").val()},function(data){
+$.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product_id; ?>").val(),user:$("#user").val(),qty:$("#qty").val(),price:$("#price<?php echo $row1->Product_id; ?>").val(),add:$("#dcart").val()},function(data){
               var id='count1';
      var fi =document.getElementById(id).innerHTML;
              fi--
@@ -155,7 +163,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product
 <input id="qty"  name="qty" value="1" hidden="hidden">
 <input id="pname';?><?php echo $row1->Product_id; ?><?php echo'"  name="product_name" value="'.$row1->product_name.'" hidden="hidden">
 <input id="pimg';?><?php echo $row1->Product_id; ?><?php echo'"  name="pimg" value="'.$row1->product_main_image.'" hidden="hidden">
-<input id="user';?><?php echo $_GLOBALS['U']; ?><?php echo'"  name="user" value="';?><?php echo $_GLOBALS['U']; ?><?php echo '" hidden="hidden">
+<input id="user"  name="user" value="';?><?php echo $_GLOBALS['U']; ?><?php echo '" hidden="hidden">
 <input id="price';?><?php echo $row1->Product_id; ?><?php echo'"  name="price" value="';?><?php echo $row1->product_price ?><?php echo '" hidden="hidden">
 <button class="btn product_btn m-1" id="cart';?><?php echo $row1->Product_id; ?><?php echo'" onclick="cart';?><?php echo $row1->Product_id;?><?php echo'()"><span class="ion-ios-cart-outline"></span></button>
                         <button class="dcart btn product_btn m-1 "  id="dcart';?><?php echo $row1->Product_id; ?><?php echo'" onclick="dcart';?><?php echo $row1->Product_id;?><?php echo'()"><span class="ion-ios-cart-outline"></span></button>
@@ -590,5 +598,21 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product
         </div>
     </div>
 </section>
+</br></br> 
+ <section class="head-ADs2">
+     <div class="container">
 
+     <?php
+     
+        $rows=$data['advertisement'];
+        foreach($rows as $row){
+
+                echo'
+                <h6>'.$row->adds_name.'</h6>
+                <img src="'.$row->adds_img.'" style="height: 180px;width:100%" />';
+
+            
+               }?>
+     </div>
+ </section>
 <?php include'footer.php'; ?>

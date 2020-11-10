@@ -14,15 +14,14 @@ function __construct(){
      $this->u=0;}
      echo $_GET['name'];
      echo $_GET['email'];
-    
+     $page=$_GET['page'];
+     echo $this->u;
       $user_model=$this->controller->model_object->create_model('users');
     $order_model=$this->controller->model_object->create_model('order');
     $compare_product_model=$this->controller->model_object->create_model('compare_product');
     $favorite_product_model=$this->controller->model_object->create_model('favorite_product');
     $cat_model=$this->controller->model_object->create_model('category');
-    $user_model->loginhere($page);
      
-     //echo '<br><br><br><br><br><br><br>jkhkhkj jhjkh jhjk jh jhj j jhj j jh  jh jhkjh kjh ';
       $x=$_GET['name'];
       $y=$_GET['email'];
      $homeItems=array(

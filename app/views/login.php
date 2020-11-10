@@ -12,7 +12,7 @@
     margin: 4px auto 4px auto;
     border-radius: 55px;
     text-align:center;
-    width: 90%;
+    width: 95%;
     height: 50px;
     font-size:1.5em;
     background-color: #BD3518;
@@ -57,7 +57,7 @@ $page=$_GET['page'];
 ?>                  
                             <br><!--<li><a href="#" class="icoFacebook" title="Facebook" style='background-color: #3B5998;'><i class="ion-social-facebook-outline"style='color:white;'>للمتابعة على حساب فيس بوك</i></a></li>
                             <li><a href="#" class="icoTwitter" title="Twitter" style='background-color: #33ccff;'><i class="ion-social-twitter-outline" style='color:white;'>للمتابعة على حساب تويتر </i></a></li>
-                            --><li><a href="login_google" class="icoGoogle" title="Google +" style='background-color: #BD3518'><i class="ion-social-google-outline" style='color:white;'> للمتابعة على حساب جوجل </i></a></li>
+                            --><li><a href="login_google?page=<?php  echo $page; ?>" class="icoGoogle" title="Google +" style='background-color: #BD3518'><i class="ion-social-google-outline" style='color:white;'> للمتابعة على حساب جوجل </i></a></li>
                         </ul><br><br>
                     <a href="./singup?page=<?php  echo $page; ?>"> <p class="text-muted text-center">او لإنشاء حساب والتسجيل الان  </p></a>
 

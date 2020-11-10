@@ -12,6 +12,7 @@ public $controller;
         if(isset($_SESSION['uid'])){
          $this->u=$_SESSION['uid'];}else{
          $this->u=0;}
+         $page=$_GET['page'];
          $user_model=$this->controller->model_object->create_model('users');
         $order_model=$this->controller->model_object->create_model('order');
         $compare_product_model=$this->controller->model_object->create_model('compare_product');

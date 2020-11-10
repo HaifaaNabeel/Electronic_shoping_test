@@ -1,4 +1,5 @@
 <br><br><br><br><br><br>
+<br><br><br><br><br><br>
 <?php include'header.php';?>
 <link rel="stylesheet" href= "app/assets/css/loginstyle.css">
 
@@ -8,7 +9,7 @@
 
 //Include Configuration File
 include('app/config/config_google_plas.php');
-
+$page=$_GET['page'];
 $login_button = '';
 
 //This $_GET["code"] variable value received after user has login into their Google Account redirct to PHP script then this variable value has been received
@@ -93,7 +94,7 @@ if(!isset($_SESSION['access_token']))
     //echo '<meta http-equiv = "refresh" content = "05.5; url = http://localhost/Electronic_shoping_test/return_google?name="'.'name'.'" />';
     //echo '<meta http-equiv = "refresh" content = "05.5; url = http://localhost/Electronic_shoping_test/return_google?name="'.$name.' />';
 
-    header('location:return_google?name='.$name.'&email='.$email);
+    header('location:return_google?name='.$name.'&email='.$email.'&page='.$page);
    }
    else
    {

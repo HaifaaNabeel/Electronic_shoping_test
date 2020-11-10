@@ -3,8 +3,8 @@
 .form-input .xx {display:block;width:150px;height:auto;max-height:100px;;
             border-radius:10px;cursor:pointer;}
 .form-input img {width:150px;height:110px;margin:2px;}
-.ion-android-cancel{position: relative;bottom: 114px;left: 70%;font-size: 2.5em;outline: none;
-            margin:5px 8px;color: red;}
+.ion-android-cancel{font-size: 2.5em;outline: none;
+            margin:5px 8px;margin-top:-3em;color: red;position: static}
 .ion-android-cancel::after{color:green;font-weight:900;border-radius: 8px;cursor:pointer;}
 </style>
 <div class="page-wrapper">
@@ -238,11 +238,74 @@
           </script>
           <!--for show and delete this image-->
 
-							<div class="form-group">
+							<!--<div class="form-group">
 								<label for="product_branch_images">Product images</label>
 								<input value="<?php echo $row->product_branch_images;?>" type="file"  class="dropzone form-control-file" multiple id="product_branch_images" name="product_branch_images[]">
 							       print_r(<?php echo $row->product_branch_images;?>)
-							</div>
+              </div>-->
+              
+                <!-- Multiple images preview in browser-->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<div class="form-group" style="position: static;">
+  <label for="product_branch_image">Product images</label>
+  <input type="file"  value="<?php echo $row->product_branch_images;?>" style="position: static;" class="dropzone wwww form-control-file"  multiple accept="image/*" id="gallery-photo-add" name="product_branch_images[]" >  
+<?php
+$count=0;
+ $row1=explode(',',$row->product_branch_images);
+ echo '<div class="gallery" id="gallery" style="margin-top:-6em;margin-right:3em;position: static;" height="4em">';
+
+ for($i=0; $i<sizeof($row1)-1; $i++){
+   //echo $i;
+   if($count==0){
+  echo '<img class="imgdiv" width="50" style="margin-right:1em" src="../../'.$row1[$i].'">';
+} else
+continue;
+}
+echo '</div>'; $count=0;
+ ?>
+<button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionMore()" style="margin-top:-2em;margin-right:17em;"></button>
+  <br><br><br><br><br><br>
+</div>
+<script>
+////////////////////// start/////////////////////
+$(function() {
+var imagesPreview = function(input, placeToInsertImagePreview) {
+if (input.files) {
+var filesAmount = input.files.length;
+for (i = 0; i < filesAmount; i++) {
+  var reader = new FileReader();  <?php $count=1; ?>
+  reader.onload = function(event) {
+      $($.parseHTML('<img class="imgdiv" width="50" style="margin-right:1em">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+  }
+  reader.readAsDataURL(input.files[i]);
+}
+}
+};
+
+$('#gallery-photo-add').on('change', function() {
+$('.gallery').empty();
+imagesPreview(this, 'div.gallery');
+});
+});
+function myImgRemoveFunctionMore() {
+$('.gallery').empty();
+resetFile2();
+}
+function resetFile2() { 
+const file = document.querySelector('.wwww'); 
+file.value = ''; 
+} 
+////////////////////end /////////////////
+</script>
+              
+
+
+
+
+
+
+               
 
 							<div class="form-group">
 								<label for="category_parent">status</label>

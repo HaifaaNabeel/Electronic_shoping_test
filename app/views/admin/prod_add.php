@@ -3,8 +3,8 @@
 .form-input .xx {display:block;width:150px;height:auto;max-height:100px;;
             border-radius:10px;cursor:pointer;}
 .form-input img {width:150px;height:110px;margin:2px;}
-.ion-android-cancel{position: relative;bottom: 114px;left: 70%;font-size: 2.5em;outline: none;
-            margin:5px 8px;color: red;}
+.ion-android-cancel{font-size: 2.5em;outline: none;
+            margin:5px 8px;margin-top:-3em;color: red;position: static}
 .ion-android-cancel::after{color:green;font-weight:900;border-radius: 8px;cursor:pointer;}
 </style>
 <script data-require="jquery" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -220,53 +220,47 @@
           </script>
           <!--for show and delete this image-->
 
+          <!-- Multiple images preview in browser-->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-							<div class="form-group">
+							<div class="form-group" style="position: static;">
 								<label for="product_branch_image">Product images</label>
-								<input type="file"  multiple accept="image/*" id="product_branch_images[]" name="product_branch_images[]" onchange="showPreviewMore(event);">
-                <div id="myFiles1" height='100'></div>
-
+								<input type="file" style="position: static;" class="dropzone wwww form-control-file"  multiple accept="image/*" id="gallery-photo-add" name="product_branch_images[]" >
+                <div class="gallery" id="gallery" style="margin-top:-6em;margin-right:3em;position: static;" height="4em"></div>
+                <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionMore()" style="margin-top:-2em;margin-right:17em;"></button>
+                <br><br><br><br><br><br>
               </div>
-<script>
-
-
-function showPreviewMore(event){
-  let inputFile = $('#product_branch_images');
-  let filesContainer = $('#myFiles1');
-  //filesContainer.append("ldfldsjflkjsdfk");
-  }
-}
-
-    /*$(function(){
-let inputFile = $('#product_branch_images');
-//let button = $('#myButton');
-//let buttonSubmit = $('#mySubmitButton');
-let filesContainer = $('#myFiles1');
-let files = [];
-
-inputFile.change(function() {
-let newFiles = []; 
-for(let index = 0; index < inputFile[0].files.length; index++) {
-  let file = inputFile[0].files[index];
-  newFiles.push(file);
-  files.push(file);
-}
-newFiles.forEach(file => {
-  let fileElement = $(` <img src="../../app/assets/img/products_images/${file.name}" height='100' width=' 120'>`);
-
-  fileElement.data('fileData', file);
-  filesContainer.append(fileElement);
-  fileElement.click(function(event) {
-    let fileElement = $(event.target);
-    //let indexToRemove = files.indexOf(fileElement.data('fileData'));
-    //fileElement.remove();
-    //files.splice(indexToRemove, 1);
-  });
+              <script>
+              ////////////////////// start/////////////////////
+   $(function() {
+      var imagesPreview = function(input, placeToInsertImagePreview) {
+        if (input.files) {
+            var filesAmount = input.files.length;
+            for (i = 0; i < filesAmount; i++) {
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                    $($.parseHTML('<img class="imgdiv" width="50" style="margin-right:1em">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                }
+                reader.readAsDataURL(input.files[i]);
+            }
+        }
+    };
+ 
+    $('#gallery-photo-add').on('change', function() {
+      $('.gallery').empty();
+        imagesPreview(this, 'div.gallery');
+    });
 });
-});
-});*/
+function myImgRemoveFunctionMore() {
+  $('.gallery').empty();
+    resetFile2();
+           }
+        function resetFile2() { 
+            const file = document.querySelector('.wwww'); 
+            file.value = ''; 
+        } 
+        ////////////////////end /////////////////
 </script>
-
 
 
 

@@ -345,7 +345,7 @@ exit();
                           </div>
                   </ul>
                   </li>
-                         <li  class="has-sub" >
+                         <!--<li  class="has-sub" >
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
                     aria-expanded="false" aria-controls="charts">
                     <i class="mdi mdi-chart-pie"></i>
@@ -374,13 +374,13 @@ exit();
                           </li>
                </div>
                   </ul>
-                </li>
+                </li>-->
               
 
                
 
      
-                <li  class="has-sub" >
+                <!--<li  class="has-sub" >
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#charts"
                     aria-expanded="false" aria-controls="charts">
                     <i class="mdi mdi-chart-pie"></i>
@@ -404,12 +404,12 @@ exit();
                       
                     </div>
                   </ul>
-                </li>    
+                </li> -->   
             </ul>
 
           </div>
 
-          <hr class="separator" />
+          <!--<hr class="separator" />-->
 
          
         </div>

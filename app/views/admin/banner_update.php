@@ -86,7 +86,7 @@
                       </li>
                       
                       <li class="dropdown-footer">
-                        <a href="../../logout"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a href="../../logout"> <i class="mdi mdi-logout"></i> تسجيل الخروج </a>
                       </li>
                     </ul>
                   </li>
@@ -99,7 +99,7 @@
     <div class="content-wrapper">
           <div class="content">							
               <div class="row">
-								<div class="col-lg-8">
+								<div class="col-lg-11">
 									<div class="card card-default text-right">
 										<div class="card-header card-header-border-bottom">
 											<h2>تعديل واجهه</h2>
@@ -125,9 +125,9 @@ foreach($rows as $row){
 													<input class="form-control" accept="image/*" type="file" id="banner_title" name="banner_img">
 												</div>                                            
 
-                                                <div class="form-footer pt-4 pt-5 mt-4 border-top">
-													<button type="submit" class="btn btn-primary btn-default">ok </button>
-													<a type="submit" class="btn btn-secondary btn-default" href="banner">Cancel</a>
+                                                <div class="form-footer pt-4 pt-5 mt-4 border-top text-right">
+													<button type="submit" class="btn btn-primary btn-default">تعديل الواجهه </button>
+													<a type="submit" class="btn btn-secondary btn-default" href="banner">الغاء</a>
                                                 </div>
 <?php  }?>
 											</form>

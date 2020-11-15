@@ -90,7 +90,7 @@
 
                       
                       <li class="dropdown-footer">
-                        <a href="../../logout"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a href="../../logout"> <i class="mdi mdi-logout"></i> تسجيل الخروج </a>
                       </li>
                     </ul>
                   </li>

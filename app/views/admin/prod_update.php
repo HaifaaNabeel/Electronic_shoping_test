@@ -97,7 +97,7 @@
 
                       
                       <li class="dropdown-footer">
-                        <a href="../../logout"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a href="../../logout"> <i class="mdi mdi-logout"></i> تسجيل الخروج </a>
                       </li>
                     </ul>
                   </li>
@@ -115,10 +115,10 @@
    <div class="content-wrapper">
      <div class="content">							
 	   <div class="row">
-		<div class="col-lg-8">
+		<div class="col-lg-11">
 		  <div class="card card-default">
 			<div class="card-header card-header-border-bottom">
-				<h2>Update Product</h2>
+				<h2> تعديل المنتج </h2>
 			</div>
 			<div class="card-body">
 			   <form method="post" action="admin_prod/update" enctype="multipart/form-data">
@@ -132,64 +132,79 @@
 									<input value="<?php echo $row->Product_id;?>" class="form-control" type="text" id="Product_id" name="Product_id" hidden="hidden">
 								</div>
 							<div class="form-group">
-								<label for="product_name">Product Name:</label>
+								<label for="product_name">اسم المنتج :</label>
 								<input  value="<?php echo $row->product_name;?>" class="form-control" type="text" id="product_name" name="product_name">
                             </div>
 							<div class="form-group">
-								<label for="product_english_name">Product English Name:</label>
+								<label for="product_english_name">اسم المنتج باللغة الانجليزية :</label>
 								<input value="<?php echo $row->product_english_name;?>" class="form-control" type="text" id="product_english_name" name="product_english_name">
                             </div>				
 							<div class="form-group">
-								<label for="product_price">Price:</label>
+								<label for="product_price">السعر بالريال اليمني :</label>
 								<input value="<?php echo $row->product_price;?>" class="form-control" type="text" id="product_price" name="product_price">
                             </div>
                                                 
                             <div class="form-group">
-								<label for="product_Quantity">Quantity:</label>
+								<label for="product_Quantity">الكمية :</label>
 								<input value="<?php echo $row->product_Quantity;?>"  class="form-control" type="text" id="product_Quantity" name="product_Quantity">
                             </div>
 							
 							<div class="form-group">
-								<label for="product_details">Product details:</label>
+								<label for="product_details">تفاصيل المنتج :</label>
 								<textarea value="<?php echo $row->product_details;?>"  class="form-control" id="product_details" rows="3" name="product_details">
 								<?php echo $row->product_details;?>
 							   </textarea>
 							</div>
 
 							<div class="form-group">
-								<label for="product_details">Product is offer</label>
+								<label for="product_details">يمتلك المنتج عرض : </label>
 								<select class="form-control" name="product_is_offer" id="product_is_offer">
                 <option value=<?php echo $row->product_is_offer;?>><?php echo $row->product_is_offer;?></option>
-									<option value=0>No</option>
-									<option value=1>Yes</option>
+									<option value=0>لا يمتلك </option>
+									<option value=1>يمتلك </option>
                            		</select>
 							</div>
 							<div class="form-group">
-								<label for="product_details">Product offer percent</label>
+								<label for="product_details">يمتلك المنتج تخفيض بالسعر :</label>
 								<select class="form-control" name="product_offer_percent" id="product_offer_percent">
                 <option value=<?php echo $row->product_offer_percent;?>><?php echo $row->product_offer_percent;?></option>
-									<option value=0>No</option>
-									<option value=1>Yes</option>
+									<option value=0>لا يمتلك </option>
+									<option value=1>يمتلك </option>
                            		</select>
 							</div>
 							<div class="form-group">
-								<label for="product_details">Price after discount</label>
+								<label for="product_details">السعر بعد التخفيض :</label>
                 <input class="form-control" value="<?php echo $row->product_price_after_discount;?>" type="text" name="product_price_after_discount" id="product_price_after_discount">
 							</div>
 							<div class="form-group">
-								<label for="product_details">Product has Gift</label>
+								<label for="product_details">يمتلك المنتج هدية </label>
 								<select class="form-control" name="product_is_gift" id="product_is_offer">
                   <option value=<?php echo $row->product_is_gift;?>><?php echo $row->product_is_gift;?></option>
-                  <option value=0>No</option>
-									<option value=1>Yes</option>
+                  <option value=0>لا يمتلك </option>
+									<option value=1>يمتلك </option>
                   </select>
               </div>
               <?php //echo $row->product_main_image; ?>
 							<div class="form-group">
-								<label for="product_details"> Gift Product </label>
+								<label for="product_details"> هدية المنتج : </label>
 								<select class="form-control" name="gift_id" id="gift_id">
-                <option value=<?php echo $row->gift_id;?>>.....</option>  
-								<?php 
+                <!--<option value=<?php echo $row->gift_id;?>>.....</option> -->
+                <?php 
+                     $rows2=$data['products1'];
+                     $has_gift=0;
+                     foreach($rows2 as $row1){
+                          if($row1->Product_id == $row->gift_id  )
+                          {echo "<option value=$row->gift_id>$row1->product_name</option>";
+                            $has_gift=1;
+                          }
+                          else 
+                          continue;
+                     }
+                      /*if($has_gift == 1)
+                      echo "<option value=$row->gift_id>لا يمتلك هدية </option>";*/
+                      ?>
+                <?php 
+                echo' <option value=0>لا يمتلك هدية </option>';
 											$rows2=$data['products1'];
                        foreach($rows2 as $row1){
                            echo "
@@ -208,7 +223,7 @@
               
 
               <div class="form-group">
-								<label for="product_main_image">Product image:</label>
+								<label for="product_main_image">صورة المنتج الاساسية :</label>
                 <div class="form-input">
                   <label for="file-ip-1" class="xx">
                       <img id="file-ip-1-preview" src="../../<?php echo $row->product_main_image;?>">
@@ -248,7 +263,7 @@
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <div class="form-group" style="position: static;">
-  <label for="product_branch_image">Product images</label>
+  <label for="product_branch_image">صور المنتج الفرعية :</label>
   <input type="file"  value="<?php echo $row->product_branch_images;?>" style="position: static;" class="dropzone wwww form-control-file"  multiple accept="image/*" id="gallery-photo-add" name="product_branch_images[]" >  
 <?php
 $count=0;
@@ -264,7 +279,7 @@ continue;
 }
 echo '</div>'; $count=0;
  ?>
-<button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionMore()" style="margin-top:-2em;margin-right:17em;"></button>
+<button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionMore()" style="margin-top:-.5em;"></button>
   <br><br><br><br><br><br>
 </div>
 <script>
@@ -308,15 +323,15 @@ file.value = '';
                
 
 							<div class="form-group">
-								<label for="category_parent">status</label>
+								<label for="category_parent">حالة المنتج :</label>
 								<select class="form-control" name="product_is_active" id="product_is_active">
-									<option value=1>active</option>
-									<option value=0>no-active</option>
+									<option value=1>متوفر </option>
+									<option value=0>غير متوفر </option>
                            		</select>
                             </div>
                         
                             <div class="form-group">
-								<label for="category_id">Category:</label>
+								<label for="category_id">الصنف :</label>
 								<select class="form-control" name="category_id">
 									  <?php 
 											$rows=$data['categories_parent'];
@@ -337,9 +352,9 @@ file.value = '';
                 ?>
                                                 
 
-                                                <div class="form-footer pt-4 pt-5 mt-4 border-top">
-													<button type="submit" class="btn btn-primary btn-default">Update Product</button>
-													<button type="submit" class="btn btn-secondary btn-default">Cancel</button>
+                                                <div class="form-footer pt-4 pt-5 mt-4 border-top text-right">
+													<button type="submit" class="btn btn-primary btn-default">تعديل المنتج </button>
+													<button type="submit" class="btn btn-secondary btn-default">الغاء</button>
                                                 </div>
                                                 
 											</form>

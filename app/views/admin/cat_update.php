@@ -89,7 +89,7 @@
 
                       
                       <li class="dropdown-footer">
-                        <a href="../../logout"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a href="../../logout"> <i class="mdi mdi-logout"></i> تسجيل الخروج </a>
                       </li>
                     </ul>
                   </li>
@@ -101,10 +101,10 @@
           </header>
         <div class="content-wrapper">
           <div class="content">							<div class="row">
-								<div class="col-lg-8">
+								<div class="col-lg-11">
 									<div class="card card-default">
 										<div class="card-header card-header-border-bottom">
-											<h2>Udate Category</h2>
+											<h2>تعديل الصنف </h2>
 										</div>
 										<div class="card-body">
 											<form method="post" action="admin_cat/update">
@@ -116,26 +116,26 @@ foreach($rows as $row){
 													<input value="<?php echo $row->category_id;?>" class="form-control" type="text" id="category_name" name="category_id" hidden="hidden">
 												</div>
 												<div class="form-group">
-													<label for="category_name">Category Name:</label>
+													<label for="category_name">اسم الصنف :</label>
 													<input value="<?php echo $row->category_name;?>" class="form-control" type="text" id="category_name" name="category_name">
 												</div>
                                                 <div class="form-group">
-													<label for="category_name">Category english Name:</label>
+													<label for="category_name">اسم الصنف باللغة الانجليزية :</label>
 													<input class="form-control" value="<?php echo $row->category_english_name;?>" type="text" id="category_english_name" name="category_english_name">
 												</div>
 												
                                                 <div class="form-group">
-													<label for="category_parent">status</label>
+													<label for="category_parent">الحالة :</label>
 													<select class="form-control" id="category_is_active">
-														<option value=1>Active</option>
-														<option value=0>No-active</option>
+														<option value=1>متوفر </option>
+														<option value=0>غير متوفر </option>
 													</select>
                                                 </div>
                                                 
                                                 <div class="form-group">
-													<label for="category_parent">Parent</label>
+													<label for="category_parent">الصنف </label>
 													<select class="form-control" id="category_parent">
-														<option value=0>Parent</option>
+														<option value=0>اساسي </option>
                                                           <?php
                               $rows=$data['categories_parent'];
         
@@ -152,9 +152,9 @@ foreach($rows as $row){
                                                 
  <?php  }
                     ?>
-                                                <div class="form-footer pt-4 pt-5 mt-4 border-top">
-													<button type="submit" class="btn btn-primary btn-default">Update Category</button>
-													<a type="submit" class="btn btn-secondary btn-default" href="categories">Cancel</a>
+                                                <div class="form-footer pt-4 pt-5 mt-4 border-top text-right">
+													<button type="submit" class="btn btn-primary btn-default">تعديل الصنف </button>
+													<a type="submit" class="btn btn-secondary btn-default" href="categories">الغاء</a>
                                                 </div>
                                                 
 											</form>

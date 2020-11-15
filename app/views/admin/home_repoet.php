@@ -89,7 +89,7 @@
 
                       
                       <li class="dropdown-footer">
-                        <a href="../../logout"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a href="../../logout"> <i class="mdi mdi-logout"></i> تسجيل الخروج </a>
                       </li>
                     </ul>
                   </li>
@@ -158,7 +158,7 @@
             <div class="card card-default todo-table" id="todo" data-scroll-height="675">
               <div class="card-header justify-content-between">
                 <h2>قائمة الأعمال</h2>
-                <a class="btn btn-primary btn-pill" id="add-task" href="#" role="button"> Add task </a>
+                <a class="btn btn-primary btn-pill" id="add-task" href="#" role="button"> اضافة مهمة  </a>
               </div>
               <div class="card-body slim-scroll">
                 <div class="todo-single-item d-none" id="todo-input">

@@ -86,7 +86,7 @@
                       </li>
                       
                       <li class="dropdown-footer">
-                        <a href="../../logout"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a href="../../logout"> <i class="mdi mdi-logout"></i> تسجيل الخروج </a>
                       </li>
                     </ul>
                   </li>
@@ -99,29 +99,28 @@
     <div class="content-wrapper">
           <div class="content">							
               <div class="row">
-								<div class="col-lg-8">
-									<div class="card card-default text-right">
+								<div class="col-lg-11">
+									<div class="card card-default "><!--text-right-->
 										<div class="card-header card-header-border-bottom">
 											<h2>اضافة واجهه</h2>
 										</div>
 										<div class="card-body">
 											<form method="post"  enctype="multipart/form-data" action="admin_banner/add_bann">
-				
-												<div class="form-group">
+                      <div class="form-group">
 													<label for="category_name"> العنوان</label>
 													<input class="form-control" type="text" id="banner_title" name="banner_title">
 <input type="text" class="form-control"  placeholder="" name="banner_added_date" hidden="hidden" readonly required value="<?php echo date('y-m-d'); ?>"><input type="text" class="form-control"  placeholder="" name="banner_status" hidden="hidden" readonly required value="null">
 												</div>
-                                                <div class="form-group">
+                        <div class="form-group">
 													<label for="category_name"> الصورة</label>
 													<input class="form-control" accept="image/*" type="file" id="banner_title" name="banner_img">
 												</div>
                                                 
                                             
 
-                                                <div class="form-footer pt-4 pt-5 mt-4 border-top">
-													<button type="submit" class="btn btn-primary btn-default">ok </button>
-													<a type="submit" class="btn btn-secondary btn-default" href="banner">Cancel</a>
+                                                <div class="form-footer pt-4 pt-5 mt-4 border-top text-right">
+													<button type="submit" class="btn btn-primary btn-default">اضافة واجهه </button>
+													<a type="submit" class="btn btn-secondary btn-default " href="banner">الغاء</a>
                                                 </div>
                                                 
 											</form>

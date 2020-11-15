@@ -89,7 +89,7 @@
 
                       
                       <li class="dropdown-footer">
-                        <a href="../../logout"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a href="../../logout"> <i class="mdi mdi-logout"></i> تسجيل الخروج </a>
                       </li>
                     </ul>
                   </li>
@@ -104,7 +104,7 @@
     <div class="content-wrapper">
           <div class="content">							
               <div class="row">
-								<div class="col-lg-8">
+								<div class="col-lg-11">
 									<div class="card card-default">
 										<div class="card-header card-header-border-bottom">
 											<h2>نتيجة البحث</h2>

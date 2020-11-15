@@ -99,7 +99,7 @@
 
                       
                       <li class="dropdown-footer">
-                        <a href="../../logout"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a href="../../logout"> <i class="mdi mdi-logout"></i> تسجيل الخروج </a>
                       </li>
                     </ul>
                   </li>
@@ -117,66 +117,66 @@
         <div class="content-wrapper">
           <div class="content">							
 		     <div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-11">
 					<div class="card card-default">
 						<div class="card-header card-header-border-bottom">
-							<h2>Add New Product</h2>
+							<h2>اضافة منتج جديد </h2>
 						</div>
 						<div class="card-body">
 						  <form method="post" action="../admin_prod/add_product" enctype="multipart/form-data">
 				
 						  <div class="form-group">
-								<label for="product_name">Product Name:</label>
+								<label for="product_name">اسم المنتج :</label>
 								<input class="form-control" type="text" id="product_name" name="product_name">
                             </div>
 							<div class="form-group">
-								<label for="product_english_name">Product English Name:</label>
+								<label for="product_english_name">اسم المنتج باللغة الانجليزية :</label>
 								<input class="form-control" type="text" id="product_english_name" name="product_english_name">
                             </div>				
 							<div class="form-group">
-								<label for="product_price">Price:</label>
+								<label for="product_price">السعر بالريال اليمني </label>
 								<input class="form-control" type="text" id="product_price" name="product_price">
                             </div>
                                                 
                             <div class="form-group">
-								<label for="product_Quantity">Quantity:</label>
+								<label for="product_Quantity">الكمية :</label>
 								<input class="form-control" type="text" id="product_Quantity" name="product_Quantity">
                             </div>
 							
 							<div class="form-group">
-								<label for="product_details">Product details:</label>
+								<label for="product_details">تفاصيل المنتج : </label>
 								<textarea class="form-control" id="product_details" rows="3" name="product_details"></textarea>
 							</div>
 
 							<div class="form-group">
-								<label for="product_details">Product is offer</label>
+								<label for="product_details">يمتلك المنتج عرض :</label>
 								<select class="form-control" name="product_is_offer" id="product_is_offer">
-									<option value=0>No</option>
-									<option value=1>Yes</option>
+									<option value=0>لا يمتلك </option>
+									<option value=1>يمتلك </option>
                            		</select>
 							</div>
 							<div class="form-group">
-								<label for="product_details">Product offer percent</label>
+								<label for="product_details">يمتلك المنتج تخفيض في السعر :</label>
 								<select class="form-control" name="product_offer_percent" id="product_offer_percent">
-									<option value=0>No</option>
-									<option value=1>Yes</option>
+									<option value=0>لا يمتلك </option>
+									<option value=1>يمتلك </option>
                            		</select>
 							</div>
 							<div class="form-group">
-								<label for="product_details">Price after discount</label>
+								<label for="product_details">السعر بعد التخفيض :</label>
 								<input class="form-control" type="text" name="product_price_after_discount" id="product_price_after_discount">
 							</div>
 							<div class="form-group">
-								<label for="product_details">Product has Gift</label>
+								<label for="product_details">يمتلك المنتج هدية :</label>
 								<select class="form-control" name="product_is_gift" id="product_is_offer">
-									<option value=0>No</option>
-									<option value=1>Yes</option>
+									<option value=0>لا يمتلك </option>
+									<option value=1>يمتلك </option>
                            		</select>
 							</div>
 							<div class="form-group">
-								<label for="product_details"> Gift Product </label>
+								<label for="product_details"> هدية المنتج  </label>
 								<select class="form-control" name="gift_id" id="gift_id">
-                   <option value=0>.......</option>
+                   <option value=0> لا يمتلك هدية  </option>
 								<?php 
 											$rows=$data['products1'];
                        foreach($rows as $row){
@@ -190,7 +190,7 @@
 
 
               <div class="form-group">
-								<label for="product_main_image">Product image:</label>
+								<label for="product_main_image">صورة المنتج الاساسية :</label>
                 <div class="form-input">
                   <label for="file-ip-1" class="xx">
                       <img id="file-ip-1-preview" >
@@ -224,10 +224,10 @@
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 							<div class="form-group" style="position: static;">
-								<label for="product_branch_image">Product images</label>
+								<label for="product_branch_image">صور المنتج الفرعية :</label>
 								<input type="file" style="position: static;" class="dropzone wwww form-control-file"  multiple accept="image/*" id="gallery-photo-add" name="product_branch_images[]" >
                 <div class="gallery" id="gallery" style="margin-top:-6em;margin-right:3em;position: static;" height="4em"></div>
-                <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionMore()" style="margin-top:-2em;margin-right:17em;"></button>
+                <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionMore()" style="margin-top:-.5em;"></button>
                 <br><br><br><br><br><br>
               </div>
               <script>
@@ -267,15 +267,15 @@ function myImgRemoveFunctionMore() {
 
 
 							<div class="form-group">
-								<label for="category_parent">status</label>
+								<label for="category_parent">حالة المنتج :</label>
 								<select class="form-control" name="product_is_active" id="product_is_active">
-									<option value=1>active</option>
-									<option value=0>no-active</option>
+									<option value=1>متوفر </option>
+									<option value=0>غير متوفر </option>
                            		</select>
                             </div>
                         
                             <div class="form-group">
-								<label for="category_id">Category:</label>
+								<label for="category_id">الصنف :</label>
 								<select class="form-control" name="category_id">
 									  <?php 
 											$rows=$data['categories_parent'];
@@ -291,9 +291,9 @@ function myImgRemoveFunctionMore() {
 							<input type="text" class="form-control"  placeholder="" name="product_date_added" hidden="hidden" readonly required value="<?php echo date('y-m-d'); ?>">
                             <input type="text"  value="1" name="admin_who_add" hidden="hidden" readonly required >
 
-                            <div class="form-footer pt-4 pt-5 mt-4 border-top">
-								<button type="submit" class="btn btn-primary btn-default">Add Product</button>
-								<button type="submit" class="btn btn-secondary btn-default">Cancel</button>
+                            <div class="form-footer pt-4 pt-5 mt-4 border-top text-right">
+								<button type="submit" class="btn btn-primary btn-default">اضافة منتج </button>
+								<button type="submit" class="btn btn-secondary btn-default">الغاء </button>
                             </div>
                                                 
 						</form>

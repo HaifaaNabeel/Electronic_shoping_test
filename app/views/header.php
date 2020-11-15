@@ -225,7 +225,7 @@ left: 95%;">
                  ?>
               </span><span class="ion-ios-color-filter-outline"></span></a>
   
-          <a class="ico" href=""><span class="ion-ios-search"></span></a>
+          <a class="ico" data-toggle="modal" data-target="#myModal11"><span class="ion-ios-search"></span></a>
 
 
       </li>
@@ -234,3 +234,34 @@ left: 95%;">
       
 </nav> 
 </header>
+    
+      <!-- The signup Modal -->
+<div class="modal" id="myModal11">
+  <div class="modal-dialog">
+    <div class="modal-content" style="color: #402558;">
+
+      <!-- Modal Header -->
+      <div class="modal-header" >
+        <h4 class="modal-title color-white "> البحث عن منتج </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+ <form action="search"  class="text-right" role="form"   method="get"  >
+                      <div class="form-group col-sm-12" style="float:right;">                                                                                        <label>  </label>
+
+                        <input type="text" name="SEARCHW" value="<?php if(isset($_GET['SEARCHW'])){echo $_GET['SEARCHW'];}?>" class="form-control  rounded-0 p-3"   placeholder="اسم المنتج">   
+                      </div>
+                          
+      <div class="form-group  col-sm-12" style="float:right;"> 
+                      <button type="submit" name="SEARCH" style="width: 49%;color:#402558; border: 1px solid #402558;float:right;" class="btn p-2 rounded-0" >بحث</button>
+                  
+                     </div>
+                    </form></div>
+
+     
+    </div>
+  </div>
+</div>
+              <!--end The signup Modal -->

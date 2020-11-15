@@ -158,7 +158,34 @@ exit();
                   </ul>
                 </li>
                         
-                         <li  class="has-sub" >
+                         
+                <li  class="has-sub" >
+                  <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#bannerr"
+                    aria-expanded="false" aria-controls="charts">
+                    <i class="mdi mdi-chart-pie"></i>
+                    <span class="nav-text">الواجهه</span> <b class="caret"></b>
+                  </a>
+                  <ul  class="collapse"  id="bannerr"
+                    data-parent="#sidebar-menu">
+                    <div class="sub-menu">
+                          <li >
+                            <a class="sidenav-item-link" href="../admin_banner/banner">
+                              <span class="nav-text">عرض  واجهات الموقع </span>
+                            </a>
+                          </li>
+                          <li >
+                            <a class="sidenav-item-link" href="../admin_banner/add">
+                              <span class="nav-text">  اضافة واجهه  </span>
+                            </a>
+                          </li>
+                          <li >
+                           
+                          </li>
+               </div>
+                  </ul>
+                </li>
+                
+                <li  class="has-sub" >
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#cat"
                     aria-expanded="false" aria-controls="charts">
                     <i class="mdi mdi-chart-pie"></i>
@@ -291,14 +318,20 @@ exit();
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="">
-                              <span class="nav-text">تقرير 1  </span>
+                            <a class="sidenav-item-link" href="../admin_report/reports_cust">
+                              <span class="nav-text">كافة الزبائن  </span>
                               
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="">
-                              <span class="nav-text">تقرير 2  </span>
+                            <a class="sidenav-item-link" href="../admin_report/reports_order">
+                              <span class="nav-text">كافة الطلبات  </span>
+                              
+                            </a>
+                          </li>
+                          <li >
+                            <a class="sidenav-item-link" href="../admin_report/reports_prod">
+                              <span class="nav-text">كافة المنتجات  </span>
                               
                             </a>
                           </li>

@@ -1,12 +1,4 @@
-<?php include'header.php';?>
-<style>
-.form-input .xx {display:block;width:150px;height:auto;max-height:100px;;
-            border-radius:10px;cursor:pointer;}
-.form-input img {width:150px;height:110px;margin:2px;}
-.ion-android-cancel{font-size: 2.5em;outline: none;
-            margin:5px 8px;margin-top:-3em;color: red;position: static}
-.ion-android-cancel::after{color:green;font-weight:900;border-radius: 8px;cursor:pointer;}
-</style>
+<?php include"header.php";?>
 <div class="page-wrapper">
                   <!-- Header -->
                   <header class="main-header " id="header">
@@ -17,14 +9,12 @@
               </button>
               <!-- search form -->
               <div class="search-form d-none d-lg-inline-block">
-                  <form method="post" action="search_result">
+                  <form method="post" action="">
                 <div class="input-group">
                   
-                  <!--<input type="text"  name="category_name" id="search-input" class="form-control" placeholder="ابحث هنا"
+                  <input type="text"  name="category_name" id="search-input" class="form-control" placeholder="ابحث هنا"
                     autofocus autocomplete="off" />
-                    <button type="submit" name="search" value="search" id="search-btn" class="btn btn-flat" >
-                    <i class="mdi mdi-magnify"></i> بحث 
-                  </button>-->
+                  
                     </form>
                 </div>
               
@@ -74,7 +64,7 @@
                       </li>
                     </ul>
                   </li>
-                  <!-- User Account -->
+                <!-- User Account -->
                 <li class="dropdown user-menu">
                     <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                     <?php $rows=$data['user']; 
@@ -94,7 +84,6 @@
                         }?>
                         </div>
                       </li>
-
                       
                       <li class="dropdown-footer">
                         <a href="../../logout"> <i class="mdi mdi-logout"></i> Log Out </a>
@@ -106,85 +95,51 @@
             </nav>
 
 
-          </header> 
-
-
-<!--////////////////////////////////end  header///////////////////////////////-->
-
-        <div class="content-wrapper">
+          </header>
+    <div class="content-wrapper">
           <div class="content">							
-		     <div class="row">
-				<div class="col-lg-8">
-					<div class="card card-default">
-						<div class="card-header card-header-border-bottom">
-							<h2>Add New Advertisement</h2>
-						</div>
-						<div class="card-body">
-						  <form method="post" action="../admin_adv/add" enctype="multipart/form-data">
-				
-						  <div class="form-group">
-								<label for="adds_name">Advertisement Name:</label>
-								<input class="form-control" type="text" id="product_name" name="adds_name">
-                            </div>
-
-              <div class="form-group">
-                <label for="adds_img">Advertisement image:</label>
-                <div class="form-input">
-                  <label for="file-ip-1" class="xx">
-                      <img id="file-ip-1-preview" >
-                      <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionOne()" ></button>
-                  </label>
-                   <input type="file" class="form-control-file www" name="adds_img" id="adds_img" accept="image/*" onchange="showPreviewOne(event);">
-                 </div>
-               </div>
-                          <!--for show and delete this image-->
-       <script>
-            function showPreviewOne(event){
-              if(event.target.files.length > 0){
-                let src = URL.createObjectURL(event.target.files[0]);
-                let preview = document.getElementById("file-ip-1-preview");
-                preview.src = src;
-                preview.style.display = "block";
-              } 
-            }
-            function myImgRemoveFunctionOne() {
-              document.getElementById("file-ip-1-preview").src = "";
-              resetFile();
-            }
-        function resetFile() { 
-            const file = document.querySelector('.www'); 
-            file.value = ''; 
-        } 
-          </script>
-          <!--for show and delete this image-->
-
-
-							<div class="form-group">
-								<label for="place_in_home">place_in_home</label>
-								<input class="form-control" type="text" id="place_in_home" name="place_in_home">
-                            </div>
+              <div class="row">
+								<div class="col-lg-8">
+									<div class="card card-default text-right">
+										<div class="card-header card-header-border-bottom">
+											<h2>تعديل واجهه</h2>
+										</div>
+										<div class="card-body">
+											<form method="post" enctype="multipart/form-data" action="admin_banner/update_bann">
+				<?php
+$rows=$data['banner'];
+foreach($rows as $row){  
+?>
                                                 
-                       
+<div class="form-group">
+													<label for="category_name"> العنوان</label>
+<input class="form-control" type="text" value="<?php echo $row->banner_title;?>" id="banner_title" name="banner_title">
+<input type="text" class="form-control"  placeholder="" name="banner_added_date" hidden="hidden" readonly required 
+       value="<?php echo $row->banner_added_date;?>">
+<input type="text" class="form-control"  placeholder="" name="banner_status" hidden="hidden" readonly required value="<?php echo $row->banner_status;?>">
+<input type="text" class="form-control"  placeholder="" name="banner_id" hidden="hidden" readonly required value="<?php echo $row->banner_id;?>">
+<input type="text" class="form-control" name="banner_imgs" hidden="hidden"  value="<?php echo $row->banner_img;?>">
+												</div>
+                                                <div class="form-group">
+													<label for="category_name"> الصورة</label>
+													<input class="form-control" accept="image/*" type="file" id="banner_title" name="banner_img">
+												</div>                                            
 
-                           
-                        
-                         
+                                                <div class="form-footer pt-4 pt-5 mt-4 border-top">
+													<button type="submit" class="btn btn-primary btn-default">ok </button>
+													<a type="submit" class="btn btn-secondary btn-default" href="banner">Cancel</a>
+                                                </div>
+<?php  }?>
+											</form>
+										</div>
+									</div>
 
-							<input type="text" class="form-control"  placeholder="" name="date" hidden="hidden" readonly required value="<?php echo date('y-m-d'); ?>">
-                          
+									
 
-                            <div class="form-footer pt-4 pt-5 mt-4 border-top">
-								<button type="submit" class="btn btn-primary btn-default">Add Advertisement</button>
-								<button type="submit" class="btn btn-secondary btn-default">Cancel</button>
-                            </div>
-                                                
-						</form>
-					</div>
-				</div>
+									
+												
 
-			</div>
-		</div>
-	<div>
-</div>
 
-                <?php include'footer.php';?>
+        </div>
+
+<?php include'footer.php';?>

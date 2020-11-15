@@ -11,6 +11,19 @@ class order{
         return $this->db->executeb($final_query);
  
     }
+    function getOrdersNot_Done()
+    {
+        $final_query=$this->db->select('*').$this->db->from('orders').$this->db->whereone('checkout_num','=','0');
+        return $this->db->executeb($final_query);
+ 
+    }
+    
+    function getAllOrders()
+    {
+        $final_query=$this->db->select('*').$this->db->from('orders');
+        return $this->db->executeb($final_query);
+ 
+    }
     /***************************************
     ========================================
     cart functions
@@ -27,21 +40,18 @@ class order{
         if($uid==0){
         @session_start();
             $_SESSION['cart'];
-             $sp1=array();
  $item=array('p_id'=>$pid,'p_name'=>$pname,'p_img'=>$pimg,'p_qty'=>$qty,'p_price'=>$price);
- array_push($_SESSION['cart'],$item);        
-/*foreach($_SESSION['cart'] as $index=>$column){
-foreach($column as $key=>$value){
-if (in_array($item, $_SESSION['cart']))
-  {            print_r($_SESSION['cart']);
-}else{
-    $sp=$_SESSION['cart'];
-        array_push($sp1,$item);
-        $_SESSION['cart']=$sp1;
-  
-  }	
+IF(ARRAY_SEARCH($pid,ARRAY_COLUMN($_SESSION['cart'],'p_id'))!==FALSE){
+	foreach($_SESSION['cart'] as $index=>$column){
+    foreach($column as $key=>$value){
+        if($key=='p_id' && $value==$pid){
+	$_SESSION['cart'][$index]['p_qty']=$_SESSION['cart'][$index]['p_qty']+$qty;
+        }
+	}
+	}
+}ELSE{
+     array_push($_SESSION['cart'],$item);  	
 }
-}*/
         }elseif($uid!=0){
              $final_query= "select * from orders where user_id= $uid and product_id= $pid and checkout_num=0";
 $result = $this->db->connect()->prepare($final_query);
@@ -55,10 +65,21 @@ $result = $this->db->connect()->prepare($final_query);
 echo"yees";           
     }else{
 echo"no";
- }      }else{
-        
-        echo"product is here";           
-
+ }      }elseif($count==1){
+         while($row=$result->fetch()){
+                $_GLOBALS['aaa']=$iii;
+                    $iii=$row['product_id'];
+              $_GLOBALS['qqq']=$qqq;
+                    $qqq=$row['quantity'];
+              }
+                             $rt=$qqq+$qty;
+            $final_query = "update `orders` set `quantity`=$rt where `product_id`=$pid and user_id=$uid";
+    if( $this->db->executea($final_query)){
+echo"yees";           
+    }else{
+echo"no";
+ } 
+            
         }
     }
     }
@@ -215,7 +236,33 @@ echo"no";
                        header('location:carte');
            
                        }
-            }  
+            }
+
+            function getcolor($uid){    
+   $final_query= "select  product_id from orders where user_id= $uid and checkout_num=0";
+$result = $this->db->connect()->prepare($final_query);
+			$result->execute();
+          $count= $result->rowcount();
+        if($count > 0){
+            $arr=array();
+            while($row=$result->fetch()){
+                $arr[]=$row['product_id'];
+              }
+            return $arr;
+          }else{
+         @session_start();
+            $sp=array();
+            if(isset($_SESSION['cart'])){
+                foreach($_SESSION['cart'] as $index=>$column){
+foreach($column as $key=>$value){
+				$sp[]=$_SESSION['cart'][$index]['p_id'];
+}
+}
+
+}
+return $sp;
+        }
+     } 
      
 
    

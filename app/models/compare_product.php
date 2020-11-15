@@ -45,7 +45,6 @@ echo"no";
  }      
 }
         }
-  
      function  getOnefilter($uid){
        $final_query= "select DISTINCT * from compare_product where user_id= $uid";
 $result = $this->db->connect()->prepare($final_query);
@@ -109,7 +108,26 @@ $result = $this->db->connect()->prepare($final_query);
         }
         }
  }
-   
+    function getcolor($uid){    
+   $final_query= "select  product_id from compare_product where user_id= $uid ";
+$result = $this->db->connect()->prepare($final_query);
+			$result->execute();
+          $count= $result->rowcount();
+        if($count > 0){
+            $arr=array();
+            while($row=$result->fetch()){
+                $arr[]=$row['product_id'];
+              }
+            return $arr;
+          }else{
+         @session_start();
+            if(isset($_SESSION['filter'])){
+                            return $_SESSION['filter'];
+
+}
+        }
+     }
+    
     
    
     

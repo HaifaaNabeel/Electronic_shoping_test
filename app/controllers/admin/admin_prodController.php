@@ -56,6 +56,19 @@ function add_prod()
 
 }
 
+public function getUniqueName($path, $name) {
+    $name = str_replace(" ", "_", mb_eregi_replace('\s+', ' ', $name));
+
+    $i = 0;
+    $uniqueName = $name;
+    while (file_exists("{$path}/{$uniqueName}")) {
+        $i++;
+        $uniqueName =  $name . $i;
+    }
+    return $uniqueName;
+}
+
+
 function add_product(){
     $allowedFileType = array('jpg','png','jpeg'); 
     $done_upload=0;$done_upload1=0;
@@ -63,7 +76,8 @@ function add_product(){
     ///////////for upload main image////////
     //$imag_path=date(DATE_RFC822)."app/assets/img/products_images/".$_FILES['product_main_image']['name'];
     //$x=date("l jS \of F Y h/i/s A");
-    $imag_path="app/assets/img/products_images/".$_FILES['product_main_image']['name'];
+    //$imag_path="app/assets/img/products_images/".time().$_FILES['product_main_image']['name'];
+    $imag_path="app/assets/img/products_images/".rand().$_FILES['product_main_image']['name'];
     $fileType= strtolower(pathinfo($imag_path, PATHINFO_EXTENSION));
     
     
@@ -75,7 +89,7 @@ function add_product(){
 }
 
     //////////////for upload branch images//////////////
-    $imags_path="app/assets/img/products_images/";
+    $imags_path="app/assets/img/products_images/".rand();
     $array_images="";
         foreach($_FILES['product_branch_images']['name'] as $id=>$val)
         {   $fileName        = $_FILES['product_branch_images']['name'][$id];
@@ -124,7 +138,7 @@ function update(){
     $allowedFileType = array('jpg','png','jpeg'); 
     $done_upload=0;$done_upload1=0;
     ///////////for upload main image////////
-    $imag_path="app/assets/img/products_images".$_FILES['product_main_image']['name'];
+    $imag_path="app/assets/img/products_images".rand().rand().$_FILES['product_main_image']['name'];
     $fileType= strtolower(pathinfo($imag_path, PATHINFO_EXTENSION));
     if(move_uploaded_file($_FILES['product_main_image']['tmp_name'],$imag_path))
     {  if(in_array($fileType, $allowedFileType))
@@ -138,7 +152,7 @@ function update(){
     //////////////for upload branch images//////////////
     if(!empty(array_filter($_FILES['product_branch_images']['name'])))
     {
-        $imags_path="app/assets/img/products_images/";
+        $imags_path="app/assets/img/products_images/".rand().rand();
         $array_images="";
          foreach($_FILES['product_branch_images']['name'] as $id=>$val)
        {   $fileName        = $_FILES['product_branch_images']['name'][$id];

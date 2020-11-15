@@ -201,7 +201,35 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product
       <?php ;}?>
 </div>
 
+<?php
+$inorder=$data['color'];
+foreach($inorder as $order){
+    $item='cart'.$order;
+echo"<script>
+ document.getElementById('".$item."').style.backgroundColor='#ff6500';
+ document.getElementById('".$item."').style.color='#fff';
+</script>";
 
+}
+$infavraite=$data['fcolor'];
+foreach($infavraite as $favorite){
+    $item1='favorit'.$favorite;
+echo"<script>
+ document.getElementById('".$item1."').style.backgroundColor='#ff6500';
+ document.getElementById('".$item1."').style.color='#fff';
+</script>";
+
+}
+$infilter=$data['ficolor'];
+foreach($infilter as $f){
+    $item1='filter'.$f;
+echo"<script>
+ document.getElementById('".$item1."').style.backgroundColor='#ff6500';
+ document.getElementById('".$item1."').style.color='#fff';
+</script>";
+
+}
+?>
 
 
 

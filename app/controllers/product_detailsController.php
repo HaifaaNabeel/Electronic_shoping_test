@@ -25,6 +25,9 @@ function __construct(){
              'cartitem'=>$order_model->getOne($this->u),
              'favoriteitem'=>$favorite_product_model->getOnef($this->u),
              'filteritem'=>$compare_product_model->getOnefilter($this->u),
+             'color'=>$order_model->getcolor($this->u),
+             'fcolor'=>$favorite_product_model->getcolor($this->u),
+             'ficolor'=>$compare_product_model->getcolor($this->u),
              'user'=>$user_model->getname($this->u),
 
         );

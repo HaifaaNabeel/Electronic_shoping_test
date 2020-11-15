@@ -14,6 +14,11 @@ function  getOne($id)
         $final_query= $this->db->select('product_date_added').$this->db->from('products').$this->db->whereone('Product_id','=',$id);
         return $this->db->executeb($final_query); 
 }
+function getname($name){
+        
+    $final_query= $this->db->select('*').$this->db->from('products').$this->db->whereone(' product_name ',' like ', "'%".$name."%'");
+           return $this->db->executeb($final_query);     
+       }
 
 function  getData()
 {

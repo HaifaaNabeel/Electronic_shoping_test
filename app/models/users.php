@@ -429,6 +429,12 @@ function login_googlehh($x,$y)
         return $this->db->executeb($final_query);
 
     }
+    function getUsersCust()
+    {
+        $final_query=$this->db->select('*').$this->db->from('users').$this->db->whereone('user_roles','=','0');
+        return $this->db->executeb($final_query);
+
+    }
 
     function getname($id){
         if($id > 0){

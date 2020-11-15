@@ -1,4 +1,12 @@
 <?php include"header.php";?>
+<style>
+.form-input .xx {display:block;width:150px;height:auto;max-height:100px;;
+            border-radius:10px;cursor:pointer;}
+.form-input img {width:150px;height:110px;margin:2px;}
+.ion-android-cancel{font-size: 2.5em;outline: none;
+            margin:5px 8px;margin-top:-3em;color: red;position: static}
+.ion-android-cancel::after{color:green;font-weight:900;border-radius: 8px;cursor:pointer;}
+</style>
 <div class="page-wrapper">
                   <!-- Header -->
                   <header class="main-header " id="header">
@@ -109,19 +117,49 @@
                       <div class="form-group">
 													<label for="category_name"> العنوان</label>
 													<input class="form-control" type="text" id="banner_title" name="banner_title">
-<input type="text" class="form-control"  placeholder="" name="banner_added_date" hidden="hidden" readonly required value="<?php echo date('y-m-d'); ?>"><input type="text" class="form-control"  placeholder="" name="banner_status" hidden="hidden" readonly required value="null">
+                          <input type="text" class="form-control"  placeholder="" name="banner_added_date" hidden="hidden" readonly required value="<?php echo date('y-m-d'); ?>"><input type="text" class="form-control"  placeholder="" name="banner_status" hidden="hidden" readonly required value="null">
 												</div>
                         <div class="form-group">
-													<label for="category_name"> الصورة</label>
-													<input class="form-control" accept="image/*" type="file" id="banner_title" name="banner_img">
-												</div>
+                          <label for="category_name"> الصورة</label>
+                          <div class="form-input">
+                             <label for="file-ip-1" class="xx">
+                               <img id="file-ip-1-preview" >
+                               <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionOne()" ></button>
+                             </label>
+													  <input class="form-control www" accept="image/*" type="file" id="banner_title" name="banner_img" onchange="showPreviewOne(event);">
+                          </div>
+                        </div>
+                        
+          <!--for show and delete this image-->
+       <script>
+            function showPreviewOne(event)
+            {
+              if(event.target.files.length > 0)
+              {
+                let src = URL.createObjectURL(event.target.files[0]);
+                let preview = document.getElementById("file-ip-1-preview");
+                preview.src = src;
+                preview.style.display = "block";
+              } 
+            }
+            function myImgRemoveFunctionOne() 
+            {
+              document.getElementById("file-ip-1-preview").src= "";
+              resetFile();
+            }
+            function resetFile() 
+            { 
+              const file = document.querySelector('.www'); 
+              file.value =''; 
+            } 
+          </script>
+          <!--for show and delete this image-->
                                                 
                                             
-
-                                                <div class="form-footer pt-4 pt-5 mt-4 border-top text-right">
+          <div class="form-footer pt-4 pt-5 mt-4 border-top text-right">
 													<button type="submit" class="btn btn-primary btn-default">اضافة واجهه </button>
 													<a type="submit" class="btn btn-secondary btn-default " href="banner">الغاء</a>
-                                                </div>
+          </div>
                                                 
 											</form>
 										</div>

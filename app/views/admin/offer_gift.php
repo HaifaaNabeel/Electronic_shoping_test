@@ -1,14 +1,14 @@
 <?php include"header.php";?>
 <div class="page-wrapper">
                   <!-- Header -->
-                  <header class="main-header " id="header">
+                  <header class="main-header " id="header" style="background-color:white;border:1px solid;">
             <nav class="navbar navbar-static-top navbar-expand-lg">
               <!-- Sidebar toggle button -->
               <button id="sidebar-toggler" class="sidebar-toggle">
                 <span class="sr-only">Toggle navigation</span>
               </button>
               <!-- search form -->
-              <div class="search-form d-none d-lg-inline-block">
+              <div class="search-form d-none d-lg-inline-block" ><!--style="background-color:white;border:1px solid;"-->
                   <form method="post" action="search_result">
                 <div class="input-group">
                   
@@ -22,7 +22,7 @@
               
               </div>
 
-              <div class="navbar-right ">
+              <div class="navbar-right " style="background-color:white;border:1px solid;">
                 <ul class="nav navbar-nav">
                  
                   <li class="dropdown notifications-menu" style="display:none">

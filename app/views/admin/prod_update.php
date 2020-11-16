@@ -9,20 +9,20 @@
 </style>
 <div class="page-wrapper">
                   <!-- Header -->
-                  <header class="main-header " id="header">
-            <nav class="navbar navbar-static-top navbar-expand-lg">
+                  <header class="main-header " id="header" style="background-color:white;border:1px solid;">
+            <nav class="navbar navbar-static-top navbar-expand-lg" >
               <!-- Sidebar toggle button -->
               <button id="sidebar-toggler" class="sidebar-toggle">
                 <span class="sr-only">Toggle navigation</span>
               </button>
               <!-- search form -->
-              <div class="search-form d-none d-lg-inline-block">
+              <div class="search-form d-none d-lg-inline-block" style="background-color:white;border:1px solid;">
                   <form method="post" action="search_result">
                 <div class="input-group">
                   
                   <!----><input type="text"  name="product_name" id="search-input" class="form-control" placeholder="ابحث هنا"
-                    autofocus autocomplete="off" />
-                    <button type="submit" name="search" value="search" id="search-btn" class="btn btn-flat" >
+                    autofocus autocomplete="off" style=" width:48em;"/>
+                    <button type="submit" name="search" value="search" id="search-btn" class="btn btn-flat" style="background-color:rgb(230, 223, 223);">
                     <i class="mdi mdi-magnify"></i> بحث 
                   </button>
                     </form>
@@ -30,7 +30,7 @@
               
               </div>
 
-              <div class="navbar-right ">
+              <div class="navbar-right " style="background-color:white;border:1px solid;">
                 <ul class="nav navbar-nav">
                  
                   <li class="dropdown notifications-menu" style="display:none">
@@ -159,7 +159,7 @@
 							<div class="form-group">
 								<label for="product_details">يمتلك المنتج عرض : </label>
 								<select class="form-control" name="product_is_offer" id="product_is_offer">
-                <option value=<?php echo $row->product_is_offer;?>><?php echo $row->product_is_offer;?></option>
+                <option value=<?php echo $row->product_is_offer;?>><?php  if( $row->product_is_offer==1)echo "يمتلك";else echo 'لا يمتلك';;?></option>
 									<option value=0>لا يمتلك </option>
 									<option value=1>يمتلك </option>
                            		</select>
@@ -167,27 +167,27 @@
 							<div class="form-group">
 								<label for="product_details">يمتلك المنتج تخفيض بالسعر :</label>
 								<select class="form-control" name="product_offer_percent" id="product_offer_percent">
-                <option value=<?php echo $row->product_offer_percent;?>><?php echo $row->product_offer_percent;?></option>
+                <option value=<?php echo $row->product_offer_percent;?>><?php if( $row->product_offer_percent==1)echo "يمتلك";else echo 'لا يمتلك';?></option>
 									<option value=0>لا يمتلك </option>
-									<option value=1>يمتلك </option>
+									<!--<option value=1>يمتلك </option>-->
                            		</select>
 							</div>
 							<div class="form-group">
 								<label for="product_details">السعر بعد التخفيض :</label>
-                <input class="form-control" value="<?php echo $row->product_price_after_discount;?>" type="text" name="product_price_after_discount" id="product_price_after_discount">
+                <input class="form-control" value="<?php echo $row->product_price_after_discount;?>" type="text" name="product_price_after_discount" id="product_price_after_discount" readonly>
 							</div>
 							<div class="form-group">
 								<label for="product_details">يمتلك المنتج هدية </label>
 								<select class="form-control" name="product_is_gift" id="product_is_gift">
-                  <option value=<?php echo $row->product_is_gift;?>><?php echo $row->product_is_gift;?></option>
+                  <option value=<?php echo $row->product_is_gift;?>><?php if( $row->product_is_gift==1)echo "يمتلك";else echo 'لا يمتلك';?></option>
                   <option value=0>لا يمتلك </option>
-									<option value=1>يمتلك </option>
+									 <!--<option value=1>يمتلك </option>-->
                   </select>
               </div>
               <?php //echo $row->product_main_image; ?>
 							<div class="form-group">
 								<label for="product_details"> هدية المنتج : </label>
-								<select class="form-control" name="gift_id" id="gift_id">
+								<select class="form-control" name="gift_id" id="gift_id" disabled>
                 <!--<option value=<?php echo $row->gift_id;?>>.....</option> -->
                 <?php 
                      $rows2=$data['products1'];
@@ -217,13 +217,12 @@
                  var has_percent = '<option value=0> لا يمتلك </option> <option value=1> يمتلك </option>';
                  var has_gift = '<option value=0> لا يمتلك </option> <option value=1> يمتلك </option>';
 
-                 //var gifts=<?php 	$rows=$data['products1'];foreach($rows as $row){echo "<option value=$row->Product_id>$row->product_name</option>";}?>;
-
                  var has_offer = document.getElementById("product_is_offer");
                  var is_gift = document.getElementById("product_is_gift");
                  var is_present = document.getElementById("product_offer_percent");
                  var percent_price=document.getElementById('product_price_after_discount');
-                 var gift_prod=document.getElementById('gift_id')
+                 var gift_prod=document.getElementById('gift_id');
+                 var price=document.getElementById('product_price');
                  
                  /////////////////////// on onload
                  has_offer.addEventListener("onload",function()
@@ -294,7 +293,7 @@
                    
                    else 
                     {
-                      percent_price.value = '';
+                      percent_price.value =price.value;
                       percent_price.setAttribute('readonly', true);
                     }
                  });

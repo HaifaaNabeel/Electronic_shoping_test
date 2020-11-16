@@ -1,20 +1,20 @@
 <?php include"header.php";?>
 <div class="page-wrapper">
                   <!-- Header -->
-                  <header class="main-header " id="header">
+                  <header class="main-header " id="header" style="background-color:white;border:1px solid;">
             <nav class="navbar navbar-static-top navbar-expand-lg">
               <!-- Sidebar toggle button -->
               <button id="sidebar-toggler" class="sidebar-toggle">
                 <span class="sr-only">Toggle navigation</span>
               </button>
               <!-- search form -->
-              <div class="search-form d-none d-lg-inline-block">
+              <div class="search-form d-none d-lg-inline-block"> <!--style="background-color:white;border:1px solid;"-->
                   <form method="post" action="search_result">
                 <div class="input-group">
                   
                   <!--<input type="text"  name="category_name" id="search-input" class="form-control" placeholder="ابحث هنا"
-                    autofocus autocomplete="off" />
-                    <button type="submit" name="search" value="search" id="search-btn" class="btn btn-flat" >
+                    autofocus autocomplete="off"  style=" width:48em;"/>
+                    <button type="submit" name="search" value="search" id="search-btn" class="btn btn-flat" style="background-color:rgb(230, 223, 223);">
                     <i class="mdi mdi-magnify"></i> بحث 
                   </button>-->
                     </form>
@@ -22,7 +22,7 @@
               
               </div>
 
-              <div class="navbar-right ">
+              <div class="navbar-right " style="background-color:white;border:1px solid;">
                 <ul class="nav navbar-nav">
                  
                   <li class="dropdown notifications-menu" style="display:none">
@@ -108,7 +108,7 @@
             <!-- New Customers -->
             <div class="card card-table-border-none"  data-scroll-height="580">
               <div class="card-header justify-content-between ">
-                <h2>الزبائن الجدد</h2>
+                <h2>كافة الزبائن </h2>
                 <div>
                     <button class="text-black-50 mr-2 font-size-20">
                       <i class="mdi mdi-cached"></i>
@@ -118,8 +118,8 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-customar">
                           <li class="dropdown-item"><a  href="#">Action</a></li>
-                          <li class="dropdown-item"><a  href="#">Another action</a></li>
-                          <li class="dropdown-item"><a  href="#">Something else here</a></li>
+                          <!--<li class="dropdown-item"><a  href="#">Another action</a></li>
+                          <li class="dropdown-item"><a  href="#">Something else here</a></li>-->
                         </ul>
                       </div>
                 </div>

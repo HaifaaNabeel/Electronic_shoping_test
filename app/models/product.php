@@ -182,6 +182,13 @@ function getAllProducts()
     return $this->db->executeb($final_query); 
 }
 
+function getFinashProducts()
+{
+    $final_query= $this->db->select('*').$this->db->from('products').$this->db->whereone('product_Quantity','<=','5');;
+    return $this->db->executeb($final_query); 
+}
+
+
 }
 
 ?>

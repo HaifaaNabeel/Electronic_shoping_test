@@ -447,6 +447,12 @@ function login_googlehh($x,$y)
      
      }
 
+     function getUsersCustOrder()
+{
+    $final_query= $this->db->select('*').$this->db->from('users').$this->db->whereone('user_roles','=','0').$this->db->orderbymore('date_added',' DESC');;
+    return $this->db->executeb($final_query); 
+}
+
 }
 
 ?>

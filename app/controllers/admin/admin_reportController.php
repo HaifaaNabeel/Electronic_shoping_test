@@ -33,9 +33,12 @@ function index(){
             
             'user'=>$this->user_model->getOne($_SESSION['id']),
             'users'=>$this->user_model->getUsersCust(),
-            'orders'=>$this->order_model->getOrders(),
+            'orders'=>$this->order_model->getAllOrders(),
+            'ordersDone'=>$this->order_model->getOrders(),
             'bills'=>$this->checkout_model->getBills(),
-            'products'=>$this->prod_model->getAllProducts(),
+            'products_all'=>$this->prod_model->getAllProducts(),
+            'products_finash'=>$this->prod_model->getFinashProducts(),
+            'last_users'=>$this->user_model->getUsersCustOrder(),
 
 
    

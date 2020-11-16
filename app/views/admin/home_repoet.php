@@ -102,7 +102,78 @@
 
 <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////--->
 <div class="content-wrapper" dir="rtl">
-    <div class="content">						 
+    <div class="content">	
+      
+                <!-- Top Statistics -->
+            <div class="row">
+              <div class="col-xl-4 col-sm-6">
+                <div class="card card-mini mb-4">
+                  <div class="card-body">
+                    <h2 class="mb-1" >
+                    <?php
+                         $rows1=$data['products_finash'];
+                         $coun_product=0;
+                          foreach ($rows1 as $row1)
+                          {
+                            $coun_product=$coun_product+1;
+                          }
+                          echo $coun_product;
+                         ?>
+                      &nbsp &nbsp  &nbsp &nbsp
+                      <span class="ion-android-warning" style="color:red;text-align: center;font-size:2em"></h2>
+                    <p>المنتجات التي قاربت على الانتهاء</p>
+                    <div class="chartjs-wrapper">
+                      <canvas id=""></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-sm-6">
+                <div class="card card-mini mb-4">
+                  <div class="card-body">
+                    
+                    <h2 class="mb-1">
+                    <?php
+                         $rows1=$data['products_finash'];
+                         $coun_product=0;
+                          foreach ($rows1 as $row1)
+                          {
+                            $coun_product=$coun_product+1;
+                          }
+                          echo $coun_product;
+                         ?>
+                       &nbsp &nbsp  &nbsp &nbsp
+                      <span class="ion-chatboxes ion-email-unread" style="color:red;text-align:center;font-size:2em"></span></h2>
+                    <p> اخر رسائل العملاء </p>
+                    <div class="chartjs-wrapper">
+                      <canvas id=""></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 col-sm-6">
+                <div class="card card-mini mb-4">
+                  <div class="card-body">
+                    <h2 class="mb-1"> 
+                         <?php
+                         $rows3=$data['users'];
+                         $coun_user=0;
+                          foreach ($rows3 as $row3)
+                          {
+                            $coun_user=$coun_user+1;
+                          }
+                          echo $coun_user;
+                         ?>
+                      &nbsp &nbsp  &nbsp &nbsp
+                       <span class="ion-ios-people" style="color:red;text-align: center;font-size:2em"></span></h2>
+                    <p>المجموع الكلي للعملاء </p>
+                    <div class="chartjs-wrapper">
+                      <canvas id=""></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- Top Statistics -->
             <div class="row">
               <div class="col-xl-3 col-sm-6">
@@ -153,7 +224,7 @@
 
 
                   <div class="row">
-                      <div class="col-xl-8 col-md-12">
+                      <div class="col-xl-7 col-md-12">
                  <!-- To Do list -->
             <div class="card card-default todo-table" id="todo" data-scroll-height="675">
               <div class="card-header justify-content-between">
@@ -218,7 +289,7 @@
             </div>
                 </div>
 
-                      <div class="col-xl-4 col-md-12">
+             <div class="col-xl-5 col-md-12">
             <!-- Doughnut Chart -->
             <div class="card card-default" data-scroll-height="675">
               <div class="card-header justify-content-center">
@@ -229,19 +300,27 @@
               </div>
               <a href="#" class="pb-5 d-block text-center text-muted"><i class="mdi mdi-download mr-2"></i> تنزيل التقرير العام</a>
               <div class="card-footer d-flex flex-wrap bg-white p-0">
-                <div class="col-6">
+                <div class="col-4">
                   <div class="py-4 px-4">
                     <ul class="d-flex flex-column justify-content-between">
                       <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #4c84ff"></i>تم اكتمال الطلب</li>
-                      <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #80e1c1 "></i>طلب غير مدفوع</li>
+                      <!-- <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color:  #8061ef"></i>انتظار الطلب</li>-->
                     </ul>
                   </div>
                 </div>
-                <div class="col-6 border-left">
+                <div class="col-4 border-left">
                   <div class="py-4 px-4 ">
                     <ul class="d-flex flex-column justify-content-between">
-                      <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #8061ef"></i>انتظار الطلب</li>
-                      <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #ffa128"></i>تم إلغاء الطلب</li>
+                      <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #80e1c1"></i> طلب غير مدفوع</li>
+                     <!-- <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #ffa128"></i>تم إلغاء الطلب</li>-->
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-4 border-left">
+                  <div class="py-4 px-4 ">
+                    <ul class="d-flex flex-column justify-content-between">
+                      <!--<li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #80e1c1"></i> طلب غير مدفوع</li>-->
+                      <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #ffa128"></i>باقي المنتجات</li>
                     </ul>
                   </div>
                 </div>
@@ -416,7 +495,7 @@
             <!-- New Customers -->
             <div class="card card-table-border-none"  data-scroll-height="580">
               <div class="card-header justify-content-between ">
-                <h2>الزبائن الجدد</h2>
+                <h2>اخر الزبائن </h2>
                 <div>
                     <button class="text-black-50 mr-2 font-size-20">
                       <i class="mdi mdi-cached"></i>
@@ -425,9 +504,9 @@
                         <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-customar"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-customar">
-                          <li class="dropdown-item"><a  href="#">Action</a></li>
-                          <li class="dropdown-item"><a  href="#">Another action</a></li>
-                          <li class="dropdown-item"><a  href="#">Something else here</a></li>
+                          <li class="dropdown-item"><a  href="#">مشاهدة الجميع </a></li>
+                          <!--<li class="dropdown-item"><a  href="#">Another action</a></li>
+                          <li class="dropdown-item"><a  href="#">Something else here</a></li>-->
                         </ul>
                       </div>
                 </div>
@@ -435,7 +514,50 @@
               <div class="card-body pt-0">
                 <table class="table ">
                   <tbody>
-                    <tr>
+                  <tr>
+                     
+                      <td >اسم المستخدم والايميل </td>
+                      <td >تاريخ التسجيل </td>
+                      <td >كافة الطلبات </td>
+                      <!--<td >التكلفة </td>-->
+                      
+                    </tr>
+                    <?php  
+                  $rows=$data['orders'];
+                  $rows2=$data['last_users'];
+                  $rows3=$data['orders'];
+                  $count_users=0;
+                  foreach ($rows2 as $row2)
+                  {
+                    if($count_users==5)
+                    {
+                    break;
+                    }
+                    else
+                    {
+                          echo '
+                          <tr>
+                             <td >'.$row2->user_name.' <br><small>'.$row2->user_email.'</small></td>
+                             <td >'.$row2->date_added.'</td>';
+                             $count_order=0;
+                           foreach ($rows3 as $row3)
+                          { 
+                               if($row3->user_id == $row2->user_id )
+                              {
+                                 $count_order=$count_order+1;
+                              }
+                             else
+                             continue;
+                          }
+                          echo '<td >'.$count_order.' طلبات</td>';
+                     
+                          echo '</tr>';
+                          $count_users=$count_users+1;
+                        
+                    }
+                  }
+                  ?>
+                    <!--<tr>
                       <td >
                         <div class="media">
                           <div class="media-image mr-3 rounded-circle">
@@ -509,49 +631,72 @@
                       </td>
                       <td >1 طلب</td>
                       <td class="text-dark d-none d-md-block">$60</td>
-                    </tr>
+                    </tr>-->
                   </tbody>
                 </table>
               </div>
             </div>
 </div>
-                      <div class="col-xl-7">
+         <div class="col-xl-7">
             <!-- Top Products -->
-            <div class="card card-default" data-scroll-height="580">
-              <div class="card-header justify-content-between mb-4">
-                <h2>أهم المنتجات</h2>
+            <div class="card card-default" data-scroll-height="580" style="padding:3em">
+              <div class="card-header justify-content-between mb-4" >
+                <h2>أهم منتجات البيع </h2>
                 <div>
                     <button class="text-black-50 mr-2 font-size-20"><i class="mdi mdi-cached"></i></button>
                     <div class="dropdown show d-inline-block widget-dropdown">
                         <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-product" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-product">
-                          <li class="dropdown-item"><a  href="#">تاريخ التحديث</a></li>
+                        <li class="dropdown-item"><a  href="#">كافة المنتجات </a></li>
+                        <!--<li class="dropdown-item"><a  href="#">تاريخ التحديث</a></li>
                           <li class="dropdown-item"><a  href="#">سجل الدخول</a></li>
                           <li class="dropdown-item"><a  href="#">احصائيات</a></li>
-                          <li class="dropdown-item"><a  href="#">امسح البيانات</a></li>
+                          <li class="dropdown-item"><a  href="#">امسح البيانات</a></li>-->
                         </ul>
                       </div>
                 </div>
 
               </div>
-              <div class="card-body py-0">
-                <div class="media d-flex mb-5">
+
+              
+              <?php 
+                      $rows=$data['ordersDone'];
+                      $rows2=$data['products_all'];
+                      $count_pro=0;
+                      $count_quan=0;
+                      foreach ($rows as $row)
+                      {  
+                        foreach ($rows2 as $row2)
+                        { if($count_pro==5)
+                          {
+                          break;
+                          }
+                          if($row->product_id == $row2->Product_id)
+                          {
+                        echo'
+                        <div class="media d-flex mb-5">
                   <div class="media-image align-self-center mr-3 rounded">
-                    <a href="#"><img src="assets/img/products/p1.jpg" alt="customer image"></a>
+                  <img src="../../'.$row2->product_main_image.'" alt="customer image" class="img-thumbnail img-fluid" width=60px hight=60px>
                   </div>
                   <div class="media-body align-self-center">
-                    <a href="#"><h6 class="mb-3 text-dark font-weight-medium"> Coach Swagger</h6></a>
-                    <p class="float-md-right"><span class="text-dark mr-2">20</span>مبيعات</p>
-                    <p class="d-none d-md-block">Statement belting with double-turnlock hardware adds “swagger” to a simple.</p>
+                    <a href="#"><h6 class="mb-3 text-dark font-weight-medium">'.$row2->product_name.'</h6></a>
+                    <p class="">'.$row2->product_details.'</p>
                     <p class="mb-0">
-                      <del>$300</del>
-                      <span class="text-dark ml-3">$250</span>
-                    </p>
+                      <!--<del>$300</del>-->
+                      <span class="text-dark ml-3">'.$row2->product_price.' ريال يمني </span>
+                      &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<span class="text-dark mr-2">10</span>مبيعات 
+                      </p>
                   </div>
-                </div>
-
-                <div class="media d-flex mb-5">
+                </div>';
+                $count_pro=$count_pro+1;
+                
+                      }
+                    }
+                  }
+                ?>
+                
+                <!--<div class="media d-flex mb-5">
                   <div class="media-image align-self-center mr-3 rounded">
                     <a href="#"><img src="assets/img/products/p2.jpg" alt="customer image"></a>
                   </div>
@@ -579,7 +724,7 @@
                       <span class="text-dark ml-3">$50</span>
                     </p>
                   </div>
-                </div>
+                </div>-->
                 </div>
             </div>
 </div>

@@ -132,8 +132,8 @@
                       <td >اسم المستخدم والايميل </td>
                       <td >تاريخ التسجيل </td>
                       <td >كافة الطلبات </td>
-                      <td >طلبات تم دفعها</td>
-                      <td >طلبات لم يتم دفعها</td>
+                      <!--<td >طلبات تم دفعها</td>
+                      <td >طلبات لم يتم دفعها</td>-->
                     </tr>
                   <?php  
                   $rows=$data['ordersDone'];
@@ -178,7 +178,7 @@
                           else
                           continue;
                       }
-                      echo '<td >'.$count1.' طلبات</td>';
+                     // echo '<td >'.$count1.' طلبات</td>';
                       $count2=0;
                       foreach ($rows3 as $row3)
                       { 
@@ -189,9 +189,9 @@
                           else
                           continue;
                       }
-                      echo '<td >'.$count2.' طلبات</td>
-                      <!--<td class="text-dark d-none d-md-block">$150</td>-->
-                    </tr>';
+                     // echo '<td >'.$count2.' طلبات</td>
+                      //<!--<td class="text-dark d-none d-md-block">$150</td>-->
+                      echo '</tr>';
                 }
                     ?>
                     <!--<tr>

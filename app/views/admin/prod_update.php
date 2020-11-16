@@ -178,7 +178,7 @@
 							</div>
 							<div class="form-group">
 								<label for="product_details">يمتلك المنتج هدية </label>
-								<select class="form-control" name="product_is_gift" id="product_is_offer">
+								<select class="form-control" name="product_is_gift" id="product_is_gift">
                   <option value=<?php echo $row->product_is_gift;?>><?php echo $row->product_is_gift;?></option>
                   <option value=0>لا يمتلك </option>
 									<option value=1>يمتلك </option>
@@ -200,8 +200,6 @@
                           else 
                           continue;
                      }
-                      /*if($has_gift == 1)
-                      echo "<option value=$row->gift_id>لا يمتلك هدية </option>";*/
                       ?>
                 <?php 
                 echo' <option value=0>لا يمتلك هدية </option>';
@@ -213,13 +211,109 @@
 															}
                                          ?>
                            		</select>
-							</div>
+              </div>
+              
+              <script>
+                 var has_percent = '<option value=0> لا يمتلك </option> <option value=1> يمتلك </option>';
+                 var has_gift = '<option value=0> لا يمتلك </option> <option value=1> يمتلك </option>';
 
-              <!--<div class="form-group">
-								<label for="product_main_image">Product image:</label>
-								<input type="file" value="<?php echo $row->product_main_image;?>"  class="form-control-file" id="product_main_image" name="product_main_image">
-								print_r(<?php echo $row->product_main_image;?>)
-              </div>-->
+                 //var gifts=<?php 	$rows=$data['products1'];foreach($rows as $row){echo "<option value=$row->Product_id>$row->product_name</option>";}?>;
+
+                 var has_offer = document.getElementById("product_is_offer");
+                 var is_gift = document.getElementById("product_is_gift");
+                 var is_present = document.getElementById("product_offer_percent");
+                 var percent_price=document.getElementById('product_price_after_discount');
+                 var gift_prod=document.getElementById('gift_id')
+                 
+                 /////////////////////// on onload
+                 has_offer.addEventListener("onload",function()
+                 {
+                   if (has_offer.value == "1") 
+                   {
+                    is_gift.innerHTML = has_gift;
+                    is_present.innerHTML= has_percent;
+                    //percent_price.removeAttribute('readonly');
+                   }
+                   
+                   else if(has_offer.value == "0") 
+                    {
+                      is_gift.innerHTML = '<option value=0>...</option>';
+                      is_present.innerHTML= '<option value=0>...</option>';
+                      percent_price.value = '';
+                      percent_price.setAttribute('readonly', true);
+                      gift_prod.value = 0;
+                      gift_prod.setAttribute('disabled', true);
+                    }
+                    else
+                    {
+                      is_gift.innerHTML = '<option value=0>...</option>';
+                      is_present.innerHTML= '<option value=0>...</option>';
+                      percent_price.value = '';
+                      percent_price.setAttribute('readonly', true);
+                      gift_prod.value = 0;
+                      gift_prod.setAttribute('disabled', true);
+                    }
+                  });
+                 /////////////////// change the offer
+                 has_offer.addEventListener("change",function()
+                 {
+                   if (has_offer.value == "1") 
+                   {
+                    is_gift.innerHTML = has_gift;
+                    is_present.innerHTML= has_percent;
+                    //percent_price.removeAttribute('readonly');
+                   }
+                   
+                   else if(has_offer.value == "0") 
+                    {
+                      is_gift.innerHTML = '<option value=0>...</option>';
+                      is_present.innerHTML= '<option value=0>...</option>';
+                      percent_price.value = '';
+                      percent_price.setAttribute('readonly', true);
+                      gift_prod.value = 0;
+                      gift_prod.setAttribute('disabled', true);
+                    }
+                    else
+                    {
+                      is_gift.innerHTML = '<option value=0>...</option>';
+                      is_present.innerHTML= '<option value=0>...</option>';
+                      percent_price.value = '';
+                      percent_price.setAttribute('readonly', true);
+                      gift_prod.value = 0;
+                      gift_prod.setAttribute('disabled', true);
+                    }
+                  });
+                  
+                  /////////////////// change the present 
+                  is_present.addEventListener("change",function()
+                 {
+                  if (is_present.value == "1") 
+                   {
+                    percent_price.removeAttribute('readonly');
+                   }
+                   
+                   else 
+                    {
+                      percent_price.value = '';
+                      percent_price.setAttribute('readonly', true);
+                    }
+                 });
+                 /////////////////// change the gift 
+                  is_gift.addEventListener("change",function()
+                  {
+                    if (is_gift.value == "1") 
+                    {
+                      gift_prod.removeAttribute('disabled');
+                    }
+                    else 
+                    {
+                      gift_prod.value = 0;
+                      gift_prod.setAttribute('disabled', true);
+                    }
+                  });
+              </script>
+                
+                
               
 
               <div class="form-group">

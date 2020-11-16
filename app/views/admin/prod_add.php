@@ -151,33 +151,34 @@
 							<div class="form-group">
 								<label for="product_details">يمتلك المنتج عرض :</label>
 								<select class="form-control" name="product_is_offer" id="product_is_offer">
-									<option value=0>لا يمتلك </option>
-									<option value=1>يمتلك </option>
+                <option value=0>.....</option>
+                <option value=0>لا يمتلك </option>
+								<option value=1>يمتلك </option>
                            		</select>
 							</div>
 							<div class="form-group">
 								<label for="product_details">يمتلك المنتج تخفيض في السعر :</label>
 								<select class="form-control" name="product_offer_percent" id="product_offer_percent">
-									<option value=0>لا يمتلك </option>
-									<option value=1>يمتلك </option>
+									<option value=0>.....</option>
+									<!--<option value=1>يمتلك </option>-->
                            		</select>
 							</div>
 							<div class="form-group">
 								<label for="product_details">السعر بعد التخفيض :</label>
-								<input class="form-control" type="text" name="product_price_after_discount" id="product_price_after_discount">
+								<input class="form-control" type="text" name="product_price_after_discount" id="product_price_after_discount" readonly>
 							</div>
 							<div class="form-group">
 								<label for="product_details">يمتلك المنتج هدية :</label>
-								<select class="form-control" name="product_is_gift" id="product_is_offer">
-									<option value=0>لا يمتلك </option>
-									<option value=1>يمتلك </option>
+								<select class="form-control" name="product_is_gift" id="product_is_gift">
+									<option value=0>...</option>
+									<!--<option value=1>يمتلك </option>-->
                            		</select>
 							</div>
 							<div class="form-group">
 								<label for="product_details"> هدية المنتج  </label>
-								<select class="form-control" name="gift_id" id="gift_id">
+								<select class="form-control" name="gift_id" id="gift_id" disabled>
                    <option value=0> لا يمتلك هدية  </option>
-								<?php 
+                   <?php 
 											$rows=$data['products1'];
                        foreach($rows as $row){
                            echo "
@@ -187,6 +188,68 @@
                                          ?>
                            		</select>
               </div>
+              
+              <script>
+                 var has_percent = '<option value=0> لا يمتلك </option> <option value=1> يمتلك </option>';
+                 var has_gift = '<option value=0> لا يمتلك </option> <option value=1> يمتلك </option>';
+
+                 //var gifts=<?php 	$rows=$data['products1'];foreach($rows as $row){echo "<option value=$row->Product_id>$row->product_name</option>";}?>;
+
+                 var has_offer = document.getElementById("product_is_offer");
+                 var is_gift = document.getElementById("product_is_gift");
+                 var is_present = document.getElementById("product_offer_percent");
+                 var percent_price=document.getElementById('product_price_after_discount');
+                 var gift_prod=document.getElementById('gift_id')
+                 
+                 has_offer.addEventListener("change",function()
+                 {
+                   if (has_offer.value == "1") 
+                   {
+                    is_gift.innerHTML = has_gift;
+                    is_present.innerHTML= has_percent;
+                    //percent_price.removeAttribute('readonly');
+                   }
+                   
+                   else 
+                    {
+                      is_gift.innerHTML = '<option value=0>...</option>';
+                      is_present.innerHTML= '<option value=0>...</option>';
+                      percent_price.value = '';
+                      percent_price.setAttribute('readonly', true);
+                      gift_prod.value = 0;
+                      gift_prod.setAttribute('disabled', true);
+                    }
+                  });
+                  
+                  is_present.addEventListener("change",function()
+                 {
+                  if (is_present.value == "1") 
+                   {
+                    percent_price.removeAttribute('readonly');
+                   }
+                   
+                   else 
+                    {
+                      percent_price.value = '';
+                      percent_price.setAttribute('readonly', true);
+                    }
+                 });
+                  is_gift.addEventListener("change",function()
+                  {
+                    if (is_gift.value == "1") 
+                    {
+                      gift_prod.removeAttribute('disabled');
+                      //gift_prod.innerHTML=gifts;
+                    }
+                    else 
+                    {
+                      //gift_prod.innerHTML= '<option value=0>لا يمتلك هدية </option>';
+                      gift_prod.value = 0;
+                      gift_prod.setAttribute('disabled', true);
+                    }
+                  });
+              </script>
+
 
 
               <div class="form-group">

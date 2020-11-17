@@ -206,7 +206,53 @@
         
        
        <!--      منتجات مشابهه       -->
-        
+       
+    <section class="points2">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="text-center" style="color:#F27523;"> منتجات مشابة </h1>
+                    </br></br>
+                </div>
+                <div class="img-gallery  owl-carousel owl-theme">
+                    <div class="col-sm-6 col-md-3 " style='width: 200%;height:30%;'>
+                        <div class="">
+                            <img class=""
+                                src="app/assets/img/Download-Lenovo-Logo-PNG-Transparent-Image-420x186.png" >
+                        </div>
+                    </div>
+
+                    <!--<div class="col-sm-6 col-md-3 p-1">
+                        <div class="">
+                            <img class="img-fluid" src="app/assets/img/Huawei-Symbol.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 p-1">
+                        <div class="">
+                            <img class="img-fluid" src="app/assets/img/Sony-Logo-1961%E2%80%931962.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 p-1">
+                        <div class="">
+                            <img class="img-fluid" src="app/assets/img/samsung_logo_PNG16.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 p-1">
+                        <div class="">
+                            <img class="img-fluid" src="app/assets/img/samsung_logo_PNG16.png">
+                        </div>
+                    </div>-->
+                </div>
+                </br></br></br></br></br></br>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-3">
+
+
+    </section>
         
 
        

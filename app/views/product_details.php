@@ -52,7 +52,7 @@
     
     
     .sh_img img{
-    height: 600px;
+    height: 380px;
     }
     
     .sh_img .thump-btn {
@@ -82,7 +82,7 @@
 							
                     <div class="row">
                         <div class="col-md-6 sh_img">
-                            <img src="'.$rows->product_main_image.'" width="100%" id="productImg">
+                            <img src="'.$rows->product_main_image.'" width="80%"  id="productImg">
                             <br>
                             <br>
                             <div class="small-img-row">

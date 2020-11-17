@@ -64,7 +64,7 @@
     </section>
 
     <section class="mt-3">
-        <div class="container-fluid">
+        <div class="container-fluid" dir="rtl">
             <div class="row">
                 <div class="col-md-2"></div>
 
@@ -82,8 +82,8 @@
 
                 <div class="col-md-3 text-center ">
 
-                    <img class="img-fluid mx-auto d-block" src="app/assets/img/our-story.png" alt=""
-                        style="margin-top: 100px;">
+                    <img class="img-fluid mx-auto d-block" src="app/assets/img/login_store_logos-1.png" alt=""
+                        style="margin-top: 100px; width:300px;">
                 </div>
 
 

@@ -5,55 +5,110 @@
  <link rel="stylesheet" href="app/assets/css/zoom.css">
  <script src="app/assets/js/jquery.exzoom.js"></script> 
  <script src="app/assets/js/script.js"></script> 
+ <style>
+    
+    .small-img-row{
+        display: flex;
+        justify-content: space-between;
+        float: right;
+    }
+    
+    .small-img-col{
+        flex-basis: 24%;
+        cursor: pointer;
+    
+    }
+    
+    h1,h4,h3,.det{
+    text-align: right;
+    }
+    
+    label{
+        float: right;
+    }
+    
+    .handle-counter{
+        float: right;
+    }
+    
+    .small-img:active {
+        border: 1px #ffc700 solid;
+        
+        opacity: 50%;
+    }
+    
+    
+    
+    .sh_img .small-img-row .small-img-col img{
+        
+        height: 100px;
+        width: 100px;
+    
+    }
+    
+    h1,h4,h3,.det{
+    text-align: right;
+    }
+    
+    
+    .sh_img img{
+    height: 600px;
+    }
+    
+    .sh_img .thump-btn {
+        border:none;
+    }
+    
+    .sh_img .thump-btn:active{
+        border: 1px #ffc700 solid;
+        
+        opacity: 50%;
+    }
 
-
-
-
+    </style>
  <body>
 
 		<!-- ggggggggggggggggggggggggggggg -->
-		<div class="container sh_col" dir="rtl" >
+		<div class="container-fluid sh_col" dir="rtl" >
 	        <div class="heading-section">
-	            <h2>تفاصيل المنتج</h2>
+	            <h2 style="color:#F27523;">تفاصيل المنتج</h2>
 			</div>
 			<?php
 				 $row=$data['products'];
 				 foreach($row as $rows){
 					 
-                    
-                        
-				  
                   
-							echo'
+                    echo'
 							
-        <div class="row">
-            <div class="col-md-6 sh_img">
-				<img src="'.$rows->product_main_image.'" width="100%" id="productImg">
-                <br>
-                <br>
-                <div class="small-img-row">
-                <div class="small-img-col">
-                        <img src="'.$rows->product_main_image.'" width="100%" class="small-img">
-                    </div>'?>
-				<?php
-				 $branch_img=explode(',',$rows->product_branch_images);
-				 for($i=0; $i<sizeof($branch_img)-2; $i++)
-				 echo 
-				 ' <div class="small-img-col">
-                        <img src="'.$branch_img[$i].'" width="100%" class="small-img">
-                    </div>'?>
-                    
+                    <div class="row">
+                        <div class="col-md-6 sh_img">
+                            <img src="'.$rows->product_main_image.'" width="100%" id="productImg">
+                            <br>
+                            <br>
+                            <div class="small-img-row">
+                            <div class="small-img-col">
+                            <button class="thump-btn"><img src="'.$rows->product_main_image.'"  class="small-img">
+                                </div>'?>
+                            <?php
+                             $branch_img=explode(',',$rows->product_branch_images);
+                             for($i=0; $i<sizeof($branch_img)-1; $i++)
+                             echo 
+                             ' <div class="small-img-col">
+                             <button class="thump-btn"> <img src="'.$branch_img[$i].'"  class="small-img">
+                                </div>'?>
+                                
 					<?php
 					echo'    
                 </div>
             </div>
             <div class="col-md-6">
-                <h1>'.$rows->product_name.'</h1>
-                <h4>'.$rows->product_price.'</h4>
+            <h1>'.$rows->product_name.'</h1>
+            <h4 style="font-weight: 900;"><span>$</span>'.$rows->product_price.'</h4>
                 
                 <br>
-                <p>'.$rows->product_details.'</p>
-				<br>
+                <p class="det">'.$rows->product_details.'</p>
+                <br>
+                
                 <div class="product-count mb-4">
                 <h4>الكمية</h4>'
                 ;?>
@@ -95,9 +150,67 @@
         </div>
 <hr>
 
-</div>
 
 
+
+<div class="col-md-12 mt-4 " dir="rtl" >
+			<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link lead active" role="tab" data-toggle="tab" href="#tabDescription">وصف</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link lead" role="tab" data-toggle="tab" href="#tabSpecification">مواصفات</a>
+				</li>
+				
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane pt-4 active" role="tabpanel" id="tabDescription">
+					<?php
+                    echo '<p class="det">'.$rows->product_details.'</p>'
+                    ?>
+				</div>
+				<div class="tab-pane pt-4" dir="rtl" role="tabpanel" id="tabSpecification">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<td colspan="2"><strong>الذاكره</strong></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>test 1</td>
+								<td>16GB</td>
+							</tr>
+						</tbody>
+						<thead>
+							<tr>
+								<td colspan="2"><strong>المعالج</strong></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>No. of Cores</td>
+								<td>4</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+	
+			
+			
+			
+			</div>
+		</div>
+        </div>
+
+        
+       
+       <!--      منتجات مشابهه       -->
+        
+        
+
+       
+       
  <script>
         
 function filter<?php echo $rows->Product_id; ?>(){
@@ -169,40 +282,15 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $rows->Product
         
     </script>
 <?php }
-                             ?>			
-		<?php
-$inorder=$data['color'];
-foreach($inorder as $order){
-    $item='cart'.$order;
-echo"<script>
- document.getElementById('".$item."').style.backgroundColor='#ff6500';
- document.getElementById('".$item."').style.color='#fff';
-</script>";
+                             ?>
+                             
 
-}
-$infavraite=$data['fcolor'];
-foreach($infavraite as $favorite){
-    $item1='favorit'.$favorite;
-echo"<script>
- document.getElementById('".$item1."').style.backgroundColor='#ff6500';
- document.getElementById('".$item1."').style.color='#fff';
-</script>";
 
-}
-$infilter=$data['ficolor'];
-foreach($infilter as $f){
-    $item1='filter'.$f;
-echo"<script>
- document.getElementById('".$item1."').style.backgroundColor='#ff6500';
- document.getElementById('".$item1."').style.color='#fff';
-</script>";
-
-}
-?>
-
+                            
+			
+		
 	
-	
-		<script>
+                             <script>
     var productImg=document.getElementById("productImg");
     var smallImg=document.getElementsByClassName("small-img");
 
@@ -221,6 +309,23 @@ echo"<script>
         productImg.src = smallImg[3].src;
         
     }
+    smallImg[4].onclick=function(){
+        productImg.src = smallImg[4].src;
+        
+    }
+    smallImg[5].onclick=function(){
+        productImg.src = smallImg[5].src;
+        
+    }
+    smallImg[6].onclick=function(){
+        productImg.src = smallImg[6].src;
+        
+    }
+    smallImg[7].onclick=function(){
+        productImg.src = smallImg[7].src;
+        
+    }
+
 
 </script>
 
@@ -238,3 +343,12 @@ $('small-img').click(function () {
 </body>
 
 <?php include'footer.php';?>
+
+
+
+
+
+
+
+
+

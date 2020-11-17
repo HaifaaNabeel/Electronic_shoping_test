@@ -293,17 +293,90 @@
             <!-- Doughnut Chart -->
             <div class="card card-default" data-scroll-height="675">
               <div class="card-header justify-content-center">
-                <h2>نظرة عامة على الطلبات</h2>
+                <h2>نظرة عامة على طلبات المنتجات </h2>
               </div>
               <div class="card-body" >
-                <canvas id="doChart" ></canvas>
+                <!--<canvas id="doChart" ></canvas>-->
+                <?php
+                //count all quentity products 
+                $rows4=$data['products_all'];
+                $prod_cont=0;
+                foreach($rows4 as $row4)
+                {
+                  $prod_cont=$prod_cont+$row4->product_Quantity;
+                }
+                $rows5=$data['ordersDone'];
+                $order_done_coun=0;
+                foreach($rows5 as $row5)
+                {
+                  $order_done_coun=$order_done_coun+$row5->quantity;
+                }
+                $rows6=$data['ordersNotDone'];
+                $order_Not_coun=0;
+                foreach($rows6 as $row6)
+                {
+                  $order_Not_coun=$order_Not_coun+$row6->quantity;
+                }
+                //echo $prod_cont.'<br>'.$order_done_coun.'<br>'.$order_Not_coun.'<br>';
+                $prod_cont_after=$prod_cont-$order_done_coun-$order_Not_coun;
+                //echo $prod_cont_after;
+                ?>
+  <input type="text" id="prods" hidden="hidden" readonly required value="<?php echo $prod_cont_after;?>">
+  <input type="text" id="orders" hidden="hidden" readonly required value="<?php echo $order_done_coun;?>">
+  <input type="text" id="norders" hidden="hidden" readonly required value="<?php echo $order_Not_coun;?>">
+
+                
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      var prods=document.getElementById('prods').value;
+      var orders=document.getElementById('orders').value;
+      var norders=document.getElementById('norders').value;
+      var x=90;
+      var y=30;
+      var w=20;
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['منتجات متاحة في الموقع',x],
+          ['طلبات تم بيعها', y ],
+          ['طلبات تم اضافتها للسلة', w ],
+          //['Commute',  2],
+          //['Watch TV', 2],
+          
+          /*['Task', 'Hours per Day'],
+          ['طلبات تم بيعها',  document.getElementById('orders').value ],
+          ['طلبات تم اضافتها للسلة',  document.getElementById('norders').value  ],
+          //['Commute',  2],
+          //['Watch TV', 2],
+          ['منتجات متاحة في الموقع', document.getElementById('prods').value ]*/
+
+        ]);
+
+        var options = {
+          title: ''
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+                <div style="margin-left:.5em;background-color:;font-size:100px">
+                <div id="piechart" style="width: 400px; height:300px;margin-right:-.2em"></div>
+              </div>
+              
+
               </div>
               <a href="#" class="pb-5 d-block text-center text-muted"><i class="mdi mdi-download mr-2"></i> تنزيل التقرير العام</a>
               <div class="card-footer d-flex flex-wrap bg-white p-0">
                 <div class="col-4">
                   <div class="py-4 px-4">
                     <ul class="d-flex flex-column justify-content-between">
-                      <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #4c84ff"></i>تم اكتمال الطلب</li>
+                      <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: red"></i>تم اكتمال الطلب</li>
                       <!-- <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color:  #8061ef"></i>انتظار الطلب</li>-->
                     </ul>
                   </div>
@@ -311,7 +384,7 @@
                 <div class="col-4 border-left">
                   <div class="py-4 px-4 ">
                     <ul class="d-flex flex-column justify-content-between">
-                      <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #80e1c1"></i> طلب غير مدفوع</li>
+                      <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: orange"></i> طلب غير مدفوع</li>
                      <!-- <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #ffa128"></i>تم إلغاء الطلب</li>-->
                     </ul>
                   </div>
@@ -320,7 +393,7 @@
                   <div class="py-4 px-4 ">
                     <ul class="d-flex flex-column justify-content-between">
                       <!--<li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #80e1c1"></i> طلب غير مدفوع</li>-->
-                      <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #ffa128"></i>باقي المنتجات</li>
+                      <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: blue"></i>باقي المنتجات</li>
                     </ul>
                   </div>
                 </div>

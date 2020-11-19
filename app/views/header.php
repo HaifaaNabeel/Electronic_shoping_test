@@ -78,12 +78,105 @@ $_GLOBALS['U']=0;
   <!--start header-->
        
        
+       <section class="newmenu fixed-top">
+           <div class="container-fluid">
+               <div class="row ">
+                       <div class="col-md-4 col-sm-12">
+                       <div class=" icons">
+                             <i class="ico" id="userr" href="#">
+              <span class="counter" id="mmo" style="position: absolute;
+top:15%;
+left: 46%;">
+   <?php
+                   $user=$data['user'];
+                  foreach($user as $u){
+                  echo $u->user_name;
+                  }
+                 ?></span>
+              <span class="ion-ios-person-outline"></span>
+              <ul class="submin">
+                  
+                  <li id="login"><a  href="./login?page=<?php echo $_SESSION['page']; ?>"><span class="ion-ios-person-outline"></span></a></li>
+                  <li id="logout"><a   href="./logout" ><span class="ion-android-exit"></span></a></li>
+                         <?php 
+            if($_GLOBALS['U']===0){
+            echo' <script>
+            document.getElementById("logout").style.display="none";
+            document.getElementById("mmo").style.display="none";
+            </script>';
+            }if($_GLOBALS['U'] > 0){
+            echo' <script>
+            document.getElementById("logout").style.display="block";
+            document.getElementById("login").style.display="none";
+            </script>';
+            }
+            
+            ?>
+            <script>
+           // document.getElementById("logout").style.display="none";
+            </script>
+              </ul>
+                  </i>
+           
+          <a class="ico" href="./cart"><span class="counter" id="count1">
+               <?php
+                   $rows=$data['cartitem'];
+                  foreach($rows as $row){
+                  echo $row;
+                  }
+                 ?>
+              </span><span class="ion-ios-cart-outline"></span></a>
+     
+            <a class="ico" href="./favorite"><span class="counter" id="count2">
+                 <?php
+                   $rows1=$data['favoriteitem'];
+                  foreach($rows1 as $row1){
+                  echo $row1;
+                  }
+                 ?>
+                </span><span class="ion-android-favorite-outline"></span></a>
+   
+          <a class="ico" href="./compare"><span class="counter" id="count3">
+              <?php
+                   $rows3=$data['filteritem'];
+                  foreach($rows3 as $row){
+                  echo $row;
+                  }
+                 ?>
+              </span><span class="ion-ios-color-filter-outline"></span></a>
+  
+          <a class="ico" href=""  data-toggle="modal" id="moon" data-target="#myModal11"><span  class="ion-ios-search"></span></a>
+        </div>
+                   </div>
+                       <div class="col-md-4 col-sm-12 small">
+ <form action="search"  class="text-right" role="form" style="direction:rtl;"   method="get"  >
+                       <div class="input-group mb-3">
+  <input type="text" name="SEARCHW" value="<?php if(isset($_GET['SEARCHW'])){echo $_GET['SEARCHW'];}?>" class="form-control see" placeholder="البحث عن منتج">
+  <div class="input-group-append">
+    <button class="btn btn-light v" type="submit" name="SEARCH">بحث</button>
+  </div>
+</div>
+                           </form>
+                   </div>
+                       <div class="col-md-4 col-sm-12 small">
+                       <div class=" iconss">
+     
+          <a class="ico" href="#"><span class="ion-social-whatsapp-outline"></span></a>
+          <a class="ico" href="#"><span class="ion-social-instagram-outline"></span></a>
+          <a class="ico" href="#"><span class="ion-social-youtube-outline"></span></a>
+          <a class="ico" href="#"><span class="ion-social-linkedin-outline"></span></a>
+  
+      </div>
+                   </div>
+               </div>
+           </div>
+       </section>
   <nav class="navbar navbar-expand-md fixed-top">
   <!-- Brand -->
-  <a class="navbar-brand" href="#"><img src="app/assets/img/login_store_logos-2.png" width="144px"></a>
+  <a class="navbar-brand" href="#"><img src="app/assets/img/login_store_logos-2.png" width=""></a>
 
   <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+  <button class="navbar-toggler" type="button" style="color: #e55d03;" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="ion-navicon-round"></span>
   </button>
 
@@ -93,11 +186,9 @@ $_GLOBALS['U']=0;
       <li class="nav-item">
         <a class="nav-link" href="./home" id="home">الرئيسية</a>
       </li>
+     
       <li class="nav-item">
-        <a class="nav-link" href="./aboutus">عن المتجر </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">أهم الاصناف</a>
+        <a class="nav-link" href="#"> الاقسام</a>
           <ul class="submenu">
             <?php
           $rows=$data['categories'];
@@ -145,6 +236,9 @@ $_GLOBALS['U']=0;
       <li class="nav-item">
         <a class="nav-link" href="./contact">تواصل معنا</a>
       </li>
+         <li class="nav-item">
+        <a class="nav-link" href="./aboutus">عن المتجر </a>
+      </li>
          <li class="nav-item" style="display:none;">
         <a class="nav-link" href="#">عربي</a>
                      <ul class="submenu">
@@ -157,78 +251,7 @@ $_GLOBALS['U']=0;
             
           </ul>
       </li>
-      <li class="nav-item icons">
-    
-          <a class="ico " href="#">
-              <span class="counter" id="mmo" style="position: absolute;
-top: 20%;
-left: 95%;">
-   <?php
-                   $user=$data['user'];
-                  foreach($user as $u){
-                  echo $u->user_name;
-                  }
-                 ?></span>
-              <span class="ion-ios-person-outline"></span>
-              
-        <ul class="submenu1"> 
-           <li id="login" class="nav-item ">
-               <a  class="ico" href="./login?page=<?php echo $_SESSION['page']; ?>"><span class="ion-ios-person-outline"></span></a>
-            </li>
-            <li id="logout" class="nav-item ">
-               <a  class="ico" href="./logout" ><span class="ion-android-exit"></span></a>
-            </li>
-            <?php 
-            if($_GLOBALS['U']===0){
-            echo' <script>
-            document.getElementById("logout").style.display="none";
-            document.getElementById("mmo").style.display="none";
-            </script>';
-            }if($_GLOBALS['U'] > 0){
-            echo' <script>
-            document.getElementById("logout").style.display="block";
-            document.getElementById("login").style.display="none";
-            </script>';
-            }
-            
-            ?>
-            <script>
-           // document.getElementById("logout").style.display="none";
-            </script>
-               </ul>
-                  </a>
-           
-          <a class="ico" href="./cart"><span class="counter" id="count1">
-               <?php
-                   $rows=$data['cartitem'];
-                  foreach($rows as $row){
-                  echo $row;
-                  }
-                 ?>
-              </span><span class="ion-ios-cart-outline"></span></a>
      
-            <a class="ico" href="./favorite"><span class="counter" id="count2">
-                 <?php
-                   $rows1=$data['favoriteitem'];
-                  foreach($rows1 as $row1){
-                  echo $row1;
-                  }
-                 ?>
-                </span><span class="ion-android-favorite-outline"></span></a>
-   
-          <a class="ico" href="./compare"><span class="counter" id="count3">
-              <?php
-                   $rows3=$data['filteritem'];
-                  foreach($rows3 as $row){
-                  echo $row;
-                  }
-                 ?>
-              </span><span class="ion-ios-color-filter-outline"></span></a>
-  
-          <a class="ico" data-toggle="modal" data-target="#myModal11"><span class="ion-ios-search"></span></a>
-
-
-      </li>
     </ul>
   </div>
       

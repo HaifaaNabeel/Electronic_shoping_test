@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="col-lg-12" style="">
 					<div class="text-center">
-						<h4 style="text-center">
+						<h4 style="text-align:center;color: white !important;">
 متجر الكتروني لبيع المنتجات الالكترونيه
                             </br>
                         </h4>
@@ -17,7 +17,7 @@
 					<div class="text-center">
                        
 						<ul>
-                         <h6>روابط عامة</h6>    
+                         <h5 style="text-align:center;color: white !important;">روابط عامة</h5>    
                             <li>من نحن</li>
                             <li>العروض </li>
                             <li> تواصل معنا</li>                            
@@ -28,7 +28,7 @@
 					<div class="text-center">
                         
 						<ul>
-                            <h6> الاصناف</h6>
+                          <h5 style="text-align:center;color: white !important;"> الاصناف</h5>
                             <li>موبايلات</li>
                             <li>لابتوبات </li>
                             <li>  تابليتات</li>                            
@@ -38,7 +38,7 @@
             <div class="col-md-4 col-sm-12" style="">
 					<div class="text-center">
 						<ul>
-                       <h6>للتواصل </h6>
+                      <h5 style="text-align:center;color: white !important;">للتواصل </h5>
                             <li><span class="ion-social-facebook-outline"></span>:www.facebook.com </li>
                             <li><span class="ion-social-whatsapp-outline"></span>:www.whatsapp.com </li>
                             <li><span class="ion-social-twitter-outline"></span>:www.twitter.com</li>                            

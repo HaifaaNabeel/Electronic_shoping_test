@@ -1,6 +1,42 @@
 @media (max-width:250.98px) {
-  #collapsibleNavbar {
+    .small{display: none;}
+    #moon{display: inline-block;}
+    .ico {
+    margin: 6px;
+    color: #f37722;
+    font-weight: bolder;
+    font-size: 20px;
+}
+    .points{width: 90%;}
+    .submin {
+    display: none;
+    position: fixed;
+    list-style: none;
+    left: 71%;
+    background-color: white;
+    padding: 4px;
+    top: 32px;
+    z-index: 2;
+}
+    .navbar-brand img {
+    width: 170px;
+}
+    .carousel-caption h3 {
+    color: #e55d03;
+    font-weight: ;
+    font-size: 44px;
+}
+    .navbar {
+    direction: rtl;
+    background-color: #fffdfd0d;
+    margin-top: 42px;
+    height: 55px;
+    padding-top: 2px;
+    padding-bottom: 14px;
+}
+ #collapsibleNavbar {
     margin-right: 0%;
+    background-color: #ffffff;
 }
     .icons {
     position: relative;
@@ -19,8 +55,41 @@
 }
 }
 @media (min-width: 250px) and (max-width: 575.98px) { 
-     #collapsibleNavbar {
+        .small{display: none;}
+    #moon{display: inline-block;}
+    .ico {
+    margin: 6px;
+    color: #f37722;
+    font-weight: bolder;
+    font-size: 20px;
+}
+        .points{width: 90%;}
+
+    .submin {
+    display: none;
+    position: fixed;
+    list-style: none;
+    left: 74%;
+    background-color: white;
+    padding: 4px;
+    top: 32px;
+    z-index: 2;
+}
+.navbar-brand img {
+    width: 170px;
+}
+    .carousel-caption h3 {
+    color: #e55d03;
+    font-weight: ;
+    font-size: 44px;
+}
+    .navbar {
+    margin-top: 42px;
+    padding-top: 2px;
+}
+   #collapsibleNavbar {
     margin-right: 0%;
+    background-color: #ffffff;
 }
     .icons {
     position: relative;
@@ -65,6 +134,16 @@ right: 0%;
     right: 0%;
         text-align: center;
 }
+    .submin {
+    display: none;
+    position: fixed;
+    list-style: none;
+    left: 74%;
+    background-color: white;
+    padding: 4px;
+    top: 32px;
+    z-index: 2;
+}
     .nav-item a {
     width: auto;
 }
@@ -89,10 +168,20 @@ right: 0%;
 #collapsibleNavbar {
     margin-right: 5%;
 }
+    .submin {
+    display: none;
+    position: fixed;
+    list-style: none;
+    left: 17%;
+    background-color: white;
+    padding: 4px;
+    top: 25px;
+    z-index: 2;
+}
     .nav-item a {
-    width: 94px;
-    color: black;
-    font-size: 14px;
+    width: 85px;
+    color: ;
+    font-size: 13px;
     font-weight: bold;
     text-align: center;
 }
@@ -101,21 +190,40 @@ right: 0%;
         margin-top: 5px;
     margin-top: 11px;
     margin-top: 5px;
-    color: black;
+    color: ;
     font-weight: bolder;
     font-size: 18px;
 }
-    .icons {
+   .icons {
     position: fixed;
-    right: 82%;
+    right: 80%;
 }
 }
 
 @media (min-width: 992px) and (max-width: 1099.98px) { 
 
- 
+   .submin {
+    display: none;
+    position: fixed;
+    list-style: none;
+    left: 15%;
+    background-color: white;
+    padding: 4px;
+    top: 25px;
+    z-index: 2;
+}
 }
 
 @media (min-width: 1200px)
 { 
+    .submin {
+    display: none;
+    position: fixed;
+    list-style: none;
+    left: 15%;
+    background-color: white;
+    padding: 4px;
+    top: 25px;
+    z-index: 2;
+}
 }

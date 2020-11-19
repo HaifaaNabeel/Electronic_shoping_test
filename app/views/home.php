@@ -1,7 +1,6 @@
 <?php include'header.php'; //session_destroy();
 ?>
-      <slider style="top: -56px;">
-  <div class="layer1"></div>   
+      <slider >
 <div id="demo" class="carousel slide" data-ride="carousel">
 
   <!-- The slideshow -->
@@ -13,27 +12,30 @@
         foreach($bann as $ban){
 
                                ?>
-    <div class="carousel-item <?php echo $ban->banner_status; ?>">
+    <div class="carousel-item <?php echo $ban->banner_status; ?> animated fadeIn" style="animation-delay:0s;">
       <img src="app/assets/img/banner_image/<?php echo $ban->banner_img; ?>"  alt="Los Angeles" >
-        <div class="carousel-caption animated fadeInLeft " style="animation-delay:2s;">
-    <h3><?php echo $ban->banner_title; ?></h3>
+  <div class="carousel-caption">
+    <h3 class="animated  zoomIn" style="animation-delay:1s;"><?php echo $ban->banner_title; ?></h3>
   </div>
     </div>
       <?php } ?>
       
     
 </div>
+     
+    <!-- Left and right controls -->
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="control ti-arrow-left"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="control ti-arrow-right"></span>
-    </a>
+    <span class="ion-android-arrow-dropleft-circle"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="ion-android-arrow-dropright-circle"></span>
+  </a>
+
 </div>
     </slider>   
  </br></br> 
- <section class="head-ADs">
-     <div class="container">
+ <section class="head-ADs" style="margin-left:26px;">
+     <div class="container-fluid">
 
      <?php
      
@@ -42,18 +44,19 @@
 
                 echo'
                 <h6>'.$row->adds_name.'</h6>
-                <img src="'.$row->adds_img.'" style="height: 180px;width:100%" />';
+                <img src="'.$row->adds_img.'" style="height: 180px;width:49%" />
+                <img src="'.$row->adds_img.'" style="height: 180px;width:49%" />';
 
             
                }?>
      </div>
  </section>
-<section>
+<section style="margin-right:26px;margin-left:26px;">
 <!-- try for show category and its products -->
 
 
 
-<div class="container">
+<div class="container-fluid">
 <?php
             $rows=$data['categories'];
             foreach($rows as $row){
@@ -63,10 +66,12 @@
     <div class="row">
             <div class="col-sm-12">
 
-                <h3 class="text-center mb-3 mt-3">'.$row->category_name.'</h3>
+                <span class="h3 text-right mb-3 mt-3" style="float: right;">'.$row->category_name.'</span>
+                <span class="text-left mb-3 mt-3" style="float: left;"><a style="margin: 1px;color: #f37722;font-weight: bolder;font-size: 15px;" href="products?id='.$row->category_id.'">عرض الكل</a></span>
            </div>'?>
-        <div class="col-sm-12">
-          <div class="img-gallery  owl-carousel owl-theme" >
+    
+             <div class="col-sm-12">
+              <div class="img-gallery  owl-carousel owl-theme">
           <?php
             $rows1=$data['products'];
             //for($row1 = 0; $row1 < 8; $row1++){
@@ -77,15 +82,18 @@
                     if($row1->category_id == $row->category_id )
                  {
             echo'
-            <div class=" text-center mr-1 ml-1  mb-2" >
-              <div class="card">
+            
+         
+              <div class=" text-center  mb-2">
+                  <div class="card">
 
-                 <div style="height:auto ;" class="table-block ">
-                    <img alt=""  src="'.$row1->product_main_image.'" style="height: 272px;" />
+                 <div style="height:auto ;" class="table-block">
+                   <a href="product_details?id='.$row1->Product_id.'">
+                   <img alt=""  src="'.$row1->product_main_image.'" style="height: 272px;"/>
                  </div>
                 <div class="card-body">
-                    <h6>'.$row1->product_name.'</h6>
-                    <h6>'.$row1->product_price.'</h6>';?>
+                  <h6 class=" text-center">'.$row1->product_name.'</h6>
+                      <h5 class=" text-center" style="font-weight: bold;">'.$row1->product_price.'RY</h6></a>';?>
                           <script>
         
 function filter<?php echo $row1->Product_id; ?>(){
@@ -158,7 +166,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product
     </script>
               <?php echo'
                     
-                    <h6>
+                    <h6 class="text-center">
 <input id="id';?><?php echo $row1->Product_id; ?><?php echo'"  name="product_id" value="';?><?php echo $row1->Product_id; ?><?php echo '" hidden="hidden">
 <input id="qty"  name="qty" value="1" hidden="hidden">
 <input id="pname';?><?php echo $row1->Product_id; ?><?php echo'"  name="product_name" value="'.$row1->product_name.'" hidden="hidden">
@@ -172,7 +180,6 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $row1->Product
                      
                         <button class=" btn product_btn m-1" id="filter';?><?php echo $row1->Product_id; ?><?php echo'" onclick="filter';?><?php echo $row1->Product_id; ?><?php echo'()" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
                          <button class=" dcart btn product_btn m-1" id="dfilter';?><?php echo $row1->Product_id; ?><?php echo'" onclick="dfilter';?><?php echo $row1->Product_id; ?><?php echo'()" name="dfilter"><span class="ion-ios-color-filter-outline"></span></button>
-                        <a class="btn product_btn m-1" href="product_details?id='.$row1->Product_id.'"><span class="ion-ios-more-outline"></span></a>
                     </h6>                    
                 </div>
               </div> 
@@ -541,7 +548,7 @@ echo"<script>
     </div>
 </section>-->
 </br></br>
-
+</section>
     <section class="points">
         <h1 class=""> علامات تجاريه</h1>
         <svg id="mesvg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 197.72">
@@ -556,7 +563,7 @@ echo"<script>
                     <h1 class="text-center" style="color:#F27523;"> علامات تجاريه</h1>
                     </br></br>
                 </div>
-                <div class="img-gallery  owl-carousel owl-theme">
+                <div class="img-gallery1  owl-carousel owl-theme">
                     <div class="col-sm-6 col-md-3 p-1">
                         <div class="">
                             <img class="img-fluid"
@@ -628,7 +635,7 @@ echo"<script>
 </section>
 </br></br> 
  <section class="head-ADs2">
-     <div class="container">
+     <div class="container-fluid">
 
      <?php
      

@@ -1,80 +1,46 @@
 <?php include'header.php'; ?>
-<link rel="stylesheet" href= "app/assets/css/loginstyle.css">
-
-
-<body>
     <br><br><br><br><br><br>
-<style>
-
-.social-circle li a {
-    display: inline-block;
-    position: relative;
-    margin: 4px auto 4px auto;
-    border-radius: 55px;
-    text-align:center;
-    width: 95%;
-    height: 50px;
-    font-size:1.5em;
-    background-color: #BD3518;
-    color:white;
-}
-
-
-</style>
+    <?php  
+$page=$_GET['page'];
+?>   
      <main>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <div class="col-md-4 "></div>
-        <div class="col-md-4 ">
-        <img src="app/assets/img/login_store_logos-2.png" width="100%">
-            <div class="card" style="border-radius: 24px; padding:10px " >
-
-   
-
+                <div class="col-md-6 col-sm-12 ">
+                    <img class="img-fluid log-img" src="app/assets/img/user-login-illustration-with-key_108061-291.jpg">
+</div>
+        <div class="col-md-6 col-sm-12 ">
+            <div class="pl-4 pr-4"  >
+             <h2 class="text-right" style="color: #221446;"> تسجيل الدخول </h2>
                 <form class="" action="" method="POST">
-                    <h2 class="text-center" style="color: #000;"> تسجيل الدخول </h2>
                     </br>
                     <div class="form-group text-right">
-                                <label class="text-right" for="uname">اسم المستخدم </label>
+                         <label class="log-lab" for="uname">اسم المستخدم </label>
 
-                        <input type="text" class="form-control text-right " id="uname" placeholder="اسم المستخدم" name="user_name" required>
+                        <input type="text" class="form-control text-right " id="uname"  name="user_name" required>
                     </div>
                     <div class="form-group text-right">
-                                                <label class="text-right" for="pass">كلمة المرور  </label>
+                        <label class="log-lab" for="pass">كلمة المرور  </label>
 
-                        <input type="password" class="form-control text-right" id="pass" placeholder="كلمة المرور " name="user_pass" required>
+                        <input type="password" class="form-control text-right" id="pass"  name="user_pass" required>
 
                     </div>
-                     <button type="submit" name="Login" class="btn  check_btn"  id="submit">الدخول </button>
-<br><br>
-                    <a  href="#" style="display:none;"><p class="text-muted text-center">نسيت كلمة المرور ؟ </p></a> <br>
+                    <div class="form-group text-right">
 
-                     <p class="text-muted text-center"> او لتسجيل الدخول بحسابات اخرى </p>
-                     
-                        <ul class="social-network social-circle navbar-nav" style="text-align:center;padding-left:27%">
-       <?php  
-$page=$_GET['page'];
-?>                  
-                            <br><!--<li><a href="#" class="icoFacebook" title="Facebook" style='background-color: #3B5998;'><i class="ion-social-facebook-outline"style='color:white;'>للمتابعة على حساب فيس بوك</i></a></li>
-                            <li><a href="#" class="icoTwitter" title="Twitter" style='background-color: #33ccff;'><i class="ion-social-twitter-outline" style='color:white;'>للمتابعة على حساب تويتر </i></a></li>
-                            --><li><a href="login_google?page=<?php  echo $page; ?>" class="icoGoogle" title="Google +" style='background-color: #BD3518'><i class="ion-social-google-outline" style='color:white;'> للمتابعة على حساب جوجل </i></a></li>
-                        </ul><br><br>
-                    <a href="./singup?page=<?php  echo $page; ?>"> <p class="text-muted text-center">او لإنشاء حساب والتسجيل الان  </p></a>
+                     <button type="submit" name="Login" class="btn  login"  id="submit">الدخول </button>
+                <a  href="#" style="display:none;"><p class="text-center">نسيت كلمة المرور ؟ </p></a> <br>
+<a href="login_google" class="icoGoogle btn log-gog" title="Google +" ><i class="ion-social-google-outline"> للمتابعة على حساب جوجل </i></a>
+             <a href="./singup?page=<?php  echo $page; ?>" class="log-link"> <span class="text-left"> أنشاء حساب والتسجيل الان  </span></a>
 
-                    
-                </form> <!--//';}?>-->
+                </div>
+                </form> 
                 
             </div>
         </div>
-        <div class="col-md-4 "></div>
-
     </div>
     
 </div>
 
 
-<br><br><br><br><br><br>
     </main>
-
-<br><br><br><br>
 <?php include'footer.php'; ?>

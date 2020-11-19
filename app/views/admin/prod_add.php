@@ -4,7 +4,7 @@
             border-radius:10px;cursor:pointer;}
 .form-input img {width:150px;height:110px;margin:2px;}
 .ion-android-cancel{font-size: 2.5em;outline: none;
-            margin:5px 8px;margin-top:-3em;color: red;position: static}
+            margin:5px 8px;margin-top:-3em;color: black;position: static;background-color:white;;border-radius:55%}
 .ion-android-cancel::after{color:green;font-weight:900;border-radius: 8px;cursor:pointer;}
 </style>
 <script data-require="jquery" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -256,7 +256,7 @@
                 <div class="form-input">
                   <label for="file-ip-1" class="xx">
                       <img id="file-ip-1-preview" >
-                      <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionOne()" ></button>
+                      <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionOne()" hidden id="cancel_b"></button>
                   </label>
                    <input type="file" class="form-control-file www" name="product_main_image" id="file-ip-1" accept="image/*" onchange="showPreviewOne(event);">
                 </div>
@@ -267,13 +267,16 @@
               if(event.target.files.length > 0){
                 let src = URL.createObjectURL(event.target.files[0]);
                 let preview = document.getElementById("file-ip-1-preview");
+                let cancel_b=document.getElementById("cancel_b");
                 preview.src = src;
                 preview.style.display = "block";
+                cancel_b.removeAttribute('hidden');
               } 
             }
             function myImgRemoveFunctionOne() {
               document.getElementById("file-ip-1-preview").src = "";
               resetFile();
+              cancel_b.setAttribute('hidden', true);
             }
         function resetFile() { 
             const file = document.querySelector('.www'); 
@@ -289,7 +292,7 @@
 								<label for="product_branch_image">صور المنتج الفرعية :</label>
 								<input type="file" style="position: static;" class="dropzone wwww form-control-file"  multiple accept="image/*" id="gallery-photo-add" name="product_branch_images[]" >
                 <div class="gallery" id="gallery" style="margin-top:-6em;margin-right:3em;position: static;" height="4em"></div>
-                <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionMore()" style="margin-top:-.5em;"></button>
+                <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionMore()" style="margin-top:-.5em;" hidden></button>
                 <br><br><br><br><br><br>
               </div>
               <script>

@@ -4,7 +4,7 @@
             border-radius:10px;cursor:pointer;}
 .form-input img {width:150px;height:110px;margin:2px;}
 .ion-android-cancel{font-size: 2.5em;outline: none;
-            margin:5px 8px;margin-top:-3em;color: red;position: static}
+  margin:5px 8px;margin-top:-3em;color: black;position: static;background-color:white;;border-radius:55%}
 .ion-android-cancel::after{color:green;font-weight:900;border-radius: 8px;cursor:pointer;}
 </style>
 <div class="page-wrapper">
@@ -320,24 +320,27 @@
                 <div class="form-input">
                   <label for="file-ip-1" class="xx">
                       <img id="file-ip-1-preview" src="../../<?php echo $row->product_main_image;?>">
-                      <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionOne()" ></button>
+                      <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionOne()" id="cancel_b"></button>
                   </label>
                    <input type="file" class="form-control-file www" value="<?php echo $row->product_main_image;?>" name="product_main_image" id="file-ip-1" accept="image/*" onchange="showPreviewOne(event);">
                 </div>
             </div>
           <!--for show and delete this image-->
-       <script>
+          <script>
             function showPreviewOne(event){
               if(event.target.files.length > 0){
                 let src = URL.createObjectURL(event.target.files[0]);
                 let preview = document.getElementById("file-ip-1-preview");
+                let cancel_b=document.getElementById("cancel_b");
                 preview.src = src;
                 preview.style.display = "block";
+                cancel_b.removeAttribute('hidden');
               } 
             }
             function myImgRemoveFunctionOne() {
               document.getElementById("file-ip-1-preview").src = "";
               resetFile();
+              cancel_b.setAttribute('hidden', true);
             }
         function resetFile() { 
             const file = document.querySelector('.www'); 
@@ -361,7 +364,7 @@
 <?php
 $count=0;
  $row1=explode(',',$row->product_branch_images);
- echo '<div class="gallery" id="gallery" style="margin-top:-6em;margin-right:3em;position: static;" height="4em">';
+ echo '<div class="gallery" id="gallery" style="margin-top:-7.2em;margin-right:3em;position: static;" height="4em">';
 
  for($i=0; $i<sizeof($row1)-1; $i++){
    //echo $i;
@@ -372,7 +375,7 @@ continue;
 }
 echo '</div>'; $count=0;
  ?>
-<button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionMore()" style="margin-top:-.5em;"></button>
+<button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionMore()" style=";" hidden></button>
   <br><br><br><br><br><br>
 </div>
 <script>
@@ -394,7 +397,7 @@ for (i = 0; i < filesAmount; i++) {
 $('#gallery-photo-add').on('change', function() {
 $('.gallery').empty();
 imagesPreview(this, 'div.gallery');
-});
+})
 });
 function myImgRemoveFunctionMore() {
 $('.gallery').empty();
@@ -426,14 +429,28 @@ file.value = '';
                             <div class="form-group">
 								<label for="category_id">الصنف :</label>
 								<select class="form-control" name="category_id">
-									  <?php 
-											$rows=$data['categories_parent'];
-                                               foreach($rows as $row){
-                                                   echo "
-                                                     <option value=$row->category_id>$row->category_name</option>
-															   ";
+                
+                <!--<option value=<?php echo $row->category_id ;?>> <?php echo $row->category_id; ?> </option>-->
+                <?php 
+                     $rows2=$data['categories_parent'];
+                     foreach($rows2 as $row1){
+                          if($row1->category_id == $row->category_id  )
+                          {echo "<option value=$row->category_id>$row1->category_name</option>";
+                          }
+                          else 
+                          continue;
+                     }
+                      
+											$rows3=$data['categories_parent'];
+                                               foreach($rows3 as $row3){
+                                                if($row3->category_id != $row->category_id )
+                                                {echo "
+                                                  <option value=$row3->category_id>$row3->category_name</option>
+                              ";}
+                                                else
+                                                   {continue;}
 															}
-                                         ?>
+                                     ?>
                                 </select>
                             </div>
 
@@ -443,9 +460,7 @@ file.value = '';
 				<?php 
 					}
                 ?>
-                                                
-
-                                                <div class="form-footer pt-4 pt-5 mt-4 border-top text-right">
+                   <div class="form-footer pt-4 pt-5 mt-4 border-top text-right">
 													<button type="submit" class="btn btn-primary btn-default">تعديل المنتج </button>
 													<button type="submit" class="btn btn-secondary btn-default">الغاء</button>
                                                 </div>

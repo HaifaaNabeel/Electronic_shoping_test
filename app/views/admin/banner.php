@@ -1,7 +1,7 @@
 <?php include"header.php";?>
 <div class="page-wrapper">
                   <!-- Header -->
-                  <header class="main-header " id="header">
+                  <header class="main-header " id="header"  style="background-color:white;border:1px solid;">
             <nav class="navbar navbar-static-top navbar-expand-lg">
               <!-- Sidebar toggle button -->
               <button id="sidebar-toggler" class="sidebar-toggle">
@@ -22,7 +22,7 @@
               
               </div>
 
-              <div class="navbar-right ">
+              <div class="navbar-right "  style="background-color:white;border:1px solid;">
                 <ul class="nav navbar-nav">
                  
                   <li class="dropdown notifications-menu" style="display:none">

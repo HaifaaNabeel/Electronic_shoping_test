@@ -1,7 +1,7 @@
-<?php include'header.php'; //session_destroy();
+<?php include'header2.php'; //session_destroy();
 ?>
       <slider >
-<div id="demo" class="carousel slide" data-ride="carousel">
+<div id="demo" style="margin-top:-15px;" class="carousel slide" data-ride="carousel">
 
   <!-- The slideshow -->
     

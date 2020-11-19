@@ -1,20 +1,9 @@
 <?php include'header.php'; ?>
-<link rel="stylesheet" href= "app/assets/css/loginstyle.css">
-<body>
     <br><br><br><br><br><br>
-<style>.number_check{
-    border-radius:55px;background-color: #F27523 ;color:white;font-size:1.5em;
-    text-align:center;height: 50px;
 
-}</style>
     <main>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4 "></div>
-        <div class="col-md-4 ">
-          <img src="app/assets/img/login_store_logos-2.png" width="100%">  
-            <div class="card" style="border-radius: 24px; padding:10px" >
-            <!--<div class="col-md-12 col-xs-12  number_check"> 4</div><br>-->
             
 <?php
 $id=$_GET['id'];//$tootlecost=$_POST['tootlecost'];
@@ -37,59 +26,47 @@ $id=$_GET['id'];//$tootlecost=$_POST['tootlecost'];
      //$checkout_num;
  //$x=$_GLOBALS['U'];echo $x;
 //echo $user;echo $user;echo $user;echo $user;echo $user;
-
+ 
  //// the payment is done 
   echo '
+  <div class="col-md-6 ">
+        
+  </br>
+            <img class="" width="100%" alt="image" src="app/assets/img/successful-purchase-concept-illustration_114360-1003.jpg"/>
+        </div>
+        <div class="col-md-6 ">
+         </br> </br>
     <h2 class="text-center" style="color: ##221446;"> رقم طلبك  </h2>
-    <h2 class="text-center" style="color: ##221446;">.............</h2>
+    <h2 class="text-center" style="color: ##221446;">'.$checkout_num.'</h2>
     <h4 class="text-center" style="color: ##221446;"> لقد تمت عمليةالشراء بنجاح  <span class="ion-android-checkmark-circle">  </span><span class="ion-happy-outline"></span> </h4>
-
-    <br><a class="btn  number_check "  href="./bill_sale?id='.$user.'&bill='.$checkout_num.'">لعرض الفاتورة <span class="ion-ios-paper-outline"></span></a>
-    <!--<br><a class="btn  number_check "   href="./">للعودة الى سلة المشتريات <span class="ion-ios-cart-outline"></span></a>-->
-    <br><a class="btn  number_check "   href="./home">للعودة الى المتجر <span class="ion-ios-home-outline"></a>
+ 
+    <br><a class="btn  log-cont1 "  href="./bill_sale?id='.$user.'&bill='.$checkout_num.'">لعرض الفاتورة <span class="ion-ios-paper-outline"></span></a>
+    <!--<br><a class="btn  log-cont1 "   href="./">للعودة الى سلة المشتريات <span class="ion-ios-cart-outline"></span></a>-->
+    <br><a class="btn  log-cont1 "   href="./home">للعودة الى المتجر <span class="ion-ios-home-outline"></a>
  ';
-
-
+ 
  
 
 
 
 
 
-
+ 
 ?>
-
-     <!--<main>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4 "></div>
-        <div class="col-md-4 ">
-            <div class="card" style="border-radius: 24px; padding:10px" >
-            <div class="col-md-12 col-xs-12  number_check"> 4</div><br>
-
-
-                    <h2 class="text-center" style="color: ##221446;"> رقم طلبك  </h2>
-                    <h2 class="text-center" style="color: ##221446;">.............</h2>
-                    <h4 class="text-center" style="color: ##221446;"> لقد تمت عمليةالشراء بنجاح  <span class="ion-android-checkmark-circle"></span> </h4>
-
-                    <br><a class="btn  number_check "  href="">لعرض الفاتورة <span class="ion-ios-paper-outline"></span></a>
-                    <br><a class="btn  number_check "   href="">للعودة الى سلة المشتريات <span class="ion-ios-cart-outline"></span></a>
-                    <br><a class="btn  number_check "   href="">للعودة الى المتجر <span class="ion-ios-home-outline"></a>-->
-<br><br>
+ 
+   <br><br>
                     
                 </form>
                 
             </div>
         </div>
         <div class="col-md-4 "></div>
-
+ 
     </div>
     
 </div>
-
-
+ 
 <br><br><br><br><br><br>
     </main>
-
-<br><br><br><br>
+ 
 <?php include'footer.php'; ?>

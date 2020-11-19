@@ -42,10 +42,20 @@ display: block;
         border-bottom: 1px solid #ff6500;
 
 } 
-.navbar1 {
+.navbar33 {
     direction: rtl;
+    background-color: #fffdfd0d;
+    margin-top: 46px;
+    height: 55px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+        border-bottom: 1px solid #ff6500;
+
+} 
+.navbar1 {
     background-color: #ffffff;
     border-bottom: 2px solid #ff6500;
+      
 } 
 .navbar-brand{
     font-size: 28px;
@@ -474,6 +484,18 @@ color: #fff;
     border: 1px solid #4c3c78;
     color: #4c3c78;
     margin-bottom: 5px;
+}
+.log-cont1 {
+    background-color: #221446;
+    border: 1px solid #4c3c78;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.log-cont1:hover {
+    background-color: transparent;
+    border: 1px solid #4c3c78;
+    color: #4c3c78;
 }
 .sign-gog{
     background-color: transparent;

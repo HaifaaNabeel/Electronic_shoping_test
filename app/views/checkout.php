@@ -1,71 +1,62 @@
 <?php include'header.php'; ?>
-<link rel="stylesheet" href= "app/assets/css/loginstyle.css">
 <body>
     <br><br><br><br><br><br>
-<style>
-</style>
+
                    <?php
                     $tootlecost=$_POST['tootlecost'];
                     $user=$_POST['user'];
-                    //$tootlecost=590;$user=10;
-                   //echo"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
-
 
                     ?>
      <main>
-<div class="container-fluid">
+         <section class="chheckout">
+<div class="container">
     <div class="row">
-        <div class="col-md-4 "></div>
-        <div class="col-md-4 ">
-            <img src="app/assets/img/login_store_logos-2.png" width="100%">
-            <div class="card" style="border-radius: 24px; padding:10px" >
-            <!---<div class="col-md-12 col-xs-12  number_check"> 2 </div><br>-->
+        <div class="col-md-6 ">
+        
+  </br>
+            <img class="" width="100%" alt="image" src="app/assets/img/happy-tiny-man-woman-with-big-open-wallet_74855-5869.jpg"/>
+        </div>
+        <div class="col-md-6 ">
+            <div class="">
                 <form class="" action="http://localhost/bank_new_api/api/take_put_checkout.php" method="POST">
-                    <h2 class="text-center" style="color: #000;"> الدفع </h2>
+                    <h2 class="text-center" style="color: #221446;"> ادفع الان </h2>
+                    <br>
                     <div class="form-group text-right ">
-                        <label class="text-right" for="card_type">نوع البطاقة </label>
-                        <input type="text" class="form-control text-right " id="card_name" name="card_name" required>
+                        <label class="log-lab" for="card_type">نوع البطاقة </label>
+                        <input type="text" class="form-control text-right " id="uname" name="card_name" required>
                     </div>
                     <div class="form-group text-right ">
-                        <label class="text-right" for="card_num">رقم البطاقة </label>
-                        <input type="text" class="form-control text-right " id="card_num" name="card_num" required>
+                        <label class="log-lab" for="card_num">رقم البطاقة </label>
+                        <input type="text" class="form-control text-right " id="uname" name="card_num" required>
                     </div>
-                    <!--<div class="form-group text-right">
-                        <label class="text-right" for="card_name">الاسم الموجود على البطاقة</label>
-                        <input type="text" class="form-control text-right" id="name" name="name" required>
-                    </div>-->
+                    
                     <div class="form-group text-right ">
-                        <label class="text-right" for="card_pass">الرقم السري </label>
-                        <input type="password" class="form-control text-right " id="card_pass" name="card_pass" required>
+                        <label class="log-lab" for="card_pass">الرقم السري </label>
+                        <input type="password" class="form-control text-right " id="uname" name="card_pass" required>
                     </div>
                     <div class="form-group text-right">
-                        <label class="text-right" for="address">تاريخ انتهاء الصلاحية </label>
-                        <input type="date" class="form-control text-right" id="Expired_date" name="Expired_date" required>
+                        <label class="log-lab" for="address">تاريخ انتهاء الصلاحية </label>
+                        <input type="date" class="form-control text-right" id="uname" name="Expired_date" required>
                     </div>
 
                     <input type="text"   name="url"      value="<?php echo 'http://localhost/Electronic_shoping_test/done_pay_or_not'?>" hidden="hidden" readonly required>
                     <input type="text"   name="user_id"     value="<?php echo $user; ?>" hidden="hidden" readonly required>
                     <input type="text"   name="cost"     value="<?php echo $tootlecost;?>" hidden="hidden" readonly required>
                     <input type="text"   name="web_id"   value="123456789" hidden="hidden" readonly required>
-                    <input type="text"   name="web_pass" value="123456789" hidden="hidden" readonly required>
-
-                     
-                        <button type="submit" class="btn  check_btn"  id="submit">الدفع الان  </button>
+                    <input type="text"   name="web_pass" value="123456789" hidden="hidden" readonly required>                     
+                        <button type="submit" style="    width: 100%;" class="btn log-cont"  id="submit">الدفع الان  </button>
 <br><br>
                     
                 </form>
                 
             </div>
         </div>
-        <div class="col-md-4 "></div>
-
     </div>
     
 </div>
 
-
+         </section>
 <br><br><br><br><br><br>
     </main>
 
-<br><br><br><br>
 <?php include'footer.php'; ?>

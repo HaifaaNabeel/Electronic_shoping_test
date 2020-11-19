@@ -3,7 +3,7 @@
 
  </br></br>
 <section>
-    <div class="container">
+    <div class="container" >
          </br></br>
 
         <div class="row">
@@ -29,16 +29,19 @@
           $rows=$data['products'];
                 foreach($rows as $row){
                     echo '
-             <div class="col-sm-12 col-md-4 col-lg-4">
-              <div class=" text-center mr-1 ml-1  mb-2">
-                  <div class="card">
-                 <div style="height:auto ;" class="table-block ">
+             <div class="col-sm-12 col-md-4 col-lg-3 ">
+              <div class=" text-center mr-1 ml-1  mb-3">
+                  <div class="card" style="margin:1px;width:100%;">
+<a href="product_details?id='.$row->Product_id.'">
+<div style="height:auto ;" class="table-block ">
                     <img alt=""  src="'.$row->product_main_image.'" style="height:272px;width:100%" />
-                 </div>
+                 </div></a>
                 <div class="card-body">    <!--$row->product_date_added.<br>-->
-                    <h6>'.$row->product_name.'</h6>
-                    <h6>'.$row->product_price.'</h6>
-                    <h6>
+<a href="product_details?id='.$row->Product_id.'">
+ <h6 class=" text-center">'.$row->product_name.'</h6>
+                      <h5 class=" text-center" style="font-weight: bold;">'.$row->product_price.'RY</h6>
+                    </a>
+                    <h6 class="text-center">
 <input id="id';?><?php echo $row->Product_id; ?><?php echo'"  name="product_id" value="';?><?php echo $row->Product_id; ?><?php echo '" hidden="hidden">
 <input id="qty"  name="qty" value="1" hidden="hidden">
 <input id="pname';?><?php echo $row->Product_id; ?><?php echo'"  name="product_name" value="'.$row->product_name.'" hidden="hidden">
@@ -51,12 +54,7 @@
                          <button class="  btn product_btn m-1 dcart" id="dfavorite';?><?php echo $row->Product_id; ?><?php echo'" onclick="dfavoor';?><?php echo $row->Product_id; ?><?php echo'()" name="dfavorite"><span class="ion-android-favorite-outline"></span></button>
                      
                         <button class=" btn product_btn m-1" id="filter';?><?php echo $row->Product_id; ?><?php echo'" onclick="filter';?><?php echo $row->Product_id; ?><?php echo'()" name="filter"><span class="ion-ios-color-filter-outline"></span></button>
-                         <button class="  btn product_btn m-1 dcart" id="dfilter';?><?php echo $row->Product_id; ?><?php echo'" onclick="dfilter';?><?php echo $row->Product_id; ?><?php echo'()" name="dfilter"><span class="ion-ios-color-filter-outline"></span></button>
-                       
-                        
-                        
-                        <a class="btn product_btn m-1" href="product_details?id='.$row->Product_id.'"><span class="ion-ios-more-outline"></span></a>
-                    </h6>                    
+                         <button class="  btn product_btn m-1 dcart" id="dfilter';?><?php echo $row->Product_id; ?><?php echo'" onclick="dfilter';?><?php echo $row->Product_id; ?><?php echo'()" name="dfilter"><span class="ion-ios-color-filter-outline"></span></button>                    </h6>                    
                 </div>
               </div>          
 

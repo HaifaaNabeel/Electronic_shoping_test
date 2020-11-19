@@ -33,7 +33,6 @@ $_GLOBALS['U']=$_SESSION['uid'];
 $_GLOBALS['U']=0;
 }
 ?>
-<!DOCTYPE html>
 <html lang="en">
 <head>     
        <meta charset="utf-8">
@@ -44,7 +43,7 @@ $_GLOBALS['U']=0;
 
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Ecomm</title>
+      <title>login store</title>
       <!--fonts files-->
       <link href="app/assets/font/f/Tajawal-Medium.ttf" rel="stylesheet"> 
       <link rel="stylesheet" href="app/assets/font/ionicons/css/ionicons.min.css">
@@ -78,7 +77,7 @@ $_GLOBALS['U']=0;
   <!--start header-->
        
        
-       <section class="newmenu fixed-top">
+       <section class="newmenu1 fixed-top">
            <div class="container-fluid">
                <div class="row ">
                        <div class="col-md-4 col-sm-12">
@@ -171,7 +170,7 @@ left: 46%;">
                </div>
            </div>
        </section>
-  <nav class="navbar navbar-expand-md fixed-top">
+  <nav class=" navbar-expand-md fixed-top navbar navbar1">
   <!-- Brand -->
   <a class="navbar-brand" href="#"><img src="app/assets/img/login_store_logos-2.png" width=""></a>
 

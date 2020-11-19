@@ -4,12 +4,12 @@
             border-radius:10px;cursor:pointer;}
 .form-input img {width:150px;height:110px;margin:2px;}
 .ion-android-cancel{font-size: 2.5em;outline: none;
-            margin:5px 8px;margin-top:-3em;color: red;position: static}
+  margin:5px 8px;margin-top:-3em;color: black;position: static;background-color:white;;border-radius:55%;}
 .ion-android-cancel::after{color:green;font-weight:900;border-radius: 8px;cursor:pointer;}
 </style>
 <div class="page-wrapper">
                   <!-- Header -->
-                  <header class="main-header " id="header">
+                  <header class="main-header " id="header"  style="background-color:white;border:1px solid;">
             <nav class="navbar navbar-static-top navbar-expand-lg">
               <!-- Sidebar toggle button -->
               <button id="sidebar-toggler" class="sidebar-toggle">
@@ -31,7 +31,7 @@
               
               </div>
 
-              <div class="navbar-right ">
+              <div class="navbar-right "  style="background-color:white;border:1px solid;">
                 <ul class="nav navbar-nav">
                  
                   <li class="dropdown notifications-menu" style="display:none">
@@ -139,7 +139,7 @@
                       <div class="form-input">
                   <label for="file-ip-1" class="xx">
                       <img id="file-ip-1-preview" src="../../app/assets/img/banner_image/<?php echo $row->banner_img;?>">
-                      <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionOne()" ></button>
+                      <button type="button" class="ion-android-cancel" onclick="myImgRemoveFunctionOne()" hidden id="cancel_b" ></button>
                   </label>
 											<input class="form-control www" accept="image/*" type="file" id="banner_title" name="banner_img" value="<?php echo $row->banner_img;?>" onchange="showPreviewOne(event);">
                   </div>
@@ -151,13 +151,18 @@
               if(event.target.files.length > 0){
                 let src = URL.createObjectURL(event.target.files[0]);
                 let preview = document.getElementById("file-ip-1-preview");
+                let cancel_b=document.getElementById("cancel_b");
                 preview.src = src;
                 preview.style.display = "block";
+                //cancel_b.removeAttribute('hidden');         
+
               } 
             }
             function myImgRemoveFunctionOne() {
               document.getElementById("file-ip-1-preview").src = "";
               resetFile();
+              //cancel_b.setAttribute('hidden', true);
+
             }
         function resetFile() { 
             const file = document.querySelector('.www'); 

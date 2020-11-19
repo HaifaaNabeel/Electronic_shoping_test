@@ -104,58 +104,15 @@
 <div class="content-wrapper" dir="rtl">
     <div class="content">	
       
-                <!-- Top Statistics -->
+                
+            <!-- new row -->
             <div class="row">
-              <div class="col-xl-4 col-sm-6">
-                <div class="card card-mini mb-4">
-                  <div class="card-body">
-                    <h2 class="mb-1" >
-                    <?php
-                         $rows1=$data['products_finash'];
-                         $coun_product=0;
-                          foreach ($rows1 as $row1)
-                          {
-                            $coun_product=$coun_product+1;
-                          }
-                          echo $coun_product;
-                         ?>
-                      &nbsp &nbsp  &nbsp &nbsp
-                      <span class="ion-android-warning" style="color:red;text-align: center;font-size:2em"></h2>
-                    <p>المنتجات التي قاربت على الانتهاء</p>
-                    <div class="chartjs-wrapper">
-                      <canvas id=""></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-sm-6">
-                <div class="card card-mini mb-4">
-                  <div class="card-body">
-                    
-                    <h2 class="mb-1">
-                    <?php
-                         $rows1=$data['products_finash'];
-                         $coun_product=0;
-                          foreach ($rows1 as $row1)
-                          {
-                            $coun_product=$coun_product+1;
-                          }
-                          echo $coun_product;
-                         ?>
-                       &nbsp &nbsp  &nbsp &nbsp
-                      <span class="ion-chatboxes ion-email-unread" style="color:red;text-align:center;font-size:2em"></span></h2>
-                    <p> اخر رسائل العملاء </p>
-                    <div class="chartjs-wrapper">
-                      <canvas id=""></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-4 col-sm-6">
-                <div class="card card-mini mb-4">
-                  <div class="card-body">
-                    <h2 class="mb-1"> 
-                         <?php
+								<div class="col-md-6 col-lg-6 col-xl-3">
+									<div class="card widget-block p-4 rounded bg-primary border">
+										<div class="card-block">
+											<h2 class="mdi ion-ios-people mr-4 text-white"></h2>
+											<h3 class="text-white my-2">
+                      <?php
                          $rows3=$data['users'];
                          $coun_user=0;
                           foreach ($rows3 as $row3)
@@ -165,15 +122,72 @@
                           echo $coun_user;
                          ?>
                       &nbsp &nbsp  &nbsp &nbsp
-                       <span class="ion-ios-people" style="color:red;text-align: center;font-size:2em"></span></h2>
-                    <p>المجموع الكلي للعملاء </p>
-                    <div class="chartjs-wrapper">
-                      <canvas id=""></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                      </h3>
+											<h4 class="text-white">المجموع الكلي للعملاء</h4>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6 col-xl-3">
+									<div class="card widget-block p-4 rounded bg-warning border">
+										<div class="card-block">
+											<h2 class="mdi ion-android-playstore mr-4 text-white"></h2>
+											<h3 class="text-white my-2">
+                      <?php
+                         $rows3=$data['users'];
+                         $coun_user=0;
+                          foreach ($rows3 as $row3)
+                          {
+                            $coun_user=$coun_user+1;
+                          }
+                          echo $coun_user;
+                         ?>
+                      &nbsp &nbsp  &nbsp &nbsp
+                      </h3>
+											<h4 class="text-white">مجموع طلبات اليوم</h4>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6 col-xl-3">
+									<div class="card widget-block p-4 rounded bg-danger border">
+										<div class="card-block">
+											<h2 class="mdi ion-android-warning mr-4 text-white"></h2>
+											<h3 class="text-white my-2">
+                    <?php
+                         $rows1=$data['products_finash'];
+                         $coun_product=0;
+                          foreach ($rows1 as $row1)
+                          {
+                            $coun_product=$coun_product+1;
+                          }
+                          echo $coun_product;
+                         ?>
+                      &nbsp &nbsp  &nbsp &nbsp
+                    </h3>
+                    <h4 class="text-white">منتجات قاربت على الانتهاء</h4>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-6 col-xl-3">
+									<div class="card widget-block p-4 rounded bg-success border">
+										<div class="card-block">
+											<h2 class="mdi ion-email-unread t mr-4 text-white"></h2>
+											<h3 class="text-white my-2">
+                      <?php
+                         $rows1=$data['products_finash'];
+                         $coun_product=0;
+                          foreach ($rows1 as $row1)
+                          {
+                            $coun_product=$coun_product+1;
+                          }
+                          echo $coun_product;
+                         ?>
+                       &nbsp &nbsp  &nbsp &nbsp
+                      </h3>
+											<h4 class="text-white">اخر رسائل العملاء </h4>
+										</div>
+									</div>
+								</div>
+							</div>
             <!-- Top Statistics -->
             <div class="row">
               <div class="col-xl-3 col-sm-6">
@@ -296,7 +310,7 @@
                 <h2>نظرة عامة على طلبات المنتجات </h2>
               </div>
               <div class="card-body" >
-                <!--<canvas id="doChart" ></canvas>-->
+                <canvas id="doChart" ></canvas>
                 <?php
                 //count all quentity products 
                 $rows4=$data['products_all'];
@@ -321,7 +335,7 @@
                 $prod_cont_after=$prod_cont-$order_done_coun-$order_Not_coun;
                 //echo $prod_cont_after;
                 ?>
-  <input type="text" id="prods" hidden="hidden" readonly required value="<?php echo $prod_cont_after;?>">
+  <!--<input type="text" id="prods" hidden="hidden" readonly required value="<?php echo $prod_cont_after;?>">
   <input type="text" id="orders" hidden="hidden" readonly required value="<?php echo $order_done_coun;?>">
   <input type="text" id="norders" hidden="hidden" readonly required value="<?php echo $order_Not_coun;?>">
 
@@ -367,7 +381,7 @@
     </script>
                 <div style="margin-left:.5em;background-color:;font-size:100px">
                 <div id="piechart" style="width: 400px; height:300px;margin-right:-.2em"></div>
-              </div>
+              </div>-->
               
 
               </div>
@@ -376,16 +390,16 @@
                 <div class="col-4">
                   <div class="py-4 px-4">
                     <ul class="d-flex flex-column justify-content-between">
-                      <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: red"></i>تم اكتمال الطلب</li>
-                      <!-- <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color:  #8061ef"></i>انتظار الطلب</li>-->
+                      <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: orange"></i>تم اكتمال الطلب</li>
+                      <!---<li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color:  #8061ef"></i>انتظار الطلب</li>-->
                     </ul>
                   </div>
                 </div>
                 <div class="col-4 border-left">
                   <div class="py-4 px-4 ">
                     <ul class="d-flex flex-column justify-content-between">
-                      <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: orange"></i> طلب غير مدفوع</li>
-                     <!-- <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #ffa128"></i>تم إلغاء الطلب</li>-->
+                      <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: blueviolet"></i> طلب غير مدفوع</li>
+                     <!----> <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #80e1c1"></i>تم إلغاء الطلب</li>
                     </ul>
                   </div>
                 </div>
@@ -393,7 +407,7 @@
                   <div class="py-4 px-4 ">
                     <ul class="d-flex flex-column justify-content-between">
                       <!--<li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #80e1c1"></i> طلب غير مدفوع</li>-->
-                      <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: blue"></i>باقي المنتجات</li>
+                      <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: rgba(18, 137, 216, 0.938)"></i>باقي المنتجات</li>
                     </ul>
                   </div>
                 </div>
@@ -435,7 +449,7 @@
                       </td>
                       <td class="d-none d-md-table-cell">1 Unit</td>
                       <td class="d-none d-md-table-cell">Oct 20, 2018</td>
-                      <td class="d-none d-md-table-cell">$230</td>
+                      <td class="d-none d-md-table-cell">RY230</td>
                       <td >
                         <span class="badge badge-success">منتهي</span>
                       </td>
@@ -460,7 +474,7 @@
                       </td>
                       <td class="d-none d-md-table-cell">2 عناصر</td>
                       <td class="d-none d-md-table-cell">Nov 15, 2018</td>
-                      <td class="d-none d-md-table-cell">$550</td>
+                      <td class="d-none d-md-table-cell">RY550</td>
                       <td >
                         <span class="badge badge-warning">تأخر</span>
                       </td>
@@ -485,7 +499,7 @@
                       </td>
                       <td class="d-none d-md-table-cell">1 عناصر</td>
                       <td class="d-none d-md-table-cell">Nov 18, 2018</td>
-                      <td class="d-none d-md-table-cell">$325</td>
+                      <td class="d-none d-md-table-cell">RY325</td>
                       <td >
                         <span class="badge badge-warning">في الانتظار</span>
                       </td>
@@ -511,7 +525,7 @@
                       </td>
                       <td class="d-none d-md-table-cell">5 عناصر</td>
                       <td class="d-none d-md-table-cell">Dec 13, 2018</td>
-                      <td class="d-none d-md-table-cell">$200</td>
+                      <td class="d-none d-md-table-cell">RY200</td>
                       <td >
                         <span class="badge badge-success">منتهي</span>
                       </td>
@@ -536,7 +550,7 @@
                       </td>
                       <td class="d-none d-md-table-cell">1 عناصر</td>
                       <td class="d-none d-md-table-cell">Dec 23, 2018</td>
-                      <td class="d-none d-md-table-cell">$150</td>
+                      <td class="d-none d-md-table-cell">RY150</td>
                       <td >
                         <span class="badge badge-danger">ملغي</span>
                       </td>
@@ -800,8 +814,158 @@
                 </div>-->
                 </div>
             </div>
+
+
+
 </div>
+
+
+<div class="row">
+							<div class="col-xl-4 col-lg-6 col-12">
+								
+                  <!-- Polar and Radar Chart -->
+                  <div class="card card-default">
+                    <div class="card-header justify-content-center">
+                      <h2>نظرة عامة على المبيعات</h2>
+                    </div>
+                    <div class="card-body pt-0">
+                      <ul class="nav nav-pills mb-5 mt-5 nav-style-fill nav-justified" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">حالة المبيعات</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">المبيعات الشهرية</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                          <canvas id="polar"></canvas>
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                          <canvas id="radar"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+							</div>
+							<div class="col-xl-4 col-lg-6 col-12"> 
+                  <!-- Top Sell Table -->
+                  <div class="card card-table-border-none" data-scroll-height="550">
+                    <div class="card-header justify-content-between">
+                      <h2>مبيعات بالكمية </h2>
+                      <div>
+                          <button class="text-black-50 mr-2 font-size-20"><i class="mdi mdi-cached"></i></button>
+                          <div class="dropdown show d-inline-block widget-dropdown">
+                              <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-units" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
+                              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-units">
+                                <li class="dropdown-item"><a  href="#">Action</a></li>
+                                <li class="dropdown-item"><a  href="#">Another action</a></li>
+                                <li class="dropdown-item"><a  href="#">Something else here</a></li>
+                              </ul>
+                            </div>
+                      </div>
+                    </div>
+                    <div class="card-body slim-scroll py-0">
+                      <table class="table ">
+                        <tbody>
+                          <tr>
+                            <td class="text-dark">موبايل سامسونج </td>
+                            <td class="text-center">9</td>
+                            <td class="text-right">33% <i class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i> </td>
+                          </tr>
+                          <tr>
+                            <td class="text-dark">لابتوب ديل </td>
+                            <td class="text-center">6</td>
+                            <td class="text-right">150% <i class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i> </td>
+                          </tr>
+                          <tr>
+                            <td class="text-dark">ساعة الكترونية </td>
+                            <td class="text-center">3</td>
+                            <td class="text-right">50% <i class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i> </td>
+                          </tr>
+                          <tr>
+                            <td class="text-dark">سماعات </td>
+                            <td class="text-center">7</td>
+                            <td class="text-right">150% <i class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i> </td>
+                          </tr>
+                          <tr>
+                            <td class="text-dark">شاحن </td>
+                            <td class="text-center">10</td>
+                            <td class="text-right">300% <i class="mdi mdi-arrow-down-bold text-danger pl-1 font-size-12"></i> </td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <div class="card-footer bg-white py-4">
+                      <a href="#" class="btn-link py-3 text-uppercase">عرض التقرير</a>
+                    </div>
                   </div>
 </div>
+							<div class="col-xl-4 col-12">
+                        <!-- Notification Table -->
+                        <div class="card card-default" data-scroll-height="550">
+                          <div class="card-header justify-content-between ">
+                            <h2>اخر التنبيهات </h2>
+                            <div>
+                                <button class="text-black-50 mr-2 font-size-20"><i class="mdi mdi-cached"></i></button>
+                                <div class="dropdown show d-inline-block widget-dropdown">
+                                    <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
+                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-notification">
+                                      <li class="dropdown-item"><a  href="#">Action</a></li>
+                                      <li class="dropdown-item"><a  href="#">Another action</a></li>
+                                      <li class="dropdown-item"><a  href="#">Something else here</a></li>
+                                    </ul>
+                                  </div>
+                            </div>
+
+                          </div>
+                          <div class="card-body slim-scroll">
+                            <div class="media pb-3 align-items-center justify-content-between">
+                              <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-primary text-white">
+                                <i class="mdi mdi-cart-outline font-size-20"></i>
+                              </div>
+                              <div class="media-body pr-3 ">
+                                <a class="mt-0 mb-1 font-size-15 text-dark" href="#">طلب جديد</a>
+                                <p >طلبية جديدة بالحجم الكبير </p>
+                              </div>
+                              <span class=" font-size-12 d-inline-block"><i class="mdi mdi-clock-outline"></i> 10 AM</span>
+                            </div>
+
+                            <div class="media py-3 align-items-center justify-content-between">
+                              <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-success text-white">
+                                <i class="mdi mdi-email-outline font-size-20"></i>
+                              </div>
+                              <div class="media-body pr-3">
+                                <a class="mt-0 mb-1 font-size-15 text-dark" href="#">تنبية من البريد </a>
+                                <p >تنبية جديد </p>
+                              </div>
+                              <span class=" font-size-12 d-inline-block"><i class="mdi mdi-clock-outline"></i> 9 AM</span>
+                            </div>
+
+
+                            <div class="media py-3 align-items-center justify-content-between">
+                              <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-warning text-white">
+                                <i class="mdi mdi-stack-exchange font-size-20"></i>
+                              </div>
+                              <div class="media-body pr-3">
+                                <a class="mt-0 mb-1 font-size-15 text-dark" href="#">تذكير بمهمة</a>
+                                <p >مهمة لم تطلع عليها </p>
+                              </div>
+                              <span class=" font-size-12 d-inline-block"><i class="mdi mdi-clock-outline"></i> 10 AM</span>
+                            </div>
+                            
+
+                            
+                          </div>
+                          <div class="mt-3"></div>
+                        </div>
+</div>
+						</div>
+                  </div>
+</div>
+
 
 <?php include"footer.php";?>

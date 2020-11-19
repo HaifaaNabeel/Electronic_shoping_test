@@ -130,14 +130,14 @@ exit();
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="index">
+                            <a class="sidenav-item-link" href="../admin_report/reports_order">
                               <span class="nav-text">الطلبات</span>
                               
                               <span class="badge badge-success" style="display:none;">new</span>
                               
                             </a>
                           </li>
-                         <li >
+                         <!--<li >
                             <a class="sidenav-item-link" href="index">
                               <span class="nav-text">المشتريات</span>
                               
@@ -152,7 +152,7 @@ exit();
                               <span class="badge badge-success" style="display:none;">new</span>
                               
                             </a>
-                          </li>
+                          </li>-->
                         
                     </div>
                   </ul>
@@ -162,7 +162,7 @@ exit();
                 <li  class="has-sub" >
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#bannerr"
                     aria-expanded="false" aria-controls="charts">
-                    <i class="mdi mdi-chart-pie"></i>
+                    <i class="mdi mdi-polaroid"></i>
                     <span class="nav-text">الواجهه</span> <b class="caret"></b>
                   </a>
                   <ul  class="collapse"  id="bannerr"
@@ -188,7 +188,7 @@ exit();
                 <li  class="has-sub" >
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#cat"
                     aria-expanded="false" aria-controls="charts">
-                    <i class="mdi mdi-chart-pie"></i>
+                    <i class="mdi mdi-notification-clear-all"></i>
                     <span class="nav-text">الاصناف</span> <b class="caret"></b>
                   </a>
                   <ul  class="collapse"  id="cat"
@@ -218,7 +218,7 @@ exit();
                                    <li  class="has-sub" >
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#pro"
                     aria-expanded="false" aria-controls="charts">
-                    <i class="mdi mdi-chart-pie"></i>
+                    <i class="mdi mdi-fridge-outline"></i>
                     <span class="nav-text">المنتجات</span> <b class="caret"></b>
                   </a>
                   <ul  class="collapse"  id="pro"
@@ -248,7 +248,7 @@ exit();
                 <li  class="has-sub" >
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#offer"
                     aria-expanded="false" aria-controls="charts">
-                    <i class="mdi mdi-chart-pie"></i>
+                    <i class="mdi mdi-paper-cut-vertical"></i>
                     <span class="nav-text">العروض</span> <b class="caret"></b>
                   </a>
                   <ul  class="collapse"  id="offer"
@@ -278,7 +278,7 @@ exit();
                           <li  class="has-sub" >
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#post"
                     aria-expanded="false" aria-controls="charts">
-                    <i class="mdi mdi-chart-pie"></i>
+                    <i class="mdi mdi-palette-swatch"></i>
                     <span class="nav-text">الاعلانات</span> <b class="caret"></b>
                   </a>
                   <ul  class="collapse"  id="post"
@@ -330,7 +330,7 @@ exit();
                             </a>
                           </li>
                           <li >
-                            <a class="sidenav-item-link" href="../admin_report/reports_prod">
+                            <a class="sidenav-item-link" href="../admin_prod/index"><!--../admin_report/reports_prod-->
                               <span class="nav-text">كافة المنتجات  </span>
                               
                             </a>

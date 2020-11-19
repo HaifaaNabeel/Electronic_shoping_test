@@ -134,7 +134,7 @@
                       </td>
                       <td class="d-none d-md-table-cell">1 Unit</td>
                       <td class="d-none d-md-table-cell">Oct 20, 2018</td>
-                      <td class="d-none d-md-table-cell">$230</td>
+                      <td class="d-none d-md-table-cell">RY230</td>
                       <td >
                         <span class="badge badge-success">منتهي</span>
                       </td>
@@ -159,7 +159,7 @@
                       </td>
                       <td class="d-none d-md-table-cell">2 عناصر</td>
                       <td class="d-none d-md-table-cell">Nov 15, 2018</td>
-                      <td class="d-none d-md-table-cell">$550</td>
+                      <td class="d-none d-md-table-cell">RY550</td>
                       <td >
                         <span class="badge badge-warning">تأخر</span>
                       </td>
@@ -184,7 +184,7 @@
                       </td>
                       <td class="d-none d-md-table-cell">1 عناصر</td>
                       <td class="d-none d-md-table-cell">Nov 18, 2018</td>
-                      <td class="d-none d-md-table-cell">$325</td>
+                      <td class="d-none d-md-table-cell">RY325</td>
                       <td >
                         <span class="badge badge-warning">في الانتظار</span>
                       </td>
@@ -210,7 +210,7 @@
                       </td>
                       <td class="d-none d-md-table-cell">5 عناصر</td>
                       <td class="d-none d-md-table-cell">Dec 13, 2018</td>
-                      <td class="d-none d-md-table-cell">$200</td>
+                      <td class="d-none d-md-table-cell">RY200</td>
                       <td >
                         <span class="badge badge-success">منتهي</span>
                       </td>
@@ -235,7 +235,7 @@
                       </td>
                       <td class="d-none d-md-table-cell">1 عناصر</td>
                       <td class="d-none d-md-table-cell">Dec 23, 2018</td>
-                      <td class="d-none d-md-table-cell">$150</td>
+                      <td class="d-none d-md-table-cell">RY150</td>
                       <td >
                         <span class="badge badge-danger">ملغي</span>
                       </td>

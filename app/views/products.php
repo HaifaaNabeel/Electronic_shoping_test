@@ -39,7 +39,7 @@
                 <div class="card-body">    <!--$row->product_date_added.<br>-->
 <a href="product_details?id='.$row->Product_id.'">
  <h6 class=" text-center">'.$row->product_name.'</h6>
-                      <h5 class=" text-center" style="font-weight: bold;">'.$row->product_price.'RY</h6>
+                      <h5 class=" text-center" style="font-weight: bold;">'.$row->product_price.' ريال يمني </h6>
                     </a>
                     <h6 class="text-center">
 <input id="id';?><?php echo $row->Product_id; ?><?php echo'"  name="product_id" value="';?><?php echo $row->Product_id; ?><?php echo '" hidden="hidden">

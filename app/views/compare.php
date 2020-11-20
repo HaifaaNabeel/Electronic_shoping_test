@@ -75,7 +75,7 @@
 
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <p class="mb-0"><span><strong><?php echo $item->product_price; ?>RY</strong></span></p>
+                                    <p class="mb-0"><span><strong><?php echo $item->product_price; ?> ريال يمني </strong></span></p>
                                     <div>
                                         <a href="product_details?id=<?php echo $item->Product_id; ?>" class="a-text">تفاصيل اكثر</a>
 

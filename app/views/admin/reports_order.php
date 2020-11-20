@@ -122,7 +122,7 @@
                       <th class="d-none d-md-table-cell">الكمية</th>
                       <th class="d-none d-md-table-cell">تاريخ الطلب</th>
                       <th class="d-none d-md-table-cell">تكلفة الطلب</th>
-                      <th>Status</th>
+                      <th>الحالة </th>
                       <th></th>
                     </tr>
                   </thead>
@@ -130,11 +130,11 @@
                     <tr>
                       <td >24541</td>
                       <td >
-                        <a class="text-dark" href=""> Coach Swagger</a>
+                        <a class="text-dark" href="">لابتوب ديل </a>
                       </td>
-                      <td class="d-none d-md-table-cell">1 Unit</td>
+                      <td class="d-none d-md-table-cell">1 عنصر</td>
                       <td class="d-none d-md-table-cell">Oct 20, 2018</td>
-                      <td class="d-none d-md-table-cell">RY230</td>
+                      <td class="d-none d-md-table-cell"> ريال يمني 2300</td>
                       <td >
                         <span class="badge badge-success">منتهي</span>
                       </td>
@@ -155,11 +155,11 @@
                     <tr>
                       <td >24541</td>
                       <td >
-                        <a class="text-dark" href=""> Toddler Shoes, Gucci Watch</a>
+                        <a class="text-dark" href=""> كامير اف وان</a>
                       </td>
                       <td class="d-none d-md-table-cell">2 عناصر</td>
                       <td class="d-none d-md-table-cell">Nov 15, 2018</td>
-                      <td class="d-none d-md-table-cell">RY550</td>
+                      <td class="d-none d-md-table-cell">ريال يمني5500 </td>
                       <td >
                         <span class="badge badge-warning">تأخر</span>
                       </td>
@@ -180,11 +180,11 @@
                     <tr>
                       <td >24541</td>
                       <td >
-                        <a class="text-dark" href=""> Hat Black Suits</a>
+                        <a class="text-dark" href="">سماعة اتش وان</a>
                       </td>
                       <td class="d-none d-md-table-cell">1 عناصر</td>
                       <td class="d-none d-md-table-cell">Nov 18, 2018</td>
-                      <td class="d-none d-md-table-cell">RY325</td>
+                      <td class="d-none d-md-table-cell">ريال يمني3205</td>
                       <td >
                         <span class="badge badge-warning">في الانتظار</span>
                       </td>
@@ -206,11 +206,11 @@
                     <tr>
                       <td >24541</td>
                       <td >
-                        <a class="text-dark" href=""> Backpack Gents, Swimming Cap Slin</a>
+                        <a class="text-dark" href=""> كامير اتش دي</a>
                       </td>
                       <td class="d-none d-md-table-cell">5 عناصر</td>
                       <td class="d-none d-md-table-cell">Dec 13, 2018</td>
-                      <td class="d-none d-md-table-cell">RY200</td>
+                      <td class="d-none d-md-table-cell">ريال يمني2000</td>
                       <td >
                         <span class="badge badge-success">منتهي</span>
                       </td>
@@ -231,11 +231,11 @@
                     <tr>
                       <td >24541</td>
                       <td >
-                        <a class="text-dark" href=""> Speed 500 Ignite</a>
+                        <a class="text-dark" href="">ساعة ذكية </a>
                       </td>
                       <td class="d-none d-md-table-cell">1 عناصر</td>
                       <td class="d-none d-md-table-cell">Dec 23, 2018</td>
-                      <td class="d-none d-md-table-cell">RY150</td>
+                      <td class="d-none d-md-table-cell">ريال يمني 2000</td>
                       <td >
                         <span class="badge badge-danger">ملغي</span>
                       </td>

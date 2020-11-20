@@ -92,7 +92,7 @@
                  </div>
                 <div class="card-body">
                   <h6 class=" text-center">'.$row1->product_name.'</h6>
-                      <h5 class=" text-center" style="font-weight: bold;">'.$row1->product_price.'RY</h6></a>';?>
+                      <h5 class=" text-center" style="font-weight: bold;">'.$row1->product_price.' ريال يمني </h6></a>';?>
                           <script>
         
 function filter<?php echo $row1->Product_id; ?>(){

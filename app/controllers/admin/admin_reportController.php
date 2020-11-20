@@ -37,7 +37,7 @@ function index(){
             'ordersDone'=>$this->order_model->getOrders(),
             'ordersNotDone'=>$this->order_model->getOrdersNot_Done(),
             'bills'=>$this->checkout_model->getBills(),
-            'products_all'=>$this->prod_model->getAllProducts(),
+            'products_all'=>$this->prod_model->getDataOrder(),
             'products_finash'=>$this->prod_model->getFinashProducts(),
             'last_users'=>$this->user_model->getUsersCustOrder(),
             

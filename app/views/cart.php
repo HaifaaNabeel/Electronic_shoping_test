@@ -77,7 +77,7 @@
 
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <p class="mb-0"><span ><strong class="qtypricforeone" id="priceq<?php echo $item->Product_id;?>"><?php  echo $item->product_price*$item->quantity ;?></strong>RY</span></p>
+                                    <p class="mb-0"><span ><strong class="qtypricforeone" id="priceq<?php echo $item->Product_id;?>"><?php  echo $item->product_price*$item->quantity ;?></strong> ريال يمني </span></p>
                                     <div>
     <a data-toggle="modal" data-target="#myModal1<?php echo $item->Product_id; ?>" class="a-text" id="dcart<?php echo $item->Product_id; ?>" >حذف من السلة
              <span class="ion-android-delete"></span></a>
@@ -239,7 +239,7 @@ elseif($_GLOBALS['U']==0){
 
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <p class="mb-0"><span ><strong class="qtypricforeone" id="priceq<?php echo $_SESSION['cart'][$index]['p_id']; ?>"><?php   echo $_SESSION['cart'][$index]['p_price']*$_SESSION['cart'][$index]['p_qty']; ;?></strong>RY</span></p>
+                                    <p class="mb-0"><span ><strong class="qtypricforeone" id="priceq<?php echo $_SESSION['cart'][$index]['p_id']; ?>"><?php   echo $_SESSION['cart'][$index]['p_price']*$_SESSION['cart'][$index]['p_qty']; ;?></strong> ريال يمني </span></p>
                                     <div>
          <a data-toggle="modal" data-target="#myModal1<?php echo $_SESSION['cart'][$index]['p_id']; ?>" class="a-text">حذف من السلة
              <span class="ion-android-delete"></span></a>
@@ -383,7 +383,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['car
                                 class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                 الإجمالي
                                 <span class="tootale">    
-                      </span> RY
+                      </span> ريال يمني 
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                 تكاليف الشحن
@@ -398,7 +398,7 @@ $.post("add/add_cart/deletefromcart",{product_id:$("#id<?php echo $_SESSION['car
                                     </strong>
                                 </div>
                                 <span><strong class="tootale">
-                      RY</strong></span>
+                                ريال يمني </strong></span>
                             </li>
                         </ul><?php
                         if($_GLOBALS['U'] == 0)

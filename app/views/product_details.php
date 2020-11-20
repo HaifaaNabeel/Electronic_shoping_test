@@ -104,7 +104,7 @@
             </div>
             <div class="col-md-6">
             <h1>'.$rows->product_name.'</h1>
-            <h4 style="font-weight: 900;">'.$rows->product_price.'<span>RY</span></h4>
+            <h4 style="font-weight: 900;">'.$rows->product_price.'<span> ريال يمني </span></h4>
                 
                 <br>
                 <p class="det">'.$rows->product_details.'</p>

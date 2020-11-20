@@ -169,7 +169,7 @@
                               echo '<td >'.$row1->category_name.'</td><!-- we want to add category name not id-->';
                              }}//'<td >'.$row2->category_name.'</td><!-- we want to add category name not id-->
 
-                            echo'<td >'.$row->product_price.'</td>
+                            echo'<td >'.$row->product_price.' ريال يمني </td>
                             <td >'.$row->product_Quantity.'</td>
                             <td >
                                 <div class="btn-group" role="group" aria-label="Basic example">

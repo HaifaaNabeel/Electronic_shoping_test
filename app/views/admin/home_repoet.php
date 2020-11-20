@@ -437,7 +437,7 @@
                       <th class="d-none d-md-table-cell">الكمية</th>
                       <th class="d-none d-md-table-cell">تاريخ الطلب</th>
                       <th class="d-none d-md-table-cell">تكلفة الطلب</th>
-                      <th>Status</th>
+                      <th>الحالة </th>
                       <th></th>
                     </tr>
                   </thead>
@@ -445,11 +445,11 @@
                     <tr>
                       <td >24541</td>
                       <td >
-                        <a class="text-dark" href=""> Coach Swagger</a>
+                        <a class="text-dark" href="">لابتوب ديل </a>
                       </td>
-                      <td class="d-none d-md-table-cell">1 Unit</td>
+                      <td class="d-none d-md-table-cell">1 عنصر</td>
                       <td class="d-none d-md-table-cell">Oct 20, 2018</td>
-                      <td class="d-none d-md-table-cell">RY230</td>
+                      <td class="d-none d-md-table-cell"> ريال يمني 2300</td>
                       <td >
                         <span class="badge badge-success">منتهي</span>
                       </td>
@@ -470,11 +470,11 @@
                     <tr>
                       <td >24541</td>
                       <td >
-                        <a class="text-dark" href=""> Toddler Shoes, Gucci Watch</a>
+                        <a class="text-dark" href=""> كامير اف وان</a>
                       </td>
                       <td class="d-none d-md-table-cell">2 عناصر</td>
                       <td class="d-none d-md-table-cell">Nov 15, 2018</td>
-                      <td class="d-none d-md-table-cell">RY550</td>
+                      <td class="d-none d-md-table-cell">ريال يمني5500 </td>
                       <td >
                         <span class="badge badge-warning">تأخر</span>
                       </td>
@@ -495,11 +495,11 @@
                     <tr>
                       <td >24541</td>
                       <td >
-                        <a class="text-dark" href=""> Hat Black Suits</a>
+                        <a class="text-dark" href="">سماعة اتش وان</a>
                       </td>
                       <td class="d-none d-md-table-cell">1 عناصر</td>
                       <td class="d-none d-md-table-cell">Nov 18, 2018</td>
-                      <td class="d-none d-md-table-cell">RY325</td>
+                      <td class="d-none d-md-table-cell">ريال يمني3205</td>
                       <td >
                         <span class="badge badge-warning">في الانتظار</span>
                       </td>
@@ -521,11 +521,11 @@
                     <tr>
                       <td >24541</td>
                       <td >
-                        <a class="text-dark" href=""> Backpack Gents, Swimming Cap Slin</a>
+                        <a class="text-dark" href=""> كامير اتش دي</a>
                       </td>
                       <td class="d-none d-md-table-cell">5 عناصر</td>
                       <td class="d-none d-md-table-cell">Dec 13, 2018</td>
-                      <td class="d-none d-md-table-cell">RY200</td>
+                      <td class="d-none d-md-table-cell">ريال يمني2000</td>
                       <td >
                         <span class="badge badge-success">منتهي</span>
                       </td>
@@ -546,11 +546,11 @@
                     <tr>
                       <td >24541</td>
                       <td >
-                        <a class="text-dark" href=""> Speed 500 Ignite</a>
+                        <a class="text-dark" href="">ساعة ذكية </a>
                       </td>
                       <td class="d-none d-md-table-cell">1 عناصر</td>
                       <td class="d-none d-md-table-cell">Dec 23, 2018</td>
-                      <td class="d-none d-md-table-cell">RY150</td>
+                      <td class="d-none d-md-table-cell">ريال يمني 2300</td>
                       <td >
                         <span class="badge badge-danger">ملغي</span>
                       </td>
@@ -746,9 +746,45 @@
 
               </div>
 
-              
+              <?php  
+                 /* //$rows=$data['ordersDone'];
+                  $rows=$data['products_all'];
+                  //$rows3=$data['orders'];
+                  $count_order=0;
+                  foreach ($rows as $row)
+                  {
+                    if($count_order==5)
+                    {
+                    break;
+                    }
+                    else
+                    {
+                             //$count_order=0;
+                           
+                                echo'
+                    <div class="media d-flex mb-5">
+              <div class="media-image align-self-center mr-3 rounded">
+              <img src="../../'.$row->product_main_image.'" alt="customer image" class="img-thumbnail img-fluid" width=60px hight=60px>
+              </div>
+              <div class="media-body align-self-center">
+                <a href="#"><h6 class="mb-3 text-dark font-weight-medium">'.$row->product_name.'</h6></a>
+                <p class="">'.$row->product_details.'</p>
+                <p class="mb-0">
+                  <!--<del>$300</del>-->
+                  <span class="text-dark ml-3">'.$row->product_price.' ريال يمني </span>
+                  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<span class="text-dark mr-2">10</span>مبيعات 
+                  </p>
+              </div>
+            </div>';
+                                 $count_order=$count_order+1;
+                              }
+                             
+                          }*/
+                          
+                    
+                  ?>
               <?php 
-                      $rows=$data['ordersDone'];
+                    /*  $rows=$data['ordersDone'];
                       $rows2=$data['products_all'];
                       $count_pro=0;
                       $count_quan=0;
@@ -781,9 +817,78 @@
                       }
                     }
                   }
+                  $rows=$data['ordersDone'];
+                  $rows2=$data['products_all'];
+                  $count_pro=0;
+                  $count_quan=0;
+                  foreach ($rows as $row)
+                  {  
+                    foreach ($rows2 as $row2)
+                    { if($count_pro==5)
+                      {
+                      break;
+                      }
+                      if($row->product_id == $row2->Product_id)
+                      {
+                    echo'
+                    <div class="media d-flex mb-5">
+              <div class="media-image align-self-center mr-3 rounded">
+              <img src="../../'.$row2->product_main_image.'" alt="customer image" class="img-thumbnail img-fluid" width=60px hight=60px>
+              </div>
+              <div class="media-body align-self-center">
+                <a href="#"><h6 class="mb-3 text-dark font-weight-medium">'.$row2->product_name.'</h6></a>
+                <p class="">'.$row2->product_details.'</p>
+                <p class="mb-0">
+                  <!--<del>$300</del>-->
+                  <span class="text-dark ml-3">'.$row2->product_price.' ريال يمني </span>
+                  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<span class="text-dark mr-2">10</span>مبيعات 
+                  </p>
+              </div>
+            </div>';
+            $count_pro=$count_pro+1;
+            
+                  }
+                }
+              }*/
                 ?>
-                
-                <!--<div class="media d-flex mb-5">
+                <?php 
+                 $rows=$data['products_all'];
+                 $rows1=$data['ordersDone'];
+                 $count_pro=0;
+                 foreach($rows as $row)
+                 {
+                   if($count_pro == 2)
+                    {break;}
+
+                   else{
+                     foreach($rows1 as $row1)
+                     {
+                       if($row1->product_id == $row->Product_id)
+                      {
+                       //echo $row1->product_id;
+                       echo'
+                    <div class="media d-flex mb-5">
+              <div class="media-image align-self-center mr-3 rounded">
+              <img src="../../'.$row->product_main_image.'" alt="customer image" class="img-thumbnail img-fluid" width=60px hight=60px>
+              </div>
+              <div class="media-body align-self-center">
+                <a href="#"><h6 class="mb-3 text-dark font-weight-medium">'.$row->product_name.'</h6></a>
+                <p class=""></p>
+                <p class="mb-0">
+                  <!--<del>$300</del>-->
+                  <span class="text-dark ml-3">'.$row->product_price.' ريال يمني </span>
+                  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<span class="text-dark mr-2">10</span>مبيعات 
+                  </p>
+              </div>
+            </div>';
+                       $count_pro=$count_pro+1;
+
+                     }
+                    }
+                }
+              }
+                ?>
+                 <!--<div class="media d-flex mb-5">
                   <div class="media-image align-self-center mr-3 rounded">
                     <a href="#"><img src="assets/img/products/p2.jpg" alt="customer image"></a>
                   </div>
@@ -798,7 +903,7 @@
                   </div>
                 </div>
 
-                <div class="media d-flex mb-5">
+               <div class="media d-flex mb-5">
                   <div class="media-image align-self-center mr-3 rounded">
                     <a href="#"><img src="assets/img/products/p3.jpg" alt="customer image"></a>
                   </div>

@@ -1,4 +1,5 @@
 @media (max-width:250.98px) {
+    .cch-h1{font-size: 27px;}
     .small{display: none;}
     #moon{display: inline-block;}
     .ico {
@@ -18,8 +19,9 @@
     top: 32px;
     z-index: 2;
 }
-    .navbar-brand img {
-    width: 170px;
+  .navbar-brand img {
+    width: 131px;
+    padding-top: 9px;
 }
     .carousel-caption h3 {
     color: #e55d03;
@@ -53,8 +55,29 @@
     margin-left: 20%;
     bottom: -154%;
 }
+    .log-gog {
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid #4c3c78;
+    color: #4c3c78;
+    margin-top: 2%;
+    margin-bottom: 5px;
+    float: none;
+}
+    .login {
+    background-color: transparent;
+    border-color: #F27523;
+    color: #F27523;
+    width: 100%;
+    float: none;
+}
+    .log-img {
+    width: 100%;
+}
 }
 @media (min-width: 250px) and (max-width: 575.98px) { 
+        .cch-h1{font-size: 27px;}
+
         .small{display: none;}
     #moon{display: inline-block;}
     .ico {
@@ -76,7 +99,7 @@
     z-index: 2;
 }
 .navbar-brand img {
-    width: 170px;
+    width: 168px;
 }
     .carousel-caption h3 {
     color: #e55d03;
@@ -123,17 +146,50 @@ right: 0%;
     margin-left: 20%;
     bottom: -154%;
 }
+    .cont-h1 {
+    text-align: center;
+    color: #221446;
+    font-size: 28px;
+    padding-top: 13px;
+}
+   .log-gog {
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid #4c3c78;
+    color: #4c3c78;
+    margin-top: 2%;
+    margin-bottom: 5px;
+    float: none;
+}
+    .login {
+    background-color: transparent;
+    border-color: #F27523;
+    color: #F27523;
+    width: 100%;
+    float: none;
+}
+    .log-img {
+    width: 100%;
+}
    }
-
 @media (min-width: 576px) and (max-width:767.98px ) {
   #collapsibleNavbar {
     margin-right: 0%;
 }
+        .cch-h1{font-size: 30px;}
+
     .icons {
     position: relative;
     right: 0%;
         text-align: center;
 }
+    .navbar-brand img {
+    width: 225px;
+    margin-top: -9px;
+}
+            .small{display: none;}
+    #moon{display: inline-block;}
+
     .submin {
     display: none;
     position: fixed;
@@ -163,11 +219,50 @@ li ul ul{
 right: 0%;
     display:none ;
 }
+  .ahood {
+    width: 100vh;
+    margin-left: -90px;
+}
+    .cont-h1 {
+    text-align: center;
+    color: #221446;
+    font-size: 27px;
+}
+    .log-gog {
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid #4c3c78;
+    color: #4c3c78;
+    margin-top: 2%;
+    margin-bottom: 5px;
+    float: none;
+}
+    .login {
+    background-color: transparent;
+    border-color: #F27523;
+    color: #F27523;
+    width: 100%;
+    float: none;
+}
+        .sign-gog {
+    background-color: transparent;
+    width: 100%;
+    float: right;
+    border: 1px solid #4c3c78;
+    color: #4c3c78;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+    .log-img {
+    width: 100%;
+}
 }
 @media (min-width: 767.98px) and (max-width: 992px) { 
 #collapsibleNavbar {
     margin-right: 5%;
 }
+        .cch-h1{font-size: 30px;}
+
     .submin {
     display: none;
     position: fixed;
@@ -198,10 +293,55 @@ right: 0%;
     position: fixed;
     right: 80%;
 }
+ .ahood {
+    width: 76vh;
+    margin-left: -106px;
 }
-
+    .ahood1 {
+    width: 88%;
+    position: relative;
+    left: -10%;
+}
+    .cont-h1 {
+    text-align: right;
+    color: #221446;
+    font-size: 27px;
+}
+    .log-gog {
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid #4c3c78;
+    color: #4c3c78;
+    margin-top: 2%;
+    margin-bottom: 5px;
+    float: none;
+        font-size: 14px;
+}
+    .login {        font-size: 14px;
+    background-color: transparent;
+    border-color: #F27523;
+    color: #F27523;
+    width: 100%;
+    float: none;
+}
+    .sign-gog {
+    background-color: transparent;
+    width: 100%;
+    float: right;
+    border: 1px solid #4c3c78;
+    color: #4c3c78;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+    .log-img {
+    width: 100%;
+}
+}
 @media (min-width: 992px) and (max-width: 1099.98px) { 
-
+.cch-h1 {
+    color: #fa5c5c;
+    font-size: 28px;
+}
    .submin {
     display: none;
     position: fixed;
@@ -212,9 +352,172 @@ right: 0%;
     top: 25px;
     z-index: 2;
 }
+    .ahood {
+    width: 79vh;
+    margin-left: -60px;
+}
+    .ahood1 {
+    width: 63%;
+    position: relative;
+    left: 13%;
+}
+    .cont-h1 {
+    text-align: right;
+    color: #221446;
+    font-size: 29px;
+}
+     .log-gog {
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid #4c3c78;
+    color: #4c3c78;
+    margin-top: 2%;
+    margin-bottom: 5px;
+    float: none;
+        font-size: 14px;
+}
+    .login {        font-size: 14px;
+    background-color: transparent;
+    border-color: #F27523;
+    color: #F27523;
+    width: 100%;
+    float: none;
+}
+   .sign-gog {
+    background-color: transparent;
+    width: 100%;
+    float: right;
+    border: 1px solid #4c3c78;
+    color: #4c3c78;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+    .log-img {
+    width: 100%;
+}
 }
 
-@media (min-width: 1200px)
+@media (min-width: 1099.98px)and (max-width: 1200px)
+{ 
+    .cch-h1 {
+    color: #fa5c5c;
+    font-size: 28px;
+}
+    .submin {
+    display: none;
+    position: fixed;
+    list-style: none;
+    left: 15%;
+    background-color: white;
+    padding: 4px;
+    top: 25px;
+    z-index: 2;
+}
+      .ahood {
+    width: 79vh;
+    margin-left: -60px;
+}
+    .ahood1 {
+    width: 70%;
+    position: relative;
+    left: 0%;
+}
+    .cont-h1 {
+    text-align: right;
+    color: #221446;
+    font-size: 29px;
+}
+   .log-gog {
+    background-color: transparent;
+    border: 1px solid #4c3c78;
+    color: #4c3c78;
+    margin-top: -6%;
+    margin-bottom: 5px;
+    float: right;
+    font-size: 14px;
+}
+    .login {        font-size: 14px;
+    background-color: transparent;
+    border-color: #F27523;
+    color: #F27523;
+    float: left;
+}
+    .log-img {
+    width: 100%;
+}
+    .sign-gog {
+    background-color: transparent;
+    width: 48%;
+    float: right;
+    border: 1px solid #4c3c78;
+    color: #4c3c78;
+    margin-top: 1px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+}
+@media (min-width: 1201)and (max-width: 1350px)
+{ .cch-h1 {
+    color: #fa5c5c;
+    font-size: 28px;
+}
+    .submin {
+    display: none;
+    position: fixed;
+    list-style: none;
+    left: 15%;
+    background-color: white;
+    padding: 4px;
+    top: 25px;
+    z-index: 2;
+}
+     .log-gog {
+    background-color: transparent;
+    border: 1px solid #4c3c78;
+    color: #4c3c78;
+    margin-top: -6%;
+    margin-bottom: 5px;
+    float: right;
+    font-size: 14px;
+}
+    .login {        font-size: 14px;
+    background-color: transparent;
+    border-color: #F27523;
+    color: #F27523;
+    float: none;
+}
+    .log-img {
+    width: 100%;
+}
+}
+@media (min-width: 1351px)and (max-width: 1550px)
+{ 
+    .submin {
+    display: none;
+    position: fixed;
+    list-style: none;
+    left: 15%;
+    background-color: white;
+    padding: 4px;
+    top: 25px;
+    z-index: 2;
+}
+}
+@media (min-width: 1550px)and (max-width: 1750px)
+{ 
+    .submin {
+    display: none;
+    position: fixed;
+    list-style: none;
+    left: 15%;
+    background-color: white;
+    padding: 4px;
+    top: 25px;
+    z-index: 2;
+}
+}
+@media (min-width: 1750px)and (max-width: 2000px)
 { 
     .submin {
     display: none;

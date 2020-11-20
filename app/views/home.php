@@ -1,8 +1,9 @@
 <?php include'header2.php'; //session_destroy();
 ?>
+<br> <br>
       <slider >
 <div id="demo" style="margin-top:-15px;" class="carousel slide" data-ride="carousel">
-
+<br> <br><br> 
   <!-- The slideshow -->
     
   <div class="carousel-inner">
@@ -86,10 +87,9 @@
          
               <div class=" text-center  mb-2">
                   <div class="card">
-
-                 <div style="height:auto ;" class="table-block">
-                   <a href="product_details?id='.$row1->Product_id.'">
-                   <img alt=""  src="'.$row1->product_main_image.'" style="height: 272px;"/>
+                   <a  href="product_details?id='.$row1->Product_id.'">
+                 <div class="table-block " style="height:272px;padding-top:9px;" >
+                   <img src="'.$row1->product_main_image.'" style="max-height: 100%;max-width: 100%;"/>
                  </div>
                 <div class="card-body">
                   <h6 class=" text-center">'.$row1->product_name.'</h6>

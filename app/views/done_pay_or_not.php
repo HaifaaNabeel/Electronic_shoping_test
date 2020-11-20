@@ -1,8 +1,6 @@
 <?php include'header.php'; ?>
 <body>
-    <br><br><br><br><br><br>
-
-    <main>
+    <main class="contact">
 <div class="container-fluid">
     <div class="row">
        
@@ -19,14 +17,15 @@ if($id == 1)  //error in card data name ,num ,pass
 <div class="col-md-6 ">
         
   </br>
-            <img class="" width="100%" alt="image" src="app/assets/img/concept-operating-system-error-404-error-web-page-illustration_126608-118.jpg"/>
+            <img class="ahood1" width="100%" alt="image" src="app/assets/img/concept-operating-system-error-404-error-web-page-illustration_126608-118.jpg"/>
         </div>
         <div class="col-md-6 ">
-         </br> </br>
+         </br> 
             <div class="" style="border-radius: 24px; padding:10px" >
-    <h2 class="text-center" style="color: #fa5c5c;"> لم تتم عمليه الشراء  <span class="ion-close-round"></span></h2>
-    <h2 class="text-center" style="color: #221446;">الرجاء ادخال بيانات البطاقة بشكل صحيح <span class="ion-sad-outline"></span></h2>
-    <h4 class="text-center" style="color: #221446;"></h4>
+    <h2 class="text-center cch-h1" style="color: #fa5c5c;"> لم تتم عمليه الشراء  <span class="ion-close-"></span></h2>
+    </br>
+    <h2 class="text-center cch-h1" style="color: #221446;">الرجاء ادخال بيانات البطاقة بشكل صحيح <span class="ion-sad-outline"></span></h2>
+    <h4 class="text-center cch-h1" style="color: #221446;"></h4>
 
     <!--<br><a class="btn  number_check "  href="./checkout">للاعادة ادخال بيانات البطاقة  <span class="ion-ios-paper-outline"></span></a>-->
     <br><a class="btn  log-cont1 "   href="./cart">للعودة الى سلة المشتريات <span class="ion-ios-cart-outline"></span></a>
@@ -39,13 +38,13 @@ else if  ($id == 3)   //error in card date
  <div class="col-md-6 ">
         
   </br>
-            <img class="" width="100%" alt="image" src="app/assets/img/concept-operating-system-error-404-error-web-page-illustration_126608-118.jpg"/>
+            <img class="ahood1" width="100%" alt="image" src="app/assets/img/concept-operating-system-error-404-error-web-page-illustration_126608-118.jpg"/>
         </div>
         <div class="col-md-6 ">
         </br> </br>
             <div class="" style="border-radius: 24px; padding:10px" >
-    <h2 class="text-center" style="color: #fa5c5c;"> لم تتم عمليه الشراء  <span class="ion-close-round"></span></h2>
-    <h2 class="text-center" style="color: ##221446;">الرجاء التاكد من تاريخ صلاحية البطاقة <span class="ion-sad-outline"></span></h2>
+    <h2 class="text-center cch-h1" style="color: #fa5c5c;"> لم تتم عمليه الشراء  <span class="ion-close-"></span></h2></br>
+    <h2 class="text-center cch-h1" style="color: ##221446;">الرجاء التاكد من تاريخ صلاحية البطاقة <span class="ion-sad-outline"></span></h2>
     <h4 class="text-center" style="color: ##221446;">    </h4>
 
     <!--<br><a class="btn  number_check "  href="./checkout">للاعادة ادخال بيانات البطاقة  <span class="ion-ios-paper-outline"></span></a>-->
@@ -60,13 +59,13 @@ else if  ($id == 2)   ///error in card account or cost
  <div class="col-md-6 ">
         
   </br>
-            <img class="" width="100%" alt="image" src="app/assets/img/concept-operating-system-error-404-error-web-page-illustration_126608-118.jpg"/>
+            <img class="ahood1" width="100%" alt="image" src="app/assets/img/concept-operating-system-error-404-error-web-page-illustration_126608-118.jpg"/>
         </div>
         <div class="col-md-6 ">
         </br> </br>
             <div class="" style="border-radius: 24px; padding:10px" >
-    <h2 class="text-center" style="color: ##221446;"> لم تتم عمليه الشراء  <span class="ion-close-round"></span></h2>
-    <h2 class="text-center" style="color: ##221446;">ان بطاقتك ليس لديها الرصيد الكافي للشراء الرجاء التاكد من طلباتك <span class="ion-sad-outline"></span> </h2>
+    <h2 class="text-center cch-h1" style="color: ##221446;"> لم تتم عمليه الشراء  <span class="ion-close-"></span></h2></br>
+    <h2 class="text-center cch-h1" style="color: ##221446;">ان بطاقتك ليس لديها الرصيد الكافي للشراء الرجاء التاكد من طلباتك <span class="ion-sad-outline"></span> </h2>
     <h4 class="text-center" style="color: ##221446;">    </h4>
 
     <!--<br><a class="btn  number_check "  href="./checkout">للاعادة ادخال بيانات البطاقة  <span class="ion-ios-paper-outline"></span></a>-->
@@ -82,13 +81,13 @@ else if  ($id == 0) //// error in process payment
     <div class="col-md-6 ">
         
   </br>
-            <img class="" width="100%" alt="image" src="app/assets/img/concept-operating-system-error-404-error-web-page-illustration_126608-118.jpg"/>
+            <img class="ahood1" width="100%" alt="image" src="app/assets/img/concept-operating-system-error-404-error-web-page-illustration_126608-118.jpg"/>
         </div>
         <div class="col-md-6 ">
         </br> </br>
             <div class="" style="border-radius: 24px; padding:10px" >
-    <h2 class="text-center" style="color: #fa5c5c;"> لم تتم عمليه الشراء  <span class="ion-close-round"></span></h2>
-    <h2 class="text-center" style="color: ##221446;">وجهتنا بعض المشاكل في عملية الشراء الرجاء المحاولةمرة اخرى <span class="ion-sad-outline"></span> </h2>
+    <h2 class="text-center cch-h1" style="color: #fa5c5c;"> لم تتم عمليه الشراء  <span class="ion-close-"></span></h2></br>
+    <h2 class="text-center cch-h1" style="color: ##221446;">وجهتنا بعض المشاكل في عملية الشراء الرجاء المحاولةمرة اخرى <span class="ion-sad-outline"></span> </h2>
     <h4 class="text-center" style="color: ##221446;">    </h4>
 
     <!--<br><a class="btn  number_check "  href="./checkout">للاعادة ادخال بيانات البطاقة  <span class="ion-ios-paper-outline"></span></a>-->
@@ -115,14 +114,14 @@ else if  ($id == 4) //// the payment is done
     <div class="col-md-6 ">
         
   </br>
-            <img class="" width="100%" alt="image" src="app/assets/img/concept-operating-system-error-404-error-web-page-illustration_126608-118.jpg"/>
+            <img class="ahood1" width="100%" alt="image" src="app/assets/img/concept-operating-system-error-404-error-web-page-illustration_126608-118.jpg"/>
         </div>
         <div class="col-md-6 ">
         </br> </br>
             <div class="" style="border-radius: 24px; padding:10px" >
-    <h2 class="text-center" style="color: #fa5c5c;"> لم تتم عمليه الشراء  <span class="ion-android-checkmark-circle"></span></h2>
-    <h2 class="text-center" style="color: ##221446;">وجهتنا بعض المشاكل في عملية الشراء الرجاء المحاولةمرة اخرى </h2>
-    <h4 class="text-center" style="color: ##221446;">    </h4>
+    <h2 class="text-center cch-h1" style="color: #fa5c5c;"> لم تتم عمليه الشراء  <span class="ion-android-checkmark-circle"></span></h2></br>
+    <h2 class="text-center cch-h1" style="color: ##221446;">وجهتنا بعض المشاكل في عملية الشراء الرجاء المحاولةمرة اخرى </h2>
+    <h4 class="text-center cch-h1" style="color: ##221446;">    </h4>
 
     <!--<br><a class="btn  number_check "  href="./checkout">للاعادة ادخال بيانات البطاقة  <span class="ion-ios-paper-outline"></span></a>-->
     <br><a class="btn  log-cont1 "   href="./cart">للعودة الى سلة المشتريات <span class="ion-ios-cart-outline"></span></a>
@@ -130,31 +129,7 @@ else if  ($id == 4) //// the payment is done
     </div>
  ';
  }
-
-
-
-
-
-
 ?>
-
-     <!--<main>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4 "></div>
-        <div class="col-md-4 ">
-            <div class="card" style="border-radius: 24px; padding:10px" >
-            <div class="col-md-12 col-xs-12  number_check"> 4</div><br>
-
-
-                    <h2 class="text-center" style="color: ##221446;"> رقم طلبك  </h2>
-                    <h2 class="text-center" style="color: ##221446;">.............</h2>
-                    <h4 class="text-center" style="color: ##221446;"> لقد تمت عمليةالشراء بنجاح  <span class="ion-android-checkmark-circle"></span> </h4>
-
-                    <br><a class="btn  number_check "  href="">لعرض الفاتورة <span class="ion-ios-paper-outline"></span></a>
-                    <br><a class="btn  number_check "   href="">للعودة الى سلة المشتريات <span class="ion-ios-cart-outline"></span></a>
-                    <br><a class="btn  number_check "   href="">للعودة الى المتجر <span class="ion-ios-home-outline"></a>-->
-<br><br>
                     
                 </form>
                 
@@ -163,10 +138,6 @@ else if  ($id == 4) //// the payment is done
     </div>
     
 </div>
-
-
-<br><br><br><br><br><br>
     </main>
 
-<br><br><br><br>
 <?php include'footer.php'; ?>

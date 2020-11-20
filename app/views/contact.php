@@ -2,12 +2,11 @@
 <?php include'header.php'; 
 
 ?>
-   </br></br></br></br></br></br>
 <section class="contact">
 	
 
 
-<div class="container ">
+<div class="container "><br> <br><br> <br><br> <br><br> <br>
   <?php  
 $do = isset($_GET['do']);
 if($do==contact){
@@ -45,11 +44,11 @@ if(isset($_POST['btn-send']))
         <div class="col-md-6 col-sm-12">
             </br>
   </br>
-            <img class="" width="100%" alt="image" src="app/assets/img/contact-us-concept-landing-page_52683-12759.jpg"/>
+            <img class="ahood" alt="image" src="app/assets/img/contact-us-concept-landing-page_52683-12759.jpg"/>
         </div> 
          <div class="col-md-6 col-sm-12 ">
                <div class="">
-                   <h2 class="text-right" style="color: #221446;"> تواصل معنا</h2>
+                   <h2 class=" cont-h1"> تواصل معنا</h2>
                    <?php 
       $Msg = "";
       if(isset($_GET['error']))
@@ -80,7 +79,7 @@ if(isset($_POST['btn-send']))
 			  			 	<textarea type="text" class="form-control text-right input-cont" id="description" name="msg"  style="height: 6.1em;"></textarea>
 			  			</div>
 			  			<div class="form-group" style="float:left; padding:3px 20px" >
-			  				<button type="submit" class="btn btn-default log-cont"  name="btn-send" ><i class="ion-ios-paperplane" ></i> ارسال الرسالة </button>
+			  				<button type="submit" class="btn log-cont"  name="btn-send" ><i class="ion-ios-paperplane" ></i> ارسال الرسالة </button>
 			  			</div>
 			  			
           

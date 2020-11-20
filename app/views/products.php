@@ -33,8 +33,8 @@
               <div class=" text-center mr-1 ml-1  mb-3">
                   <div class="card" style="margin:1px;width:100%;">
 <a href="product_details?id='.$row->Product_id.'">
-<div style="height:auto ;" class="table-block ">
-                    <img alt=""  src="'.$row->product_main_image.'" style="height:272px;width:100%" />
+                 <div class="table-block " style="height:272px;padding-top:9px;" >
+                    <img alt=""  src="'.$row->product_main_image.'" style="max-height: 100%;max-width: 100%;" />
                  </div></a>
                 <div class="card-body">    <!--$row->product_date_added.<br>-->
 <a href="product_details?id='.$row->Product_id.'">

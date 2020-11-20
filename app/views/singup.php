@@ -11,9 +11,9 @@ $page=$_GET['page'];
 </div>
         <div class="col-md-6 col-sm-12 ">
             <div class="pl-4 pr-4"  >
-                     <h2 class="text-right" style="color: #221446;"> انشاء حساب </h2>
+                     <h2 class="cont-h1"> انشاء حساب </h2>
               <form action="" method="post">
-                  <p class="text-right" style="font-size:15px;"> اهلا بك في متجرنا لإنشاء حساب قم بإدخال بياناتك</p>
+                  <p class="cont-h1" style="font-size:15px;"> اهلا بك في متجرنا لإنشاء حساب قم بإدخال بياناتك</p>
                   <div class="form-group text-right">
                         <label class="log-lab"  for="uname">اسم المستخدم </label>
                         <input type="text" class="form-control text-right " id="uname" placeholder="اسم المستخدم" name="user_name" required>

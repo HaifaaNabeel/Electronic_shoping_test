@@ -2,7 +2,7 @@
     <br><br><br><br><br><br>
 
     <main>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
             
 <?php
@@ -32,7 +32,7 @@ $id=$_GET['id'];//$tootlecost=$_POST['tootlecost'];
   <div class="col-md-6 ">
         
   </br>
-            <img class="" width="100%" alt="image" src="app/assets/img/successful-purchase-concept-illustration_114360-1003.jpg"/>
+            <img class="ahood1" width="100%" alt="image" src="app/assets/img/successful-purchase-concept-illustration_114360-1003.jpg"/>
         </div>
         <div class="col-md-6 ">
          </br> </br>

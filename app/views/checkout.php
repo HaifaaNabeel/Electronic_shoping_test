@@ -1,6 +1,5 @@
 <?php include'header.php'; ?>
 <body>
-    <br><br><br><br><br><br>
 
                    <?php
                     $tootlecost=$_POST['tootlecost'];
@@ -8,18 +7,18 @@
 
                     ?>
      <main>
-         <section class="chheckout">
+         <section class="contact">
 <div class="container">
     <div class="row">
         <div class="col-md-6 ">
         
   </br>
-            <img class="" width="100%" alt="image" src="app/assets/img/happy-tiny-man-woman-with-big-open-wallet_74855-5869.jpg"/>
+            <img class="ahood" width="100%" alt="image" src="app/assets/img/happy-tiny-man-woman-with-big-open-wallet_74855-5869.jpg"/>
         </div>
         <div class="col-md-6 ">
             <div class="">
                 <form class="" action="http://localhost/bank_new_api/api/take_put_checkout.php" method="POST">
-                    <h2 class="text-center" style="color: #221446;"> ادفع الان </h2>
+                    <h2 class="cont-h1"> ادفع الان </h2>
                     <br>
                     <div class="form-group text-right ">
                         <label class="log-lab" for="card_type">نوع البطاقة </label>
@@ -56,7 +55,7 @@
 </div>
 
          </section>
-<br><br><br><br><br><br>
+<br><br>
     </main>
 
 <?php include'footer.php'; ?>

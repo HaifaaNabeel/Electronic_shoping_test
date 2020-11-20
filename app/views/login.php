@@ -1,17 +1,16 @@
 <?php include'header.php'; ?>
-    <br><br><br><br><br><br>
     <?php  
 $page=$_GET['page'];
 ?>   
-     <main>
-<div class="container">
+     <main class="contact">
+<div class="container"><br><br><br><br><br><br>
     <div class="row">
                 <div class="col-md-6 col-sm-12 ">
                     <img class="img-fluid log-img" src="app/assets/img/user-login-illustration-with-key_108061-291.jpg">
 </div>
         <div class="col-md-6 col-sm-12 ">
             <div class="pl-4 pr-4"  >
-             <h2 class="text-right" style="color: #221446;"> تسجيل الدخول </h2>
+             <h2 class=" cont-h1"> تسجيل الدخول </h2>
                 <form class="" action="" method="POST">
                     </br>
                     <div class="form-group text-right">

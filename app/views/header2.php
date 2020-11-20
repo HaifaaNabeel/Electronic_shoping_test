@@ -1,5 +1,7 @@
 <?php
 ob_start();
+error_reporting(0);
+ini_set('display_errors', 0);
 @session_start();
 $_SESSION['page']=$_SERVER['REQUEST_URI'];
 //echo $_SESSION['page'];
@@ -172,7 +174,7 @@ left: 46%;">
        </section>
   <nav class="navbar navbar-expand-md fixed-top">
   <!-- Brand -->
-  <a class="navbar-brand" href="#"><img src="app/assets/img/login_store_logos-2.png" width=""></a>
+  <a class="navbar-brand" href="home"><img src="app/assets/img/login_store_logos-2.png" width=""></a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" style="color: #e55d03;" data-toggle="collapse" data-target="#collapsibleNavbar">

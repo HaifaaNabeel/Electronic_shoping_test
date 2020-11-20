@@ -1,9 +1,8 @@
 <?php include'header2.php'; //session_destroy();
 ?>
-<br> <br>
       <slider >
-<div id="demo" style="margin-top:-15px;" class="carousel slide" data-ride="carousel">
-<br> <br><br> 
+<div id="demo" style="margin-top:;" class="carousel slide" data-ride="carousel">
+
   <!-- The slideshow -->
     
   <div class="carousel-inner">
@@ -14,7 +13,7 @@
 
                                ?>
     <div class="carousel-item <?php echo $ban->banner_status; ?> animated fadeIn" style="animation-delay:0s;">
-      <img src="app/assets/img/banner_image/<?php echo $ban->banner_img; ?>"  alt="Los Angeles" >
+      <img src="app/assets/img/banner_image/<?php echo $ban->banner_img; ?>"   class="img-fluid" >
   <div class="carousel-caption">
     <h3 class="animated  zoomIn" style="animation-delay:1s;"><?php echo $ban->banner_title; ?></h3>
   </div>
@@ -643,8 +642,8 @@ echo"<script>
         foreach($rows as $row){
 
                 echo'
-                <h6>'.$row->adds_name.'</h6>
-                <img src="'.$row->adds_img.'" style="height: 180px;width:100%" />';
+                <img src="'.$row->adds_img.'" style="height: 180px;width:65%" />
+                <img src="'.$row->adds_img.'" style="height: 180px;width:34%" />';
 
             
                }?>

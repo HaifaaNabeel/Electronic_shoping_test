@@ -6,7 +6,7 @@
 	
 
 
-<div class="container "><br> <br><br> <br><br> <br><br> <br>
+<div class="container "><br>
   <?php  
 $do = isset($_GET['do']);
 if($do==contact){

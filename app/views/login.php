@@ -3,7 +3,7 @@
 $page=$_GET['page'];
 ?>   
      <main class="contact">
-<div class="container"><br><br><br><br><br><br>
+<div class="container">
     <div class="row">
                 <div class="col-md-6 col-sm-12 ">
                     <img class="img-fluid log-img" src="app/assets/img/user-login-illustration-with-key_108061-291.jpg">

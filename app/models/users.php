@@ -7,11 +7,12 @@ public  $db;
         $this->db=new DB();
     }
   
-   function loginhere($page){
+    function loginhere($page){
         if(isset($_POST['Login'])){
           $name=$_POST['user_name'];
           $pass=$_POST['user_pass'];
-            $SQL = "SELECT * FROM users where user_name='$name' and user_pass='$pass' and user_is_active=1 ";
+            $hashpassword= sha1($pass);
+            $SQL = "SELECT * FROM users where user_name='$name' and user_pass='$hashpassword' and user_is_active=1 ";
         $result = $this->db->connect()->prepare($SQL);
         $result->execute();
       $count= $result->rowcount();
@@ -115,16 +116,17 @@ echo $name;
               $role=$_POST['user_roles'];
               $date=$_POST['date_added'];
               $admin=$_POST['admin_who_added'];
+            $hashpassword= sha1($pass);
          $SQL = "SELECT * FROM users where user_email='$email'";
         $result = $this->db->connect()->prepare($SQL);
         $result->execute();
       $count= $result->rowcount();
             if($count==0){
-        $final_query="INSERT INTO `users`(`user_name`, `user_email`, `user_pass`, `user_is_active`, `user_roles`, `date_added`, `admin_who_added`) VALUES ('$name','$email','$pass','$active','$role','$date','$admin')";
+        $final_query="INSERT INTO `users`(`user_name`, `user_email`, `user_pass`, `user_is_active`, `user_roles`, `date_added`, `admin_who_added`) VALUES ('$name','$email','$hashpassword','$active','$role','$date','$admin')";
                  $result =$this->db->connect()->prepare($final_query);
 			
  if($result->execute()){
-      $SQL = "SELECT * FROM users where user_name='$name' and user_pass='$pass'";
+      $SQL = "SELECT * FROM users where user_name='$name' and user_pass='$hashpassword'";
         $result = $this->db->connect()->prepare($SQL);
         $result->execute();
                 $count= $result->rowcount();
@@ -197,7 +199,7 @@ echo"no";
         }                
 header('location:'.$page);
        }
- } //end if user 
+ }
                
     }
         elseif($count>0){

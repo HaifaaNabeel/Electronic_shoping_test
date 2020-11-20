@@ -1,7 +1,7 @@
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
 <?php include'header.php';?>
-<link rel="stylesheet" href= "app/assets/css/loginstyle.css">
+         </br> </br>
+         </br> </br>
+         </br> </br>
 
 <?php
 
@@ -9,7 +9,7 @@
 
 //Include Configuration File
 include('app/config/config_google_plas.php');
-$page=$_GET['page'];
+
 $login_button = '';
 
 //This $_GET["code"] variable value received after user has login into their Google Account redirct to PHP script then this variable value has been received
@@ -65,10 +65,10 @@ if(isset($_GET["code"]))
 if(!isset($_SESSION['access_token']))
 {
  //Create a URL to obtain user authorization
- echo'<div class="row">
- <div class="col-md-4 "></div>
- <div class="col-md-4 ">
- <img src="app/assets/img/login_store_logos-2.png" width="100%">  
+ echo'
+    <div class="row">
+<div class="col-md-12 ">
+         </br> </br>
    
   <h3 align="center">سوف يتم تسجيل دخولك بحساب جوجل </h3>';
  $login_button = '<a href="'.$google_client->createAuthUrl().'" class="icoGoogle" title="Google +" style="font-size:5em;color:red"><i class="ion-social-google-outline"></i></a>';
@@ -88,13 +88,13 @@ if(!isset($_SESSION['access_token']))
     echo '<h3><b>Name :</b> '.$_SESSION['user_first_name'].' '.$_SESSION['user_last_name'].'</h3>';
     echo '<h3><b>Email :</b> '.$_SESSION['user_email_address'].'</h3>';
     $name=$_SESSION['user_first_name'].' '.$_SESSION['user_last_name'];
-    //echo $name."   hyhhghghghghgh";
+    echo $name."   hyhhghghghghgh";
     $email=$_SESSION['user_email_address'];
     //echo '<h3><a href="logout.php">Logout</h3></div>';header()
     //echo '<meta http-equiv = "refresh" content = "05.5; url = http://localhost/Electronic_shoping_test/return_google?name="'.'name'.'" />';
     //echo '<meta http-equiv = "refresh" content = "05.5; url = http://localhost/Electronic_shoping_test/return_google?name="'.$name.' />';
 
-    header('location:return_google?name='.$name.'&email='.$email.'&page='.$page);
+    header('location:return_google?name='.$name.'&email='.$email);
    }
    else
    {
